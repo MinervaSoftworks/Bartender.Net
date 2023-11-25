@@ -1,2 +1,2 @@
 # torn.api
-An API to interact with the game Torn's REST API.
+A wrapper with the game Torn City's REST API.
