@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torn.Api.Net.Models", "Torn.Api.Net.Models\Torn.Api.Net.Models.csproj", "{67FB1AF3-1E3B-4DA3-8675-C03A7E7F75B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Torn.Api.Net.Framework", "Torn.Api.Net.Framework\Torn.Api.Net.Framework.csproj", "{6380B42E-5B64-40CF-A6DB-43377B069DB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67FB1AF3-1E3B-4DA3-8675-C03A7E7F75B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FB1AF3-1E3B-4DA3-8675-C03A7E7F75B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FB1AF3-1E3B-4DA3-8675-C03A7E7F75B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FB1AF3-1E3B-4DA3-8675-C03A7E7F75B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6380B42E-5B64-40CF-A6DB-43377B069DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6380B42E-5B64-40CF-A6DB-43377B069DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6380B42E-5B64-40CF-A6DB-43377B069DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6380B42E-5B64-40CF-A6DB-43377B069DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77FDE809-A22C-4BBA-A542-A71E6B5512E4}
+	EndGlobalSection
+EndGlobal
