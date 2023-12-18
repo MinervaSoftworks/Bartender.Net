@@ -2,9 +2,9 @@
 
 namespace TornApi.Net.REST {
     /// <summary>
-    /// A short-lived REST client. A new client must be created after each request as the internal client is disposed of after use.
+    /// A request client to interact with Torn's REST Api.
     /// </summary>
-    public class SingleRequestClient (IHttpClientFactory clientFactory) {
+    public class ApiRequestClient (IHttpClientFactory clientFactory) {
         private IHttpClientFactory _clientFactory = clientFactory;
 
         public async Task<HttpResponseMessage?> GetAsync(RequestConfiguration config) {

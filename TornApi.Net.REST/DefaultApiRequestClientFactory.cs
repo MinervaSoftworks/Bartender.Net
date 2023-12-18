@@ -1,13 +1,13 @@
 ﻿namespace TornApi.Net.REST {
-    public class DefaultSingleRequestClientFactory : IHttpClientFactory, IDisposable {
+    public class DefaultApiRequestClientFactory : IHttpClientFactory, IDisposable {
         private static object _instLock = new object ();
 
-        public static DefaultSingleRequestClientFactory Instance {
+        public static DefaultApiRequestClientFactory Instance {
             get {
                 if(_instance is null) {
                     lock(_instLock) {
                         if(_instance is null) {
-                            _instance = new DefaultSingleRequestClientFactory ();
+                            _instance = new DefaultApiRequestClientFactory ();
                         }
                     }
                 }
@@ -16,9 +16,9 @@
             }
         }
 
-        private DefaultSingleRequestClientFactory () { }
+        private DefaultApiRequestClientFactory () { }
 
-        private static DefaultSingleRequestClientFactory? _instance;
+        private static DefaultApiRequestClientFactory? _instance;
 
         private readonly Lazy<HttpMessageHandler> _lazyHandler = new Lazy<HttpMessageHandler> (() => new HttpClientHandler ());
 
