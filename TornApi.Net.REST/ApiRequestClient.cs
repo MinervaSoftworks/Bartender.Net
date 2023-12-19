@@ -1,20 +1,116 @@
-﻿using System.Net.Http.Headers;
+﻿using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http.Headers;
+using TornApi.Net.Models.Common;
+using TornApi.Net.Models.Key;
 
 namespace TornApi.Net.REST {
     /// <summary>
     /// A request client to interact with Torn's REST Api.
     /// </summary>
-    public class ApiRequestClient (IHttpClientFactory clientFactory) {
-        private IHttpClientFactory _clientFactory = clientFactory;
+    public class ApiRequestClient {
+        private HttpClient _client;
 
-        public async Task<HttpResponseMessage?> GetAsync(RequestConfiguration config) {
-            using var client = _clientFactory.CreateClient ("src");
+        public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
+            _client = clientFactory.CreateClient ();
 
-            client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
+            _client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
 
-            client.BaseAddress = new Uri (config.ApiUrl);
+            _client.BaseAddress = new Uri (apiUrl);
+        }
 
-            return await client.GetAsync (config.ToString ());
+        public async Task<ApiResponse<T>> GetSingleObjectAsync<T>(RequestConfiguration config) where T : class {
+            var keyStatus = await ValidateKeyAsync (config.Key);
+
+            var result = new ApiResponse<T> {
+                KeyStatus = keyStatus
+            };
+
+            if(!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
+                return result;
+            }
+
+            var response = await _client.GetAsync (config.ToString ());
+
+            result.HttpResponseMessage = response;
+
+            if(!response.IsSuccessStatusCode) {
+                return result;
+            }
+
+            var json = await response.Content.ReadAsStringAsync ();
+
+            if(json == string.Empty) {
+                return result;
+            }
+
+            var parsed = JsonConvert.DeserializeObject<T> (json);
+
+            result.Content = parsed;
+
+            return result;
+        }
+
+        public async Task<KeyValidationStatus> ValidateKeyAsync (string key) {
+            var config = new RequestConfiguration {
+                Key = key,
+                Section = "key",
+                Selections = ["info"]
+            };
+
+            var status = new KeyValidationStatus ();
+
+            var response = await _client.GetAsync (config.ToString());
+
+            if(!response.IsSuccessStatusCode) {
+                return new KeyValidationStatus {
+                    HttpStatusCode = response.StatusCode
+                };
+            }
+
+            var json = await response.Content.ReadAsStringAsync ();
+
+            if(json == string.Empty) {
+                return new KeyValidationStatus {
+                    HttpStatusCode = HttpStatusCode.NotFound
+                };
+            }
+
+            var error = ParseErrorCode (json);
+
+            if(error >= 0) {
+                return new KeyValidationStatus {
+                    ErrorCode = error,
+                };
+            }
+
+            var parsed = JsonConvert.DeserializeObject<KeyInfo> (json);
+
+            if(parsed is null) {
+                return new KeyValidationStatus ();
+            }
+
+            if((int) parsed.AccessType < 2) {
+                return new KeyValidationStatus {
+                    IsValid = true,
+                    ErrorCode = 16,
+                };
+            }
+
+            return new KeyValidationStatus {
+                IsValid = true,
+                HasRequiredAccessLevel = true,
+                ErrorCode = -1
+            };
+        }
+
+        private int ParseErrorCode (string json) {
+            try {
+                var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
+                return parsed is null ? 0 : parsed.Code;
+            } catch {
+                return -1;
+            }
         }
     }
 }

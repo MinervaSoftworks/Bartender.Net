@@ -2,12 +2,12 @@
 
 namespace TornApi.Net.Models.Key;
 
-internal class Info {
+public class KeyInfo {
     [JsonProperty ("access_level")]
     public int AccessLevel { get; set; }
 
     [JsonProperty ("access_type")]
-    public AccessType AccessType { get; set; }
+    public AccessLevel AccessType { get; set; }
 
     [JsonProperty ("selections")]
     public Selections Selections { get; set; }

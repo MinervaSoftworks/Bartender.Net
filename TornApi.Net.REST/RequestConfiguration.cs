@@ -1,11 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 namespace TornApi.Net.REST {
-    public struct RequestConfiguration {
-        [NotNull]
-        public string ApiUrl { get; set; }
-
-        [NotNull]
+    public struct RequestConfiguration {[NotNull]
         public string Key { get; set; }
 
         public int ID { get; set; }
