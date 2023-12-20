@@ -4,9 +4,9 @@
 
         public static DefaultApiRequestClientFactory Instance {
             get {
-                if(_instance is null) {
-                    lock(_instLock) {
-                        if(_instance is null) {
+                if (_instance is null) {
+                    lock (_instLock) {
+                        if (_instance is null) {
                             _instance = new DefaultApiRequestClientFactory ();
                         }
                     }

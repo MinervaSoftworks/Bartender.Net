@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 namespace TornApi.Net.Models.Faction;
+
 public class Basic {
     [JsonProperty ("age")]
     public int Age { get; set; }

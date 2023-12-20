@@ -19,14 +19,14 @@ namespace TornApi.Net.REST {
             _client.BaseAddress = new Uri (apiUrl);
         }
 
-        public async Task<ApiResponse<T>> GetSingleObjectAsync<T>(RequestConfiguration config) where T : class {
+        public async Task<ApiResponse<T>> GetSingleObjectAsync<T> (RequestConfiguration config) where T : class {
             var keyStatus = await ValidateKeyAsync (config.Key);
 
             var result = new ApiResponse<T> {
                 KeyStatus = keyStatus
             };
 
-            if(!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
+            if (!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
                 return result;
             }
 
@@ -34,13 +34,13 @@ namespace TornApi.Net.REST {
 
             result.HttpResponseMessage = response;
 
-            if(!response.IsSuccessStatusCode) {
+            if (!response.IsSuccessStatusCode) {
                 return result;
             }
 
             var json = await response.Content.ReadAsStringAsync ();
 
-            if(json == string.Empty) {
+            if (json == string.Empty) {
                 return result;
             }
 
@@ -60,9 +60,9 @@ namespace TornApi.Net.REST {
 
             var status = new KeyValidationStatus ();
 
-            var response = await _client.GetAsync (config.ToString());
+            var response = await _client.GetAsync (config.ToString ());
 
-            if(!response.IsSuccessStatusCode) {
+            if (!response.IsSuccessStatusCode) {
                 return new KeyValidationStatus {
                     HttpStatusCode = response.StatusCode
                 };
@@ -70,7 +70,7 @@ namespace TornApi.Net.REST {
 
             var json = await response.Content.ReadAsStringAsync ();
 
-            if(json == string.Empty) {
+            if (json == string.Empty) {
                 return new KeyValidationStatus {
                     HttpStatusCode = HttpStatusCode.NotFound
                 };
@@ -78,7 +78,7 @@ namespace TornApi.Net.REST {
 
             var error = ParseErrorCode (json);
 
-            if(error >= 0) {
+            if (error >= 0) {
                 return new KeyValidationStatus {
                     ErrorCode = error,
                 };
@@ -86,11 +86,11 @@ namespace TornApi.Net.REST {
 
             var parsed = JsonConvert.DeserializeObject<KeyInfo> (json);
 
-            if(parsed is null) {
+            if (parsed is null) {
                 return new KeyValidationStatus ();
             }
 
-            if((int) parsed.AccessType < 2) {
+            if ((int) parsed.AccessType < 2) {
                 return new KeyValidationStatus {
                     IsValid = true,
                     ErrorCode = 16,
@@ -108,7 +108,8 @@ namespace TornApi.Net.REST {
             try {
                 var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
                 return parsed is null ? 0 : parsed.Code;
-            } catch {
+            }
+            catch {
                 return -1;
             }
         }

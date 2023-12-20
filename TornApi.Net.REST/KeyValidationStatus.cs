@@ -9,5 +9,7 @@ namespace TornApi.Net.REST {
         public int ErrorCode { get; set; } = 0;
 
         public HttpStatusCode HttpStatusCode { get; set; } = HttpStatusCode.OK;
+
+        public bool IsKeyUsable => IsValid && HasRequiredAccessLevel;
     }
 }
