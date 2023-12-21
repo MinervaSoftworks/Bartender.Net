@@ -19,8 +19,8 @@ namespace TornApi.Net.REST {
             _client.BaseAddress = new Uri (apiUrl);
         }
 
-        public async Task<ApiResponse<T>> GetSingleObjectAsync<T> (RequestConfiguration config) where T : class {
-            var keyStatus = await ValidateKeyAsync (config.Key);
+        public async Task<ApiResponse<T>> GetSingleObjectAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
+            var keyStatus = await ValidateKeyAsync (config.Key, accessLevel);
 
             var result = new ApiResponse<T> {
                 KeyStatus = keyStatus
@@ -51,11 +51,12 @@ namespace TornApi.Net.REST {
             return result;
         }
 
-        public async Task<KeyValidationStatus> ValidateKeyAsync (string key) {
+        public async Task<KeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
             var config = new RequestConfiguration {
                 Key = key,
                 Section = "key",
-                Selections = ["info"]
+                Selections = ["info"],
+                Comment = "TornApi.Net Key Validation"
             };
 
             var status = new KeyValidationStatus ();
@@ -90,7 +91,7 @@ namespace TornApi.Net.REST {
                 return new KeyValidationStatus ();
             }
 
-            if ((int) parsed.AccessType < 2) {
+            if (parsed.AccessType < requiredLevel) {
                 return new KeyValidationStatus {
                     IsValid = true,
                     ErrorCode = 16,
@@ -107,7 +108,7 @@ namespace TornApi.Net.REST {
         private int ParseErrorCode (string json) {
             try {
                 var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
-                return parsed is null ? 0 : parsed.Code;
+                return parsed is null ? -1 : parsed.Error.Code;
             }
             catch {
                 return -1;

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TornApi.Net.Models", "TornA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TornApi.Net.REST", "TornApi.Net.REST\TornApi.Net.REST.csproj", "{0298660E-1CAA-499E-A88A-1F56E8DA8008}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TornApi.Net.Tests", "TornApi.Net.Tests\TornApi.Net.Tests.csproj", "{218FCFD2-D1F3-46D3-807C-98D40A0D598F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0298660E-1CAA-499E-A88A-1F56E8DA8008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0298660E-1CAA-499E-A88A-1F56E8DA8008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0298660E-1CAA-499E-A88A-1F56E8DA8008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{218FCFD2-D1F3-46D3-807C-98D40A0D598F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218FCFD2-D1F3-46D3-807C-98D40A0D598F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218FCFD2-D1F3-46D3-807C-98D40A0D598F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218FCFD2-D1F3-46D3-807C-98D40A0D598F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

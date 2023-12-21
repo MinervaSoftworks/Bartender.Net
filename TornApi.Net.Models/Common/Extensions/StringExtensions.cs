@@ -1,4 +1,5 @@
 ﻿using TornApi.Net.Models.Faction;
+using TornApi.Net.Models.Key;
 
 namespace TornApi.Net.Models.Common.Extensions {
     public static partial class StringExtensions {
@@ -35,6 +36,15 @@ namespace TornApi.Net.Models.Common.Extensions {
             "Silver" => Rank.Silver,
             "Unranked" => Rank.Unranked,
             _ => throw new Exception ($"Unknown Rank {rank}")
+        };
+
+        public static AccessLevel ToAccessLevel (this string level) => level switch {
+            "Custom" => AccessLevel.Custom,
+            "Full Access" => AccessLevel.FullAccess,
+            "Limited Access" => AccessLevel.LimitedAccess,
+            "Minimal Access" => AccessLevel.MinimalAccess,
+            "Public Only" => AccessLevel.PublicOnly,
+            _ => throw new Exception ($"Unknown AccessLevel {level}")
         };
     }
 }
