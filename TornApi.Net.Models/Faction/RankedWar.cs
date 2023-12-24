@@ -2,6 +2,8 @@
 
 namespace TornApi.Net.Models.Faction {
     public class RankedWar {
+        public int ID { get; set; }
+
         [JsonProperty ("factions")]
         public IDictionary<string, RankedWarFaction> Factions { get; set; }
 

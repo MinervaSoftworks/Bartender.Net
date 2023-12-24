@@ -3,6 +3,10 @@
 namespace TornApi.Net.Models.User;
 
 public class PlayerStates {
+    public int ID { get; set; }
+
+    public int OwnerID { get; set; }
+
     [JsonProperty ("hospital_timestamp")]
     public long HospitalTimestamp { get; set; }
 

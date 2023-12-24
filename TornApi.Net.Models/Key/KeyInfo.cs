@@ -8,7 +8,7 @@ public class KeyInfo {
     public int AccessLevel { get; set; }
 
     [JsonProperty ("access_type")]
-    [JsonConverter(typeof(AccessLevelConverter))]
+    [JsonConverter (typeof (AccessLevelConverter))]
     public AccessLevel AccessType { get; set; }
 
     [JsonProperty ("selections")]

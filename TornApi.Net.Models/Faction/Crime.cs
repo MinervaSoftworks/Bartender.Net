@@ -4,6 +4,8 @@ using TornApi.Net.Models.Common;
 namespace TornApi.Net.Models.Faction;
 
 public class Crime {
+    public int FactionID { get; set; }
+
     [JsonProperty ("crime_id")]
     public int ID { get; set; }
 

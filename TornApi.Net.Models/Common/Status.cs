@@ -3,6 +3,10 @@
 namespace TornApi.Net.Models.Common;
 
 public class Status {
+    public int ID { get; set; }
+
+    public int OwnerID { get; set; }
+
     [JsonProperty("color")]
     public StatusColor Color { get; set; }
 

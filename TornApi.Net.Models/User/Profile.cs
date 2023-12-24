@@ -23,7 +23,7 @@ public class Profile {
     public int Enemies { get; set; }
 
     [JsonProperty ("faction")]
-    public Faction Faction { get; set; }
+    public FactionStub Faction { get; set; }
 
     [JsonProperty ("forum_posts")]
     public int ForumPosts { get; set; }

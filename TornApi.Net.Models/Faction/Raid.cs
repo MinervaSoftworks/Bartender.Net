@@ -2,6 +2,8 @@
 
 namespace TornApi.Net.Models.Faction {
     public class Raid {
+        public int ID { get; set; }
+
         [JsonProperty ("defender_score")]
         public int DefenderScore { get; set; }
 

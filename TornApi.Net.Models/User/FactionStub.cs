@@ -2,16 +2,14 @@
 
 namespace TornApi.Net.Models.User;
 
-public class Faction {
+public class FactionStub {
     [JsonProperty ("days_in_faction")]
     public int DaysInFaction { get; set; }
 
     [JsonProperty ("faction_id")]
-
     public int FactionID { get; set; }
 
     [JsonProperty ("faction_name")]
-
     public string Name { get; set; }
 
     [JsonProperty ("faction_tag")]

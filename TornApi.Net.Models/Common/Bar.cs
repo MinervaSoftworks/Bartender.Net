@@ -3,6 +3,10 @@
 namespace TornApi.Net.Models.Common;
 
 public class Bar {
+    public int ID { get; set; }
+
+    public int OwnerID { get; set; }
+
     [JsonProperty("current")]
     public int Current { get; set; }
 

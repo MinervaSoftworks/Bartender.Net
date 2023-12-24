@@ -3,6 +3,10 @@
 namespace TornApi.Net.Models.Common;
 
 public class Marriage {
+    public int ID { get; set; }
+
+    public int OwnerID { get; set; }
+
     [JsonProperty("duration")]
     public int Duration { get; set; }
 

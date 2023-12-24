@@ -2,6 +2,10 @@
 
 namespace TornApi.Net.Models.Faction {
     public class Ranking {
+        public int ID { get; set; }
+
+        public int FactionID { get; set; }
+
         [JsonProperty ("division")]
         public int Division { get; set; }
 

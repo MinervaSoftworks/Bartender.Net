@@ -3,6 +3,10 @@
 namespace TornApi.Net.Models.User;
 
 public class WorkingStats {
+    public int ID { get; set; }
+
+    public int OwnerID { get; set; }
+
     [JsonProperty ("manual_labor")]
     public int ManualLabor { get; set; }
 
