@@ -3,6 +3,8 @@ using TornApi.Net.Models.Common;
 
 namespace TornApi.Net.Models.Faction {
     public class Member {
+        public int ID { get; set; }
+
         public int FactionID { get; set; }
 
         [JsonProperty ("days_in_faction")]

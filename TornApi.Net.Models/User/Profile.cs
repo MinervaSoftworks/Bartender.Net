@@ -11,7 +11,7 @@ public class Profile {
     public int Awards { get; set; }
 
     [JsonProperty ("icons")]
-    public Dictionary<string, string> BasicIcons { get; set; }
+    public IDictionary<string, string> BasicIcons { get; set; }
 
     [JsonProperty ("competition")]
     public Competition Competition { get; set; }
