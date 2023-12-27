@@ -15,9 +15,9 @@ namespace TornApi.Net.REST {
         [NotNull]
         public IEnumerable<string> Selections { get; set; }
 
-        public int? From { get; set; }
+        public DateTime? From { get; set; }
 
-        public int? To { get; set; }
+        public DateTime? To { get; set; }
 
         public int? Limit { get; set; }
 
@@ -30,15 +30,22 @@ namespace TornApi.Net.REST {
 
             var commentPart = Comment is not null && Comment.Length > 0 ? $"&comment={Comment}" : "";
 
-            var fromPart = From  > 0 ? $"&from={From}" : "";
+            var fromPart = From is not null ? $"&from={GetUnixTimestamp(From.Value)}" : "";
 
-            var toPart = To > 0 ? $"&to={To}" : "";
+            var toPart = To is not null ? $"&to={GetUnixTimestamp (To.Value)}" : "";
 
             var limitPart = Limit > 0 ? $"&={Limit}" : "";
 
             var sortPart = Sort is not null && Sort.Length > 0 ? $"&sort={Sort}" : "";
 
-            return $"/{Section}/{ID}{selectionPart}{commentPart}{fromPart}{toPart}{sortPart}{keyPart}";
+            return $"/{Section}/{ID}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
+        }
+
+        private static long GetUnixTimestamp (DateTime dateTime) {
+            DateTime unixEpoch = new DateTime (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            TimeSpan timeDifference = dateTime.ToUniversalTime () - unixEpoch;
+
+            return (long) timeDifference.TotalSeconds;
         }
     }
 }
