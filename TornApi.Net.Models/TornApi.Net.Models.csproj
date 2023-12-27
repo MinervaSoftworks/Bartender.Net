@@ -9,7 +9,7 @@
     <Authors>Raven Crowe</Authors>
     <Description>Models for TornApi.Net</Description>
     <Copyright>Copyright (c) Raven Crowe 2023</Copyright>
-    <Version>0.4.1</Version>
+    <Version>0.4.2</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
