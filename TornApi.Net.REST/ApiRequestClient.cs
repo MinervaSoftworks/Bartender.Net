@@ -19,7 +19,7 @@ namespace TornApi.Net.REST {
             _client.BaseAddress = new Uri (apiUrl);
         }
 
-        public async Task<ApiResponse<T>> GetSingleObjectAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
+        public async Task<ApiResponse<T>> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
             var keyStatus = await ValidateKeyAsync (config.Key, accessLevel);
 
             var result = new ApiResponse<T> {
