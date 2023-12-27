@@ -24,7 +24,7 @@ public class Crime {
 
     [JsonProperty ("participants")]
     [JsonConverter(typeof(ParticipantConverter))]
-    public IEnumerable<int> Participants { get; set; }
+    public IEnumerable<CrimeParticipant> Participants { get; set; }
 
     [JsonProperty ("planned_by")]
     public int PlannedBy { get; set; }
@@ -57,18 +57,21 @@ public class Crime {
                 return null;
             }
 
-            var ids = new List<int> ();
+            var participants = new List<CrimeParticipant> ();
 
             while(reader.TokenType != JsonToken.EndArray) {
                 reader.Read ();
 
                 if(reader.TokenType == JsonToken.PropertyName) {
-                    ids.Add (int.Parse(reader.Value as string));
+                    participants.Add (new CrimeParticipant { 
+                        ParticipantID = int.Parse(reader.Value as string) 
+                    });
+
                     reader.Skip ();
                 }
             }
 
-            return ids;
+            return participants;
         }
 
         public override void WriteJson (JsonWriter writer, object value, JsonSerializer serializer) {
