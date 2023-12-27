@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using TornApi.Net.Models.Common;
 
 namespace TornApi.Net.Models.Faction;
 
@@ -24,7 +23,7 @@ public class Crime {
     public int MoneyGain { get; set; }
 
     [JsonProperty ("participants")]
-    public IEnumerable<Status> Members { get; set; }
+    public CrimeParticipants Members { get; set; }
 
     [JsonProperty ("planned_by")]
     public int PlannedBy { get; set; }
