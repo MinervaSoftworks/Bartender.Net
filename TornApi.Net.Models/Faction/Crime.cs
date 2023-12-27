@@ -23,7 +23,8 @@ public class Crime {
     public int MoneyGain { get; set; }
 
     [JsonProperty ("participants")]
-    public CrimeParticipants Members { get; set; }
+    [JsonConverter(typeof(ParticipantConverter))]
+    public IEnumerable<int> Participants { get; set; }
 
     [JsonProperty ("planned_by")]
     public int PlannedBy { get; set; }
@@ -45,4 +46,33 @@ public class Crime {
 
     [JsonProperty ("time_created")]
     public long TimeCreated { get; set; }
+
+    private class ParticipantConverter : JsonConverter {
+        public override bool CanConvert (Type objectType) {
+            return true;
+        }
+
+        public override object ReadJson (JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
+            if (reader.TokenType != JsonToken.StartArray) {
+                return null;
+            }
+
+            var ids = new List<int> ();
+
+            while(reader.TokenType != JsonToken.EndArray) {
+                reader.Read ();
+
+                if(reader.TokenType == JsonToken.PropertyName) {
+                    ids.Add (int.Parse(reader.Value as string));
+                    reader.Skip ();
+                }
+            }
+
+            return ids;
+        }
+
+        public override void WriteJson (JsonWriter writer, object value, JsonSerializer serializer) {
+            throw new NotImplementedException ("This shouldn't be used to write Json.");
+        }
+    }
 }
