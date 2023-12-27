@@ -6,8 +6,10 @@ namespace TornApi.Net.Models.Faction;
 public class Crime {
     public int FactionID { get; set; }
 
-    [JsonProperty ("crime_id")]
     public int ID { get; set; }
+
+    [JsonProperty ("crime_id")]
+    public int CrimeID { get; set; }
 
     [JsonProperty ("crime_name")]
     public string Name { get; set; }
