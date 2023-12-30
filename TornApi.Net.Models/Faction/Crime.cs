@@ -64,7 +64,7 @@ public class Crime {
 
                 if(reader.TokenType == JsonToken.PropertyName) {
                     participants.Add (new CrimeParticipant { 
-                        ParticipantID = int.Parse(reader.Value as string) 
+                        ID = int.Parse(reader.Value as string) 
                     });
 
                     reader.Skip ();
