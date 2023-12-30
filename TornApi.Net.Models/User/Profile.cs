@@ -59,7 +59,7 @@ public class Profile {
     public string Name { get; set; }
 
     [JsonProperty ("player_id")]
-    public int ID { get; set; }
+    public int ProfileID { get; set; }
 
     [JsonProperty ("rank")]
     public string Rank { get; set; }

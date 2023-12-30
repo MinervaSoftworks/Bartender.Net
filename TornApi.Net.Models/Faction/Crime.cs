@@ -5,8 +5,6 @@ namespace TornApi.Net.Models.Faction;
 public class Crime {
     public int FactionID { get; set; }
 
-    public int ID { get; set; }
-
     [JsonProperty ("crime_id")]
     public int CrimeID { get; set; }
 
@@ -64,7 +62,7 @@ public class Crime {
 
                 if(reader.TokenType == JsonToken.PropertyName) {
                     participants.Add (new CrimeParticipant { 
-                        ID = int.Parse(reader.Value as string) 
+                        CrimeParticipantID = int.Parse(reader.Value as string) 
                     });
 
                     reader.Skip ();

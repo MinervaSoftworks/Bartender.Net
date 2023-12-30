@@ -3,7 +3,7 @@
 namespace TornApi.Net.Models.User;
 
 public class Job {
-    public int ID { get; set; }
+    public int JobID { get; set; }
 
     public int OwnerID { get; set; }
 

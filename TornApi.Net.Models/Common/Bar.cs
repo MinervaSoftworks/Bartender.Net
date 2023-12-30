@@ -3,7 +3,7 @@
 namespace TornApi.Net.Models.Common;
 
 public class Bar {
-    public int ID { get; set; }
+    public int BarID { get; set; }
 
     public int OwnerID { get; set; }
 

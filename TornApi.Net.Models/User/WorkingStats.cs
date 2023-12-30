@@ -3,7 +3,7 @@
 namespace TornApi.Net.Models.User;
 
 public class WorkingStats {
-    public int ID { get; set; }
+    public int ProfileID { get; set; }
 
     public int OwnerID { get; set; }
 

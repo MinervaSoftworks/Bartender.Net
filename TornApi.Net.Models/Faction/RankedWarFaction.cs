@@ -2,7 +2,7 @@
 
 namespace TornApi.Net.Models.Faction {
     public class RankedWarFaction {
-        public int ID { get; set; }
+        public int RankedWarFactionID { get; set; }
 
         public int RankedWarID { get; set; }
 

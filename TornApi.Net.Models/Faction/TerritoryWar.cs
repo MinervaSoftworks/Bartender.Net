@@ -24,6 +24,6 @@ namespace TornApi.Net.Models.Faction {
         public string Territory { get; set; }
 
         [JsonProperty ("territory_war_id")]
-        public int ID { get; set; }
+        public int TerritoryWarID { get; set; }
     }
 }

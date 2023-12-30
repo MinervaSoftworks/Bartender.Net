@@ -3,7 +3,7 @@
 namespace TornApi.Net.Models.Common;
 
 public class LastAction {
-    public int ID { get; set; }
+    public int LastActionID { get; set; }
 
     public int OwnerID { get; set; }
 

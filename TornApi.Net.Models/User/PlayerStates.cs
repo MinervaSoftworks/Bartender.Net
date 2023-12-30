@@ -3,7 +3,7 @@
 namespace TornApi.Net.Models.User;
 
 public class PlayerStates {
-    public int ID { get; set; }
+    public int PlayerStatusID { get; set; }
 
     public int OwnerID { get; set; }
 
