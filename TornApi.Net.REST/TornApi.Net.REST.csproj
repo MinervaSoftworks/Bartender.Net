@@ -9,7 +9,7 @@
     <Copyright>Copyright (c) Raven Crowe 2023</Copyright>
     <Description>REST request clients for TornApi.Net</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.5.2</Version>
+    <Version>0.5.4</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

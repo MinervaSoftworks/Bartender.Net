@@ -19,6 +19,8 @@
         public string? Sort { get; set; }
 
         public override string ToString () {
+            var idPart = ID > 0 ? $"{ID}" : "";
+
             var keyPart = $"&key={Key}";
 
             var selectionPart = $"?selections={string.Join (',', Selections)}";
@@ -29,11 +31,11 @@
 
             var toPart = To is not null ? $"&to={GetUnixTimestamp (To.Value)}" : "";
 
-            var limitPart = Limit > 0 ? $"&={Limit}" : "";
+            var limitPart = Limit > 0 ? $"&limit={Limit}" : "";
 
             var sortPart = Sort is not null && Sort.Length > 0 ? $"&sort={Sort}" : "";
 
-            return $"/{Section}/{ID}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
+            return $"/{Section}/{idPart}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
         }
 
         private static long GetUnixTimestamp (DateTime dateTime) {
