@@ -8,7 +8,7 @@ namespace TornApi.Net.REST {
     /// <summary>
     /// A request client to interact with Torn's REST Api.
     /// </summary>
-    public class ApiRequestClient {
+    public class ApiRequestClient : IApiRequestClient {
         private HttpClient _client;
 
         public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {

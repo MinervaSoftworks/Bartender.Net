@@ -1,7 +1,7 @@
 ﻿using System.Net;
 
 namespace TornApi.Net.REST {
-    public class KeyValidationStatus {
+    public class KeyValidationStatus : IKeyValidationStatus {
         public bool IsValid { get; set; } = false;
 
         public bool HasRequiredAccessLevel { get; set; } = false;

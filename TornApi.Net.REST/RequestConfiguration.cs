@@ -1,18 +1,13 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace TornApi.Net.REST {
-    public struct RequestConfiguration {
-        [NotNull]
+﻿namespace TornApi.Net.REST {
+    public struct RequestConfiguration : IRequestConfiguration {
         public string Key { get; set; }
 
         public int ID { get; set; }
 
         public string? Comment { get; set; }
 
-        [NotNull]
         public string Section { get; set; }
 
-        [NotNull]
         public IEnumerable<string> Selections { get; set; }
 
         public DateTime? From { get; set; }
@@ -30,7 +25,7 @@ namespace TornApi.Net.REST {
 
             var commentPart = Comment is not null && Comment.Length > 0 ? $"&comment={Comment}" : "";
 
-            var fromPart = From is not null ? $"&from={GetUnixTimestamp(From.Value)}" : "";
+            var fromPart = From is not null ? $"&from={GetUnixTimestamp (From.Value)}" : "";
 
             var toPart = To is not null ? $"&to={GetUnixTimestamp (To.Value)}" : "";
 
