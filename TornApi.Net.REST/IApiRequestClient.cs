@@ -2,7 +2,7 @@
 
 namespace TornApi.Net.REST {
     public interface IApiRequestClient {
-        Task<ApiResponse<T>> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class;
-        Task<KeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel);
+        Task<IApiResponse<T>> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class;
+        Task<IKeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel);
     }
 }

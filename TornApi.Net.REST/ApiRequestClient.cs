@@ -19,7 +19,7 @@ namespace TornApi.Net.REST {
             _client.BaseAddress = new Uri (apiUrl);
         }
 
-        public async Task<ApiResponse<T>> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
+        public async Task<IApiResponse<T>> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
             var keyStatus = await ValidateKeyAsync (config.Key, accessLevel);
 
             var result = new ApiResponse<T> {
@@ -51,7 +51,7 @@ namespace TornApi.Net.REST {
             return result;
         }
 
-        public async Task<KeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
+        public async Task<IKeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
             var config = new RequestConfiguration {
                 Key = key,
                 Section = "key",

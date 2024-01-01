@@ -2,7 +2,7 @@
     public class ApiResponse<T> : IApiResponse<T> {
         public T? Content { get; set; } = default;
 
-        public KeyValidationStatus KeyStatus { get; set; } = new KeyValidationStatus ();
+        public IKeyValidationStatus KeyStatus { get; set; } = new KeyValidationStatus ();
 
         public HttpResponseMessage? HttpResponseMessage { get; set; }
 
