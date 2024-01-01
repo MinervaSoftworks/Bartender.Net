@@ -4,5 +4,7 @@ namespace TornApi.Net.REST {
         T? Content { get; set; }
         HttpResponseMessage? HttpResponseMessage { get; set; }
         KeyValidationStatus KeyStatus { get; set; }
+
+        bool IsValid ();
     }
 }
