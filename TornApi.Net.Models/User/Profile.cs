@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using TornApi.Net.Models.Common;
 
 namespace TornApi.Net.Models.User;
 

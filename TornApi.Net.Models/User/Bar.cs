@@ -1,27 +1,27 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Common;
+namespace TornApi.Net.Models.User;
 
 public class Bar {
     public int BarID { get; set; }
 
-    public int OwnerID { get; set; }
+    public Profile Owner { get; set; }
 
-    [JsonProperty("current")]
+    [JsonProperty ("current")]
     public int Current { get; set; }
 
-    [JsonProperty("fulltime")]
+    [JsonProperty ("fulltime")]
     public int Fulltime { get; set; }
 
-    [JsonProperty("increment")]
+    [JsonProperty ("increment")]
     public int Increment { get; set; }
 
-    [JsonProperty("interval")]
+    [JsonProperty ("interval")]
     public int Interval { get; set; }
 
-    [JsonProperty("Maximum")]
+    [JsonProperty ("Maximum")]
     public int Maximum { get; set; }
 
-    [JsonProperty("ticktime")]
+    [JsonProperty ("ticktime")]
     public int Ticktime { get; set; }
 }

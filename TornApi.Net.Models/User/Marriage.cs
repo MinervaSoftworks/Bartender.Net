@@ -1,18 +1,18 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Common;
+namespace TornApi.Net.Models.User;
 
 public class Marriage {
     public int MarriageID { get; set; }
 
-    public int OwnerID { get; set; }
+    public Profile Owner { get; set; }
 
-    [JsonProperty("duration")]
+    [JsonProperty ("duration")]
     public int Duration { get; set; }
 
-    [JsonProperty("spouse_id")]
+    [JsonProperty ("spouse_id")]
     public int SpouseID { get; set; }
 
-    [JsonProperty("spouse_name")]
+    [JsonProperty ("spouse_name")]
     public string SpouseName { get; set; }
 }

@@ -1,24 +1,24 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Common;
+namespace TornApi.Net.Models.User;
 
 public class Status {
     public int StatusID { get; set; }
 
-    public int OwnerID { get; set; }
+    public Profile Owner { get; set; }
 
-    [JsonProperty("color")]
+    [JsonProperty ("color")]
     public StatusColor Color { get; set; }
 
-    [JsonProperty("description")]
+    [JsonProperty ("description")]
     public string Description { get; set; }
 
-    [JsonProperty("details")]
+    [JsonProperty ("details")]
     public string Details { get; set; }
 
-    [JsonProperty("state")]
+    [JsonProperty ("state")]
     public StatusState State { get; set; }
 
-    [JsonProperty("until")]
+    [JsonProperty ("until")]
     public long Until { get; set; }
 }
