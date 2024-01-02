@@ -4,7 +4,7 @@ namespace TornApi.Net.Models.Faction {
     public class Ranking {
         public int RankingID { get; set; }
 
-        public int FactionID { get; set; }
+        public Basic Faction { get; set; }
 
         [JsonProperty ("division")]
         public int Division { get; set; }

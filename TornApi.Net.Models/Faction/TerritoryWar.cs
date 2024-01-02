@@ -2,6 +2,8 @@
 
 namespace TornApi.Net.Models.Faction {
     public class TerritoryWar {
+        public Basic Faction { get; set; }
+
         [JsonProperty ("assaulting_faction")]
         public int AssaultingFaction { get; set; }
 

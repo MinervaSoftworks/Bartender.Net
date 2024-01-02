@@ -1,18 +1,19 @@
 ﻿using Newtonsoft.Json;
+using TornApi.Net.Models.Common;
 
-namespace TornApi.Net.Models.Common;
+namespace TornApi.Net.Models.User;
 
 public class LastAction {
     public int LastActionID { get; set; }
 
-    public int OwnerID { get; set; }
+    public Profile Owner { get; set; }
 
-    [JsonProperty("relative")]
+    [JsonProperty ("relative")]
     public string Relative { get; set; }
 
-    [JsonProperty("status")]
+    [JsonProperty ("status")]
     public LastActionStatus Status { get; set; }
 
-    [JsonProperty("timestamp")]
+    [JsonProperty ("timestamp")]
     public long? Timestamp { get; set; }
 }

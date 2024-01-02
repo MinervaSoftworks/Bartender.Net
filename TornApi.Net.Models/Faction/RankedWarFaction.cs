@@ -4,7 +4,7 @@ namespace TornApi.Net.Models.Faction {
     public class RankedWarFaction {
         public int RankedWarFactionID { get; set; }
 
-        public int RankedWarID { get; set; }
+        public RankedWar RankedWar { get; set; }
 
         [JsonProperty ("chain")]
         public int Chain { get; set; }

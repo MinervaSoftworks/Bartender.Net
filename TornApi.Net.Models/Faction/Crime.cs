@@ -3,7 +3,7 @@
 namespace TornApi.Net.Models.Faction;
 
 public class Crime {
-    public int FactionID { get; set; }
+    public Basic Faction { get; set; }
 
     public int CrimeID { get; set; }
 

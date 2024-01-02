@@ -13,13 +13,13 @@ public class Basic {
     public int Capacity { get; set; }
 
     [JsonProperty ("co-leader")]
-    public int Coleader { get; set; }
+    public int ColeaderID { get; set; }
 
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public int FactionID { get; set; }
 
     [JsonProperty ("leader")]
-    public int Leader { get; set; }
+    public int LeaderID { get; set; }
 
     [JsonProperty ("members")]
     public IDictionary<string, Member> Members { get; set; }

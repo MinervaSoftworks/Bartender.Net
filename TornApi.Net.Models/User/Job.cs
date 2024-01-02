@@ -5,7 +5,7 @@ namespace TornApi.Net.Models.User;
 public class Job {
     public int JobID { get; set; }
 
-    public int OwnerID { get; set; }
+    public Profile Owner { get; set; }
 
     [JsonProperty ("company_id")]
     public int CompanyID { get; set; }

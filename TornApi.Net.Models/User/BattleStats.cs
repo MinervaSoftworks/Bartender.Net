@@ -5,7 +5,7 @@ namespace TornApi.Net.Models.User;
 public class BattleStats {
     public int BattleStatsID { get; set; }
 
-    public int OwnerID { get; set; }
+    public Profile Owner { get; set; }
 
     [JsonProperty ("strength")]
     public int Strength { get; set; }

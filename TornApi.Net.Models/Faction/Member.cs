@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using TornApi.Net.Models.Common;
+using TornApi.Net.Models.User;
 
-namespace TornApi.Net.Models.Faction {
+namespace TornApi.Net.Models.Faction
+{
     public class Member {
         public int MemberID { get; set; }
 

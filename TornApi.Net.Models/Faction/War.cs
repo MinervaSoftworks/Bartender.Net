@@ -4,6 +4,8 @@ namespace TornApi.Net.Models.Faction {
     public class War {
         public int WarID { get; set; }
 
+        public Basic Faction { get; set; }
+
         [JsonProperty ("end")]
         public long End { get; set; }
 
