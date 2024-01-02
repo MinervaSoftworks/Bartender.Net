@@ -5,8 +5,6 @@ namespace TornApi.Net.Models.User;
 public class Bar {
     public int BarID { get; set; }
 
-    public Profile Owner { get; set; }
-
     [JsonProperty ("current")]
     public int Current { get; set; }
 

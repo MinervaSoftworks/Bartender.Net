@@ -5,8 +5,6 @@ namespace TornApi.Net.Models.User;
 public class WorkingStats {
     public int WorkinStatsID { get; set; }
 
-    public Profile Owner { get; set; }
-
     [JsonProperty ("manual_labor")]
     public int ManualLabor { get; set; }
 

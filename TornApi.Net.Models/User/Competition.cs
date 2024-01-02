@@ -5,8 +5,6 @@ namespace TornApi.Net.Models.User;
 public class Competition {
     public int CompetitionID { get; set; }
 
-    public Profile Owner { get; set; }
-
     [JsonProperty ("attacks")]
     public int Attacks { get; set; }
 

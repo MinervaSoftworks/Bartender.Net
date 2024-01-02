@@ -3,8 +3,6 @@
 namespace TornApi.Net.Models.User;
 
 public class FactionStub {
-    public Profile Owner { get; set; }
-
     [JsonProperty ("days_in_faction")]
     public int DaysInFaction { get; set; }
 

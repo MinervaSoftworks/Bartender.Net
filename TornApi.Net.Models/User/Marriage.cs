@@ -5,8 +5,6 @@ namespace TornApi.Net.Models.User;
 public class Marriage {
     public int MarriageID { get; set; }
 
-    public Profile Owner { get; set; }
-
     [JsonProperty ("duration")]
     public int Duration { get; set; }
 

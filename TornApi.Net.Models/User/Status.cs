@@ -5,8 +5,6 @@ namespace TornApi.Net.Models.User;
 public class Status {
     public int StatusID { get; set; }
 
-    public Profile Owner { get; set; }
-
     [JsonProperty ("color")]
     public StatusColor Color { get; set; }
 
