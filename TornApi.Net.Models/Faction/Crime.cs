@@ -45,8 +45,8 @@ public class Crime {
     [JsonProperty ("time_ready")]
     public long TimeReady { get; set; }
 
-    [JsonProperty ("time_created")]
-    public long TimeCreated { get; set; }
+    [JsonProperty ("time_started")]
+    public long TimeStarted { get; set; }
 
     private class ParticipantConverter : JsonConverter {
         public override bool CanConvert (Type objectType) {
