@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class Status {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int StatusID { get; set; }
 
     [JsonProperty ("color")]

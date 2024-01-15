@@ -1,8 +1,12 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace TornApi.Net.Models.Faction;
 
 public class Basic {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("age")]
     public int Age { get; set; }
 
@@ -22,7 +26,8 @@ public class Basic {
     public int LeaderID { get; set; }
 
     [JsonProperty ("members")]
-    public IDictionary<string, Member> Members { get; set; }
+    [JsonConverter(typeof(MembersConverter))]
+    public IEnumerable<Member> Members { get; set; }
 
     [JsonProperty ("name")]
     public string Name { get; set; }
@@ -50,4 +55,33 @@ public class Basic {
 
     //[JsonProperty ("territory_wars")]
     //public IEnumerable<TerritoryWar> TerritoryWars { get; set; }
+
+    private class MembersConverter : JsonConverter {
+        public override bool CanConvert (Type objectType) {
+            throw new NotImplementedException ();
+        }
+
+        public override object ReadJson (JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
+            // Since writing the converter for Crime.Participants,
+            // I have learned that I can turn a JsonReader into a JObject.
+            var jObj = JObject.Load (reader);
+
+            var members = new List<Member> ();
+
+            foreach (var property in jObj.Properties()) {
+                var id = property.Name;
+                var member = property.Value.ToObject<Member> ();
+
+                member.ID = int.Parse (id);
+
+                members.Add (member);
+            }
+
+            return members;
+        }
+
+        public override void WriteJson (JsonWriter writer, object value, JsonSerializer serializer) {
+            throw new NotImplementedException ();
+        }
+    }
 }

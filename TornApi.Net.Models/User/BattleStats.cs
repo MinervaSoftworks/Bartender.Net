@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class BattleStats {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int BattleStatsID { get; set; }
 
     [JsonProperty ("strength")]

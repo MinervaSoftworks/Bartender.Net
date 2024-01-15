@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class Profile {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("age")]
     public int Age { get; set; }
 

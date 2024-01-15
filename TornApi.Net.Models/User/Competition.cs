@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class Competition {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int CompetitionID { get; set; }
 
     [JsonProperty ("attacks")]

@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class LastAction {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int LastActionID { get; set; }
 
     [JsonProperty ("relative")]

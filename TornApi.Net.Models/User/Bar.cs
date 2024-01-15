@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class Bar {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int BarID { get; set; }
 
     [JsonProperty ("current")]

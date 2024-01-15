@@ -19,7 +19,7 @@ namespace TornApi.Net.REST {
             _client.BaseAddress = new Uri (apiUrl);
         }
 
-        public async Task<IApiResponse<T>> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
+        public async Task<IApiResponse<T>?> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
             var keyStatus = await ValidateKeyAsync (config.Key, accessLevel);
 
             var result = new ApiResponse<T> {
@@ -43,10 +43,15 @@ namespace TornApi.Net.REST {
             if (json == string.Empty) {
                 return result;
             }
+            try {
+                var parsed = JsonConvert.DeserializeObject<T> (json);
 
-            var parsed = JsonConvert.DeserializeObject<T> (json);
-
-            result.Content = parsed;
+                result.Content = parsed;
+            }
+            catch (JsonException) {
+                result.Content = null;
+                return result;
+            }
 
             return result;
         }

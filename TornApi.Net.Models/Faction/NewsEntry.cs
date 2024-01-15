@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Faction;
 
 public class NewsEntry {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int FactionID { get; set; }
 
     [JsonProperty ("news")]

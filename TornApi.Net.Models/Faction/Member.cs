@@ -4,6 +4,9 @@ using TornApi.Net.Models.User;
 namespace TornApi.Net.Models.Faction
 {
     public class Member {
+        [JsonIgnore]
+        public int ID { get; set; }
+
         public int MemberID { get; set; }
 
         public int FactionID { get; set; }

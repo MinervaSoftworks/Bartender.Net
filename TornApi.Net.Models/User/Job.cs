@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class Job {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     public int JobID { get; set; }
 
     [JsonProperty ("company_id")]

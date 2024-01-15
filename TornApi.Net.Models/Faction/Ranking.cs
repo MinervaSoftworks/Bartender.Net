@@ -2,6 +2,9 @@
 
 namespace TornApi.Net.Models.Faction {
     public class Ranking {
+        [JsonIgnore]
+        public int ID { get; set; }
+
         public int RankingID { get; set; }
 
         public Basic Faction { get; set; }
