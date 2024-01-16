@@ -80,6 +80,4 @@ public class Profile {
 
     [JsonProperty ("status")]
     public Status Status { get; set; }
-
-    public IEnumerable<Bar> Bars { get; set; }
 }
