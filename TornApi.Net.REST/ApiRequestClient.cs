@@ -11,6 +11,11 @@ namespace TornApi.Net.REST {
     public class ApiRequestClient : IApiRequestClient {
         private HttpClient _client;
 
+        private DateTime _lastUpdateFetch = DateTime.UtcNow;
+        private int _fetchDelayMiliseconds = 600;
+
+        private SemaphoreSlim _clockSemaphore = new SemaphoreSlim (1, 1);
+
         public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
             _client = clientFactory.CreateClient ();
 
@@ -29,6 +34,14 @@ namespace TornApi.Net.REST {
             if (!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
                 return result;
             }
+            _clockSemaphore.Wait ();
+            int milisecondsSinceLastFetch = (int) (DateTime.UtcNow - _lastUpdateFetch).TotalMilliseconds;
+
+            if (milisecondsSinceLastFetch < _fetchDelayMiliseconds) {
+                await Task.Delay (_fetchDelayMiliseconds - milisecondsSinceLastFetch);
+                _lastUpdateFetch = DateTime.UtcNow;
+            }
+            _clockSemaphore.Release ();
 
             var response = await _client.GetAsync (config.ToString ());
 
@@ -118,6 +131,10 @@ namespace TornApi.Net.REST {
             catch {
                 return -1;
             }
+        }
+
+        private void UpdateDelay () {
+
         }
     }
 }
