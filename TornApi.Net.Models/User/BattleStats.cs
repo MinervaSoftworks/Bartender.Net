@@ -9,19 +9,19 @@ public class BattleStats {
     public int BattleStatsID { get; set; }
 
     [JsonProperty ("strength")]
-    public int Strength { get; set; }
+    public long Strength { get; set; }
 
     [JsonProperty ("speed")]
-    public int Speed { get; set; }
+    public long Speed { get; set; }
 
     [JsonProperty ("dexterity")]
-    public int Dexterity { get; set; }
+    public long Dexterity { get; set; }
 
     [JsonProperty ("defense")]
-    public int Defense { get; set; }
+    public long Defense { get; set; }
 
     [JsonProperty ("total")]
-    public int Total { get; set; }
+    public long Total { get; set; }
 
     [JsonProperty ("strength_modifier")]
     public int StrengthModifier { get; set; }

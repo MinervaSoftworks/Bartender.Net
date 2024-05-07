@@ -9,11 +9,11 @@ public class WorkingStats {
     public int WorkinStatsID { get; set; }
 
     [JsonProperty ("manual_labor")]
-    public int ManualLabor { get; set; }
+    public long ManualLabor { get; set; }
 
     [JsonProperty ("intelligence")]
-    public int Intelligence { get; set; }
+    public long Intelligence { get; set; }
 
     [JsonProperty ("endurance")]
-    public int Endurance { get; set; }
+    public long Endurance { get; set; }
 }
