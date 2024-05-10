@@ -25,6 +25,8 @@
         public HttpClient CreateClient (string name) => new (_lazyHandler.Value, disposeHandler: false);
 
         public void Dispose () {
+            GC.SuppressFinalize (this);
+
             if (_lazyHandler.IsValueCreated) {
                 _lazyHandler.Value.Dispose ();
             }
