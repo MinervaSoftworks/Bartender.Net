@@ -20,10 +20,11 @@ internal class Program {
             Key = key,
             Section = "market",
             Selections = ["itemmarket"],
-            Comment = "TornApi.Net market testing"
+            Comment = "TornApi.Net market testing",
+            ID = 4
         };
 
-        var response = await client.GetAsync<BattleStats> (requestConfig, AccessLevel.LimitedAccess);
+        var response = await client.GetAsync<ItemMarket> (requestConfig, AccessLevel.LimitedAccess);
 
         DisplayResponseState (response);
     }

@@ -6,7 +6,7 @@ public class Item {
     [JsonProperty("cost")]
     public int Cost { get; set; }
 
-    [JsonProperty("id")]
+    [JsonProperty("ID")]
     public int ID { get; set; }
 
     [JsonProperty("quantity")]
