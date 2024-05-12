@@ -7,9 +7,10 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>TornApi.Net Models</Title>
     <Authors>Raven Crowe</Authors>
+    <Company>Minerva Softworks</Company>
     <Description>Models for TornApi.Net</Description>
     <Copyright>Copyright (c) Raven Crowe 2023</Copyright>
-    <Version>0.8.5</Version>
+    <Version>0.8.6</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

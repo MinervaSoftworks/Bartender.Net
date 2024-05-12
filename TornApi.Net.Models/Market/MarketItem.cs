@@ -2,7 +2,7 @@
 
 namespace TornApi.Net.Models.Market;
 
-public class Item {
+public class MarketItem {
     [JsonProperty("cost")]
     public int Cost { get; set; }
 
