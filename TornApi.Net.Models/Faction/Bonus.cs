@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Faction; 
 
 public class Bonus {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("chain")]
     public int Chain { get; set; }
 

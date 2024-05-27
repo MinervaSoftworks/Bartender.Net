@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Faction;
 
 public class UserChainReport {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("userID")]
     public int UserID { get; set; }
 
