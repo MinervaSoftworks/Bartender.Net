@@ -123,18 +123,10 @@ namespace TornApi.Net.REST {
             };
         }
 
-        private int ParseErrorCode (string json) {
-            try {
-                var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
-                return parsed is null ? -1 : parsed.Error.Code;
-            }
-            catch {
-                return -1;
-            }
-        }
+        private static int ParseErrorCode (string json) {
+            var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
 
-        private void UpdateDelay () {
-
+            return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
         }
     }
 }
