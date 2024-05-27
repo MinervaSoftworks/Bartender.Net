@@ -1,32 +1,31 @@
 ﻿using Newtonsoft.Json;
 using TornApi.Net.Models.User;
 
-namespace TornApi.Net.Models.Faction
-{
-    public class Member {
-        [JsonIgnore]
-        public int ID { get; set; }
+namespace TornApi.Net.Models.Faction;
 
-        public int MemberID { get; set; }
+public class Member {
+    [JsonIgnore]
+    public int ID { get; set; }
 
-        public int FactionID { get; set; }
+    public int MemberID { get; set; }
 
-        [JsonProperty ("days_in_faction")]
-        public int DaysInFaction { get; set; }
+    public int FactionID { get; set; }
 
-        [JsonProperty ("last_action")]
-        public LastAction LastAction { get; set; }
+    [JsonProperty ("days_in_faction")]
+    public int DaysInFaction { get; set; }
 
-        [JsonProperty ("level")]
-        public int Level { get; set; }
+    [JsonProperty ("last_action")]
+    public LastAction LastAction { get; set; }
 
-        [JsonProperty ("name")]
-        public string Name { get; set; }
+    [JsonProperty ("level")]
+    public int Level { get; set; }
 
-        [JsonProperty ("position")]
-        public string Position { get; set; }
+    [JsonProperty ("name")]
+    public string Name { get; set; }
 
-        [JsonProperty ("status")]
-        public Status Status { get; set; }
-    }
+    [JsonProperty ("position")]
+    public string Position { get; set; }
+
+    [JsonProperty ("status")]
+    public Status Status { get; set; }
 }

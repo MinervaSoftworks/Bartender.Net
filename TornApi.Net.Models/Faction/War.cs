@@ -1,24 +1,24 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Faction {
-    public class War {
-        [JsonIgnore]
-        public int ID { get; set; }
+namespace TornApi.Net.Models.Faction;
 
-        public int WarID { get; set; }
+public class War {
+    [JsonIgnore]
+    public int ID { get; set; }
 
-        public Basic Faction { get; set; }
+    public int WarID { get; set; }
 
-        [JsonProperty ("end")]
-        public long End { get; set; }
+    public Basic Faction { get; set; }
 
-        [JsonProperty ("start")]
-        public long Start { get; set; }
+    [JsonProperty ("end")]
+    public long End { get; set; }
 
-        [JsonProperty ("target")]
-        public int Target { get; set; }
+    [JsonProperty ("start")]
+    public long Start { get; set; }
 
-        [JsonProperty ("winner")]
-        public decimal Winner { get; set; }
-    }
+    [JsonProperty ("target")]
+    public int Target { get; set; }
+
+    [JsonProperty ("winner")]
+    public decimal Winner { get; set; }
 }

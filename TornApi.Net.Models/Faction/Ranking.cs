@@ -1,27 +1,27 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Faction {
-    public class Ranking {
-        [JsonIgnore]
-        public int ID { get; set; }
+namespace TornApi.Net.Models.Faction;
 
-        public int RankingID { get; set; }
+public class Ranking {
+    [JsonIgnore]
+    public int ID { get; set; }
 
-        public Basic Faction { get; set; }
+    public int RankingID { get; set; }
 
-        [JsonProperty ("division")]
-        public int Division { get; set; }
+    public Basic Faction { get; set; }
 
-        [JsonProperty ("level")]
-        public int Level { get; set; }
+    [JsonProperty ("division")]
+    public int Division { get; set; }
 
-        [JsonProperty ("name")]
-        public Rank Rank { get; set; }
+    [JsonProperty ("level")]
+    public int Level { get; set; }
 
-        [JsonProperty ("position")]
-        public int Position { get; set; }
+    [JsonProperty ("name")]
+    public Rank Rank { get; set; }
 
-        [JsonProperty ("wins")]
-        public int Wins { get; set; }
-    }
+    [JsonProperty ("position")]
+    public int Position { get; set; }
+
+    [JsonProperty ("wins")]
+    public int Wins { get; set; }
 }

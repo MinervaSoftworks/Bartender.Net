@@ -1,21 +1,21 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Faction {
-    public class RankedWarFaction {
-        [JsonIgnore]
-        public int ID { get; set; }
+namespace TornApi.Net.Models.Faction;
 
-        public int RankedWarFactionID { get; set; }
+public class RankedWarFaction {
+    [JsonIgnore]
+    public int ID { get; set; }
 
-        public RankedWar RankedWar { get; set; }
+    public int RankedWarFactionID { get; set; }
 
-        [JsonProperty ("chain")]
-        public int Chain { get; set; }
+    public RankedWar RankedWar { get; set; }
 
-        [JsonProperty ("name")]
-        public string Name { get; set; }
+    [JsonProperty ("chain")]
+    public int Chain { get; set; }
 
-        [JsonProperty ("score")]
-        public int Score { get; set; }
-    }
+    [JsonProperty ("name")]
+    public string Name { get; set; }
+
+    [JsonProperty ("score")]
+    public int Score { get; set; }
 }
