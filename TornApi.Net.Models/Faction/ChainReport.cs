@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿namespace TornApi.Net.Models.Faction;
 
-namespace TornApi.Net.Models.Faction;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 public class ChainReport {
     [JsonIgnore]
@@ -13,10 +14,10 @@ public class ChainReport {
     public int Chain { get; set; }
 
     [JsonProperty ("start")]
-    public int Start { get; set; }
+    public long Start { get; set; }
 
     [JsonProperty ("end")]
-    public int End { get; set; }
+    public long End { get; set; }
 
     [JsonProperty ("leave")]
     public int Leave { get; set; }
@@ -58,8 +59,5 @@ public class ChainReport {
     public int Retaliations { get; set; }
 
     [JsonProperty ("members")]
-    public IDictionary<string, UserChainReport> Members { get; set; }
-
-    [JsonProperty ("bonuses")]
-    public IEnumerable<Bonus> Bonuses { get; set; }
+    public Dictionary<string, UserChainReport> Members { get; set; }
 }

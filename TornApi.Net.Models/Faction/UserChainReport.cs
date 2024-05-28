@@ -19,10 +19,10 @@ public class UserChainReport {
     public int Attacks { get; set; }
 
     [JsonProperty ("respect")]
-    public int Respect { get; set; }
+    public double Respect { get; set; }
 
     [JsonProperty ("avg")]
-    public int Average { get; set; }
+    public double Avg { get; set; }
 
     [JsonProperty ("leave")]
     public int Leave { get; set; }
@@ -31,7 +31,7 @@ public class UserChainReport {
     public int Mug { get; set; }
 
     [JsonProperty ("hosp")]
-    public int Hospital { get; set; }
+    public int Hosp { get; set; }
 
     [JsonProperty ("war")]
     public int War { get; set; }
@@ -43,7 +43,7 @@ public class UserChainReport {
     public int Assist { get; set; }
 
     [JsonProperty ("retal")]
-    public int Retaliation { get; set; }
+    public int Retal { get; set; }
 
     [JsonProperty ("overseas")]
     public int Overseas { get; set; }
@@ -58,5 +58,5 @@ public class UserChainReport {
     public int Loss { get; set; }
 
     [JsonProperty ("best")]
-    public int Best { get; set; }
+    public double Best { get; set; }
 }

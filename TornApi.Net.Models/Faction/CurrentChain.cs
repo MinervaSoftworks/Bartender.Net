@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Faction;
 
 public class CurrentChain {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("current")]
     public int Current { get; set; }
 
