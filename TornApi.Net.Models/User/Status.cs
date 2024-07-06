@@ -6,8 +6,6 @@ public class Status {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int StatusID { get; set; }
-
     [JsonProperty ("color")]
     public StatusColor Color { get; set; }
 

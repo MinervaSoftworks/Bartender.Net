@@ -6,8 +6,6 @@ public class TerritoryWar {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public Basic Faction { get; set; }
-
     [JsonProperty ("assaulting_faction")]
     public int AssaultingFaction { get; set; }
 

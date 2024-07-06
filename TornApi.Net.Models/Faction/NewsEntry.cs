@@ -6,8 +6,6 @@ public class NewsEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int FactionID { get; set; }
-
     [JsonProperty ("news")]
     public string News { get; set; }
 

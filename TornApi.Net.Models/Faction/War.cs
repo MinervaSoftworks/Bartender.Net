@@ -6,10 +6,6 @@ public class War {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int WarID { get; set; }
-
-    public Basic Faction { get; set; }
-
     [JsonProperty ("end")]
     public long End { get; set; }
 

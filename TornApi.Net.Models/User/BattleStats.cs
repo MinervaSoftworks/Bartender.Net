@@ -6,8 +6,6 @@ public class BattleStats {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int BattleStatsID { get; set; }
-
     [JsonProperty ("strength")]
     public long Strength { get; set; }
 

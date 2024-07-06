@@ -6,8 +6,6 @@ public class Marriage {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int MarriageID { get; set; }
-
     [JsonProperty ("duration")]
     public int Duration { get; set; }
 

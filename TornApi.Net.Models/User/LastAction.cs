@@ -6,8 +6,6 @@ public class LastAction {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int LastActionID { get; set; }
-
     [JsonProperty ("relative")]
     public string Relative { get; set; }
 

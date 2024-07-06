@@ -6,10 +6,6 @@ public class Ranking {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int RankingID { get; set; }
-
-    public Basic Faction { get; set; }
-
     [JsonProperty ("division")]
     public int Division { get; set; }
 

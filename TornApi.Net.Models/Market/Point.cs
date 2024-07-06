@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Market;
 
 public class Point {
+    [JsonIgnore]
+    public int ID { get; set; }
+    
     [JsonProperty ("cost")]
     public int Cost { get; set; }
 

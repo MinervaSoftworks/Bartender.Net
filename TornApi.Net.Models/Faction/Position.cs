@@ -3,8 +3,10 @@
 namespace TornApi.Net.Models.Faction;
 
 public class Position {
+    [JsonIgnore]
     public int ID { get; set; }
 
+    [JsonIgnore]
     public string Name { get; set; }
 
     [JsonProperty ("default")]

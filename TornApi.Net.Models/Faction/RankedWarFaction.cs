@@ -6,10 +6,6 @@ public class RankedWarFaction {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int RankedWarFactionID { get; set; }
-
-    public RankedWar RankedWar { get; set; }
-
     [JsonProperty ("chain")]
     public int Chain { get; set; }
 

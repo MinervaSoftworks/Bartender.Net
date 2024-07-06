@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Torn;
 
 public class Coverage {
+    [JsonIgnore]
+    public int ID { get; set; }
+    
     [JsonProperty ("Full Body Coverage")]
     public double FullBodyCoverage { get; set; }
 

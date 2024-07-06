@@ -6,8 +6,6 @@ public class Bar {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int BarID { get; set; }
-
     [JsonProperty ("current")]
     public int Current { get; set; }
 
@@ -20,7 +18,7 @@ public class Bar {
     [JsonProperty ("interval")]
     public int Interval { get; set; }
 
-    [JsonProperty ("Maximum")]
+    [JsonProperty ("maximum")]
     public int Maximum { get; set; }
 
     [JsonProperty ("ticktime")]

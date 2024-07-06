@@ -6,8 +6,6 @@ public class Raid {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int RaidID { get; set; }
-
     [JsonProperty ("defender_score")]
     public int DefenderScore { get; set; }
 

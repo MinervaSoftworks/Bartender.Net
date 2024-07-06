@@ -6,8 +6,6 @@ public class Competition {
     [JsonIgnore]
     public int ID { get; set; }
 
-    public int CompetitionID { get; set; }
-
     [JsonProperty ("attacks")]
     public int Attacks { get; set; }
 

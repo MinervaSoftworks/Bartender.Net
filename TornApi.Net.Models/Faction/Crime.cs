@@ -3,12 +3,8 @@
 namespace TornApi.Net.Models.Faction;
 
 public class Crime {
-    public Basic Faction { get; set; }
-
     [JsonIgnore]
     public int ID { get; set; }
-
-    public int CrimeID { get; set; }
 
     // IDK why you would call this crime_id and it actually mean the type of crime.
     [JsonProperty ("crime_id")]

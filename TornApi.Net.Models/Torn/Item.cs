@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.Torn;
 
 public class Item {
+    [JsonIgnore]
+    public int ID { get; set; }
+    
     [JsonProperty ("name")]
     public string Name { get; set; }
 

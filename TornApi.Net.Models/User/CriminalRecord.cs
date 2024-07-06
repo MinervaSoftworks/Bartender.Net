@@ -3,6 +3,9 @@
 namespace TornApi.Net.Models.User;
 
 public class CriminalRecord {
+    [JsonIgnore]
+    public int ID { get; set; }
+    
     [JsonProperty ("auto_theft")]
     public int AutoTheft { get; set; }
 
