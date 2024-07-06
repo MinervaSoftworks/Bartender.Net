@@ -21,3 +21,4 @@ public class Ammo {
     [JsonProperty ("typeID")]
     public int TypeID { get; set; }
 }
+

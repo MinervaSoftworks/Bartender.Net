@@ -6,3 +6,4 @@ public class UserAttacks {
     [JsonProperty("attacks")]
     public IDictionary<string, Attack> Attacks { get; set; }
 }
+
