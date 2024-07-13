@@ -8,7 +8,7 @@ public class Member {
     public int ID { get; set; }
 
     [JsonIgnore]
-    public string ProfileID { get; set; }
+    public int ProfileID { get; set; }
 
     [JsonProperty ("days_in_faction")]
     public int DaysInFaction { get; set; }

@@ -10,7 +10,7 @@
     <Company>Minerva Softworks</Company>
     <Description>Models for TornApi.Net</Description>
     <Copyright>Copyright (c) Raven Crowe 2023</Copyright>
-    <Version>0.9.3</Version>
+    <Version>0.9.4</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -72,7 +72,7 @@ public class Basic {
                 var id = property.Name;
                 var member = property.Value.ToObject<Member> ();
 
-                member.ProfileID = id;
+                member.ProfileID = int.Parse(id);
 
                 members.Add (member);
             }
