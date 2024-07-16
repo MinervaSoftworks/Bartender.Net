@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace TornApi.Net.Models.User;
 
-public class HofWorkStats {
+public class HoFRank {
     [JsonProperty("value")]
     public int Value { get; set; }
 

@@ -2,41 +2,41 @@ using Newtonsoft.Json;
 
 namespace TornApi.Net.Models.User;
 
-public class HallofFame {
+public class HallOfFame {
     [JsonProperty("attacks")]
-    public HofAttacks Attacks { get; set; }
+    public HoFRank Attacks { get; set; }
 
     [JsonProperty("battlestats")]
-    public HofBattleStats Battlestats { get; set; }
+    public HoFRank Battlestats { get; set; }
 
     [JsonProperty("busts")]
-    public Busts Busts { get; set; }
+    public HoFRank Busts { get; set; }
 
     [JsonProperty("defends")]
-    public Defends Defends { get; set; }
+    public HoFRank Defends { get; set; }
 
     [JsonProperty("networth")]
-    public Networth Networth { get; set; }
+    public HoFRank Networth { get; set; }
 
     [JsonProperty("offences")]
-    public Offences Offences { get; set; }
+    public HoFRank Offences { get; set; }
 
     [JsonProperty("revives")]
-    public Revives Revives { get; set; }
+    public HoFRank Revives { get; set; }
 
     [JsonProperty("traveltime")]
-    public Traveltime Traveltime { get; set; }
+    public HoFRank Traveltime { get; set; }
 
     [JsonProperty("workstats")]
-    public HofWorkStats Workstats { get; set; }
+    public HoFRank Workstats { get; set; }
 
     [JsonProperty("level")]
-    public Level Level { get; set; }
+    public HoFRank Level { get; set; }
 
     [JsonProperty("rank")]
-    public UserRank Rank { get; set; }
+    public HoFRank Rank { get; set; }
 
     [JsonProperty("awards")]
-    public Awards Awards { get; set; }
+    public HoFRank Awards { get; set; }
 }
 

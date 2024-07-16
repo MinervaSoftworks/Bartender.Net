@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace TornApi.Net.Models.Faction;
 
@@ -53,20 +54,15 @@ public class Crime {
         }
 
         public override object ReadJson (JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
+            var jObj = JObject.Load(reader);
             if (reader.TokenType != JsonToken.StartArray) {
                 return null;
             }
 
-            var participants = new List<int> ();
+            var participants = new List<int>();
 
-            while(reader.TokenType != JsonToken.EndArray) {
-                reader.Read ();
-
-                if(reader.TokenType == JsonToken.PropertyName) {
-                    participants.Add (int.Parse(reader.Value as string));
-
-                    reader.Skip ();
-                }
+            foreach (var property in jObj.Properties()) {
+                participants.Add(property.Value.ToObject<int>());
             }
 
             return participants;

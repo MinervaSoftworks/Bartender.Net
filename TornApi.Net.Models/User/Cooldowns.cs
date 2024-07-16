@@ -12,11 +12,3 @@ public class Cooldowns {
     [JsonProperty("booster")]
     public int Booster { get; set; }
 }
-
-public class Discord {
-    [JsonProperty("userID")]
-    public int UserID { get; set; }
-
-    [JsonProperty("discordID")]
-    public string DiscordID { get; set; }
-}
