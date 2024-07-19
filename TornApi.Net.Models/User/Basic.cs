@@ -21,3 +21,4 @@ public class Basic {
     [JsonProperty("status")]
     public Status Status { get; set; }
 }
+    
