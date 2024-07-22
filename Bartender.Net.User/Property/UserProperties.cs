@@ -1,0 +1,8 @@
+﻿using Newtonsoft.Json;
+
+namespace Bartender.Net.User.Property;
+
+public class UserProperties {
+    [JsonProperty("properties")]
+    public required IDictionary<string, Property> Properties { get; set; }
+}
