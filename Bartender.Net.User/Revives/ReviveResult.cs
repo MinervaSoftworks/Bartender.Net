@@ -1,6 +1,6 @@
 ﻿namespace Bartender.Net.User.Revives;
 
-public required enum ReviveResult {
+public enum ReviveResult {
     Failure,
     Success
 }

@@ -1,6 +1,5 @@
 ﻿namespace Bartender.Net.User.Profile;
 
-public required enum Gender
-{
+public enum Gender {
     Enby, Male, Female
 }

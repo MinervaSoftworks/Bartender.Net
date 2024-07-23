@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.BattleStats;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Battle;
 
-public class UserBattleStats {
+public class UserBattleStats : IUserBattleStats {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("strength")]
     public required long Strength { get; set; }

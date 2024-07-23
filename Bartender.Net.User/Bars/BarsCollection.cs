@@ -1,23 +1,24 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Bars;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bars;
 
-public class BarsCollection {
+public class BarsCollection : IBarsCollection {
     [JsonProperty ("server_time")]
     public required int ServerTime { get; set; }
 
     [JsonProperty ("happy")]
-    public required Bar Happy { get; set; }
+    public required IBar Happy { get; set; }
 
     [JsonProperty ("life")]
-    public required Bar Life { get; set; }
+    public required IBar Life { get; set; }
 
     [JsonProperty ("energy")]
-    public required Bar Energy { get; set; }
+    public required IBar Energy { get; set; }
 
     [JsonProperty ("nerve")]
-    public required Bar Nerve { get; set; }
+    public required IBar Nerve { get; set; }
 
     [JsonProperty ("chain")]
-    public required Bar Chain { get; set; }
+    public required IBar Chain { get; set; }
 }

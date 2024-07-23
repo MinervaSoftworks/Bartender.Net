@@ -1,10 +1,11 @@
+using Bartender.Net.Framework.User.Attacking;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Attacking;
 
-public class AttackStub {
+public class AttackStub : IAttackStub {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("code")]
     public required string Code { get; set; }

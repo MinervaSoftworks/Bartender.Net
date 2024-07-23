@@ -1,6 +1,5 @@
 ﻿namespace Bartender.Net.User.Profile;
 
-public required enum StatusColor
-{
+public enum StatusColor {
     Blue, Green, Red
 }

@@ -1,10 +1,11 @@
+using Bartender.Net.Framework.User.Bars;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bars;
 
-public class ChainBar {
+public class ChainBar : IChainBar {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("cooldown")]
     public required int Cooldown { get; set; }

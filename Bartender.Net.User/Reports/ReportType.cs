@@ -1,6 +1,6 @@
 ﻿namespace Bartender.Net.User.Reports;
 
-public required enum ReportType {
+public enum ReportType {
     AnonymousBounties,
     FriendOrFoe,
     Investment,

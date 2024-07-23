@@ -1,6 +1,5 @@
 ﻿namespace Bartender.Net.User.Profile;
 
-public required enum LastActionStatus
-{
+public enum LastActionStatus {
     Idle, Offline, Online
 }

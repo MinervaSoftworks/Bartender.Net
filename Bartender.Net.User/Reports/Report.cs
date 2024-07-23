@@ -27,7 +27,7 @@ public class Report {
     [JsonProperty("user_id")]
     public required int UserID { get; set; }
 
-    public required static ReportType TypeToReportType (string reportType) => reportType switch {
+    public static ReportType TypeToReportType (string reportType) => reportType switch {
         "anonymousbounties" => ReportType.AnonymousBounties,
         "friendorfoe" => ReportType.FriendOrFoe,
         "investment" => ReportType.Investment,
@@ -39,7 +39,7 @@ public class Report {
         _ => throw new ArgumentException ("Invalid report type"),
     };
 
-    public required static string ReportTypeToType (ReportType reportType) => reportType switch {
+    public static string ReportTypeToType (ReportType reportType) => reportType switch {
         ReportType.AnonymousBounties => "anonymousbounties",
         ReportType.FriendOrFoe => "friendorfoe",
         ReportType.Investment => "investment",

@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.User.Ammunition;
+﻿namespace Bartender.Net.Framework.User.Ammunition;
 
 public enum AmmoSize {
     TwentyFiveACP,

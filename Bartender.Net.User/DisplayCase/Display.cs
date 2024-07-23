@@ -1,8 +1,9 @@
+using Bartender.Net.Framework.User.DisplayCase;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.DisplayCase;
 
-public class Display {
+public class Display : IDisplay {
     [JsonProperty ("ID")]
     public required int ID { get; set; }
 
@@ -22,5 +23,5 @@ public class Display {
     public required int MarketPrice { get; set; }
 
     [JsonProperty ("UID")]
-    public required long? UID { get; set; }
+    public required long UID { get; set; }
 }

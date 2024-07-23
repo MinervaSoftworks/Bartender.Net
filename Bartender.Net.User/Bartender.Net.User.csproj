@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bartender.Net.Extensions\Bartender.Net.Extensions.csproj" />
     <ProjectReference Include="..\Bartender.Net.Framework\Bartender.Net.Framework.csproj" />
   </ItemGroup>
 

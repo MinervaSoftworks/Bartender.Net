@@ -3,9 +3,12 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class Profile {
+public class UserProfile {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
+
+    [JsonProperty ("player_id")]
+    public required int ProfileID { get; set; }
 
     [JsonProperty ("age")]
     public required int Age { get; set; }
@@ -60,9 +63,6 @@ public class Profile {
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
-
-    [JsonProperty ("player_id")]
-    public required int ProfileID { get; set; }
 
     [JsonProperty ("rank")]
     public required string Rank { get; set; }

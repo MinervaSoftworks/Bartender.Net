@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Bars;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bars;
 
-public class Bar {
+public class Bar : IBar {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("current")]
     public required int Current { get; set; }

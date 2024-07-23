@@ -1,7 +1,6 @@
 ﻿namespace Bartender.Net.User.Profile;
 
-public required enum StatusState
-{
+public enum StatusState {
     Abroad,
     Fallen,
     Federal,

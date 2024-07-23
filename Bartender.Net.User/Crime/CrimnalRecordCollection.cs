@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Crime;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Crime;
 
-public class CrimnalRecordCollection {
+public class CrimnalRecordCollection : ICrimnalRecordCollection {
     [JsonIgnore]
     public required int ID { get; set; }
 

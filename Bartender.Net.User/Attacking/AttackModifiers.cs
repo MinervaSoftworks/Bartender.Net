@@ -1,10 +1,11 @@
+using Bartender.Net.Framework.User.Attacking;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Attacking;
 
-public class Modifiers {
+public class AttackModifiers : IAttackModifiers {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("fair_fight")]
     public required double FairFight { get; set; }

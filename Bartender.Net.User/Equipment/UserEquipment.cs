@@ -1,13 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Equipment;
+using Newtonsoft.Json;
 
-namespace Bartender.Net.User.Equipable;
+namespace Bartender.Net.User.Equipment;
 
-public class Equipment {
-    [JsonProperty ("equipped")]
-    public required int Equiped { get; set; }
-
+public class UserEquipment : IUserEquipment {
     [JsonProperty ("ID")]
     public required int ID { get; set; }
+
+    [JsonProperty ("equipped")]
+    public required int Equiped { get; set; }
 
     [JsonProperty ("market_price")]
     public required int MarketPrice { get; set; }
