@@ -25,4 +25,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bartender.Net.Extensions\Bartender.Net.Extensions.csproj" />
+    <ProjectReference Include="..\Bartender.Net.Framework\Bartender.Net.Framework.csproj" />
+  </ItemGroup>
+
 </Project>

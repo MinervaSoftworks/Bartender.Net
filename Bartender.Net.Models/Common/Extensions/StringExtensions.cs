@@ -1,9 +1,8 @@
-﻿using TornApi.Net.Models.Faction;
-using TornApi.Net.Models.Key;
+﻿using Bartender.Net.Framework.Key;
+using TornApi.Net.Models.Faction;
 using TornApi.Net.Models.User;
 
-namespace TornApi.Net.Models.Common.Extensions
-{
+namespace TornApi.Net.Models.Common.Extensions {
     public static partial class StringExtensions {
         public static LastActionStatus ToLastActionStatus (this string status) => status switch {
             "Idle" => LastActionStatus.Idle,

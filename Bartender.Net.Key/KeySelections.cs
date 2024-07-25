@@ -1,8 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.Key;
+using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Key;
+namespace Bartender.Net.Key;
 
-public class Selections {
+public class KeySelections : IKeySelections {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("company")]
     public IEnumerable<string> Company { get; set; }
 

@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Tester", "Bar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.User", "Bartender.Net.User\Bartender.Net.User.csproj", "{5D185C7F-BE76-48E6-A175-9A9A2B388B78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Framework", "Bartender.Net.Framework\Bartender.Net.Framework.csproj", "{CB7BD99B-9DC4-4A44-AE27-930188D805B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Framework", "Bartender.Net.Framework\Bartender.Net.Framework.csproj", "{CB7BD99B-9DC4-4A44-AE27-930188D805B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Extensions", "Bartender.Net.Extensions\Bartender.Net.Extensions.csproj", "{32BE9FE8-A865-4CD9-86B3-9F01F19BF3C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Extensions", "Bartender.Net.Extensions\Bartender.Net.Extensions.csproj", "{32BE9FE8-A865-4CD9-86B3-9F01F19BF3C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Key", "Bartender.Net.Key\Bartender.Net.Key.csproj", "{CD4EDAAF-C46F-4F7E-82E5-8FD15D953779}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{32BE9FE8-A865-4CD9-86B3-9F01F19BF3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32BE9FE8-A865-4CD9-86B3-9F01F19BF3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32BE9FE8-A865-4CD9-86B3-9F01F19BF3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD4EDAAF-C46F-4F7E-82E5-8FD15D953779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD4EDAAF-C46F-4F7E-82E5-8FD15D953779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD4EDAAF-C46F-4F7E-82E5-8FD15D953779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD4EDAAF-C46F-4F7E-82E5-8FD15D953779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
