@@ -1,13 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Reports;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Reports;
 
-public class ReportData {
+public class ReportData : IReportData {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("bounties")]
     public required IEnumerable<string> Bounties { get; set; }
 
     [JsonProperty ("company_history")]
-    public required IEnumerable<Reference> CompanyHistory { get; set; }
+    public required IEnumerable<IReportReference> CompanyHistory { get; set; }
 
     [JsonProperty ("defense")]
     public required int Defense { get; set; }
@@ -16,13 +20,13 @@ public class ReportData {
     public required int Dexterity { get; set; }
 
     [JsonProperty ("enemylist")]
-    public required IEnumerable<FriendOrFoeUser> EnemyList { get; set; }
+    public required IEnumerable<IFriendOrFoeUser> EnemyList { get; set; }
 
     [JsonProperty ("faction_history")]
-    public required IEnumerable<Reference> FactionHistory { get; set; }
+    public required IEnumerable<IReportReference> FactionHistory { get; set; }
 
     [JsonProperty ("friendlist")]
-    public required IEnumerable<FriendOrFoeUser> FriendList { get; set; }
+    public required IEnumerable<IFriendOrFoeUser> FriendList { get; set; }
 
     [JsonProperty ("invested_amount")]
     public required int InvestedAmount { get; set; }
@@ -34,7 +38,7 @@ public class ReportData {
     public required int Money { get; set; }
 
     [JsonProperty ("otherlist")]
-    public required IEnumerable<Warrant> OtherList { get; set; }
+    public required IEnumerable<IWarrant> OtherList { get; set; }
 
     [JsonProperty ("speed")]
     public required int Speed { get; set; }
@@ -43,7 +47,7 @@ public class ReportData {
     public required int Strength { get; set; }
 
     [JsonProperty ("toplist")]
-    public required IEnumerable<Warrant> TopList { get; set; }
+    public required IEnumerable<IWarrant> TopList { get; set; }
 
     [JsonProperty ("total_battlestats")]
     public required int TotalBattleStats { get; set; }

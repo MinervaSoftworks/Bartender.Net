@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.WeaponExp;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.WeaponExp;
 
-public class WeaponExperienceEntry {
+public class WeaponExperienceEntry : IWeaponExperienceEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -14,12 +15,4 @@ public class WeaponExperienceEntry {
 
     [JsonProperty ("exp")]
     public required int Exp { get; set; }
-}
-
-public class UserWeaponExp {
-    [JsonIgnore]
-    public int ID { get; set; }
-
-    [JsonProperty("weaponexp")]
-    public required WeaponExperienceEntry WeaponExp { get; set; }
 }

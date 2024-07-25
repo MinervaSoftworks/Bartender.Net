@@ -66,5 +66,5 @@ public class Attack : IAttack {
     public required double RespectLoss { get; set; }
 
     [JsonProperty ("modifiers")]
-    public required AttackModifiers Modifiers { get; set; }
+    public required IAttackModifiers Modifiers { get; set; }
 }

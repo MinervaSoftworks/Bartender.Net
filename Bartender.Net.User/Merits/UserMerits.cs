@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.User.Merits;
 
-public class UserMerits {
+public class UserMerits : IUserMerits {
     [JsonIgnore]
     public required int ID { get; set; }
 

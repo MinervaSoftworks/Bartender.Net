@@ -1,9 +1,12 @@
 ﻿using Bartender.Net.Framework.Sections;
 using Bartender.Net.Framework.User.Ammunition;
+using Bartender.Net.Framework.User.Profile;
+using Bartender.Net.Framework.User.Reports;
+using Bartender.Net.Framework.User.Revives;
 
 namespace Bartender.Net.Extensions;
 
-public static class StringExtensions {
+public static class Extensions {
     public static AmmoType ToAmmoType (this string type) => type switch {
         "Hollow Point" => AmmoType.HollowPoint,
         "Incendiary" => AmmoType.Incendiary,
@@ -42,5 +45,79 @@ public static class StringExtensions {
         "Limited Access" => AccessLevel.Limited,
         "Full Access" => AccessLevel.Full,
         _ => throw new NotImplementedException ("Invalid access level"),
-    }
+    };
+
+    public static CompetitionType ToCompetitionType (this string competitionType) => competitionType switch {
+        "Dog Tags" => CompetitionType.DogTags,
+        "Easter Egg Hunt" => CompetitionType.EasterEggHunt,
+        "Elimination" => CompetitionType.Elimination,
+        "Halloween" => CompetitionType.Halloween,
+        "Mr & Ms Torn" => CompetitionType.MrMsTorn,
+        "Rock, Paper, Scissors" => CompetitionType.RockPaperScissors,
+        _ => throw new Exception ("Unknown competition type")
+    };
+
+    public static Gender ToGender (this string gender) => gender switch {
+        "Enby" => Gender.Enby,
+        "Female" => Gender.Female,
+        "Male" => Gender.Male,
+        _ => throw new Exception ("Unknown gender")
+    };
+
+    public static LastActionStatus ToLastActionStatus (this string lastActionStatus) => lastActionStatus switch {
+        "Idle" => LastActionStatus.Idle,
+        "Offline" => LastActionStatus.Offline,
+        "Online" => LastActionStatus.Online,
+        _ => throw new Exception ("Unknown last action status")
+    };
+
+    public static StatusColor ToStatusColor (this string statusColor) => statusColor switch {
+        "blue" => StatusColor.Blue,
+        "green" => StatusColor.Green,
+        "red" => StatusColor.Red,
+        _ => throw new Exception ("Unknown status color")
+    };
+
+    public static StatusState ToStatusState (this string statusState) => statusState switch {
+        "Abroad" => StatusState.Abroad,
+        "Fallen" => StatusState.Fallen,
+        "Federal" => StatusState.Federal,
+        "Hospital" => StatusState.Hospital,
+        "Jail" => StatusState.Jail,
+        "Okay" => StatusState.Okay,
+        "Traveling" => StatusState.Traveling,
+        _ => throw new Exception ("Unknown status state")
+    };
+
+    public static TornRole ToTornRole (this string tornRole) => tornRole switch {
+        "Admin" => TornRole.Admin,
+        "Civilian" => TornRole.Civilian,
+        "Committee" => TornRole.Committee,
+        "Helper" => TornRole.Helper,
+        "Moderator" => TornRole.Moderator,
+        "NPC" => TornRole.NPC,
+        "Officer" => TornRole.Officer,
+        "Reporter" => TornRole.Reporter,
+        "Wiki Contributor" => TornRole.WikiContributor,
+        "Wiki Editor" => TornRole.WikiEditor,
+        _ => throw new Exception ("Unknown torn role")
+    };
+
+    public static ReportType ToReportType (this string reportType) => reportType switch {
+        "anonymousbounties" => ReportType.AnonymousBounties,
+        "friendorfoe" => ReportType.FriendOrFoe,
+        "investment" => ReportType.Investment,
+        "money" => ReportType.Money,
+        "mostwanted" => ReportType.MostWanted,
+        "references" => ReportType.References,
+        "stats" => ReportType.Stats,
+        "truelevel" => ReportType.TrueLevel,
+        _ => throw new ArgumentException ("Invalid report type"),
+    };
+
+    public static ReviveResult ToReviveResult (this string value) => value switch {
+        "success" => ReviveResult.Success,
+        "failure" => ReviveResult.Failure,
+        _ => throw new Exception ("Invalid Revive result")
+    };
 }

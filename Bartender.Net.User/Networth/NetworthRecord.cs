@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Networth;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Networth;
 
-public class NetworthRecord {
+public class NetworthRecord : INetworthRecord {
     [JsonIgnore]
     public required int ID { get; set; }
 

@@ -1,21 +1,26 @@
-﻿using Bartender.Net.User.Profile;
+﻿using Bartender.Net.Extensions;
+using Bartender.Net.Extensions.User;
+using Bartender.Net.Framework.User.Profile;
+using Bartender.Net.Framework.User.Revives;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Bartender.Net.User.Revives;
 
-public class Revive {
+public class Revive : IRevive {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("timestamp")]
     public required int Timestamp { get; set; }
 
     [JsonProperty ("result")]
-    public required string Result {
-        get => ReviveResultToResult (ReviveResult);
-        set => ReviveResult = ResultToReviveResult (value);
-    }
+    public required string Result { get; set; }
 
     [JsonIgnore]
-    public ReviveResult ReviveResult { get; private set; }
+    public ReviveResult ReviveResult {
+        get => Result.ToReviveResult ();
+        set => Result = value.ToReviveResultString ();
+    }
 
     [JsonProperty ("chance")]
     public required double Chance { get; set; }
@@ -51,17 +56,5 @@ public class Revive {
     public required int TargetEarlyDischarge { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public required LastAction TargetLastAction { get; set; }
-    
-    public static string ReviveResultToResult (ReviveResult result) => result switch {
-        ReviveResult.Failure => "failure",
-        ReviveResult.Success => "success",
-        _ => throw new Exception ("Invalid Revive result")
-    };
-
-    public static ReviveResult ResultToReviveResult (string value) => value switch {
-        "success" => ReviveResult.Success,
-        "failure" => ReviveResult.Failure,
-        _ => throw new Exception ("Invalid Revive result")
-    };
+    public required ILastAction TargetLastAction { get; set; }
 }

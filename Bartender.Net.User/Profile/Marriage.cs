@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Profile;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class Marriage {
+public class Marriage : IMarriage {
     [JsonIgnore]
     public required int ID { get; set; }
 

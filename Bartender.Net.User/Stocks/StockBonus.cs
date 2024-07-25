@@ -1,8 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Stocks;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Stocks;
 
-public class StockBonus {
+public class StockBonus : IStockBonus {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("ready")]
     public required int Ready { get; set; }
 

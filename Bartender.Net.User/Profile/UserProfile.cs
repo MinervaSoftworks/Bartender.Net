@@ -1,9 +1,12 @@
-﻿using Bartender.Net.User.Bars;
+﻿using Bartender.Net.Extensions;
+using Bartender.Net.Extensions.User;
+using Bartender.Net.Framework.User.Bars;
+using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class UserProfile {
+public class UserProfile : IUserProfile {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -20,7 +23,7 @@ public class UserProfile {
     public required IDictionary<string, string> BasicIcons { get; set; }
 
     [JsonProperty ("competition")]
-    public required Competition Competition { get; set; }
+    public required ICompetition Competition { get; set; }
 
     [JsonProperty ("donator")]
     public required bool Donator { get; set; }
@@ -29,7 +32,7 @@ public class UserProfile {
     public required int Enemies { get; set; }
 
     [JsonProperty ("faction")]
-    public required FactionStub Faction { get; set; }
+    public required IFactionStub Faction { get; set; }
 
     [JsonProperty ("forum_posts")]
     public required int ForumPosts { get; set; }
@@ -37,29 +40,35 @@ public class UserProfile {
     [JsonProperty ("friends")]
     public required int Friends { get; set; }
 
-    [JsonProperty ("gender")]
-    public required Gender Gender { get; set; }
+    [JsonProperty("gender")]
+    public required string GenderString { get; set; }
+
+    [JsonIgnore]
+    public Gender Gender {
+        get => GenderString.ToGender ();
+        set => GenderString = value.ToGenderString (); 
+    }
 
     [JsonProperty ("honor")]
     public required int Honor { get; set; }
 
     [JsonProperty ("job")]
-    public required Job Job { get; set; }
+    public required IJob Job { get; set; }
 
     [JsonProperty ("karma")]
     public required int Karma { get; set; }
 
     [JsonProperty ("last_action")]
-    public required LastAction LastAction { get; set; }
+    public required ILastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
     public required int Level { get; set; }
 
     [JsonProperty ("life")]
-    public required Bar Life { get; set; }
+    public required IBar Life { get; set; }
 
     [JsonProperty ("marrige")]
-    public required Marriage Marriage { get; set; }
+    public required IMarriage Marriage { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
@@ -77,8 +86,8 @@ public class UserProfile {
     public required string Signup { get; set; }
 
     [JsonProperty ("states")]
-    public required PlayerStates States { get; set; }
+    public required IPlayerStates States { get; set; }
 
     [JsonProperty ("status")]
-    public required Status Status { get; set; }
+    public required IStatus Status { get; set; }
 }

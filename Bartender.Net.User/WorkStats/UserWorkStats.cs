@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.WorkStats;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Work;
 
-public class UserWorkStats {
+public class UserWorkStats : IUserWorkStats {
     [JsonIgnore]
     public required int ID { get; set; }
 

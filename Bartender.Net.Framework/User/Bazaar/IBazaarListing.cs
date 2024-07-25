@@ -1,4 +1,6 @@
-﻿namespace Bartender.Net.Framework.User.Bazaar;
+﻿using Bartender.Net.Framework.User.Profile;
+
+namespace Bartender.Net.Framework.User.Bazaar;
 
 public interface IBazaarListing : IBartenderEntity {
     int MarketPrice { get; set; }

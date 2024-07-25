@@ -1,8 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Skills;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Skills;
 
-public class UserSkills {
+public class UserSkills : IUserSkills {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("bootlegging")]
     public required string Bootlegging { get; set; }
 

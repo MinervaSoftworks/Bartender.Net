@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Profile;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class FactionStub {
+public class FactionStub : IFactionStub {
     [JsonIgnore]
     public required int ID { get; set; }
 
@@ -10,7 +11,7 @@ public class FactionStub {
     public required int DaysInFaction { get; set; }
 
     [JsonProperty ("faction_id")]
-    public required int FactionID { get; set; }
+    public required int FactionID { get => ID; set => ID = value; }
 
     [JsonProperty ("faction_name")]
     public required string FactionName { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Bartender.Net.Framework.User.HoF; 
 
-public interface IHallOfFame {
+public interface IHallOfFame : IBartenderEntity {
     IHallOfFameRank Attacks { get; set; }
     IHallOfFameRank Awards { get; set; }
     IHallOfFameRank Battlestats { get; set; }

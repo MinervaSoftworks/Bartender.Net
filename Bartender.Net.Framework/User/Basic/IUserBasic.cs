@@ -1,4 +1,6 @@
-﻿namespace Bartender.Net.Framework.User.Basic;
+﻿using Bartender.Net.Framework.User.Profile;
+
+namespace Bartender.Net.Framework.User.Basic;
 
 public interface IUserBasic : IBartenderEntity {
     Gender Gender { get; set; }

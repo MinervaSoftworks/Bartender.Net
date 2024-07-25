@@ -1,25 +1,39 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Extensions;
+using Bartender.Net.Extensions.User;
+using Bartender.Net.Framework.User.Profile;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class Status
-{
+public class Status : IStatus {
     [JsonIgnore]
     public required int ID { get; set; }
 
     [JsonProperty("color")]
-    public required StatusColor Color { get; set; }
+    public required string Color { get; set; }
 
-    [JsonProperty("description")]
+    [JsonIgnore]
+    public StatusColor StatusColor { 
+        get => Color.ToStatusColor ();
+        set => Color = value.ToStatusColorString ();
+    }
+
+    [JsonProperty ("description")]
     public required string Description { get; set; }
 
-    [JsonProperty("details")]
+    [JsonProperty ("details")]
     public required string Details { get; set; }
 
     [JsonProperty("state")]
-    public required StatusState State { get; set; }
+    public required string State { get; set; }
 
-    [JsonProperty("until")]
+    [JsonIgnore]
+    public required StatusState StatusState { 
+        get => State.ToStatusState();
+        set => State = value.ToStatusStateString ();
+    }
+
+    [JsonProperty ("until")]
     public required long Until { get; set; }
 }
 
