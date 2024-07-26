@@ -3,8 +3,8 @@
 namespace Bartender.Net.Framework.Key;
 
 public interface IKeyInfo {
-    AccessLevel AccessLevel { get; set; }
-    string AccessLevelString { get; set; }
-    int ID { get; set; }
-    IKeySelections Selections { get; set; }
+    AccessLevel AccessLevel { get; }
+    string AccessLevelString { get; }
+    int ID { get; }
+    IKeySelections Selections { get; }
 }

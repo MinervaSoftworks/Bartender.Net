@@ -3,10 +3,10 @@
 namespace Bartender.Net.Framework.User.Bazaar;
 
 public interface IBazaarListing : IBartenderEntity {
-    int MarketPrice { get; set; }
-    string Name { get; set; }
-    IUserProfile Owner { get; set; }
-    int Price { get; set; }
-    int Quantity { get; set; }
-    string Type { get; set; }
+    int MarketPrice { get; }
+    string Name { get; }
+    IUserProfile Owner { get; }
+    int Price { get; }
+    int Quantity { get; }
+    string Type { get; }
 }

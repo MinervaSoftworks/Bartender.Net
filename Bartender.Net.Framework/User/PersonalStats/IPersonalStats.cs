@@ -2,200 +2,200 @@
 
 // TODO Fix these caps
 public interface IPersonalStats : IBartenderEntity {
-    int Activestreak { get; set; }
-    int Alcoholused { get; set; }
-    int Argtravel { get; set; }
-    int Arrestsmade { get; set; }
-    int Attackcriticalhits { get; set; }
-    int Attackdamage { get; set; }
-    int Attackhits { get; set; }
-    int Attackmisses { get; set; }
-    int Attacksassisted { get; set; }
-    int Attacksdraw { get; set; }
-    int Attackslost { get; set; }
-    int Attacksstealthed { get; set; }
-    int Attackswon { get; set; }
-    int Attackswonabroad { get; set; }
-    int Auctionsells { get; set; }
-    int Auctionswon { get; set; }
-    int Awards { get; set; }
-    int Axehits { get; set; }
-    int Bazaarcustomers { get; set; }
-    int Bazaarprofit { get; set; }
-    int Bazaarsales { get; set; }
-    int Bestactivestreak { get; set; }
-    int Bestdamage { get; set; }
-    int Bestkillstreak { get; set; }
-    int Bloodwithdrawn { get; set; }
-    int Booksread { get; set; }
-    int Boostersused { get; set; }
-    int Bountiescollected { get; set; }
-    int Bountiesplaced { get; set; }
-    int Bountiesreceived { get; set; }
-    int Candyused { get; set; }
-    int Cantaken { get; set; }
-    int Cantravel { get; set; }
-    int Caytravel { get; set; }
-    int Chahits { get; set; }
-    int Chitravel { get; set; }
-    int Cityfinds { get; set; }
-    int Cityitemsbought { get; set; }
-    int Classifiedadsplaced { get; set; }
-    int Companymailssent { get; set; }
-    int Consumablesused { get; set; }
-    int Contractscompleted { get; set; }
-    int Counterfeiting { get; set; }
-    int Criminaloffenses { get; set; }
-    int Cybercrime { get; set; }
-    int Daysbeendonator { get; set; }
-    int Defendslost { get; set; }
-    int Defendslostabroad { get; set; }
-    int Defendsstalemated { get; set; }
-    int Defendswon { get; set; }
-    int Defense { get; set; }
-    int Dexterity { get; set; }
-    int Drugsused { get; set; }
-    int Dubtravel { get; set; }
-    int Dukecontractscompleted { get; set; }
-    int Dumpfinds { get; set; }
-    int Dumpsearches { get; set; }
-    int Eastereggs { get; set; }
-    int Eastereggsused { get; set; }
-    int Elo { get; set; }
-    int Endurance { get; set; }
-    int Energydrinkused { get; set; }
-    int Extortion { get; set; }
-    int Exttaken { get; set; }
-    int Factionmailssent { get; set; }
-    int Failedbusts { get; set; }
-    int Fraud { get; set; }
-    int Friendmailssent { get; set; }
-    int Grehits { get; set; }
-    int H2hhits { get; set; }
-    int Hawtravel { get; set; }
-    int Heahits { get; set; }
-    int Highestbeaten { get; set; }
-    int Hollowammoused { get; set; }
-    int Hospital { get; set; }
-    int Illegalproduction { get; set; }
-    int Illicitservices { get; set; }
-    int Incendiaryammoused { get; set; }
-    int Intelligence { get; set; }
-    int Investedprofit { get; set; }
-    int Itemsbought { get; set; }
-    int Itemsboughtabroad { get; set; }
-    int Itemsdumped { get; set; }
-    int Itemslooted { get; set; }
-    int Itemssent { get; set; }
-    int Jailed { get; set; }
-    int Japtravel { get; set; }
-    int Jobpointsused { get; set; }
-    int Kettaken { get; set; }
-    int Killstreak { get; set; }
-    int Largestmug { get; set; }
-    int Lontravel { get; set; }
-    int Lsdtaken { get; set; }
-    int Machits { get; set; }
-    int Mailssent { get; set; }
-    int Manuallabor { get; set; }
-    int Medicalitemsused { get; set; }
-    int Meritsbought { get; set; }
-    int Mextravel { get; set; }
-    int Missioncreditsearned { get; set; }
-    int Missionscompleted { get; set; }
-    long Moneyinvested { get; set; }
-    int Moneymugged { get; set; }
-    int Nerverefills { get; set; }
-    int Networth { get; set; }
-    int Networthauctionhouse { get; set; }
-    int Networthbank { get; set; }
-    int Networthbazaar { get; set; }
-    int Networthbookie { get; set; }
-    int Networthcayman { get; set; }
-    int Networthcompany { get; set; }
-    int Networthdisplaycase { get; set; }
-    int Networthenlistedcars { get; set; }
-    int Networthitemmarket { get; set; }
-    int Networthitems { get; set; }
-    int Networthloan { get; set; }
-    int Networthpending { get; set; }
-    int Networthpiggybank { get; set; }
-    int Networthpoints { get; set; }
-    int Networthproperties { get; set; }
-    int Networthstockmarket { get; set; }
-    int Networthunpaidfees { get; set; }
-    int Networthvault { get; set; }
-    int Networthwallet { get; set; }
-    int Onehitkills { get; set; }
-    int Opitaken { get; set; }
-    int Organisedcrimes { get; set; }
-    int Overdosed { get; set; }
-    int Pcptaken { get; set; }
-    int Peoplebought { get; set; }
-    int Peopleboughtspent { get; set; }
-    int Peoplebusted { get; set; }
-    int Personalsplaced { get; set; }
-    int Piehits { get; set; }
-    int Piercingammoused { get; set; }
-    int Pishits { get; set; }
-    int Pointsbought { get; set; }
-    int Pointssold { get; set; }
-    int Racesentered { get; set; }
-    int Raceswon { get; set; }
-    int Racingpointsearned { get; set; }
-    int Racingskill { get; set; }
-    int Raidhits { get; set; }
-    int Rankedwarhits { get; set; }
-    int Rankedwarringwins { get; set; }
-    int Receivedbountyvalue { get; set; }
-    int Refills { get; set; }
-    int Rehabcost { get; set; }
-    int Rehabs { get; set; }
-    int Respectforfaction { get; set; }
-    int Retals { get; set; }
-    int Revives { get; set; }
-    int Reviveskill { get; set; }
-    int Revivesreceived { get; set; }
-    int Rifhits { get; set; }
-    int Roundsfired { get; set; }
-    int Shohits { get; set; }
-    int Shrtaken { get; set; }
-    int Slahits { get; set; }
-    int Smghits { get; set; }
-    int Soutravel { get; set; }
-    int Specialammoused { get; set; }
-    int Speed { get; set; }
-    int Spetaken { get; set; }
-    int Spousemailssent { get; set; }
-    int Statenhancersused { get; set; }
-    int Stockfees { get; set; }
-    int Stocklosses { get; set; }
-    int Stocknetprofits { get; set; }
-    int Stockpayouts { get; set; }
-    int Stockprofits { get; set; }
-    int Strength { get; set; }
-    int Switravel { get; set; }
-    int Territoryclears { get; set; }
-    int Territoryjoins { get; set; }
-    int Territorytime { get; set; }
-    int Theft { get; set; }
-    int Theyrunaway { get; set; }
-    int Tokenrefills { get; set; }
-    int Totalbountyreward { get; set; }
-    int Totalbountyspent { get; set; }
-    int Totalstats { get; set; }
-    int Totalworkingstats { get; set; }
-    int Tracerammoused { get; set; }
-    int Trades { get; set; }
-    int Trainsreceived { get; set; }
-    int Traveltime { get; set; }
-    int Traveltimes { get; set; }
-    int Unarmoredwon { get; set; }
-    int Useractivity { get; set; }
-    int Vandalism { get; set; }
-    int Victaken { get; set; }
-    int Virusescoded { get; set; }
-    int Weaponsbought { get; set; }
-    int Xantaken { get; set; }
-    int Yourunaway { get; set; }
+    int Activestreak { get; }
+    int Alcoholused { get; }
+    int Argtravel { get; }
+    int Arrestsmade { get; }
+    int Attackcriticalhits { get; }
+    int Attackdamage { get; }
+    int Attackhits { get; }
+    int Attackmisses { get; }
+    int Attacksassisted { get; }
+    int Attacksdraw { get; }
+    int Attackslost { get; }
+    int Attacksstealthed { get; }
+    int Attackswon { get; }
+    int Attackswonabroad { get; }
+    int Auctionsells { get; }
+    int Auctionswon { get; }
+    int Awards { get; }
+    int Axehits { get; }
+    int Bazaarcustomers { get; }
+    int Bazaarprofit { get; }
+    int Bazaarsales { get; }
+    int Bestactivestreak { get; }
+    int Bestdamage { get; }
+    int Bestkillstreak { get; }
+    int Bloodwithdrawn { get; }
+    int Booksread { get; }
+    int Boostersused { get; }
+    int Bountiescollected { get; }
+    int Bountiesplaced { get; }
+    int Bountiesreceived { get; }
+    int Candyused { get; }
+    int Cantaken { get; }
+    int Cantravel { get; }
+    int Caytravel { get; }
+    int Chahits { get; }
+    int Chitravel { get; }
+    int Cityfinds { get; }
+    int Cityitemsbought { get; }
+    int Classifiedadsplaced { get; }
+    int Companymailssent { get; }
+    int Consumablesused { get; }
+    int Contractscompleted { get; }
+    int Counterfeiting { get; }
+    int Criminaloffenses { get; }
+    int Cybercrime { get; }
+    int Daysbeendonator { get; }
+    int Defendslost { get; }
+    int Defendslostabroad { get; }
+    int Defendsstalemated { get; }
+    int Defendswon { get; }
+    int Defense { get; }
+    int Dexterity { get; }
+    int Drugsused { get; }
+    int Dubtravel { get; }
+    int Dukecontractscompleted { get; }
+    int Dumpfinds { get; }
+    int Dumpsearches { get; }
+    int Eastereggs { get; }
+    int Eastereggsused { get; }
+    int Elo { get; }
+    int Endurance { get; }
+    int Energydrinkused { get; }
+    int Extortion { get; }
+    int Exttaken { get; }
+    int Factionmailssent { get; }
+    int Failedbusts { get; }
+    int Fraud { get; }
+    int Friendmailssent { get; }
+    int Grehits { get; }
+    int H2hhits { get; }
+    int Hawtravel { get; }
+    int Heahits { get; }
+    int Highestbeaten { get; }
+    int Hollowammoused { get; }
+    int Hospital { get; }
+    int Illegalproduction { get; }
+    int Illicitservices { get; }
+    int Incendiaryammoused { get; }
+    int Intelligence { get; }
+    int Investedprofit { get; }
+    int Itemsbought { get; }
+    int Itemsboughtabroad { get; }
+    int Itemsdumped { get; }
+    int Itemslooted { get; }
+    int Itemssent { get; }
+    int Jailed { get; }
+    int Japtravel { get; }
+    int Jobpointsused { get; }
+    int Kettaken { get; }
+    int Killstreak { get; }
+    int Largestmug { get; }
+    int Lontravel { get; }
+    int Lsdtaken { get; }
+    int Machits { get; }
+    int Mailssent { get; }
+    int Manuallabor { get; }
+    int Medicalitemsused { get; }
+    int Meritsbought { get; }
+    int Mextravel { get; }
+    int Missioncreditsearned { get; }
+    int Missionscompleted { get; }
+    long Moneyinvested { get; }
+    int Moneymugged { get; }
+    int Nerverefills { get; }
+    int Networth { get; }
+    int Networthauctionhouse { get; }
+    int Networthbank { get; }
+    int Networthbazaar { get; }
+    int Networthbookie { get; }
+    int Networthcayman { get; }
+    int Networthcompany { get; }
+    int Networthdisplaycase { get; }
+    int Networthenlistedcars { get; }
+    int Networthitemmarket { get; }
+    int Networthitems { get; }
+    int Networthloan { get; }
+    int Networthpending { get; }
+    int Networthpiggybank { get; }
+    int Networthpoints { get; }
+    int Networthproperties { get; }
+    int Networthstockmarket { get; }
+    int Networthunpaidfees { get; }
+    int Networthvault { get; }
+    int Networthwallet { get; }
+    int Onehitkills { get; }
+    int Opitaken { get; }
+    int Organisedcrimes { get; }
+    int Overdosed { get; }
+    int Pcptaken { get; }
+    int Peoplebought { get; }
+    int Peopleboughtspent { get; }
+    int Peoplebusted { get; }
+    int Personalsplaced { get; }
+    int Piehits { get; }
+    int Piercingammoused { get; }
+    int Pishits { get; }
+    int Pointsbought { get; }
+    int Pointssold { get; }
+    int Racesentered { get; }
+    int Raceswon { get; }
+    int Racingpointsearned { get; }
+    int Racingskill { get; }
+    int Raidhits { get; }
+    int Rankedwarhits { get; }
+    int Rankedwarringwins { get; }
+    int Receivedbountyvalue { get; }
+    int Refills { get; }
+    int Rehabcost { get; }
+    int Rehabs { get; }
+    int Respectforfaction { get; }
+    int Retals { get; }
+    int Revives { get; }
+    int Reviveskill { get; }
+    int Revivesreceived { get; }
+    int Rifhits { get; }
+    int Roundsfired { get; }
+    int Shohits { get; }
+    int Shrtaken { get; }
+    int Slahits { get; }
+    int Smghits { get; }
+    int Soutravel { get; }
+    int Specialammoused { get; }
+    int Speed { get; }
+    int Spetaken { get; }
+    int Spousemailssent { get; }
+    int Statenhancersused { get; }
+    int Stockfees { get; }
+    int Stocklosses { get; }
+    int Stocknetprofits { get; }
+    int Stockpayouts { get; }
+    int Stockprofits { get; }
+    int Strength { get; }
+    int Switravel { get; }
+    int Territoryclears { get; }
+    int Territoryjoins { get; }
+    int Territorytime { get; }
+    int Theft { get; }
+    int Theyrunaway { get; }
+    int Tokenrefills { get; }
+    int Totalbountyreward { get; }
+    int Totalbountyspent { get; }
+    int Totalstats { get; }
+    int Totalworkingstats { get; }
+    int Tracerammoused { get; }
+    int Trades { get; }
+    int Trainsreceived { get; }
+    int Traveltime { get; }
+    int Traveltimes { get; }
+    int Unarmoredwon { get; }
+    int Useractivity { get; }
+    int Vandalism { get; }
+    int Victaken { get; }
+    int Virusescoded { get; }
+    int Weaponsbought { get; }
+    int Xantaken { get; }
+    int Yourunaway { get; }
 }

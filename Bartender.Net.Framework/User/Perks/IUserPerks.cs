@@ -1,12 +1,12 @@
 ﻿namespace Bartender.Net.Framework.User.Perks;
 
 public interface IUserPerks : IBartenderEntity {
-    List<object> BookPerks { get; set; }
-    List<string> EducationPerks { get; set; }
-    List<string> EnhancerPerks { get; set; }
-    List<string> FactionPerks { get; set; }
-    List<string> JobPerks { get; set; }
-    List<string> MeritPerks { get; set; }
-    List<string> PropertyPerks { get; set; }
-    List<string> StockPerks { get; set; }
+    List<object> BookPerks { get; }
+    List<string> EducationPerks { get; }
+    List<string> EnhancerPerks { get; }
+    List<string> FactionPerks { get; }
+    List<string> JobPerks { get; }
+    List<string> MeritPerks { get; }
+    List<string> PropertyPerks { get; }
+    List<string> StockPerks { get; }
 }

@@ -1,11 +1,11 @@
 ﻿namespace Bartender.Net.Framework.Key;
 
 public interface IKeySelections {
-    IEnumerable<string> Company { get; set; }
-    IEnumerable<string> Faction { get; set; }
-    IEnumerable<string> Key { get; set; }
-    IEnumerable<string> Market { get; set; }
-    IEnumerable<string> Property { get; set; }
-    IEnumerable<string> Torn { get; set; }
-    IEnumerable<string> User { get; set; }
+    IEnumerable<string> Company { get; }
+    IEnumerable<string> Faction { get; }
+    IEnumerable<string> Key { get; }
+    IEnumerable<string> Market { get; }
+    IEnumerable<string> Property { get; }
+    IEnumerable<string> Torn { get; }
+    IEnumerable<string> User { get; }
 }

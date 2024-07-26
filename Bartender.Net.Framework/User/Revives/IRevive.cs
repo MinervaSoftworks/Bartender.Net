@@ -3,19 +3,19 @@
 namespace Bartender.Net.Framework.User.Revives;
 
 public interface IRevive : IBartenderEntity {
-    double Chance { get; set; }
-    string Result { get; set; }
+    double Chance { get; }
+    string Result { get; }
     ReviveResult ReviveResult { get; }
-    int ReviverFaction { get; set; }
-    string ReviverFactionname { get; set; }
-    int ReviverId { get; set; }
-    string ReviverName { get; set; }
-    int TargetEarlyDischarge { get; set; }
-    int TargetFaction { get; set; }
-    string TargetFactionname { get; set; }
-    string TargetHospitalReason { get; set; }
-    int TargetId { get; set; }
-    ILastAction TargetLastAction { get; set; }
-    string TargetName { get; set; }
-    int Timestamp { get; set; }
+    int ReviverFaction { get; }
+    string ReviverFactionname { get; }
+    int ReviverId { get; }
+    string ReviverName { get; }
+    int TargetEarlyDischarge { get; }
+    int TargetFaction { get; }
+    string TargetFactionname { get; }
+    string TargetHospitalReason { get; }
+    int TargetId { get; }
+    ILastAction TargetLastAction { get; }
+    string TargetName { get; }
+    int Timestamp { get; }
 }

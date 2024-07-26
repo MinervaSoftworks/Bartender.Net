@@ -1,10 +1,10 @@
 ﻿namespace Bartender.Net.Framework.User.DisplayCase;
 
 public interface IDisplay : IBartenderEntity {
-    int Circulation { get; set; }
-    int MarketPrice { get; set; }
-    string Name { get; set; }
-    int Quantity { get; set; }
-    string Type { get; set; }
-    long UID { get; set; }
+    int Circulation { get; }
+    int MarketPrice { get; }
+    string Name { get; }
+    int Quantity { get; }
+    string Type { get; }
+    long UID { get; }
 }
