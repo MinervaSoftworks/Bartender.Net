@@ -1,11 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.Market.PointsMarket;
+using Newtonsoft.Json;
 
 namespace TornApi.Net.Models.Market;
 
-public class Point {
+public class PointListing : IPointListing {
     [JsonIgnore]
     public int ID { get; set; }
-    
+
     [JsonProperty ("cost")]
     public int Cost { get; set; }
 
