@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.Framework.User.HoF; 
+﻿namespace Bartender.Net.Framework.User.HoF;
 
 public interface IHallOfFameRank : IBartenderEntity {
     int Rank { get; }

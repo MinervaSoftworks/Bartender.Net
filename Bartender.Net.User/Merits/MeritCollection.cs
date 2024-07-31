@@ -4,5 +4,5 @@ namespace Bartender.Net.User.Merits;
 
 public class MeritCollection : IMeritCollection {
     [JsonProperty ("merits")]
-    public required UserMerits Merits { get; set; }
+    public UserMerits Merits { get; set; }
 }

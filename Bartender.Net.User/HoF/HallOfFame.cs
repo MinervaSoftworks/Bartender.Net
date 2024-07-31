@@ -8,39 +8,39 @@ public class HallOfFame : IHallOfFame {
     public int ID { get; set; }
 
     [JsonProperty ("attacks")]
-    public required HallOfFameRank Attacks { get; set; }
+    public HallOfFameRank Attacks { get; set; }
 
     [JsonProperty ("battlestats")]
-    public required HallOfFameRank Battlestats { get; set; }
+    public HallOfFameRank Battlestats { get; set; }
 
     [JsonProperty ("busts")]
-    public required HallOfFameRank Busts { get; set; }
+    public HallOfFameRank Busts { get; set; }
 
     [JsonProperty ("defends")]
-    public required HallOfFameRank Defends { get; set; }
+    public HallOfFameRank Defends { get; set; }
 
     [JsonProperty ("networth")]
-    public required HallOfFameRank Networth { get; set; }
+    public HallOfFameRank Networth { get; set; }
 
     [JsonProperty ("offences")]
-    public required HallOfFameRank Offences { get; set; }
+    public HallOfFameRank Offences { get; set; }
 
     [JsonProperty ("revives")]
-    public required HallOfFameRank Revives { get; set; }
+    public HallOfFameRank Revives { get; set; }
 
     [JsonProperty ("traveltime")]
-    public required HallOfFameRank Traveltime { get; set; }
+    public HallOfFameRank Traveltime { get; set; }
 
     [JsonProperty ("workstats")]
-    public required HallOfFameRank Workstats { get; set; }
+    public HallOfFameRank Workstats { get; set; }
 
     [JsonProperty ("level")]
-    public required HallOfFameRank Level { get; set; }
+    public HallOfFameRank Level { get; set; }
 
     [JsonProperty ("rank")]
-    public required HallOfFameRank Rank { get; set; }
+    public HallOfFameRank Rank { get; set; }
 
     [JsonProperty ("awards")]
-    public required HallOfFameRank Awards { get; set; }
+    public HallOfFameRank Awards { get; set; }
 }
 

@@ -5,11 +5,11 @@ namespace Bartender.Net.User.Reports;
 
 public class FriendOrFoeUser : IFriendOrFoeUser {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
-    [JsonProperty("name")]
-    public required string Name { get; set; }
+    [JsonProperty ("name")]
+    public string Name { get; set; }
 
-    [JsonProperty("user_id")]
-    public required int UserID { get; set; }
+    [JsonProperty ("user_id")]
+    public int UserID { get; set; }
 }

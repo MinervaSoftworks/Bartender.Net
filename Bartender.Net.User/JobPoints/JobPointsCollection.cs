@@ -8,8 +8,8 @@ public class JobPointsCollection : IJobPointsCollection {
     public int ID { get; set; }
 
     [JsonProperty ("companies")]
-    public required IDictionary<string, CompanyPoints> MyProperty { get; set; }
+    public IDictionary<string, CompanyPoints> MyProperty { get; set; }
 
     [JsonProperty ("jobs")]
-    public required UserJobPoints JobPoints { get; set; }
+    public UserJobPoints JobPoints { get; set; }
 }

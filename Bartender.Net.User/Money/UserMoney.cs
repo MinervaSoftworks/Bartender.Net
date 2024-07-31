@@ -3,28 +3,28 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Money;
 
-public class UserMoney : IUserMoney{
+public class UserMoney : IUserMoney {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("points")]
-    public required int Points { get; set; }
+    public int Points { get; set; }
 
     [JsonProperty ("cayman_bank")]
-    public required int CaymanBank { get; set; }
+    public int CaymanBank { get; set; }
 
     [JsonProperty ("vault_amount")]
-    public required int VaultAmount { get; set; }
+    public int VaultAmount { get; set; }
 
     [JsonProperty ("company_funds")]
-    public required int CompanyFunds { get; set; }
+    public int CompanyFunds { get; set; }
 
     [JsonProperty ("daily_networth")]
-    public required int DailyNetworth { get; set; }
+    public int DailyNetworth { get; set; }
 
     [JsonProperty ("money_onhand")]
-    public required int MoneyOnhand { get; set; }
+    public int MoneyOnhand { get; set; }
 
     [JsonProperty ("city_bank")]
-    public required ICityBank CityBank { get; set; }
+    public ICityBank CityBank { get; set; }
 }

@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Revives;
 
 public class ReviveFullCollection : IReviveFullCollection {
     [JsonProperty ("revives")]
-    public required IDictionary<string, IReviveFull> Revives { get; set; }
+    public IDictionary<string, IReviveFull> Revives { get; set; }
 }

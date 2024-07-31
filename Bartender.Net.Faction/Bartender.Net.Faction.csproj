@@ -10,4 +10,19 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Upgrades\" />
+    <Folder Include="Territory\" />
+    <Folder Include="Stats\" />
+    <Folder Include="RevivesFull\" />
+    <Folder Include="Revives\" />
+    <Folder Include="Reports\" />
+    <Folder Include="RankedWars\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bartender.Net.Extensions\Bartender.Net.Extensions.csproj" />
+    <ProjectReference Include="..\Bartender.Net.Framework\Bartender.Net.Framework.csproj" />
+  </ItemGroup>
+
 </Project>

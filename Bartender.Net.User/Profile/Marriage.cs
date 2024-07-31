@@ -5,14 +5,14 @@ namespace Bartender.Net.User.Profile;
 
 public class Marriage : IMarriage {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("duration")]
-    public required int Duration { get; set; }
+    public int Duration { get; set; }
 
     [JsonProperty ("spouse_id")]
-    public required int SpouseID { get; set; }
+    public int SpouseID { get; set; }
 
     [JsonProperty ("spouse_name")]
-    public required string SpouseName { get; set; }
+    public string SpouseName { get; set; }
 }

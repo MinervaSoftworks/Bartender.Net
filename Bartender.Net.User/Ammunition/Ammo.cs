@@ -10,32 +10,32 @@ public class Ammo : IAmmo {
     public int ID { get; set; }
 
     [JsonProperty ("ammoID")]
-    public required int AmmoID { get => ID; set => ID = value; }
+    public int AmmoID { get => ID; set => ID = value; }
 
     [JsonProperty ("equipped")]
-    public required bool Equipped { get; set; }
+    public bool Equipped { get; set; }
 
     [JsonProperty ("quantity")]
-    public required int Quantity { get; set; }
+    public int Quantity { get; set; }
 
     [JsonProperty ("size")]
-    public required string Size { get; set; }
+    public string Size { get; set; }
 
     [JsonIgnore]
-    public required AmmoSize AmmoSize {
+    public AmmoSize AmmoSize {
         get => Size.ToAmmoSize ();
         set => Size = value.ToAmmoSizeString ();
     }
 
     [JsonProperty ("type")]
-    public required string Type { get; set; }
+    public string Type { get; set; }
 
     [JsonIgnore]
-    public required AmmoType AmmoType {
+    public AmmoType AmmoType {
         get => Type.ToAmmoType ();
         set => Type = value.ToAmmoTypeString ();
     }
 
     [JsonProperty ("typeID")]
-    public required int TypeID { get; set; }
+    public int TypeID { get; set; }
 }

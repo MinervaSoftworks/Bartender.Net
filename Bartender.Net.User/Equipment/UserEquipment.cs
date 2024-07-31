@@ -5,23 +5,23 @@ namespace Bartender.Net.User.Equipment;
 
 public class UserEquipment : IUserEquipment {
     [JsonProperty ("ID")]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("equipped")]
-    public required int Equiped { get; set; }
+    public int Equiped { get; set; }
 
     [JsonProperty ("market_price")]
-    public required int MarketPrice { get; set; }
+    public int MarketPrice { get; set; }
 
     [JsonProperty ("name")]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     [JsonProperty ("quantity")]
-    public required int Quantity { get; set; }
+    public int Quantity { get; set; }
 
     [JsonProperty ("type")]
-    public required string Type { get; set; }
+    public string Type { get; set; }
 
     [JsonProperty ("UID")]
-    public required int UID { get; set; }
+    public int UID { get; set; }
 }

@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Log;
 
 public class UserLog : IUserLog {
     [JsonProperty ("log")]
-    public required IDictionary<int, LogEntry> Entries { get; set; }
+    public IDictionary<int, LogEntry> Entries { get; set; }
 }

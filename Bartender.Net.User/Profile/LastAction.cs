@@ -7,13 +7,13 @@ namespace Bartender.Net.User.Profile;
 
 public class LastAction : ILastAction {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("relative")]
-    public required string Relative { get; set; }
+    public string Relative { get; set; }
 
     [JsonProperty ("status")]
-    public required string Status { get; set; }
+    public string Status { get; set; }
 
     public LastActionStatus LastActionStatus {
         get => Status.ToLastActionStatus ();
@@ -21,5 +21,5 @@ public class LastAction : ILastAction {
     }
 
     [JsonProperty ("timestamp")]
-    public required long Timestamp { get; set; }
+    public long Timestamp { get; set; }
 }

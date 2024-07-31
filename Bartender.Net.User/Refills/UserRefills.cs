@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Refills;
 
 public class UserRefills : IUserRefills {
     [JsonProperty ("refills")]
-    public required RefillStates Refills { get; set; }
+    public RefillStates Refills { get; set; }
 }

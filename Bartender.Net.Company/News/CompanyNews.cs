@@ -5,5 +5,5 @@ namespace Bartender.Net.Company.News;
 
 public class CompanyNews : ICompanyNews {
     [JsonProperty ("news")]
-    public required IDictionary<string, ICompanyNewsEntry> MyProperty { get; set; }
+    public IDictionary<string, ICompanyNewsEntry> MyProperty { get; set; }
 }

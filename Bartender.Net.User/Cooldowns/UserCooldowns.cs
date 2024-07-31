@@ -8,11 +8,11 @@ public class UserCooldowns : IUserCooldowns {
     public int ID { get; set; }
 
     [JsonProperty ("drug")]
-    public required int Drug { get; set; }
+    public int Drug { get; set; }
 
     [JsonProperty ("medical")]
-    public required int Medical { get; set; }
+    public int Medical { get; set; }
 
     [JsonProperty ("booster")]
-    public required int Booster { get; set; }
+    public int Booster { get; set; }
 }

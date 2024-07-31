@@ -8,32 +8,32 @@ public class AttackStub : IAttackStub {
     public int ID { get; set; }
 
     [JsonProperty ("code")]
-    public required string Code { get; set; }
+    public string Code { get; set; }
 
     [JsonProperty ("timestamp_started")]
-    public required int TimestampStarted { get; set; }
+    public int TimestampStarted { get; set; }
 
     [JsonProperty ("timestamp_ended")]
-    public required int TimestampEnded { get; set; }
+    public int TimestampEnded { get; set; }
 
     [JsonProperty ("attacker_id")]
-    public required int AttackerId { get; set; }
+    public int AttackerId { get; set; }
 
     [JsonProperty ("attacker_faction")]
-    public required int AttackerFaction { get; set; }
+    public int AttackerFaction { get; set; }
 
     [JsonProperty ("defender_id")]
-    public required int DefenderId { get; set; }
+    public int DefenderId { get; set; }
 
     [JsonProperty ("defender_faction")]
-    public required int DefenderFaction { get; set; }
+    public int DefenderFaction { get; set; }
 
     [JsonProperty ("result")]
-    public required string Result { get; set; }
+    public string Result { get; set; }
 
     [JsonProperty ("stealthed")]
-    public required int Stealthed { get; set; }
+    public int Stealthed { get; set; }
 
     [JsonProperty ("respect")]
-    public required int Respect { get; set; }
+    public int Respect { get; set; }
 }

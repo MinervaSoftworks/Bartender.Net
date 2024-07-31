@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.Framework.User.JobPoints; 
+﻿namespace Bartender.Net.Framework.User.JobPoints;
 
 public interface ICompanyPoints : IBartenderEntity {
     int JobPoints { get; }

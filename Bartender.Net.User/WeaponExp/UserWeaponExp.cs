@@ -7,6 +7,6 @@ public class UserWeaponExp : IUserWeaponExperience {
     [JsonIgnore]
     public int ID { get; set; }
 
-    [JsonProperty("weaponexp")]
-    public required IWeaponExperienceEntry WeaponExp { get; set; }
+    [JsonProperty ("weaponexp")]
+    public IWeaponExperienceEntry WeaponExp { get; set; }
 }

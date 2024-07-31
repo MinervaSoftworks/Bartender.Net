@@ -8,11 +8,11 @@ public class NewUserEvent : INewUserEvent {
     public int ID { get; set; }
 
     [JsonProperty ("timestamp")]
-    public required int Timestamp { get; set; }
+    public int Timestamp { get; set; }
 
     [JsonProperty ("event")]
-    public required string Event { get; set; }
+    public string Event { get; set; }
 
     [JsonProperty ("seen")]
-    public required bool Seen { get; set; }
+    public bool Seen { get; set; }
 }

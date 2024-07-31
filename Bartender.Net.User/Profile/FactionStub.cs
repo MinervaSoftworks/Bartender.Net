@@ -5,20 +5,20 @@ namespace Bartender.Net.User.Profile;
 
 public class FactionStub : IFactionStub {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("days_in_faction")]
-    public required int DaysInFaction { get; set; }
+    public int DaysInFaction { get; set; }
 
     [JsonProperty ("faction_id")]
-    public required int FactionID { get => ID; set => ID = value; }
+    public int FactionID { get => ID; set => ID = value; }
 
     [JsonProperty ("faction_name")]
-    public required string FactionName { get; set; }
+    public string FactionName { get; set; }
 
     [JsonProperty ("faction_tag")]
-    public required string FactionTag { get; set; }
+    public string FactionTag { get; set; }
 
     [JsonProperty ("position")]
-    public required string Position { get; set; }
+    public string Position { get; set; }
 }

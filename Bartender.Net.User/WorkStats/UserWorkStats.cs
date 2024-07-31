@@ -5,14 +5,14 @@ namespace Bartender.Net.User.Work;
 
 public class UserWorkStats : IUserWorkStats {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("manual_labor")]
-    public required int ManualLabor { get; set; }
+    public int ManualLabor { get; set; }
 
     [JsonProperty ("intelligence")]
-    public required int Intelligence { get; set; }
+    public int Intelligence { get; set; }
 
     [JsonProperty ("endurance")]
-    public required int Endurance { get; set; }
+    public int Endurance { get; set; }
 }

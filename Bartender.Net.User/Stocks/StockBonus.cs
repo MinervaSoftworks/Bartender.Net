@@ -8,14 +8,14 @@ public class StockBonus : IStockBonus {
     public int ID { get; set; }
 
     [JsonProperty ("ready")]
-    public required int Ready { get; set; }
+    public int Ready { get; set; }
 
     [JsonProperty ("increment")]
-    public required int Increment { get; set; }
+    public int Increment { get; set; }
 
     [JsonProperty ("progress")]
-    public required int Progress { get; set; }
+    public int Progress { get; set; }
 
     [JsonProperty ("frequency")]
-    public required int Frequency { get; set; }
+    public int Frequency { get; set; }
 }

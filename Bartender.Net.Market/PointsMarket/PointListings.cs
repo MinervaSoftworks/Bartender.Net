@@ -5,5 +5,5 @@ namespace TornApi.Net.Models.Market;
 
 public class PointListings : IPointListings {
     [JsonProperty ("pointsmarket")]
-    public required IDictionary<string, IPointListing> Points { get; set; }
+    public IDictionary<string, IPointListing> Points { get; set; }
 }

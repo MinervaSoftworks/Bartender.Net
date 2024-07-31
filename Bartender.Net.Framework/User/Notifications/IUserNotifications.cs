@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.Framework.User.Notifications; 
+﻿namespace Bartender.Net.Framework.User.Notifications;
 
 public interface IUserNotifications : IBartenderEntity {
     int Awards { get; }

@@ -8,8 +8,8 @@ public class UserMedals : IUserMedals {
     public int ID { get; set; }
 
     [JsonProperty ("medals_awarded")]
-    public required IEnumerable<int> MedalsAwarded { get; set; }
+    public IEnumerable<int> MedalsAwarded { get; set; }
 
     [JsonProperty ("medals_time")]
-    public required IEnumerable<int> MedalsTime { get; set; }
+    public IEnumerable<int> MedalsTime { get; set; }
 }

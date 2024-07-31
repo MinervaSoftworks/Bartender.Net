@@ -3,13 +3,13 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Missions;
 
-public class UserMission : IUserMission{
+public class UserMission : IUserMission {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("title")]
-    public required string Title { get; set; }
+    public string Title { get; set; }
 
     [JsonProperty ("status")]
-    public required string Status { get; set; }
+    public string Status { get; set; }
 }

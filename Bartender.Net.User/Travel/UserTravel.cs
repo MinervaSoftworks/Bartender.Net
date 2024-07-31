@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Travel;
 
 public class UserTravel : IUserTravel {
     [JsonProperty ("travel")]
-    public required ITravelEntry Travel { get; set; }
+    public ITravelEntry Travel { get; set; }
 }

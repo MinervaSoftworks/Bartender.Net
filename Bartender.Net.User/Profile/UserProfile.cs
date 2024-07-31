@@ -11,83 +11,83 @@ public class UserProfile : IUserProfile {
     public int ID { get; set; }
 
     [JsonProperty ("player_id")]
-    public required int ProfileID { get; set; }
+    public int ProfileID { get; set; }
 
     [JsonProperty ("age")]
-    public required int Age { get; set; }
+    public int Age { get; set; }
 
     [JsonProperty ("awards")]
-    public required int Awards { get; set; }
+    public int Awards { get; set; }
 
     [JsonProperty ("icons")]
-    public required IDictionary<string, string> BasicIcons { get; set; }
+    public IDictionary<string, string> BasicIcons { get; set; }
 
     [JsonProperty ("competition")]
-    public required ICompetition Competition { get; set; }
+    public ICompetition Competition { get; set; }
 
     [JsonProperty ("donator")]
-    public required bool Donator { get; set; }
+    public bool Donator { get; set; }
 
     [JsonProperty ("enemies")]
-    public required int Enemies { get; set; }
+    public int Enemies { get; set; }
 
     [JsonProperty ("faction")]
-    public required IFactionStub Faction { get; set; }
+    public IFactionStub Faction { get; set; }
 
     [JsonProperty ("forum_posts")]
-    public required int ForumPosts { get; set; }
+    public int ForumPosts { get; set; }
 
     [JsonProperty ("friends")]
-    public required int Friends { get; set; }
+    public int Friends { get; set; }
 
-    [JsonProperty("gender")]
-    public required string GenderString { get; set; }
+    [JsonProperty ("gender")]
+    public string GenderString { get; set; }
 
     [JsonIgnore]
     public Gender Gender {
         get => GenderString.ToGender ();
-        set => GenderString = value.ToGenderString (); 
+        set => GenderString = value.ToGenderString ();
     }
 
     [JsonProperty ("honor")]
-    public required int Honor { get; set; }
+    public int Honor { get; set; }
 
     [JsonProperty ("job")]
-    public required IJob Job { get; set; }
+    public IJob Job { get; set; }
 
     [JsonProperty ("karma")]
-    public required int Karma { get; set; }
+    public int Karma { get; set; }
 
     [JsonProperty ("last_action")]
-    public required ILastAction LastAction { get; set; }
+    public ILastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
-    public required int Level { get; set; }
+    public int Level { get; set; }
 
     [JsonProperty ("life")]
-    public required IBar Life { get; set; }
+    public IBar Life { get; set; }
 
     [JsonProperty ("marrige")]
-    public required IMarriage Marriage { get; set; }
+    public IMarriage Marriage { get; set; }
 
     [JsonProperty ("name")]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     [JsonProperty ("rank")]
-    public required string Rank { get; set; }
+    public string Rank { get; set; }
 
     [JsonProperty ("revivable")]
-    public required bool Revivable { get; set; }
+    public bool Revivable { get; set; }
 
     [JsonProperty ("role")]
-    public required string Role { get; set; }
+    public string Role { get; set; }
 
     [JsonProperty ("signup")]
-    public required string Signup { get; set; }
+    public string Signup { get; set; }
 
     [JsonProperty ("states")]
-    public required IPlayerStates States { get; set; }
+    public IPlayerStates States { get; set; }
 
     [JsonProperty ("status")]
-    public required IStatus Status { get; set; }
+    public IStatus Status { get; set; }
 }

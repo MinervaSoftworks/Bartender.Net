@@ -3,25 +3,25 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Messages;
 
-public class UserMessage : IUserMessage{
+public class UserMessage : IUserMessage {
     [JsonProperty ("timestamp")]
-    public required int Timestamp { get; set; }
+    public int Timestamp { get; set; }
 
     [JsonProperty ("ID")]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("name")]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     [JsonProperty ("type")]
-    public required string Type { get; set; }
+    public string Type { get; set; }
 
     [JsonProperty ("title")]
-    public required string Title { get; set; }
+    public string Title { get; set; }
 
     [JsonProperty ("seen")]
-    public required int Seen { get; set; }
+    public int Seen { get; set; }
 
     [JsonProperty ("read")]
-    public required int Read { get; set; }
+    public int Read { get; set; }
 }

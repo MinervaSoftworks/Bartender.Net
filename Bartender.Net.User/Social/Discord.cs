@@ -8,8 +8,8 @@ public class DiscordRecord : IDiscordRecord {
     public int ID { get; set; }
 
     [JsonProperty ("userID")]
-    public required int UserID { get; set; }
+    public int UserID { get; set; }
 
     [JsonProperty ("discordID")]
-    public required string DiscordID { get; set; }
+    public string DiscordID { get; set; }
 }

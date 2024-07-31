@@ -5,5 +5,5 @@ namespace Bartender.Net.Company.Applications;
 
 public class CompanyApplications : ICompanyApplications {
     [JsonProperty ("applications")]
-    public required IDictionary<string, IApplication> Applications { get; set; }
+    public IDictionary<string, IApplication> Applications { get; set; }
 }

@@ -8,5 +8,5 @@ public class UserGym : IUserGym {
     public int ID { get; set; }
 
     [JsonProperty ("active_gym")]
-    public required int ActiveGym { get; set; }
+    public int ActiveGym { get; set; }
 }

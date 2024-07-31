@@ -5,5 +5,5 @@ namespace Bartender.Net.User.PersonalStats;
 
 public class UserPersonalStats : IUserPersonalStats {
     [JsonProperty ("personalstats")]
-    public required IPersonalStats PersonalStats { get; set; }
+    public IPersonalStats PersonalStats { get; set; }
 }

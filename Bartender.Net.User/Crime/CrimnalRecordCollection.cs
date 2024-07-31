@@ -5,53 +5,53 @@ namespace Bartender.Net.User.Crime;
 
 public class CrimnalRecordCollection : ICrimnalRecordCollection {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("auto_theft")]
-    public required int AutoTheft { get; set; }
+    public int AutoTheft { get; set; }
 
     [JsonProperty ("computer_crimes")]
-    public required int ComputerCrimes { get; set; }
+    public int ComputerCrimes { get; set; }
 
     [JsonProperty ("counterfeiting")]
-    public required int Counterfeiting { get; set; }
+    public int Counterfeiting { get; set; }
 
     [JsonProperty ("cybercrime")]
-    public required int Cybercrime { get; set; }
+    public int Cybercrime { get; set; }
 
     [JsonProperty ("drug_deals")]
-    public required int DrugDeals { get; set; }
+    public int DrugDeals { get; set; }
 
     [JsonProperty ("extortion")]
-    public required int Extortion { get; set; }
+    public int Extortion { get; set; }
 
     [JsonProperty ("fraud")]
-    public required int Fraud { get; set; }
+    public int Fraud { get; set; }
 
     [JsonProperty ("fraud_crimes")]
-    public required int FraudCrimes { get; set; }
+    public int FraudCrimes { get; set; }
 
     [JsonProperty ("illegalproduction")]
-    public required int IllegalProduction { get; set; }
+    public int IllegalProduction { get; set; }
 
     [JsonProperty ("illicitservices")]
-    public required int IllicitServices { get; set; }
+    public int IllicitServices { get; set; }
 
     [JsonProperty ("murder")]
-    public required int Murder { get; set; }
+    public int Murder { get; set; }
 
     [JsonProperty ("other")]
-    public required int Other { get; set; }
+    public int Other { get; set; }
 
     [JsonProperty ("selling_illegal_products")]
-    public required int SellingIllegalProducts { get; set; }
+    public int SellingIllegalProducts { get; set; }
 
     [JsonProperty ("theft")]
-    public required int Theft { get; set; }
+    public int Theft { get; set; }
 
     [JsonProperty ("total")]
-    public required int Total { get; set; }
+    public int Total { get; set; }
 
     [JsonProperty ("vandalism")]
-    public required int Vandalism { get; set; }
+    public int Vandalism { get; set; }
 }

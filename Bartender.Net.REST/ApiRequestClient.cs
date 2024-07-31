@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Headers;
-using TornApi.Net.Models.Common;
-using TornApi.Net.Models.Key;
 
 namespace TornApi.Net.REST {
     /// <summary>

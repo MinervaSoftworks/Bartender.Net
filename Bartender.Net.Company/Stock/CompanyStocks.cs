@@ -3,5 +3,5 @@
 namespace Bartender.Net.Company.Stock;
 
 public class CompanyStocks : ICompanyStocks {
-    public required IDictionary<string, ICompanyStock> Stocks { get; set; }
+    public IDictionary<string, ICompanyStock> Stocks { get; set; }
 }

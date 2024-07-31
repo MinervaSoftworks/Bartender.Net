@@ -4,6 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Revives;
 
 public class ReviveCollection : IReviveCollection {
-    [JsonProperty("revives")]
-    public required IDictionary<string, IRevive> Revives { get; set; }
+    [JsonProperty ("revives")]
+    public IDictionary<string, IRevive> Revives { get; set; }
 }

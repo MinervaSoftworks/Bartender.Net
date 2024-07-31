@@ -7,24 +7,24 @@ public class Application : IApplication {
     [JsonIgnore]
     public int ID { get; set; }
 
-    [JsonProperty("expires")]
-    public required int Expires { get; set; }
+    [JsonProperty ("expires")]
+    public int Expires { get; set; }
 
-    [JsonProperty("level")]
-    public required int Level { get; set; }
+    [JsonProperty ("level")]
+    public int Level { get; set; }
 
-    [JsonProperty("message")]
-    public required string Message { get; set; }
+    [JsonProperty ("message")]
+    public string Message { get; set; }
 
-    [JsonProperty("name")]
-    public required string Name { get; set; }
+    [JsonProperty ("name")]
+    public string Name { get; set; }
 
-    [JsonProperty("stats")]
-    public required ApplicationStats Stats { get; set; }
+    [JsonProperty ("stats")]
+    public ApplicationStats Stats { get; set; }
 
-    [JsonProperty("status")]
-    public required string Status { get; set; }
+    [JsonProperty ("status")]
+    public string Status { get; set; }
 
-    [JsonProperty("userID")]
-    public required int UserID { get; set; }
+    [JsonProperty ("userID")]
+    public int UserID { get; set; }
 }

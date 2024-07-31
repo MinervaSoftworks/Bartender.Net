@@ -5,5 +5,5 @@ namespace Bartender.Net.User.JobPoints;
 
 public class CompanyPointsCollection : ICompanyPointsCollection {
     [JsonProperty ("companies")]
-    public required IDictionary<string, CompanyPoints> CompanyPoints { get; set; }
+    public IDictionary<string, CompanyPoints> CompanyPoints { get; set; }
 }

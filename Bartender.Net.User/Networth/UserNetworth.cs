@@ -3,5 +3,5 @@
 namespace Bartender.Net.User.Networth;
 
 public class UserNetworth : IUserNetworth {
-    public required INetworthRecord networthRecord { get; set; }
+    public INetworthRecord networthRecord { get; set; }
 }

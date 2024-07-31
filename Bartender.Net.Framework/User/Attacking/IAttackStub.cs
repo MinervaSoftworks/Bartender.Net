@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.Framework.User.Attacking; 
+﻿namespace Bartender.Net.Framework.User.Attacking;
 
 public interface IAttackStub : IBartenderEntity {
     int AttackerFaction { get; }

@@ -8,20 +8,20 @@ public class Bar : IBar {
     public int ID { get; set; }
 
     [JsonProperty ("current")]
-    public required int Current { get; set; }
+    public int Current { get; set; }
 
     [JsonProperty ("fulltime")]
-    public required int Fulltime { get; set; }
+    public int Fulltime { get; set; }
 
     [JsonProperty ("increment")]
-    public required int Increment { get; set; }
+    public int Increment { get; set; }
 
     [JsonProperty ("interval")]
-    public required int Interval { get; set; }
+    public int Interval { get; set; }
 
     [JsonProperty ("maximum")]
-    public required int Maximum { get; set; }
+    public int Maximum { get; set; }
 
     [JsonProperty ("ticktime")]
-    public required int Ticktime { get; set; }
+    public int Ticktime { get; set; }
 }

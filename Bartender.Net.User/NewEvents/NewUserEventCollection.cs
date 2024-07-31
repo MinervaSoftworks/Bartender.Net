@@ -5,8 +5,8 @@ namespace Bartender.Net.User.NewEvents;
 
 public class NewUserEventCollection : INewUserEventCollection {
     [JsonProperty ("events")]
-    public required IDictionary<string, INewUserEvent> Events { get; set; }
+    public IDictionary<string, INewUserEvent> Events { get; set; }
 
     [JsonProperty ("player_id")]
-    public required int PlayerID { get; set; }
+    public int PlayerID { get; set; }
 }

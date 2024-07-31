@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.Sections;
+﻿using Bartender.Net.Framework.Faction.Basic;
+using Bartender.Net.Framework.Sections;
 using Bartender.Net.Framework.User.Ammunition;
 using Bartender.Net.Framework.User.Profile;
 using Bartender.Net.Framework.User.Reports;
@@ -119,5 +120,15 @@ public static class Extensions {
         "success" => ReviveResult.Success,
         "failure" => ReviveResult.Failure,
         _ => throw new Exception ("Invalid Revive result")
+    };
+
+    public static Rank ToRank (this string rank) => rank switch {
+        "Bronze" => Rank.Bronze,
+        "Diamond" => Rank.Diamond,
+        "Gold" => Rank.Gold,
+        "Platinum" => Rank.Platinum,
+        "Silver" => Rank.Silver,
+        "Unranked" => Rank.Unranked,
+        _ => throw new Exception ("Unknown rank")
     };
 }

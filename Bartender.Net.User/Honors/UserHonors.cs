@@ -8,9 +8,9 @@ public class UserHonors : IUserHonors {
     public int ID { get; set; }
 
     [JsonProperty ("honors_awarded")]
-    public required List<int> HonorsAwarded { get; set; }
+    public List<int> HonorsAwarded { get; set; }
 
     [JsonProperty ("honors_time")]
-    public required List<int> HonorsTime { get; set; }
+    public List<int> HonorsTime { get; set; }
 }
 

@@ -5,41 +5,41 @@ namespace Bartender.Net.User.Property;
 
 public class UserProperty : IUserProperty {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("owner_id")]
-    public required int OwnerId { get; set; }
+    public int OwnerId { get; set; }
 
     [JsonProperty ("property_type")]
-    public required int PropertyType { get; set; }
+    public int PropertyType { get; set; }
 
     [JsonProperty ("property")]
-    public required string PropertyName { get; set; }
+    public string PropertyName { get; set; }
 
     [JsonProperty ("status")]
-    public required string Status { get; set; }
+    public string Status { get; set; }
 
     [JsonProperty ("happy")]
-    public required int Happy { get; set; }
+    public int Happy { get; set; }
 
     [JsonProperty ("upkeep")]
-    public required int Upkeep { get; set; }
+    public int Upkeep { get; set; }
 
     [JsonProperty ("staff_cost")]
-    public required int StaffCost { get; set; }
+    public int StaffCost { get; set; }
 
     [JsonProperty ("cost")]
-    public required int Cost { get; set; }
+    public int Cost { get; set; }
 
     [JsonProperty ("marketprice")]
-    public required int MarketPrice { get; set; }
+    public int MarketPrice { get; set; }
 
     [JsonProperty ("modifications")]
-    public required IPropertyModifications Modifications { get; set; }
+    public IPropertyModifications Modifications { get; set; }
 
     [JsonProperty ("staff")]
-    public required IPropertyStaff Staff { get; set; }
+    public IPropertyStaff Staff { get; set; }
 
     [JsonProperty ("rented")]
-    public required IRentEntry Rented { get; set; }
+    public IRentEntry Rented { get; set; }
 }

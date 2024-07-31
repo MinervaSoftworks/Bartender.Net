@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Attacking;
 
 public class AttackStubCollection : IAttackStubCollection {
     [JsonProperty ("attacks")]
-    public required IDictionary<string, IAttackStub> Attacks { get; set; }
+    public IDictionary<string, IAttackStub> Attacks { get; set; }
 }

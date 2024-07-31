@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Social;
 
 public class UserDiscord : IUserDiscord {
     [JsonProperty ("discord")]
-    public required IDiscordRecord Discord { get; set; }
+    public IDiscordRecord Discord { get; set; }
 }

@@ -5,20 +5,20 @@ namespace Bartender.Net.User.Bars;
 
 public class BarsCollection : IBarsCollection {
     [JsonProperty ("server_time")]
-    public required int ServerTime { get; set; }
+    public int ServerTime { get; set; }
 
     [JsonProperty ("happy")]
-    public required IBar Happy { get; set; }
+    public IBar Happy { get; set; }
 
     [JsonProperty ("life")]
-    public required IBar Life { get; set; }
+    public IBar Life { get; set; }
 
     [JsonProperty ("energy")]
-    public required IBar Energy { get; set; }
+    public IBar Energy { get; set; }
 
     [JsonProperty ("nerve")]
-    public required IBar Nerve { get; set; }
+    public IBar Nerve { get; set; }
 
     [JsonProperty ("chain")]
-    public required IBar Chain { get; set; }
+    public IBar Chain { get; set; }
 }

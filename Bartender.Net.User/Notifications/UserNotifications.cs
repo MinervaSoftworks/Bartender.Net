@@ -8,14 +8,14 @@ public class UserNotifications : IUserNotifications {
     public int ID { get; set; }
 
     [JsonProperty ("messages")]
-    public required int Messages { get; set; }
+    public int Messages { get; set; }
 
     [JsonProperty ("events")]
-    public required int Events { get; set; }
+    public int Events { get; set; }
 
     [JsonProperty ("awards")]
-    public required int Awards { get; set; }
+    public int Awards { get; set; }
 
     [JsonProperty ("competition")]
-    public required int Competition { get; set; }
+    public int Competition { get; set; }
 }

@@ -8,8 +8,8 @@ public class CompanyNewsEntry : ICompanyNewsEntry {
     public int ID { get; set; }
 
     [JsonProperty ("news")]
-    public required string News { get; set; }
+    public string News { get; set; }
 
     [JsonProperty ("timestamp")]
-    public required int Timestamp { get; set; }
+    public int Timestamp { get; set; }
 }

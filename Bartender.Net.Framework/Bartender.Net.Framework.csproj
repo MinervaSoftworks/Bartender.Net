@@ -10,4 +10,27 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Faction\ArmoryNews\" />
+    <Folder Include="Faction\Armor\" />
+    <Folder Include="Faction\AttackNews\" />
+    <Folder Include="Faction\Boosters\" />
+    <Folder Include="Faction\CrimeNews\" />
+    <Folder Include="Faction\Drugs\" />
+    <Folder Include="Faction\FundsNews\" />
+    <Folder Include="Faction\MainNews\" />
+    <Folder Include="Faction\Medical\" />
+    <Folder Include="Faction\MembershipNews\" />
+    <Folder Include="Faction\RankedWars\" />
+    <Folder Include="Faction\Reports\" />
+    <Folder Include="Faction\RevivesFull\" />
+    <Folder Include="Faction\Revives\" />
+    <Folder Include="Faction\Stats\" />
+    <Folder Include="Faction\Temporary\" />
+    <Folder Include="Faction\TerritoryNews\" />
+    <Folder Include="Faction\Territory\" />
+    <Folder Include="Faction\Upgrades\" />
+    <Folder Include="Faction\Weapons\" />
+  </ItemGroup>
+
 </Project>

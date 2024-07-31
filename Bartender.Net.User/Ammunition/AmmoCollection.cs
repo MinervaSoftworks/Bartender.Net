@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Ammunition;
 
 public class AmmoCollection : IAmmoCollection {
     [JsonProperty ("ammo")]
-    public required IEnumerable<IAmmo> Ammo { get; set; }
+    public IEnumerable<IAmmo> Ammo { get; set; }
 }

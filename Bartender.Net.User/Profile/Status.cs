@@ -7,33 +7,33 @@ namespace Bartender.Net.User.Profile;
 
 public class Status : IStatus {
     [JsonIgnore]
-    public required int ID { get; set; }
+    public int ID { get; set; }
 
-    [JsonProperty("color")]
-    public required string Color { get; set; }
+    [JsonProperty ("color")]
+    public string Color { get; set; }
 
     [JsonIgnore]
-    public StatusColor StatusColor { 
+    public StatusColor StatusColor {
         get => Color.ToStatusColor ();
         set => Color = value.ToStatusColorString ();
     }
 
     [JsonProperty ("description")]
-    public required string Description { get; set; }
+    public string Description { get; set; }
 
     [JsonProperty ("details")]
-    public required string Details { get; set; }
+    public string Details { get; set; }
 
-    [JsonProperty("state")]
-    public required string State { get; set; }
+    [JsonProperty ("state")]
+    public string State { get; set; }
 
     [JsonIgnore]
-    public required StatusState StatusState { 
-        get => State.ToStatusState();
+    public StatusState StatusState {
+        get => State.ToStatusState ();
         set => State = value.ToStatusStateString ();
     }
 
     [JsonProperty ("until")]
-    public required long Until { get; set; }
+    public long Until { get; set; }
 }
 

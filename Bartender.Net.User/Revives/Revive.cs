@@ -11,10 +11,10 @@ public class Revive : IRevive {
     public int ID { get; set; }
 
     [JsonProperty ("timestamp")]
-    public required int Timestamp { get; set; }
+    public int Timestamp { get; set; }
 
     [JsonProperty ("result")]
-    public required string Result { get; set; }
+    public string Result { get; set; }
 
     [JsonIgnore]
     public ReviveResult ReviveResult {
@@ -23,38 +23,38 @@ public class Revive : IRevive {
     }
 
     [JsonProperty ("chance")]
-    public required double Chance { get; set; }
+    public double Chance { get; set; }
 
     [JsonProperty ("reviver_id")]
-    public required int ReviverId { get; set; }
+    public int ReviverId { get; set; }
 
     [JsonProperty ("reviver_name")]
-    public required string ReviverName { get; set; }
+    public string ReviverName { get; set; }
 
     [JsonProperty ("reviver_faction")]
-    public required int ReviverFaction { get; set; }
+    public int ReviverFaction { get; set; }
 
     [JsonProperty ("reviver_factionname")]
-    public required string ReviverFactionname { get; set; }
+    public string ReviverFactionname { get; set; }
 
     [JsonProperty ("target_id")]
-    public required int TargetId { get; set; }
+    public int TargetId { get; set; }
 
     [JsonProperty ("target_name")]
-    public required string TargetName { get; set; }
+    public string TargetName { get; set; }
 
     [JsonProperty ("target_faction")]
-    public required int TargetFaction { get; set; }
+    public int TargetFaction { get; set; }
 
     [JsonProperty ("target_factionname")]
-    public required string TargetFactionname { get; set; }
+    public string TargetFactionname { get; set; }
 
     [JsonProperty ("target_hospital_reason")]
-    public required string TargetHospitalReason { get; set; }
+    public string TargetHospitalReason { get; set; }
 
     [JsonProperty ("target_early_discharge")]
-    public required int TargetEarlyDischarge { get; set; }
+    public int TargetEarlyDischarge { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public required ILastAction TargetLastAction { get; set; }
+    public ILastAction TargetLastAction { get; set; }
 }

@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Stocks;
 
 public class StockCollection : IStockCollection {
     [JsonProperty ("stocks")]
-    public required IDictionary<string, IStock> Stocks { get; set; }
+    public IDictionary<string, IStock> Stocks { get; set; }
 }

@@ -1,7 +1,6 @@
 ﻿namespace Bartender.Net.Framework.User.Ammunition;
 
-public enum AmmoType
-{
+public enum AmmoType {
     HollowPoint,
     Incendiary,
     Piercing,

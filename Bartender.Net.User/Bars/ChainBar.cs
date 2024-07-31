@@ -8,17 +8,17 @@ public class ChainBar : IChainBar {
     public int ID { get; set; }
 
     [JsonProperty ("cooldown")]
-    public required int Cooldown { get; set; }
+    public int Cooldown { get; set; }
 
     [JsonProperty ("currnet")]
-    public required int Current { get; set; }
+    public int Current { get; set; }
 
     [JsonProperty ("maximum")]
-    public required int Maximum { get; set; }
+    public int Maximum { get; set; }
 
     [JsonProperty ("modifier")]
-    public required float Modifier { get; set; }
+    public float Modifier { get; set; }
 
     [JsonProperty ("timeout")]
-    public required int Timeout { get; set; }
+    public int Timeout { get; set; }
 }

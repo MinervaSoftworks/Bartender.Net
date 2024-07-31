@@ -6,27 +6,27 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Reports;
 
 public class Report : IReport {
-    [JsonProperty("id")]
-    public required int ID { get; set; }
+    [JsonProperty ("id")]
+    public int ID { get; set; }
 
-    [JsonProperty("report")]
-    public required IReportData Data { get; set; }
+    [JsonProperty ("report")]
+    public IReportData Data { get; set; }
 
-    [JsonProperty("target")]
-    public required int Target { get; set; }
+    [JsonProperty ("target")]
+    public int Target { get; set; }
 
-    [JsonProperty("timestamp")]
-    public required int Timestamp { get; set; }
+    [JsonProperty ("timestamp")]
+    public int Timestamp { get; set; }
 
-    [JsonProperty("type")]
-    public required string Type { get; set; }
+    [JsonProperty ("type")]
+    public string Type { get; set; }
 
     [JsonIgnore]
-    public required ReportType ReportType {
+    public ReportType ReportType {
         get => Type.ToReportType ();
         set => Type = value.ToReportTypeString ();
     }
 
-    [JsonProperty("user_id")]
-    public required int UserID { get; set; }
+    [JsonProperty ("user_id")]
+    public int UserID { get; set; }
 }

@@ -5,5 +5,5 @@ namespace Bartender.Net.User.Messages;
 
 public class UserMessageCollection : IUserMessageCollection {
     [JsonProperty ("messages")]
-    public required IDictionary<string, IUserMessage> Messages { get; set; }
+    public IDictionary<string, IUserMessage> Messages { get; set; }
 }

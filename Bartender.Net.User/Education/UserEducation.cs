@@ -8,11 +8,11 @@ public class UserEducation : IUserEducation {
     public int ID { get; set; }
 
     [JsonProperty ("education_current")]
-    public required int EducationCurrent { get; set; }
+    public int EducationCurrent { get; set; }
 
     [JsonProperty ("education_timeleft")]
-    public required int EducationTimeleft { get; set; }
+    public int EducationTimeleft { get; set; }
 
     [JsonProperty ("education_completed")]
-    public required List<int> EducationCompleted { get; set; }
+    public List<int> EducationCompleted { get; set; }
 }

@@ -9,14 +9,14 @@ public class CompanyEmployee : ICompanyEmployee {
     public int ID { get; set; }
 
     [JsonProperty ("name")]
-    public required string Name { get; set; }
+    public string Name { get; set; }
 
     [JsonProperty ("position")]
-    public required string Position { get; set; }
+    public string Position { get; set; }
 
     [JsonProperty ("days_in_company")]
-    public required int DaysInCompany { get; set; }
+    public int DaysInCompany { get; set; }
 
     [JsonProperty ("last_action")]
-    public required ILastAction LastAction { get; set; }
+    public ILastAction LastAction { get; set; }
 }
