@@ -1,7 +1,6 @@
 ﻿namespace Bartender.Net.Framework.Faction.Contributors;
 
-public interface IFactionStatContributors
-{
+public interface IFactionStatContributors {
     IEnumerable<IFactionStatContributor> AlcoholUsed { get; set; }
     IEnumerable<IFactionStatContributor> AttacksChain { get; set; }
     IEnumerable<IFactionStatContributor> AttacksDamage { get; set; }

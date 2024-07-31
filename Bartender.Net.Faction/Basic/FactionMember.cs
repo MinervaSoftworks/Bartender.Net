@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.Faction.Basic;
+﻿using Bartender.Net.Framework.Common.User;
+using Bartender.Net.Framework.Faction.Basic;
 using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 

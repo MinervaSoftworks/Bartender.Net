@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Framework.User.Reports;
+﻿using Bartender.Net.Framework.Common.Reports;
 
 namespace Bartender.Net.Extensions.User;
 

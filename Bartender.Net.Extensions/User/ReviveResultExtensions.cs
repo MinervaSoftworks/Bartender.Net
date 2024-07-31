@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Framework.User.Revives;
+﻿using Bartender.Net.Framework.Common.Revives;
 
 namespace Bartender.Net.Extensions.User;
 

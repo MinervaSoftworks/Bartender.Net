@@ -1,6 +1,4 @@
-﻿using Bartender.Net.Framework.User.Profile;
-
-namespace Bartender.Net.Framework.Faction.Basic;
+﻿namespace Bartender.Net.Framework.Faction.Basic;
 
 public interface IFactionBasic : IBartenderEntity {
     int Age { get; set; }
@@ -8,7 +6,7 @@ public interface IFactionBasic : IBartenderEntity {
     int Capacity { get; set; }
     int ColeaderID { get; set; }
     int Leader { get; set; }
-    IDictionary<string, IStatus> Members { get; set; }
+    IDictionary<string, IFactionMember> Members { get; set; }
     string Name { get; set; }
     IDictionary<string, long> PeaceTreaties { get; set; }
     IEnumerable<IRaid> RaidWars { get; set; }

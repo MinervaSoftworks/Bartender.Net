@@ -1,5 +1,5 @@
-﻿using Bartender.Net.Framework.Company.Profile;
-using Bartender.Net.Framework.User.Profile;
+﻿using Bartender.Net.Framework.Common.User;
+using Bartender.Net.Framework.Company.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Profile;

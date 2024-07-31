@@ -13,15 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Extensions", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Key", "Bartender.Net.Key\Bartender.Net.Key.csproj", "{CD4EDAAF-C46F-4F7E-82E5-8FD15D953779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Market", "Bartender.Net.Market\Bartender.Net.Market.csproj", "{2B698A16-380D-4083-994F-9F879E43C7C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Market", "Bartender.Net.Market\Bartender.Net.Market.csproj", "{2B698A16-380D-4083-994F-9F879E43C7C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Torn", "Bartender.Net.Torn\Bartender.Net.Torn.csproj", "{5DAC1454-8B53-494D-8F3B-1322FD20654D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Torn", "Bartender.Net.Torn\Bartender.Net.Torn.csproj", "{5DAC1454-8B53-494D-8F3B-1322FD20654D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Faction", "Bartender.Net.Faction\Bartender.Net.Faction.csproj", "{9D0E6FA7-0B68-4F4B-81B6-EB9736CFEEEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Faction", "Bartender.Net.Faction\Bartender.Net.Faction.csproj", "{9D0E6FA7-0B68-4F4B-81B6-EB9736CFEEEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Property", "Bartender.Net.Property\Bartender.Net.Property.csproj", "{290ED21F-3578-414D-A09E-24CB72F78FDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Property", "Bartender.Net.Property\Bartender.Net.Property.csproj", "{290ED21F-3578-414D-A09E-24CB72F78FDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Company", "Bartender.Net.Company\Bartender.Net.Company.csproj", "{2A57F712-9802-4373-AC07-E37ABD8C0683}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.Company", "Bartender.Net.Company\Bartender.Net.Company.csproj", "{2A57F712-9802-4373-AC07-E37ABD8C0683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bartender.Net.Common", "Bartender.Net.Common\Bartender.Net.Common.csproj", "{17DB0AEA-AAE7-4E48-A0AA-FD0BEB0B40F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{2A57F712-9802-4373-AC07-E37ABD8C0683}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A57F712-9802-4373-AC07-E37ABD8C0683}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A57F712-9802-4373-AC07-E37ABD8C0683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17DB0AEA-AAE7-4E48-A0AA-FD0BEB0B40F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17DB0AEA-AAE7-4E48-A0AA-FD0BEB0B40F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17DB0AEA-AAE7-4E48-A0AA-FD0BEB0B40F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17DB0AEA-AAE7-4E48-A0AA-FD0BEB0B40F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

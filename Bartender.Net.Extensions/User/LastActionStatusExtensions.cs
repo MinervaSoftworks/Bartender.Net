@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Framework.User.Profile;
+﻿using Bartender.Net.Framework.Common.User;
 
 namespace Bartender.Net.Extensions.User;
 

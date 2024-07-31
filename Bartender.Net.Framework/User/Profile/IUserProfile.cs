@@ -16,7 +16,7 @@ public interface IUserProfile : IBartenderEntity {
     int Honor { get; }
     IJob Job { get; }
     int Karma { get; }
-    ILastAction LastAction { get; }
+    IRelativeLastAction LastAction { get; }
     int Level { get; }
     IBar Life { get; }
     IMarriage Marriage { get; }

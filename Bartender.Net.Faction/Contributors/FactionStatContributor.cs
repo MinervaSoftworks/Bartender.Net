@@ -1,5 +1,4 @@
-﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.Faction.Contributors;
+﻿using Bartender.Net.Framework.Faction.Contributors;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Contributors;

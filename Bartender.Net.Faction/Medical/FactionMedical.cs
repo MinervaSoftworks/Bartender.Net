@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Framework.Common.Armory;
+﻿using Bartender.Net.Framework.Faction.Common;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Boosters;

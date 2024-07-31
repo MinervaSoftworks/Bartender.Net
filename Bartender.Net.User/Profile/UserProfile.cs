@@ -59,7 +59,7 @@ public class UserProfile : IUserProfile {
     public int Karma { get; set; }
 
     [JsonProperty ("last_action")]
-    public ILastAction LastAction { get; set; }
+    public IRelativeLastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
     public int Level { get; set; }

@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.User.Profile;
+﻿using Bartender.Net.Framework.Common.User;
+using Bartender.Net.Framework.User.Profile;
 
 namespace Bartender.Net.Framework.Faction.Basic;
 

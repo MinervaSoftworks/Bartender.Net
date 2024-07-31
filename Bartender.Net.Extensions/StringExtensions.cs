@@ -1,9 +1,10 @@
-﻿using Bartender.Net.Framework.Faction.Basic;
+﻿using Bartender.Net.Framework.Common.Reports;
+using Bartender.Net.Framework.Common.Revives;
+using Bartender.Net.Framework.Common.User;
+using Bartender.Net.Framework.Faction.Basic;
 using Bartender.Net.Framework.Sections;
 using Bartender.Net.Framework.User.Ammunition;
 using Bartender.Net.Framework.User.Profile;
-using Bartender.Net.Framework.User.Reports;
-using Bartender.Net.Framework.User.Revives;
 
 namespace Bartender.Net.Extensions;
 
