@@ -8,5 +8,5 @@ public class JobPoints : IJobPoints {
     public int ID { get; set; }
 
     [JsonProperty ("jobpoints")]
-    public JobPointsCollection Points { get; set; }
+    public IJobPointsCollection Points { get; set; }
 }

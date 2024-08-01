@@ -1,6 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.Selection;
+using Bartender.Net.Key;
+using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Headers;
+using TornApi.Net.Models.Common;
 
 namespace TornApi.Net.REST {
     /// <summary>
@@ -8,11 +11,6 @@ namespace TornApi.Net.REST {
     /// </summary>
     public class ApiRequestClient : IApiRequestClient {
         private HttpClient _client;
-
-        private DateTime _lastUpdateFetch = DateTime.UtcNow;
-        private int _fetchDelayMiliseconds = 600;
-
-        private SemaphoreSlim _clockSemaphore = new SemaphoreSlim (1, 1);
 
         public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
             _client = clientFactory.CreateClient ();
@@ -32,14 +30,6 @@ namespace TornApi.Net.REST {
             if (!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
                 return result;
             }
-            _clockSemaphore.Wait ();
-            int milisecondsSinceLastFetch = (int) (DateTime.UtcNow - _lastUpdateFetch).TotalMilliseconds;
-
-            if (milisecondsSinceLastFetch < _fetchDelayMiliseconds) {
-                await Task.Delay (_fetchDelayMiliseconds - milisecondsSinceLastFetch);
-                _lastUpdateFetch = DateTime.UtcNow;
-            }
-            _clockSemaphore.Release ();
 
             var response = await _client.GetAsync (config.ToString ());
 
@@ -54,6 +44,7 @@ namespace TornApi.Net.REST {
             if (json == string.Empty) {
                 return result;
             }
+
             try {
                 var parsed = JsonConvert.DeserializeObject<T> (json);
 
@@ -72,10 +63,8 @@ namespace TornApi.Net.REST {
                 Key = key,
                 Section = "key",
                 Selections = ["info"],
-                Comment = "TornApi.Net Key Validation"
+                Comment = "Bartender.Net Key Validation"
             };
-
-            var status = new KeyValidationStatus ();
 
             var response = await _client.GetAsync (config.ToString ());
 
@@ -107,7 +96,7 @@ namespace TornApi.Net.REST {
                 return new KeyValidationStatus ();
             }
 
-            if (parsed.AccessType < requiredLevel) {
+            if (parsed.AccessLevel < requiredLevel) {
                 return new KeyValidationStatus {
                     IsValid = true,
                     ErrorCode = 16,

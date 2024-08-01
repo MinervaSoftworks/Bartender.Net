@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Faction.Territory;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Faction.Territory;
 

@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.User.Property;
+﻿using Bartender.Net.Framework.Common.Property;
+using Bartender.Net.Framework.User.Property;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Property;

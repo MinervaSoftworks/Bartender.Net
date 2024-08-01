@@ -3,7 +3,7 @@
 public interface IChainReport : IBartenderEntity {
     int Assists { get; set; }
     int Besthit { get; set; }
-    List<BonusHit> Bonuses { get; set; }
+    List<IBonusHit> Bonuses { get; set; }
     int Chain { get; set; }
     int Draws { get; set; }
     int End { get; set; }

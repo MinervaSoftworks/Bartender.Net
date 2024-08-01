@@ -5,5 +5,5 @@ namespace Bartender.Net.Company.Companies;
 
 public class CompanyEntries : ICompanyEntries {
     [JsonProperty ("cards")]
-    public IDictionary<string, CompanyEntry> Companies { get; set; }
+    public IDictionary<string, ICompanyEntry> Companies { get; set; }
 }

@@ -2,5 +2,5 @@
 
 public interface IJobPointsCollection {
     IUserJobPoints JobPoints { get; }
-    IDictionary<string, ICompanyPoints> MyProperty { get; }
+    IDictionary<string, ICompanyPoints> Companies { get; }
 }

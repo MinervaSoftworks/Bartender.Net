@@ -1,4 +1,5 @@
 using Bartender.Net.Framework.User.Bazaar;
+using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bazaar;
@@ -8,7 +9,7 @@ public class BazaarListing : IBazaarListing {
     public int ID { get; set; }
 
     [JsonIgnore]
-    public UserProfile Owner { get; set; }
+    public IUserProfile Owner { get; set; }
 
     [JsonProperty ("name")]
     public string Name { get; set; }

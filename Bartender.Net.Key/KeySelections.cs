@@ -27,4 +27,12 @@ public class KeySelections : IKeySelections {
 
     [JsonProperty ("User")]
     public IEnumerable<string> User { get; set; }
+
+    public bool HasSelectionAccess (string selection) => Company.Contains (selection)
+                                                         || Faction.Contains (selection)
+                                                         || Key.Contains (selection)
+                                                         || Market.Contains (selection)
+                                                         || Property.Contains (selection)
+                                                         || Torn.Contains (selection)
+                                                         || User.Contains (selection);
 }

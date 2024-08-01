@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.Company.Detailed;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Detailed;
 

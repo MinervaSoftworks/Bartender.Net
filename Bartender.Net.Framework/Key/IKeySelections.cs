@@ -8,4 +8,6 @@ public interface IKeySelections {
     IEnumerable<string> Property { get; }
     IEnumerable<string> Torn { get; }
     IEnumerable<string> User { get; }
+
+    bool HasSelectionAccess (string selection);
 }

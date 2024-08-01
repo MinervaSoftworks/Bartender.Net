@@ -20,7 +20,7 @@ public class Application : IApplication {
     public string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public ApplicationStats Stats { get; set; }
+    public IApplicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
     public string Status { get; set; }

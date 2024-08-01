@@ -4,6 +4,9 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.JobPoints;
 
 public class CompanyPointsCollection : ICompanyPointsCollection {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("companies")]
-    public IDictionary<string, CompanyPoints> CompanyPoints { get; set; }
+    public IDictionary<string, ICompanyPoints> CompanyPoints { get; set; }
 }

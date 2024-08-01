@@ -62,5 +62,5 @@ public class ChainReport : IChainReport {
     public IDictionary<string, IChainParticipant> Participants { get; set; }
 
     [JsonProperty ("bonuses")]
-    public List<BonusHit> Bonuses { get; set; }
+    public List<IBonusHit> Bonuses { get; set; }
 }

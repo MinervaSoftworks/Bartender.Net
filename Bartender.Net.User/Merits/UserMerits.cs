@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework.User.Merits;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Merits;
 

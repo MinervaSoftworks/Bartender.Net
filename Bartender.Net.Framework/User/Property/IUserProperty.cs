@@ -1,4 +1,6 @@
-﻿namespace Bartender.Net.Framework.User.Property;
+﻿using Bartender.Net.Framework.Common.Property;
+
+namespace Bartender.Net.Framework.User.Property;
 
 public interface IUserProperty : IBartenderEntity {
     int Cost { get; }

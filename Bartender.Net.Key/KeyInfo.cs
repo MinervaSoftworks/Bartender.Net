@@ -1,8 +1,8 @@
 ﻿using Bartender.Net.Framework.Key;
-using Bartender.Net.Framework.Sections;
+using Bartender.Net.Framework.Selection;
 using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Key;
+namespace Bartender.Net.Key;
 
 public class KeyInfo : IKeyInfo {
     [JsonProperty ("access_level")]

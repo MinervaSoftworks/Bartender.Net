@@ -1,4 +1,5 @@
 ﻿using Bartender.Net.Framework.Common.Revives;
+using Bartender.Net.Framework.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Revives;
