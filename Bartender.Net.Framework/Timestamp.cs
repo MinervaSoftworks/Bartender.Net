@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Common;
+namespace Bartender.Net.Framework;
 
 public class Timestamp {
     [JsonProperty ("timestamp")]

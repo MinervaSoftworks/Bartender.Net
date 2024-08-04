@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Common;
+namespace Bartender.Net.Framework;
 
 public class ConcreteConverter<T> : JsonConverter {
     public override bool CanConvert (Type objectType) => objectType == typeof (T);

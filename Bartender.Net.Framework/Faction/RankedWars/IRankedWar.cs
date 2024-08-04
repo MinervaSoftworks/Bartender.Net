@@ -3,8 +3,8 @@
 namespace Bartender.Net.Faction.RankedWars;
 
 public interface IRankedWar : IBartenderEntity {
-    int End { get; set; }
-    int Start { get; set; }
-    int Target { get; set; }
-    int Winner { get; set; }
+    int End { get; }
+    int Start { get; }
+    int Target { get; }
+    int Winner { get; }
 }

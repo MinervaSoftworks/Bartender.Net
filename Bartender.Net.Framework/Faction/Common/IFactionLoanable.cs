@@ -1,11 +1,11 @@
 ﻿namespace Bartender.Net.Framework.Faction.Common;
 
 public interface IFactionLoanable : IBartenderEntity {
-    int Available { get; set; }
-    int Loaned { get; set; }
-    string LoanedTo { get; set; }
-    IEnumerable<int> LoanedToIDs { get; set; }
-    string Name { get; set; }
-    int Quantity { get; set; }
-    string Type { get; set; }
+    int Available { get; }
+    int Loaned { get; }
+    string LoanedTo { get; }
+    IEnumerable<int> LoanedToIDs { get; }
+    string Name { get; }
+    int Quantity { get; }
+    string Type { get; }
 }

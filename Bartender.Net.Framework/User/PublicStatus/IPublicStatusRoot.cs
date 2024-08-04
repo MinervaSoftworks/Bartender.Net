@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Framework.User.PublicStatus;
 
-public interface IUserPublicStatus : IBartenderEntity {
+public interface IPublicStatusRoot : IBartenderEntity {
     bool Banned { get; }
     string PlayerName { get; }
     TornRole TornRole { get; }

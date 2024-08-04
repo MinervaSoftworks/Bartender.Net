@@ -1,48 +1,50 @@
-﻿namespace TornApi.Net.REST {
-    public struct RequestConfiguration : IRequestConfiguration {
-        public string Key { get; set; }
+﻿using TornApi.Net.REST;
 
-        public int ID { get; set; }
+namespace Bartender.Net.REST;
 
-        public string? Comment { get; set; }
+public class RequestConfiguration : IRequestConfiguration {
+    public string Key { get; set; }
 
-        public string Section { get; set; }
+    public int ID { get; set; }
 
-        public IEnumerable<string> Selections { get; set; }
+    public string? Comment { get; set; }
 
-        public DateTime? From { get; set; }
+    public string Section { get; set; }
 
-        public DateTime? To { get; set; }
+    public IEnumerable<string> Selections { get; set; }
 
-        public int? Limit { get; set; }
+    public DateTime? From { get; set; }
 
-        public string? Sort { get; set; }
+    public DateTime? To { get; set; }
 
-        public override string ToString () {
-            var idPart = ID > 0 ? $"{ID}" : "";
+    public int? Limit { get; set; }
 
-            var keyPart = $"&key={Key}";
+    public string? Sort { get; set; }
 
-            var selectionPart = $"?selections={string.Join (',', Selections)}";
+    public override string ToString () {
+        var idPart = ID > 0 ? $"{ID}" : "";
 
-            var commentPart = Comment is not null && Comment.Length > 0 ? $"&comment={Comment}" : "";
+        var keyPart = $"&key={Key}";
 
-            var fromPart = From is not null ? $"&from={GetUnixTimestamp (From.Value)}" : "";
+        var selectionPart = $"?selections={string.Join (',', Selections)}";
 
-            var toPart = To is not null ? $"&to={GetUnixTimestamp (To.Value)}" : "";
+        var commentPart = Comment is not null && Comment.Length > 0 ? $"&comment={Comment}" : "";
 
-            var limitPart = Limit > 0 ? $"&limit={Limit}" : "";
+        var fromPart = From is not null ? $"&from={GetUnixTimestamp (From.Value)}" : "";
 
-            var sortPart = Sort is not null && Sort.Length > 0 ? $"&sort={Sort}" : "";
+        var toPart = To is not null ? $"&to={GetUnixTimestamp (To.Value)}" : "";
 
-            return $"/{Section}/{idPart}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
-        }
+        var limitPart = Limit > 0 ? $"&limit={Limit}" : "";
 
-        private static long GetUnixTimestamp (DateTime dateTime) {
-            DateTime unixEpoch = new DateTime (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            TimeSpan timeDifference = dateTime.ToUniversalTime () - unixEpoch;
+        var sortPart = Sort is not null && Sort.Length > 0 ? $"&sort={Sort}" : "";
 
-            return (long) timeDifference.TotalSeconds;
-        }
+        return $"/{Section}/{idPart}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
+    }
+
+    private static long GetUnixTimestamp (DateTime dateTime) {
+        DateTime unixEpoch = new DateTime (1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        TimeSpan timeDifference = dateTime.ToUniversalTime () - unixEpoch;
+
+        return (long) timeDifference.TotalSeconds;
     }
 }

@@ -4,29 +4,29 @@ namespace Bartender.Net.Framework.Faction.Upgrades;
 
 public interface IUpgrade : IBartenderEntity {
     [JsonProperty ("ability")]
-    string Ability { get; set; }
+    string Ability { get; }
 
     [JsonProperty ("basecost")]
-    int BaseCost { get; set; }
+    int BaseCost { get; }
 
     [JsonProperty ("branch")]
-    string Branch { get; set; }
+    string Branch { get; }
 
     [JsonProperty ("branchmultiplier")]
-    int BranchMultiplier { get; set; }
+    int BranchMultiplier { get; }
 
     [JsonProperty ("branchorder")]
-    int BranchOrder { get; set; }
+    int BranchOrder { get; }
 
     [JsonProperty ("can_be_set")]
-    bool CanBeSet { get; set; }
+    bool CanBeSet { get; }
 
     [JsonProperty ("level")]
-    int Level { get; set; }
+    int Level { get; }
 
     [JsonProperty ("name")]
-    string Name { get; set; }
+    string Name { get; }
 
     [JsonProperty ("unlocked")]
-    DateTime Unlocked { get; set; }
+    DateTime Unlocked { get; }
 }

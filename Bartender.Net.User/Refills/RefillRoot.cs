@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Refills;
 
-public class UserRefills : IUserRefills {
+public class RefillRoot : IRefillRoot {
     [JsonProperty ("refills")]
-    public IRefillStates Refills { get; set; }
+    public required IRefillStates Refills { get; set; }
 }

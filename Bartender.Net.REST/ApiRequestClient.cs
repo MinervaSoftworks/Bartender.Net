@@ -1,9 +1,10 @@
-﻿using Bartender.Net.Framework.Selection;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Selection;
 using Bartender.Net.Key;
+using Bartender.Net.REST;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Headers;
-using TornApi.Net.Models.Common;
 
 namespace TornApi.Net.REST {
     /// <summary>

@@ -1,23 +1,24 @@
 ﻿using Bartender.Net.Extensions;
 using Bartender.Net.Extensions.User;
+using Bartender.Net.Framework.Selection;
 using Bartender.Net.Framework.User.Profile;
 using Bartender.Net.Framework.User.PublicStatus;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.PublicStatus;
 
-public class UserPublicStatus : IUserPublicStatus {
+public class PublicStatusRoot : IPublicStatusRoot, ISelectionRoot {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("baned")]
-    public bool Banned { get; set; }
+    public required bool Banned { get; set; }
 
     [JsonProperty ("playername")]
-    public string PlayerName { get; set; }
+    public required string PlayerName { get; set; }
 
     [JsonProperty ("status")]
-    public string Status { get; set; }
+    public required string Status { get; set; }
 
     [JsonIgnore]
     public TornRole TornRole {
@@ -26,6 +27,12 @@ public class UserPublicStatus : IUserPublicStatus {
     }
 
     [JsonProperty ("userID")]
-    public int UserID { get; set; }
+    public required int UserID { get; set; }
+
+    public AccessLevel AccessLevelRequired => AccessLevel.Public;
+
+    public string EndpointString => "publicstatus";
+
+    public string Name => "Public Status";
 }
 

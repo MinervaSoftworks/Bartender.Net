@@ -8,11 +8,11 @@ public class StockTransaction : IStockTransaction {
     public int ID { get; set; }
 
     [JsonProperty ("shares")]
-    public int Shares { get; set; }
+    public required int Shares { get; set; }
 
     [JsonProperty ("bought_price")]
-    public double BoughtPrice { get; set; }
+    public required double BoughtPrice { get; set; }
 
     [JsonProperty ("time_bought")]
-    public long TimeBought { get; set; }
+    public required long TimeBought { get; set; }
 }

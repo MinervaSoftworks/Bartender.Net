@@ -1,4 +1,5 @@
 ﻿using Bartender.Net.Framework.Selection;
+using Bartender.Net.REST;
 
 namespace TornApi.Net.REST {
     public interface IApiRequestClient {

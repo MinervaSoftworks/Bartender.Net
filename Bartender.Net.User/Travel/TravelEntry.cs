@@ -8,17 +8,17 @@ public class TravelEntry : ITravelEntry {
     public int ID { get; set; }
 
     [JsonProperty ("destination")]
-    public string Destination { get; set; }
+    public required string Destination { get; set; }
 
     [JsonProperty ("method")]
-    public string Method { get; set; }
+    public required string Method { get; set; }
 
     [JsonProperty ("timestamp")]
-    public int Timestamp { get; set; }
+    public required int Timestamp { get; set; }
 
     [JsonProperty ("departed")]
-    public int Departed { get; set; }
+    public required int Departed { get; set; }
 
     [JsonProperty ("time_left")]
-    public int TimeLeft { get; set; }
+    public required int TimeLeft { get; set; }
 }

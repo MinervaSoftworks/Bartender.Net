@@ -1,24 +1,24 @@
 ﻿namespace Bartender.Net.Framework.Faction.Attacks;
 
 public interface IFactionAttack : IBartenderEntity {
-    int AttackerFaction { get; set; }
-    string AttackerFactionName { get; set; }
-    int AttackerId { get; set; }
-    string AttackerName { get; set; }
-    int Chain { get; set; }
-    string Code { get; set; }
-    int DefenderFaction { get; set; }
-    string DefenderFactionName { get; set; }
-    int DefenderId { get; set; }
-    string DefenderName { get; set; }
-    IFactionAttackModifiers Modifiers { get; set; }
-    int Raid { get; set; }
-    int RankedWar { get; set; }
-    double Respect { get; set; }
-    double RespectGain { get; set; }
-    double RespectLoss { get; set; }
-    string Result { get; set; }
-    int Stealthed { get; set; }
-    long TimestampEnded { get; set; }
-    long TimestampStarted { get; set; }
+    int AttackerFaction { get; }
+    string AttackerFactionName { get; }
+    int AttackerId { get; }
+    string AttackerName { get; }
+    int Chain { get; }
+    string Code { get; }
+    int DefenderFaction { get; }
+    string DefenderFactionName { get; }
+    int DefenderId { get; }
+    string DefenderName { get; }
+    IFactionAttackModifiers Modifiers { get; }
+    int Raid { get; }
+    int RankedWar { get; }
+    double Respect { get; }
+    double RespectGain { get; }
+    double RespectLoss { get; }
+    string Result { get; }
+    int Stealthed { get; }
+    long TimestampEnded { get; }
+    long TimestampStarted { get; }
 }

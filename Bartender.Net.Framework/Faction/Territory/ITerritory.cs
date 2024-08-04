@@ -3,13 +3,13 @@
 namespace Bartender.Net.Faction.Territory;
 
 public interface ITerritory : IBartenderEntity {
-    string CoordinateX { get; set; }
-    string CoordinateY { get; set; }
-    int DailyRespect { get; set; }
-    int Density { get; set; }
-    int Faction { get; set; }
-    IRacket Racket { get; set; }
-    int Sector { get; set; }
-    int Size { get; set; }
-    int Slots { get; set; }
+    string CoordinateX { get; }
+    string CoordinateY { get; }
+    int DailyRespect { get; }
+    int Density { get; }
+    int Faction { get; }
+    IRacket Racket { get; }
+    int Sector { get; }
+    int Size { get; }
+    int Slots { get; }
 }

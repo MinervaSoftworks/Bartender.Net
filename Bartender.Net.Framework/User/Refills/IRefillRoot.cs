@@ -1,5 +1,5 @@
 ﻿namespace Bartender.Net.Framework.User.Refills;
 
-public interface IUserRefills {
+public interface IRefillRoot {
     IRefillStates Refills { get; }
 }

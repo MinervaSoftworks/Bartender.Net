@@ -1,28 +1,28 @@
 ﻿namespace Bartender.Net.Framework.Faction.Positions;
 
 public interface IFactionPosition : IBartenderEntity {
-    int CanAccessFactionApi { get; set; }
-    int CanAdjustMemberBalance { get; set; }
-    int CanChangeAnnouncement { get; set; }
-    int CanChangeDescription { get; set; }
-    int CanGiveItem { get; set; }
-    int CanGiveMoney { get; set; }
-    int CanGivePoints { get; set; }
-    int CanKickMembers { get; set; }
-    int CanLoanTemporaryItem { get; set; }
-    int CanLoanWeaponAndArmory { get; set; }
-    int CanManageApplications { get; set; }
-    int CanManageForum { get; set; }
-    int CanManageUpgrades { get; set; }
-    int CanManageWars { get; set; }
-    int CanPlanAndInitiateOrganisedCrime { get; set; }
-    int CanRetrieveLoanedArmory { get; set; }
-    int CanSendNewsletter { get; set; }
-    int CanUseBoosterItem { get; set; }
-    int CanUseDrugItem { get; set; }
-    int CanUseEnergyRefill { get; set; }
-    int CanUseMedicalItem { get; set; }
-    int CanUseNerveRefill { get; set; }
-    int Default { get; set; }
-    string Name { get; set; }
+    int CanAccessFactionApi { get; }
+    int CanAdjustMemberBalance { get; }
+    int CanChangeAnnouncement { get; }
+    int CanChangeDescription { get; }
+    int CanGiveItem { get; }
+    int CanGiveMoney { get; }
+    int CanGivePoints { get; }
+    int CanKickMembers { get; }
+    int CanLoanTemporaryItem { get; }
+    int CanLoanWeaponAndArmory { get; }
+    int CanManageApplications { get; }
+    int CanManageForum { get; }
+    int CanManageUpgrades { get; }
+    int CanManageWars { get; }
+    int CanPlanAndInitiateOrganisedCrime { get; }
+    int CanRetrieveLoanedArmory { get; }
+    int CanSendNewsletter { get; }
+    int CanUseBoosterItem { get; }
+    int CanUseDrugItem { get; }
+    int CanUseEnergyRefill { get; }
+    int CanUseMedicalItem { get; }
+    int CanUseNerveRefill { get; }
+    int Default { get; }
+    string Name { get; }
 }

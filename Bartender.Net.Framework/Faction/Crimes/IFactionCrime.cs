@@ -3,17 +3,17 @@
 namespace Bartender.Net.Framework.Faction.Crimes;
 
 public interface IFactionCrime : IBartenderEntity {
-    int CrimeType { get; set; }
-    bool Initiated { get; set; }
-    int InitiatedBy { get; set; }
-    int MoneyGain { get; set; }
-    string Name { get; set; }
-    IDictionary<string, IStatus> Participants { get; set; }
-    int PlannedBy { get; set; }
-    int RespectGain { get; set; }
-    bool Success { get; set; }
-    long TimeComplete { get; set; }
-    int TimeLeft { get; set; }
-    long TimeReady { get; set; }
-    long TimeStarted { get; set; }
+    int CrimeType { get; }
+    bool Initiated { get; }
+    int InitiatedBy { get; }
+    int MoneyGain { get; }
+    string Name { get; }
+    IDictionary<string, IStatus> Participants { get; }
+    int PlannedBy { get; }
+    int RespectGain { get; }
+    bool Success { get; }
+    long TimeComplete { get; }
+    int TimeLeft { get; }
+    long TimeReady { get; }
+    long TimeStarted { get; }
 }

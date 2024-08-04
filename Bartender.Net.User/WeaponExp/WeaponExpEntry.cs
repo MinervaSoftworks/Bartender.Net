@@ -3,16 +3,16 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.WeaponExp;
 
-public class WeaponExperienceEntry : IWeaponExperienceEntry {
+public class WeaponExpEntry : IWeaponExpEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("itemID")]
-    public int ItemID { get; set; }
+    public required int ItemID { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("exp")]
-    public int Exp { get; set; }
+    public required int Exp { get; set; }
 }

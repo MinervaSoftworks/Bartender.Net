@@ -1,12 +1,12 @@
 ﻿namespace Bartender.Net.Framework.Company.Stock;
 
 public interface ICompanyStock : IBartenderEntity {
-    int Cost { get; set; }
-    int InStock { get; set; }
-    int OnOrder { get; set; }
-    int Price { get; set; }
-    int RRP { get; set; }
-    int SoldAmount { get; set; }
-    int SoldWorth { get; set; }
-    string Name { get; set; }
+    int Cost { get; }
+    int InStock { get; }
+    int OnOrder { get; }
+    int Price { get; }
+    int RRP { get; }
+    int SoldAmount { get; }
+    int SoldWorth { get; }
+    string Name { get; }
 }

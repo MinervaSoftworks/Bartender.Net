@@ -1,23 +1,23 @@
 ﻿namespace Bartender.Net.Framework.Faction.ChainReport;
 
 public interface IChainReport : IBartenderEntity {
-    int Assists { get; set; }
-    int Besthit { get; set; }
-    List<IBonusHit> Bonuses { get; set; }
-    int Chain { get; set; }
-    int Draws { get; set; }
-    int End { get; set; }
-    int Escapes { get; set; }
-    int FactionID { get; set; }
-    int Hospitalize { get; set; }
-    int Leave { get; set; }
-    int Losses { get; set; }
-    int Mug { get; set; }
-    int Overseas { get; set; }
-    IDictionary<string, IChainParticipant> Participants { get; set; }
-    double Respect { get; set; }
-    int Retaliations { get; set; }
-    int Start { get; set; }
-    int Targets { get; set; }
-    int Warhits { get; set; }
+    int Assists { get; }
+    int Besthit { get; }
+    List<IBonusHit> Bonuses { get; }
+    int Chain { get; }
+    int Draws { get; }
+    int End { get; }
+    int Escapes { get; }
+    int FactionID { get; }
+    int Hospitalize { get; }
+    int Leave { get; }
+    int Losses { get; }
+    int Mug { get; }
+    int Overseas { get; }
+    IDictionary<string, IChainParticipant> Participants { get; }
+    double Respect { get; }
+    int Retaliations { get; }
+    int Start { get; }
+    int Targets { get; }
+    int Warhits { get; }
 }

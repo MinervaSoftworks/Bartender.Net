@@ -1,8 +1,8 @@
 ﻿namespace Bartender.Net.Framework.Faction.ChainReport;
 
 public interface IBonusHit : IBartenderEntity {
-    int Attacker { get; set; }
-    int Chain { get; set; }
-    int Defender { get; set; }
-    int Respect { get; set; }
+    int Attacker { get; }
+    int Chain { get; }
+    int Defender { get; }
+    int Respect { get; }
 }

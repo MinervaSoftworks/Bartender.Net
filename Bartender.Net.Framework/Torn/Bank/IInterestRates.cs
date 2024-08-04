@@ -1,9 +1,9 @@
 ﻿namespace TornApi.Net.Models.Torn;
 
 public interface IInterestRates {
-    double OneMonth { get; set; }
-    double OneWeek { get; set; }
-    double ThreeMonths { get; set; }
-    double TwoMonths { get; set; }
-    double TwoWeeks { get; set; }
+    double OneMonth { get; }
+    double OneWeek { get; }
+    double ThreeMonths { get; }
+    double TwoMonths { get; }
+    double TwoWeeks { get; }
 }

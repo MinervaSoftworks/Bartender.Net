@@ -4,14 +4,14 @@ namespace Bartender.Net.Framework.Faction.Upgrades;
 
 public interface IState {
     [JsonProperty ("peace")]
-    Dictionary<string, IUpgrade> Peace { get; set; }
+    Dictionary<string, IUpgrade> Peace { get; }
 
     [JsonProperty ("state")]
-    string StateName { get; set; }
+    string StateName { get; }
 
     [JsonProperty ("upgrades")]
-    Dictionary<string, IUpgrade> Upgrades { get; set; }
+    Dictionary<string, IUpgrade> Upgrades { get; }
 
     [JsonProperty ("war")]
-    Dictionary<string, IUpgrade> War { get; set; }
+    Dictionary<string, IUpgrade> War { get; }
 }

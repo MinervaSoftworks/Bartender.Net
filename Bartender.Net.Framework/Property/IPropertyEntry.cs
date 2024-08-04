@@ -3,12 +3,12 @@
 namespace Bartender.Net.Framework.Property;
 
 public interface IPropertyEntry : IBartenderEntity {
-    int Happy { get; set; }
-    int OwnerId { get; set; }
-    int PropertyType { get; set; }
-    IRentEntry Rented { get; set; }
-    List<string> Staff { get; set; }
-    List<string> Upgrades { get; set; }
-    int Upkeep { get; set; }
-    string UsersLiving { get; set; }
+    int Happy { get; }
+    int OwnerId { get; }
+    int PropertyType { get; }
+    IRentEntry Rented { get; }
+    List<string> Staff { get; }
+    List<string> Upgrades { get; }
+    int Upkeep { get; }
+    string UsersLiving { get; }
 }
