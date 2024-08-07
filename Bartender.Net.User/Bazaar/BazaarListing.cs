@@ -9,7 +9,7 @@ public class BazaarListing : IBazaarListing {
     public int ID { get; set; }
 
     [JsonIgnore]
-    public IUserProfile Owner { get; set; }
+    public IProfileRoot Owner { get; set; }
 
     [JsonProperty ("name")]
     public string Name { get; set; }

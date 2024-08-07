@@ -11,10 +11,10 @@ public class RelativeLastAction : IRelativeLastAction {
     public int ID { get; set; }
 
     [JsonProperty ("status")]
-    public string Status { get; set; }
+    public required string Status { get; set; }
 
     [JsonProperty ("relative")]
-    public string Relative { get; set; }
+    public required string Relative { get; set; }
 
     public LastActionStatus LastActionStatus {
         get => Status.ToLastActionStatus ();
@@ -22,5 +22,5 @@ public class RelativeLastAction : IRelativeLastAction {
     }
 
     [JsonProperty ("timestamp")]
-    public long Timestamp { get; set; }
+    public required long Timestamp { get; set; }
 }

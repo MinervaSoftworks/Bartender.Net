@@ -8,17 +8,17 @@ public class PropertyStaff : IPropertyStaff {
     public int ID { get; set; }
 
     [JsonProperty ("maid")]
-    public int Maid { get; set; }
+    public required int Maid { get; set; }
 
     [JsonProperty ("guard")]
-    public int Guard { get; set; }
+    public required int Guard { get; set; }
 
     [JsonProperty ("pilot")]
-    public int Pilot { get; set; }
+    public required int Pilot { get; set; }
 
     [JsonProperty ("butler")]
-    public int Butler { get; set; }
+    public required int Butler { get; set; }
 
     [JsonProperty ("doctor")]
-    public int Doctor { get; set; }
+    public required int Doctor { get; set; }
 }

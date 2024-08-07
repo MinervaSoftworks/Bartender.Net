@@ -8,17 +8,17 @@ public class Job : IJob {
     public int ID { get; set; }
 
     [JsonProperty ("company_id")]
-    public int CompanyID { get => ID; set => ID = value; }
+    public required int CompanyID { get => ID; set => ID = value; }
 
     [JsonProperty ("company_name")]
-    public string CompanyName { get; set; }
+    public required string CompanyName { get; set; }
 
     [JsonProperty ("company_type")]
-    public int Type { get; set; }
+    public required int Type { get; set; }
 
     [JsonProperty ("job")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("position")]
-    public string Position { get; set; }
+    public required string Position { get; set; }
 }

@@ -8,8 +8,8 @@ public class PlayerStates : IPlayerStates {
     public int ID { get; set; }
 
     [JsonProperty ("hospital_timestamp")]
-    public long HospitalTimestamp { get; set; }
+    public required long HospitalTimestamp { get; set; }
 
     [JsonProperty ("jail_timestamp")]
-    public long JailTimestamp { get; set; }
+    public required long JailTimestamp { get; set; }
 }

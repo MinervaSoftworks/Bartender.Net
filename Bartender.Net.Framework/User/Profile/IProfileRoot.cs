@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Framework.User.Profile;
 
-public interface IUserProfile : IBartenderEntity {
+public interface IProfileRoot : IBartenderEntity {
     int Age { get; }
     int Awards { get; }
     IDictionary<string, string> BasicIcons { get; }

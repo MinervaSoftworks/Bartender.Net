@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.WorkStats;
 
-public class WorkStatsRoot : IWorkStatsRoot, ISelectionRoot  {
+public class WorkStatsRoot : IWorkStatsRoot{
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -16,10 +16,4 @@ public class WorkStatsRoot : IWorkStatsRoot, ISelectionRoot  {
 
     [JsonProperty ("endurance")]
     public required int Endurance { get; set; }
-
-    public AccessLevel AccessLevelRequired => AccessLevel.Minimal;
-
-    public string EndpointString => "workstats";
-
-    public string Name => "Work Stats";
 }

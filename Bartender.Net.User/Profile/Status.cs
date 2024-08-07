@@ -10,7 +10,7 @@ public class Status : IStatus {
     public int ID { get; set; }
 
     [JsonProperty ("color")]
-    public string Color { get; set; }
+    public required string Color { get; set; }
 
     [JsonIgnore]
     public StatusColor StatusColor {
@@ -19,13 +19,13 @@ public class Status : IStatus {
     }
 
     [JsonProperty ("description")]
-    public string Description { get; set; }
+    public required string Description { get; set; }
 
     [JsonProperty ("details")]
-    public string Details { get; set; }
+    public required string Details { get; set; }
 
     [JsonProperty ("state")]
-    public string State { get; set; }
+    public required string State { get; set; }
 
     [JsonIgnore]
     public StatusState StatusState {
@@ -34,6 +34,6 @@ public class Status : IStatus {
     }
 
     [JsonProperty ("until")]
-    public long Until { get; set; }
+    public required long Until { get; set; }
 }
 

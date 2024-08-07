@@ -1,6 +1,6 @@
 ﻿namespace Bartender.Net.Framework.User.Perks;
 
-public interface IUserPerks : IBartenderEntity {
+public interface IPerksRoot : IBartenderEntity {
     List<object> BookPerks { get; }
     List<string> EducationPerks { get; }
     List<string> EnhancerPerks { get; }

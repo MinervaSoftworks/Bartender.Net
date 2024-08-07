@@ -1,5 +1,5 @@
 ﻿namespace Bartender.Net.Framework.User.PersonalStats;
 
-public interface IUserPersonalStats {
+public interface IPersonalStatsRoot {
     IPersonalStats PersonalStats { get; }
 }

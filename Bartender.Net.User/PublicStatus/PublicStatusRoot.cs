@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.PublicStatus;
 
-public class PublicStatusRoot : IPublicStatusRoot, ISelectionRoot {
+public class PublicStatusRoot : IPublicStatusRoot {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -28,11 +28,5 @@ public class PublicStatusRoot : IPublicStatusRoot, ISelectionRoot {
 
     [JsonProperty ("userID")]
     public required int UserID { get; set; }
-
-    public AccessLevel AccessLevelRequired => AccessLevel.Public;
-
-    public string EndpointString => "publicstatus";
-
-    public string Name => "Public Status";
 }
 

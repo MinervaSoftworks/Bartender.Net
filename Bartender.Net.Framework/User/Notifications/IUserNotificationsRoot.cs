@@ -1,5 +1,5 @@
 ﻿namespace Bartender.Net.Framework.User.Notifications;
 
-public interface IUserNotificationCollection {
+public interface IUserNotificationsRoot {
     IUserNotifications Notifications { get; }
 }

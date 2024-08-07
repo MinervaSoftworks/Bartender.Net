@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Skills;
 
-public class SkillRoot : ISkillRoot, ISelectionRoot {
+public class SkillsRoot : ISkillsRoot {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -49,10 +49,4 @@ public class SkillRoot : ISkillRoot, ISelectionRoot {
 
     [JsonProperty ("player_id")]
     public required int PlayerId { get; set; }
-
-    public AccessLevel AccessLevelRequired => AccessLevel.Minimal;
-
-    public string EndpointString => "skills";
-
-    public string Name => "Skills";
 }

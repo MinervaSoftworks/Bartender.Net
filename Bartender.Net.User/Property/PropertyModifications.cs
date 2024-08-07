@@ -8,32 +8,32 @@ public class PropertyModifications : IPropertyModifications {
     public int ID { get; set; }
 
     [JsonProperty ("interior")]
-    public int Interior { get; set; }
+    public required int Interior { get; set; }
 
     [JsonProperty ("hot_tub")]
-    public int HotTub { get; set; }
+    public required int HotTub { get; set; }
 
     [JsonProperty ("sauna")]
-    public int Sauna { get; set; }
+    public required int Sauna { get; set; }
 
     [JsonProperty ("pool")]
-    public int Pool { get; set; }
+    public required int Pool { get; set; }
 
     [JsonProperty ("open_bar")]
-    public int OpenBar { get; set; }
+    public required int OpenBar { get; set; }
 
     [JsonProperty ("shooting_range")]
-    public int ShootingRange { get; set; }
+    public required int ShootingRange { get; set; }
 
     [JsonProperty ("vault")]
-    public int Vault { get; set; }
+    public required int Vault { get; set; }
 
     [JsonProperty ("medical_facility")]
-    public int MedicalFacility { get; set; }
+    public required int MedicalFacility { get; set; }
 
     [JsonProperty ("airstrip")]
-    public int Airstrip { get; set; }
+    public required int Airstrip { get; set; }
 
     [JsonProperty ("yacht")]
-    public int Yacht { get; set; }
+    public required int Yacht { get; set; }
 }

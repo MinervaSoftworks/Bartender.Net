@@ -8,14 +8,14 @@ public class RentEntry : IRentEntry {
     public int ID { get; set; }
 
     [JsonProperty ("cost_per_day")]
-    public int CostPerDay { get; set; }
+    public required int CostPerDay { get; set; }
 
     [JsonProperty ("days_left")]
-    public int DaysLeft { get; set; }
+    public required int DaysLeft { get; set; }
 
     [JsonProperty ("total_cost")]
-    public int TotalCost { get; set; }
+    public required int TotalCost { get; set; }
 
     [JsonProperty ("user_id")]
-    public int UserID { get; set; }
+    public required int UserID { get; set; }
 }

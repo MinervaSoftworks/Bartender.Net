@@ -5,14 +5,8 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Stocks;
 
-public class StockRoot : IStockRoot, ISelectionRoot {
+public class StockRoot : IStockRoot {
     [JsonProperty ("stocks")]
-    [JsonConverter (typeof(ConcreteConverter<Stock>))]
+    [JsonConverter (typeof(ConcreteConverter<Dictionary<string, Stock>>))]
     public required IDictionary<string, IStock> Stocks { get; set; }
-
-    public AccessLevel AccessLevelRequired => AccessLevel.Minimal;
-
-    public string EndpointString => "stocks";
-
-    public string Name => "Stocks";
 }

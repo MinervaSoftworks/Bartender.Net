@@ -1,6 +1,6 @@
 ﻿namespace Bartender.Net.Framework.User.Skills;
 
-public interface ISkillRoot : IBartenderEntity {
+public interface ISkillsRoot : IBartenderEntity {
     string Bootlegging { get; }
     string Burglary { get; }
     string CardSkimming { get; }

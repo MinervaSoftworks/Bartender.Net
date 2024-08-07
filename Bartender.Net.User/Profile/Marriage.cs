@@ -8,11 +8,11 @@ public class Marriage : IMarriage {
     public int ID { get; set; }
 
     [JsonProperty ("duration")]
-    public int Duration { get; set; }
+    public required int Duration { get; set; }
 
     [JsonProperty ("spouse_id")]
-    public int SpouseID { get; set; }
+    public required int SpouseID { get; set; }
 
     [JsonProperty ("spouse_name")]
-    public string SpouseName { get; set; }
+    public required string SpouseName { get; set; }
 }

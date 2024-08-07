@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.Common.Property;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Common.Property;
 using Bartender.Net.Framework.User.Property;
 using Newtonsoft.Json;
 
@@ -9,38 +10,41 @@ public class UserProperty : IUserProperty {
     public int ID { get; set; }
 
     [JsonProperty ("owner_id")]
-    public int OwnerId { get; set; }
+    public required int OwnerId { get; set; }
 
     [JsonProperty ("property_type")]
-    public int PropertyType { get; set; }
+    public required int PropertyType { get; set; }
 
     [JsonProperty ("property")]
-    public string PropertyName { get; set; }
+    public required string PropertyName { get; set; }
 
     [JsonProperty ("status")]
-    public string Status { get; set; }
+    public required string Status { get; set; }
 
     [JsonProperty ("happy")]
-    public int Happy { get; set; }
+    public required int Happy { get; set; }
 
     [JsonProperty ("upkeep")]
-    public int Upkeep { get; set; }
+    public required int Upkeep { get; set; }
 
     [JsonProperty ("staff_cost")]
-    public int StaffCost { get; set; }
+    public required int StaffCost { get; set; }
 
     [JsonProperty ("cost")]
-    public int Cost { get; set; }
+    public required int Cost { get; set; }
 
     [JsonProperty ("marketprice")]
-    public int MarketPrice { get; set; }
+    public required int MarketPrice { get; set; }
 
     [JsonProperty ("modifications")]
-    public IPropertyModifications Modifications { get; set; }
+    [JsonConverter (typeof(ConcreteConverter<PropertyModifications>))]
+    public required IPropertyModifications Modifications { get; set; }
 
     [JsonProperty ("staff")]
-    public IPropertyStaff Staff { get; set; }
+    [JsonConverter (typeof(ConcreteConverter<PropertyStaff>))]
+    public required IPropertyStaff Staff { get; set; }
 
     [JsonProperty ("rented")]
-    public IRentEntry Rented { get; set; }
+    [JsonConverter (typeof(ConcreteConverter<RentEntry>))]
+    public required IRentEntry Rented { get; set; }
 }
