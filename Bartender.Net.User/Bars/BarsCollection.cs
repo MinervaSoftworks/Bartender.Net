@@ -7,17 +7,17 @@ public class BarsCollection {
     public required int ServerTime { get; set; }
 
     [JsonProperty ("happy")]
-    public Bar Happy { get; set; }
+    public required Bar Happy { get; set; }
 
     [JsonProperty ("life")]
-    public Bar Life { get; set; }
+    public required Bar Life { get; set; }
 
     [JsonProperty ("energy")]
-    public Bar Energy { get; set; }
+    public required Bar Energy { get; set; }
 
     [JsonProperty ("nerve")]
-    public Bar Nerve { get; set; }
+    public required Bar Nerve { get; set; }
 
     [JsonProperty ("chain")]
-    public Bar Chain { get; set; }
+    public required Bar Chain { get; set; }
 }

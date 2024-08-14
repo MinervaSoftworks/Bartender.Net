@@ -8,7 +8,7 @@ public class BazaarListing {
     public int ID { get; set; }
 
     [JsonIgnore]
-    public UserProfile Owner { get; set; }
+    public UserProfile? Owner { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

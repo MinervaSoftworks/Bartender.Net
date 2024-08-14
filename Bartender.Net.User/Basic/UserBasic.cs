@@ -21,5 +21,5 @@ public class UserBasic {
     public required string Name { get; set; }
 
     [JsonProperty ("status")]
-    public Status Status { get; set; }
+    public required Status Status { get; set; }
 }

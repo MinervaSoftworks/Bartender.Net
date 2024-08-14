@@ -4,42 +4,42 @@ namespace Bartender.Net.User.HoF;
 
 public class HallOfFame {
     [JsonIgnore]
-    public int ID { get; set; }
+    public required int ID { get; set; }
 
     [JsonProperty ("attacks")]
-    public HallOfFameRank Attacks { get; set; }
+    public required HallOfFameRank Attacks { get; set; }
 
     [JsonProperty ("battlestats")]
-    public HallOfFameRank Battlestats { get; set; }
+    public required HallOfFameRank Battlestats { get; set; }
 
     [JsonProperty ("busts")]
-    public HallOfFameRank Busts { get; set; }
+    public required HallOfFameRank Busts { get; set; }
 
     [JsonProperty ("defends")]
-    public HallOfFameRank Defends { get; set; }
+    public required HallOfFameRank Defends { get; set; }
 
     [JsonProperty ("networth")]
-    public HallOfFameRank Networth { get; set; }
+    public required HallOfFameRank Networth { get; set; }
 
     [JsonProperty ("offences")]
-    public HallOfFameRank Offences { get; set; }
+    public required HallOfFameRank Offences { get; set; }
 
     [JsonProperty ("revives")]
-    public HallOfFameRank Revives { get; set; }
+    public required HallOfFameRank Revives { get; set; }
 
     [JsonProperty ("traveltime")]
-    public HallOfFameRank Traveltime { get; set; }
+    public required HallOfFameRank Traveltime { get; set; }
 
     [JsonProperty ("workstats")]
-    public HallOfFameRank Workstats { get; set; }
+    public required HallOfFameRank Workstats { get; set; }
 
     [JsonProperty ("level")]
-    public HallOfFameRank Level { get; set; }
+    public required HallOfFameRank Level { get; set; }
 
     [JsonProperty ("rank")]
-    public HallOfFameRank Rank { get; set; }
+    public required HallOfFameRank Rank { get; set; }
 
     [JsonProperty ("awards")]
-    public HallOfFameRank Awards { get; set; }
+    public required HallOfFameRank Awards { get; set; }
 }
 

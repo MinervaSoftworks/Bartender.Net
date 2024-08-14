@@ -4,5 +4,5 @@ namespace Bartender.Net.User.UserCooldowns;
 
 public class UserCooldownsCollection {
     [JsonProperty ("cooldowns")]
-    public UserCooldowns Cooldowns { get; set; }
+    public required UserCooldowns Cooldowns { get; set; }
 }

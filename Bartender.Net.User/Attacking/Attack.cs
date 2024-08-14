@@ -64,5 +64,5 @@ public class Attack {
     public double RespectLoss { get; set; }
 
     [JsonProperty ("modifiers")]
-    public AttackModifiers Modifiers { get; set; }
+    public required AttackModifiers Modifiers { get; set; }
 }
