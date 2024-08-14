@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Applications;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Applications;
 
-public class FactionApplication : IFactionApplication {
+public class FactionApplication {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -20,7 +19,7 @@ public class FactionApplication : IFactionApplication {
     public string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public IFactionApplicationStats Stats { get; set; }
+    public FactionApplicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
     public string Status { get; set; }

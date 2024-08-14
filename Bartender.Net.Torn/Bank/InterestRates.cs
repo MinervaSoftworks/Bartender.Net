@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using TornApi.Net.Models.Torn;
 
 namespace Bartender.Net.Torn.Bank;
 
-public class InterestRates : IInterestRates {
+public class InterestRates {
     [JsonProperty ("1w")]
     public double OneWeek { get; set; }
 

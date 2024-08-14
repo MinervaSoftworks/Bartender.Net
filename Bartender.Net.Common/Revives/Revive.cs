@@ -1,12 +1,12 @@
-﻿using Bartender.Net.Extensions;
+﻿using Bartender.Net.Common.User;
+using Bartender.Net.Extensions;
 using Bartender.Net.Extensions.User;
 using Bartender.Net.Framework.Common.Revives;
-using Bartender.Net.Framework.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Revives;
 
-public class Revive : IRevive {
+public class Revive {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -56,5 +56,5 @@ public class Revive : IRevive {
     public int TargetEarlyDischarge { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public ILastAction TargetLastAction { get; set; }
+    public LastAction TargetLastAction { get; set; }
 }

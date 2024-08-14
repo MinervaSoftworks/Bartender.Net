@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using TornApi.Net.Models.Torn;
 
 namespace Bartender.Net.Torn.ChainReport;
 
-public class ChainMember : IChainMemeber {
+public class ChainMember {
     [JsonIgnore]
     public int ID { get; set; }
 

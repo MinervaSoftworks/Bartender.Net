@@ -1,12 +1,11 @@
-﻿using Bartender.Net.Framework.Torn.CityShops;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Torn.CityShops;
 
-public class CityShop : ICityShop {
+public class CityShop {
     [JsonProperty ("name")]
     public string Name { get; set; }
 
     [JsonProperty ("inventory")]
-    public IDictionary<string, ICityShopItem> Inventory { get; set; }
+    public Dictionary<string, CityShopItem> Inventory { get; set; }
 }

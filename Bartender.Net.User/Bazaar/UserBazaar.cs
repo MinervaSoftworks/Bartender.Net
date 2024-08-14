@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Bazaar;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bazaar;
 
-public class UserBazaar : IUserBazaar {
+public class UserBazaar {
     [JsonProperty ("bazaar")]
-    public List<IBazaarListing> Listings { get; set; }
+    public List<BazaarListing> Listings { get; set; }
 }

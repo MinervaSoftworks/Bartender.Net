@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace TornApi.Net.REST {
+namespace Bartender.Net.REST {
     public class KeyValidationStatus : IKeyValidationStatus {
         public bool IsValid { get; set; } = false;
 

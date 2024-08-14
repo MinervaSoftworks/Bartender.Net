@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Common.Reports;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Reports;
 
-public class Warrant : IWarrant {
+public class Warrant {
     [JsonIgnore]
     public int ID { get; set; }
 

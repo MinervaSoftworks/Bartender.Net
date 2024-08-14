@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Employees;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Employees;
 
-public class Effectiveness : IEffectiveness {
+public class Effectiveness {
     [JsonIgnore]
     public int ID { get; set; }
 

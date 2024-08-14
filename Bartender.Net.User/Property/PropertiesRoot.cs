@@ -1,11 +1,8 @@
-﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.User.Property;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Property;
 
-public class PropertiesRoot : IPropertiesRoot {
+public class PropertiesRoot {
     [JsonProperty ("properties")]
-    [JsonConverter (typeof(ConcreteConverter<Dictionary<string, UserProperty>>))]
-    public required IDictionary<string, IUserProperty> Properties { get; set; }
+    public required Dictionary<string, UserProperty> Properties { get; set; }
 }

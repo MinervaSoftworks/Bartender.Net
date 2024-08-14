@@ -1,10 +1,8 @@
-﻿using Bartender.Net.Framework.Selection;
-using Bartender.Net.Framework.User.Skills;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Skills;
 
-public class SkillsRoot : ISkillsRoot {
+public class SkillsRoot {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,11 +1,10 @@
-﻿using Bartender.Net.Framework.User.Basic;
+﻿using Bartender.Net.Common.User;
 using Bartender.Net.Framework.User.Profile;
-using Bartender.Net.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Basic;
 
-public class UserBasic : IUserBasic {
+public class UserBasic {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -22,5 +21,5 @@ public class UserBasic : IUserBasic {
     public string Name { get; set; }
 
     [JsonProperty ("status")]
-    public IStatus Status { get; set; }
+    public Status Status { get; set; }
 }

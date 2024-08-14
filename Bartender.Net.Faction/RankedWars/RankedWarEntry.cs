@@ -2,13 +2,13 @@
 
 namespace Bartender.Net.Faction.RankedWars;
 
-public class RankedWarEntry : IRankedWarEntry {
+public class RankedWarEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("war")]
-    public IRankedWar Rankedwar { get; set; }
+    public RankedWar Rankedwar { get; set; }
 
     [JsonProperty ("factions")]
-    public IDictionary<string, IRankedWarFaction> Factions { get; set; }
+    public Dictionary<string, RankedWarFaction> Factions { get; set; }
 }

@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Basic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class FactionBasic : IFactionBasic {
+public class FactionBasic {
     [JsonProperty ("age")]
     public int Age { get; set; }
 
@@ -23,22 +22,22 @@ public class FactionBasic : IFactionBasic {
     public int Leader { get; set; }
 
     [JsonProperty ("members")]
-    public IDictionary<string, IFactionMember> Members { get; set; }
+    public Dictionary<string, FactionMember> Members { get; set; }
 
     [JsonProperty ("name")]
     public string Name { get; set; }
 
     [JsonProperty ("peace")]
-    public IDictionary<string, long> PeaceTreaties { get; set; }
+    public Dictionary<string, long> PeaceTreaties { get; set; }
 
     [JsonProperty ("raid_wars")]
-    public IEnumerable<IRaid> RaidWars { get; set; }
+    public List<Raid> RaidWars { get; set; }
 
     [JsonProperty ("rank")]
-    public IRanking Rank { get; set; }
+    public Ranking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
-    public IDictionary<string, IRankedWar> RankedWars { get; set; }
+    public Dictionary<string, RankedWar> RankedWars { get; set; }
 
     [JsonProperty ("respect")]
     public int Respect { get; set; }
@@ -50,5 +49,5 @@ public class FactionBasic : IFactionBasic {
     public string TagImage { get; set; }
 
     [JsonProperty ("territory_wars")]
-    public IEnumerable<ITerritoryWar> TerritoryWars { get; set; }
+    public List<TerritoryWar> TerritoryWars { get; set; }
 }

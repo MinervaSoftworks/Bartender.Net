@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Common.Revives;
-using Bartender.Net.Framework.Common.User;
+﻿using Bartender.Net.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Revives;
 
-public class ReviveFull : IReviveFull {
+public class ReviveFull {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -36,7 +35,7 @@ public class ReviveFull : IReviveFull {
     public int TargetId { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public ILastAction TargetLastAction { get; set; }
+    public LastAction TargetLastAction { get; set; }
 
     [JsonProperty ("timestamp")]
     public int TimeStamp { get; set; }

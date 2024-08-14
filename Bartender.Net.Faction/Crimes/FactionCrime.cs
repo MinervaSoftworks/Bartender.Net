@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Faction.Crimes;
-using Bartender.Net.Framework.User.Profile;
+﻿using Bartender.Net.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Crimes;
 
-public class FactionCrime : IFactionCrime {
+public class FactionCrime {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -24,7 +23,7 @@ public class FactionCrime : IFactionCrime {
     public int MoneyGain { get; set; }
 
     [JsonProperty ("participants")]
-    public IDictionary<string, IStatus> Participants { get; set; }
+    public Dictionary<string, Status> Participants { get; set; }
 
     [JsonProperty ("planned_by")]
     public int PlannedBy { get; set; }

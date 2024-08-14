@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Profile;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Profile;
 
-public class Company : ICompany {
+public class Company {
     [JsonProperty ("company")]
-    public ICompanyProfile CompanyProfile { get; set; }
+    public CompanyProfile CompanyProfile { get; set; }
 }

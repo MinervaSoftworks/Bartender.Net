@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Faction.RankedWars;
 
-public class RankedWar : IRankedWar {
+public class RankedWar {
     [JsonIgnore]
     public int ID { get; set; }
 

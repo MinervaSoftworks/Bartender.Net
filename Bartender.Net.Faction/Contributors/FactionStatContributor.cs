@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Contributors;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Contributors;
 
-public class FactionStatContributor : IFactionStatContributor {
+public class FactionStatContributor {
     [JsonProperty ("contributed")]
     public int Contributed { get; set; }
 

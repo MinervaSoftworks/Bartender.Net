@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace TornApi.Net.REST {
+namespace Bartender.Net.REST {
     public interface IKeyValidationStatus {
         int ErrorCode { get; set; }
         bool HasRequiredAccessLevel { get; set; }

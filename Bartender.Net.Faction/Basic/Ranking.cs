@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class Ranking : IRanking {
+public class Ranking {
     [JsonIgnore]
     public int ID { get; set; }
 

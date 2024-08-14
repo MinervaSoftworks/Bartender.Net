@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Common.User;
-using Bartender.Net.Framework.Company.Profile;
+﻿using Bartender.Net.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Profile;
 
-public class CompanyEmployee : ICompanyEmployee {
+public class CompanyEmployee {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -18,5 +17,5 @@ public class CompanyEmployee : ICompanyEmployee {
     public int DaysInCompany { get; set; }
 
     [JsonProperty ("last_action")]
-    public ILastAction LastAction { get; set; }
+    public LastAction LastAction { get; set; }
 }

@@ -1,132 +1,131 @@
-﻿using Bartender.Net.Framework.Faction.Contributors;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Contributors;
 
-public class FactionStatContributors : IFactionStatContributors {
+public class FactionStatContributors {
     [JsonProperty ("medicalitemsused")]
-    public IEnumerable<IFactionStatContributor> MedicalItemsUsed { get; set; }
+    public List<FactionStatContributor> MedicalItemsUsed { get; set; }
 
     [JsonProperty ("criminaloffences")]
-    public IEnumerable<IFactionStatContributor> CriminalOffences { get; set; }
+    public List<FactionStatContributor> CriminalOffences { get; set; }
 
     [JsonProperty ("organisedcrimerespect")]
-    public IEnumerable<IFactionStatContributor> OrganisedCrimeRespect { get; set; }
+    public List<FactionStatContributor> OrganisedCrimeRespect { get; set; }
 
     [JsonProperty ("organisedcrimemoney")]
-    public IEnumerable<IFactionStatContributor> OrganisedCrimeMoney { get; set; }
+    public List<FactionStatContributor> OrganisedCrimeMoney { get; set; }
 
     [JsonProperty ("organisedcrimesuccess")]
-    public IEnumerable<IFactionStatContributor> OrganisedCrimeSuccess { get; set; }
+    public List<FactionStatContributor> OrganisedCrimeSuccess { get; set; }
 
     [JsonProperty ("organisedcrimefail")]
-    public IEnumerable<IFactionStatContributor> OrganisedCrimeFail { get; set; }
+    public List<FactionStatContributor> OrganisedCrimeFail { get; set; }
 
     [JsonProperty ("attackswon")]
-    public IEnumerable<IFactionStatContributor> AttacksWon { get; set; }
+    public List<FactionStatContributor> AttacksWon { get; set; }
 
     [JsonProperty ("attackslost")]
-    public IEnumerable<IFactionStatContributor> AttacksLost { get; set; }
+    public List<FactionStatContributor> AttacksLost { get; set; }
 
     [JsonProperty ("attackschain")]
-    public IEnumerable<IFactionStatContributor> AttacksChain { get; set; }
+    public List<FactionStatContributor> AttacksChain { get; set; }
 
     [JsonProperty ("attacksleave")]
-    public IEnumerable<IFactionStatContributor> AttacksLeave { get; set; }
+    public List<FactionStatContributor> AttacksLeave { get; set; }
 
     [JsonProperty ("attacksmug")]
-    public IEnumerable<IFactionStatContributor> AttacksMug { get; set; }
+    public List<FactionStatContributor> AttacksMug { get; set; }
 
     [JsonProperty ("attackshosp")]
-    public IEnumerable<IFactionStatContributor> AttacksHosp { get; set; }
+    public List<FactionStatContributor> AttacksHosp { get; set; }
 
     [JsonProperty ("bestchain")]
-    public IEnumerable<IFactionStatContributor> BestChain { get; set; }
+    public List<FactionStatContributor> BestChain { get; set; }
 
     [JsonProperty ("busts")]
-    public IEnumerable<IFactionStatContributor> Busts { get; set; }
+    public List<FactionStatContributor> Busts { get; set; }
 
     [JsonProperty ("revives")]
-    public IEnumerable<IFactionStatContributor> Revives { get; set; }
+    public List<FactionStatContributor> Revives { get; set; }
 
     [JsonProperty ("jails")]
-    public IEnumerable<IFactionStatContributor> Jails { get; set; }
+    public List<FactionStatContributor> Jails { get; set; }
 
     [JsonProperty ("hosps")]
-    public IEnumerable<IFactionStatContributor> Hosps { get; set; }
+    public List<FactionStatContributor> Hosps { get; set; }
 
     [JsonProperty ("medicalitemrecovery")]
-    public IEnumerable<IFactionStatContributor> MedicalItemRecovery { get; set; }
+    public List<FactionStatContributor> MedicalItemRecovery { get; set; }
 
     [JsonProperty ("medicalcooldownused")]
-    public IEnumerable<IFactionStatContributor> MedicalCooldownUsed { get; set; }
+    public List<FactionStatContributor> MedicalCooldownUsed { get; set; }
 
     [JsonProperty ("gymtrains")]
-    public IEnumerable<IFactionStatContributor> GymTrains { get; set; }
+    public List<FactionStatContributor> GymTrains { get; set; }
 
     [JsonProperty ("gymstrength")]
-    public IEnumerable<IFactionStatContributor> GymStrength { get; set; }
+    public List<FactionStatContributor> GymStrength { get; set; }
 
     [JsonProperty ("gymspeed")]
-    public IEnumerable<IFactionStatContributor> GymSpeed { get; set; }
+    public List<FactionStatContributor> GymSpeed { get; set; }
 
     [JsonProperty ("gymdefense")]
-    public IEnumerable<IFactionStatContributor> GymDefense { get; set; }
+    public List<FactionStatContributor> GymDefense { get; set; }
 
     [JsonProperty ("gymdexterity")]
-    public IEnumerable<IFactionStatContributor> GymDexterity { get; set; }
+    public List<FactionStatContributor> GymDexterity { get; set; }
 
     [JsonProperty ("candyused")]
-    public IEnumerable<IFactionStatContributor> CandyUsed { get; set; }
+    public List<FactionStatContributor> CandyUsed { get; set; }
 
     [JsonProperty ("alcoholused")]
-    public IEnumerable<IFactionStatContributor> AlcoholUsed { get; set; }
+    public List<FactionStatContributor> AlcoholUsed { get; set; }
 
     [JsonProperty ("energydrinkused")]
-    public IEnumerable<IFactionStatContributor> EnergyDrinkUsed { get; set; }
+    public List<FactionStatContributor> EnergyDrinkUsed { get; set; }
 
     [JsonProperty ("drugsused")]
-    public IEnumerable<IFactionStatContributor> DrugsUsed { get; set; }
+    public List<FactionStatContributor> DrugsUsed { get; set; }
 
     [JsonProperty ("drugoverdoses")]
-    public IEnumerable<IFactionStatContributor> DrugOverdoses { get; set; }
+    public List<FactionStatContributor> DrugOverdoses { get; set; }
 
     [JsonProperty ("rehabs")]
-    public IEnumerable<IFactionStatContributor> Rehabs { get; set; }
+    public List<FactionStatContributor> Rehabs { get; set; }
 
     [JsonProperty ("caymaninterest")]
-    public IEnumerable<IFactionStatContributor> CaymanInterest { get; set; }
+    public List<FactionStatContributor> CaymanInterest { get; set; }
 
     [JsonProperty ("traveltimes")]
-    public IEnumerable<IFactionStatContributor> TravelTimes { get; set; }
+    public List<FactionStatContributor> TravelTimes { get; set; }
 
     [JsonProperty ("traveltime")]
-    public IEnumerable<IFactionStatContributor> TravelTime { get; set; }
+    public List<FactionStatContributor> TravelTime { get; set; }
 
     [JsonProperty ("hunting")]
-    public IEnumerable<IFactionStatContributor> Hunting { get; set; }
+    public List<FactionStatContributor> Hunting { get; set; }
 
     [JsonProperty ("attacksdamagehits")]
-    public IEnumerable<IFactionStatContributor> AttacksDamageHits { get; set; }
+    public List<FactionStatContributor> AttacksDamageHits { get; set; }
 
     [JsonProperty ("attacksdamage")]
-    public IEnumerable<IFactionStatContributor> AttacksDamage { get; set; }
+    public List<FactionStatContributor> AttacksDamage { get; set; }
 
     [JsonProperty ("hosptimegiven")]
-    public IEnumerable<IFactionStatContributor> HospTimeGiven { get; set; }
+    public List<FactionStatContributor> HospTimeGiven { get; set; }
 
     [JsonProperty ("hosptimereceived")]
-    public IEnumerable<IFactionStatContributor> HospTimeReceived { get; set; }
+    public List<FactionStatContributor> HospTimeReceived { get; set; }
 
     [JsonProperty ("attacksdamaging")]
-    public IEnumerable<IFactionStatContributor> AttacksDamaging { get; set; }
+    public List<FactionStatContributor> AttacksDamaging { get; set; }
 
     [JsonProperty ("attacksrunaway")]
-    public IEnumerable<IFactionStatContributor> AttacksRunaway { get; set; }
+    public List<FactionStatContributor> AttacksRunaway { get; set; }
 
     [JsonProperty ("highestterritories")]
-    public IEnumerable<IFactionStatContributor> HighestTerritories { get; set; }
+    public List<FactionStatContributor> HighestTerritories { get; set; }
 
     [JsonProperty ("territoryrespect")]
-    public IEnumerable<IFactionStatContributor> TerritoryRespect { get; set; }
+    public List<FactionStatContributor> TerritoryRespect { get; set; }
 }

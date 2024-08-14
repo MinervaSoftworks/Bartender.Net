@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.CrimeExp;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.CrimeExp;
 
-public class FactionCrimeExperience : IFactionCrimeExperience {
+public class FactionCrimeExperience {
     [JsonProperty ("crimeexp")]
-    public IEnumerable<int> CrimeExp { get; set; }
+    public List<int> CrimeExp { get; set; }
 }

@@ -1,12 +1,11 @@
 ﻿using Bartender.Net.Extensions;
 using Bartender.Net.Extensions.User;
 using Bartender.Net.Framework.Common.User;
-using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.User;
 
-public class RelativeLastAction : IRelativeLastAction {
+public class RelativeLastAction {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Attacks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.AttackNews;
 
-public class FactionAttackModifiers : IFactionAttackModifiers {
+public class FactionAttackModifiers {
     [JsonIgnore]
     public int ID { get; set; }
 

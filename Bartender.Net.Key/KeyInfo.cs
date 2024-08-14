@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Key;
-using Bartender.Net.Framework.Selection;
+﻿using Bartender.Net.Framework.Selection;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Key;
 
-public class KeyInfo : IKeyInfo {
+public class KeyInfo {
     [JsonProperty ("access_level")]
     public int ID { get; set; }
 
@@ -18,5 +17,5 @@ public class KeyInfo : IKeyInfo {
     }
 
     [JsonProperty ("selections")]
-    public IKeySelections Selections { get; set; }
+    public KeySelections Selections { get; set; }
 }

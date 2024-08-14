@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Common.Reports;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Reports;
 
-public class FriendOrFoeUser : IFriendOrFoeUser {
+public class FriendOrFoeUser {
     [JsonIgnore]
     public int ID { get; set; }
 

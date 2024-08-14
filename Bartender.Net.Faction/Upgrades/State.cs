@@ -1,18 +1,17 @@
-﻿using Bartender.Net.Framework.Faction.Upgrades;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Upgrades;
 
-public class State : IState {
+public class State {
     [JsonProperty ("peace")]
-    public Dictionary<string, IUpgrade> Peace { get; set; }
+    public Dictionary<string, Upgrade> Peace { get; set; }
 
     [JsonProperty ("state")]
     public string StateName { get; set; }
 
     [JsonProperty ("upgrades")]
-    public Dictionary<string, IUpgrade> Upgrades { get; set; }
+    public Dictionary<string, Upgrade> Upgrades { get; set; }
 
     [JsonProperty ("war")]
-    public Dictionary<string, IUpgrade> War { get; set; }
+    public Dictionary<string, Upgrade> War { get; set; }
 }

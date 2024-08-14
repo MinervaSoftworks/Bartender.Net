@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Companies;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Companies;
 
-public class CompanyEntry : ICompanyEntry {
+public class CompanyEntry {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 

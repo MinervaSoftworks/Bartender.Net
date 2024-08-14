@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.ChainReport;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.ChainReport;
 
-public class ChainReport : IChainReport {
+public class ChainReport {
     [JsonProperty ("userID")]
     public int ID { get; set; }
 
@@ -59,8 +58,8 @@ public class ChainReport : IChainReport {
     public int Retaliations { get; set; }
 
     [JsonProperty ("members")]
-    public IDictionary<string, IChainParticipant> Participants { get; set; }
+    public Dictionary<string, ChainParticipant> Participants { get; set; }
 
     [JsonProperty ("bonuses")]
-    public List<IBonusHit> Bonuses { get; set; }
+    public List<BonusHit> Bonuses { get; set; }
 }

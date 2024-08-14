@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Market.PointsMarket;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Market;
+namespace Bartender.Net.Models.Market;
 
-public class PointListings : IPointListings {
+public class PointListings {
     [JsonProperty ("pointsmarket")]
-    public IDictionary<string, IPointListing> Points { get; set; }
+    public Dictionary<string, PointListing> Points { get; set; }
 }

@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Crimes;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Crimes;
 
-public class FactionCrimes : IFactionCrimes {
+public class FactionCrimes {
     [JsonProperty ("crimes")]
-    public IDictionary<string, IFactionCrime> Crimes { get; set; }
+    public Dictionary<string, FactionCrime> Crimes { get; set; }
 }

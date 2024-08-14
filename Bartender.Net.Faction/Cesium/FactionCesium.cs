@@ -1,7 +1,5 @@
-﻿using Bartender.Net.Framework.Faction.Cesium;
+﻿namespace Bartender.Net.Faction.Cesium;
 
-namespace Bartender.Net.Faction.Cesium;
-
-public class FactionCesium : IFactionCesium {
+public class FactionCesium {
     public int ID { get; set; }
 }

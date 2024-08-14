@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Ammunition;
 
-public class Ammo : IAmmo {
+public class Ammo {
     [JsonIgnore]
     public int ID { get; set; }
 

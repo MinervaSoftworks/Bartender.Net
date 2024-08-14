@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Property;
-using Bartender.Net.Framework.User.Property;
+﻿using Bartender.Net.User.Property;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Property;
 
-public class PropertyEndpoint : IPropertyEndpoint {
+public class PropertyEndpoint {
     [JsonProperty ("property")]
-    public IUserProperty Property { get; set; }
+    public UserProperty Property { get; set; }
 }

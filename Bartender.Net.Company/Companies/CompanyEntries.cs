@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Companies;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Companies;
 
-public class CompanyEntries : ICompanyEntries {
+public class CompanyEntries {
     [JsonProperty ("cards")]
-    public IDictionary<string, ICompanyEntry> Companies { get; set; }
+    public Dictionary<string, CompanyEntry> Companies { get; set; }
 }

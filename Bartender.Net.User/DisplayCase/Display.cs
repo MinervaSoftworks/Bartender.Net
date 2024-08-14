@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.DisplayCase;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.DisplayCase;
 
-public class Display : IDisplay {
+public class Display {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 

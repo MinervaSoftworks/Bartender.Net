@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Cooldowns;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.UserCooldowns;
 
-public class UserCooldowns : IUserCooldowns {
+public class UserCooldowns {
     [JsonIgnore]
     public int ID { get; set; }
 

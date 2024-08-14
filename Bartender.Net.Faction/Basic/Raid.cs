@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Basic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class Raid : IRaid {
+public class Raid {
     [JsonIgnore]
     public int ID { get; set; }
 

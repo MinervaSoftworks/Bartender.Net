@@ -1,5 +1,5 @@
 ﻿
-namespace TornApi.Net.REST {
+namespace Bartender.Net.REST {
     public interface IApiResponse<T> {
         T? Content { get; set; }
         HttpResponseMessage? HttpResponseMessage { get; set; }

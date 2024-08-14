@@ -1,11 +1,9 @@
-﻿using Bartender.Net.Framework.Common.User;
-using Bartender.Net.Framework.Faction.Basic;
-using Bartender.Net.Framework.User.Profile;
+﻿using Bartender.Net.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class FactionMember : IFactionMember {
+public class FactionMember {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -13,7 +11,7 @@ public class FactionMember : IFactionMember {
     public int DaysInFaction { get; set; }
 
     [JsonProperty ("last_action")]
-    public ILastAction LastAction { get; set; }
+    public LastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
     public int Level { get; set; }
@@ -25,5 +23,5 @@ public class FactionMember : IFactionMember {
     public string Position { get; set; }
 
     [JsonProperty ("status")]
-    public IStatus Status { get; set; }
+    public Status Status { get; set; }
 }

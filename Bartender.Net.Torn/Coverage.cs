@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TornApi.Net.Models.Torn;
+namespace Bartender.Net.Models.Torn;
 
 public class Coverage {
     [JsonIgnore]

@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Ammunition;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Ammunition;
 
-public class AmmoCollection : IAmmoCollection {
+public class AmmoCollection {
     [JsonProperty ("ammo")]
-    public IEnumerable<IAmmo> Ammo { get; set; }
+    public List<Ammo> Ammo { get; set; }
 }

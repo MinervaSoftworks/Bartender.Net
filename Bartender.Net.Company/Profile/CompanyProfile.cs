@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Profile;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Profile;
 
-public class CompanyProfile : ICompanyProfile {
+public class CompanyProfile {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 
@@ -41,5 +40,5 @@ public class CompanyProfile : ICompanyProfile {
     public int DaysOld { get; set; }
 
     [JsonProperty ("employees")]
-    public IDictionary<string, ICompanyEmployee> Employees { get; set; }
+    public Dictionary<string, CompanyEmployee> Employees { get; set; }
 }

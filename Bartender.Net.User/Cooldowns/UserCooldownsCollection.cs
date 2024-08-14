@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Cooldowns;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.UserCooldowns;
 
-public class UserCooldownsCollection : IUserCooldownsCollection {
+public class UserCooldownsCollection {
     [JsonProperty ("cooldowns")]
-    public IUserCooldowns Cooldowns { get; set; }
+    public UserCooldowns Cooldowns { get; set; }
 }

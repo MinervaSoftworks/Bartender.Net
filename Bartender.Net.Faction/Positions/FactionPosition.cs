@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Positions;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Positions;
 
-public class FactionPosition : IFactionPosition {
+public class FactionPosition {
     [JsonIgnore]
     public int ID { get; set; }
 

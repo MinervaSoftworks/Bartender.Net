@@ -1,20 +1,16 @@
-﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.User.Stocks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Stocks;
 
-public class Stock : IStock {
+public class Stock {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("benefit")]
-    [JsonConverter (typeof(ConcreteConverter<StockBonus>))]
-    public required IStockBonus Benefit { get; set; }
+    public required StockBonus Benefit { get; set; }
 
     [JsonProperty ("benefit")]
-    [JsonConverter (typeof(ConcreteConverter<StockBonus>))]
-    public required IStockBonus Dividend { get; set; }
+    public required StockBonus Dividend { get; set; }
 
     [JsonProperty ("stock_id")]
     public required int StockId { get; set; }
@@ -23,6 +19,5 @@ public class Stock : IStock {
     public required int TotalShares { get; set; }
 
     [JsonProperty ("transactions")]
-    [JsonConverter (typeof(ConcreteConverter<Dictionary<string, StockTransaction>>))]
-    public required Dictionary<string, IStockTransaction> Transactions { get; set; }
+    public required Dictionary<string, StockTransaction> Transactions { get; set; }
 }

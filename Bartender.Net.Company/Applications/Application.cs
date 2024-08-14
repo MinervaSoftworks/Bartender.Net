@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Applications;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Applications;
 
-public class Application : IApplication {
+public class Application {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -20,7 +19,7 @@ public class Application : IApplication {
     public string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public IApplicationStats Stats { get; set; }
+    public ApplicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
     public string Status { get; set; }

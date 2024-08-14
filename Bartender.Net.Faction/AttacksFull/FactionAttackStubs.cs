@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.AttacksFull;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.AttacksFull;
 
-public class FactionAttackStubs : IFactionAttackStubs {
+public class FactionAttackStubs {
     [JsonProperty ("attacks")]
-    public Dictionary<string, IFactionAttackStub> Stubs { get; set; }
+    public Dictionary<string, FactionAttackStub> Stubs { get; set; }
 }

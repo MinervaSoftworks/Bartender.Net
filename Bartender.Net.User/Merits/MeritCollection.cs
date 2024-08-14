@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Merits;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Merits;
 
-public class MeritCollection : IMeritCollection {
+public class MeritCollection {
     [JsonProperty ("merits")]
-    public IUserMerits Merits { get; set; }
+    public UserMerits Merits { get; set; }
 }

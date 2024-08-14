@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Applications;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Applications;
 
-public class FactionApplications : IFactionApplications {
+public class FactionApplications {
     [JsonProperty ("applications")]
-    public IDictionary<string, IFactionApplication> Applications { get; set; }
+    public Dictionary<string, FactionApplication> Applications { get; set; }
 }

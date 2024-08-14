@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Notifications;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Notifications;
 
-public class UserNotifications : IUserNotifications {
+public class UserNotifications {
     [JsonIgnore]
     public int ID { get; set; }
 

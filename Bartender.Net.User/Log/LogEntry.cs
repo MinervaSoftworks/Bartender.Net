@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Log;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Log;
 
-public class LogEntry : ILogEntry {
+public class LogEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -11,13 +10,13 @@ public class LogEntry : ILogEntry {
     public string Category { get; set; }
 
     [JsonProperty ("data")]
-    public IDictionary<string, int> Data { get; set; }
+    public Dictionary<string, int> Data { get; set; }
 
     [JsonProperty ("log")]
     public string LogType { get; set; }
 
     [JsonProperty ("params")]
-    public IDictionary<string, string> Params { get; set; }
+    public Dictionary<string, string> Params { get; set; }
 
     [JsonProperty ("timestamp")]
     public long Timestamp { get; set; }

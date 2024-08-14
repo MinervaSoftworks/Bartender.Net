@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Messages;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Messages;
 
-public class UserMessageCollection : IUserMessageCollection {
+public class UserMessageCollection {
     [JsonProperty ("messages")]
-    public IDictionary<string, IUserMessage> Messages { get; set; }
+    public Dictionary<string, UserMessage> Messages { get; set; }
 }

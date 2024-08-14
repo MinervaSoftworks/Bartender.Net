@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Chains;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Chains;
 
-public class ChainStub : IChainStub {
+public class ChainStub {
     [JsonProperty ("userID")]
     public int ID { get; set; }
 

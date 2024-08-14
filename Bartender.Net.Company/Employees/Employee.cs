@@ -1,11 +1,9 @@
-﻿using Bartender.Net.Framework.Common.User;
-using Bartender.Net.Framework.Company.Employees;
-using Bartender.Net.Framework.User.Profile;
+﻿using Bartender.Net.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Employees;
 
-public class Employee : IEmployee {
+public class Employee {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -28,11 +26,11 @@ public class Employee : IEmployee {
     public int Endurance { get; set; }
 
     [JsonProperty ("effectiveness")]
-    public IEffectiveness Effectiveness { get; set; }
+    public Effectiveness Effectiveness { get; set; }
 
     [JsonProperty ("last_action")]
-    public ILastAction LastAction { get; set; }
+    public LastAction LastAction { get; set; }
 
     [JsonProperty ("status")]
-    public IStatus Status { get; set; }
+    public Status Status { get; set; }
 }

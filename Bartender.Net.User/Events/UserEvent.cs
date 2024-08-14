@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Events;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Events;
 
-public class UserEvent : IUserEvent {
+public class UserEvent {
     [JsonIgnore]
     public int ID { get; set; }
 

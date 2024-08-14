@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Chain;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Chain;
 
-public class CurrentFactionChain : ICurrentFactionChain {
+public class CurrentFactionChain {
     [JsonProperty ("chain")]
-    public ICurrentChainEntry Chain { get; set; }
+    public CurrentChainEntry Chain { get; set; }
 }

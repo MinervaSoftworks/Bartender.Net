@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Torn.Bank;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Torn.Cards;
 
-public class Card : ICard {
+public class Card {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Market;
-using Bartender.Net.Framework.Market.Bazaar;
+﻿using Bartender.Net.Market;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Models.Market.Bazaar;
 
-public class BazaarListings : IBazaarListings {
+public class BazaarListings {
     [JsonProperty ("bazaar")]
-    public IEnumerable<IItemListing> Items { get; set; }
+    public List<ItemListing> Items { get; set; }
 }

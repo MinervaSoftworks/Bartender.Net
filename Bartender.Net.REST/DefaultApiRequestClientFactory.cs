@@ -1,4 +1,4 @@
-﻿namespace TornApi.Net.REST {
+﻿namespace Bartender.Net.REST {
     public class DefaultApiRequestClientFactory : IHttpClientFactory, IDisposable {
         private static object _instLock = new object ();
 

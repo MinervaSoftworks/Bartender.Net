@@ -2,15 +2,13 @@
 using Bartender.Net.Extensions;
 using Bartender.Net.Extensions.User;
 using Bartender.Net.Framework;
-using Bartender.Net.Framework.Selection;
-using Bartender.Net.Framework.User.Bars;
 using Bartender.Net.Framework.User.Profile;
 using Bartender.Net.User.Bars;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class ProfileRoot : IProfileRoot {
+public class ProfileRoot {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -24,12 +22,10 @@ public class ProfileRoot : IProfileRoot {
     public required int Awards { get; set; }
 
     [JsonProperty ("icons")]
-    [JsonConverter (typeof(ConcreteConverter<Dictionary<string, string>>))]
-    public required IDictionary<string, string> BasicIcons { get; set; }
+    public required Dictionary<string, string> BasicIcons { get; set; }
 
     [JsonProperty ("competition")]
-    [JsonConverter (typeof(ConcreteConverter<Competition>))]
-    public required ICompetition Competition { get; set; }
+    public required Competition Competition { get; set; }
 
     [JsonProperty ("donator")]
     public required bool Donator { get; set; }
@@ -38,8 +34,7 @@ public class ProfileRoot : IProfileRoot {
     public required int Enemies { get; set; }
 
     [JsonProperty ("faction")]
-    [JsonConverter (typeof(ConcreteConverter<FactionStub>))]
-    public required IFactionStub Faction { get; set; }
+    public required FactionStub Faction { get; set; }
 
     [JsonProperty ("forum_posts")]
     public required int ForumPosts { get; set; }
@@ -60,26 +55,22 @@ public class ProfileRoot : IProfileRoot {
     public required int Honor { get; set; }
 
     [JsonProperty ("job")]
-    [JsonConverter (typeof(ConcreteConverter<Job>))]
-    public required IJob Job { get; set; }
+    public required Job Job { get; set; }
 
     [JsonProperty ("karma")]
     public required int Karma { get; set; }
 
     [JsonProperty ("last_action")]
-    [JsonConverter (typeof(ConcreteConverter<RelativeLastAction>))]
-    public required IRelativeLastAction LastAction { get; set; }
+    public required RelativeLastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
     public required int Level { get; set; }
 
     [JsonProperty ("life")]
-    [JsonConverter (typeof(ConcreteConverter<Bar>))]
-    public required IBar Life { get; set; }
+    public required Bar Life { get; set; }
 
     [JsonProperty ("marrige")]
-    [JsonConverter (typeof(ConcreteConverter<Marriage>))]
-    public required IMarriage Marriage { get; set; }
+    public required Marriage Marriage { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
@@ -97,10 +88,8 @@ public class ProfileRoot : IProfileRoot {
     public required string Signup { get; set; }
 
     [JsonProperty ("states")]
-    [JsonConverter (typeof(ConcreteConverter<PlayerStates>))]
-    public required IPlayerStates States { get; set; }
+    public required PlayerStates States { get; set; }
 
     [JsonProperty ("status")]
-    [JsonConverter (typeof(ConcreteConverter<Status>))]
-    public required IStatus Status { get; set; }
+    public required Status Status { get; set; }
 }

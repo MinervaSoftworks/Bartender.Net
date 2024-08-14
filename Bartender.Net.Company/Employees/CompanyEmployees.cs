@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Employees;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Employees;
 
-public class CompanyEmployees : ICompanyEmployees {
+public class CompanyEmployees {
     [JsonProperty ("company_employees")]
-    public IDictionary<string, IEmployee> Employees { get; set; }
+    public Dictionary<string, Employee> Employees { get; set; }
 }

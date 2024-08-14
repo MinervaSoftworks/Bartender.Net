@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.News;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.News;
 
-public class CompanyNewsEntry : ICompanyNewsEntry {
+public class CompanyNewsEntry {
     [JsonIgnore]
     public int ID { get; set; }
 

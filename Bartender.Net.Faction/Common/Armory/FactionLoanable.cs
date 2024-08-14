@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Common;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Armor;
 
-public class FactionLoanable : IFactionLoanable {
+public class FactionLoanable {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 
@@ -25,7 +24,7 @@ public class FactionLoanable : IFactionLoanable {
     [JsonProperty ("loaned_to")]
     public string LoanedTo { get; set; }
 
-    public IEnumerable<int> LoanedToIDs {
+    public List<int> LoanedToIDs {
         get {
             if (LoanedTo.Length > 0 && !_loanedIDs.Any ()) {
                 var ids = new List<int> ();
@@ -42,5 +41,5 @@ public class FactionLoanable : IFactionLoanable {
         set => _loanedIDs = value;
     }
 
-    private IEnumerable<int> _loanedIDs = new List<int> ();
+    private List<int> _loanedIDs = new List<int> ();
 }

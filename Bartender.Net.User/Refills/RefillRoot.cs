@@ -1,11 +1,8 @@
-﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.User.Refills;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Refills;
 
-public class RefillRoot : IRefillRoot {
+public class RefillRoot {
     [JsonProperty ("refills")]
-    [JsonConverter (typeof(ConcreteConverter<RefillStates>))]
-    public required IRefillStates Refills { get; set; }
+    public required RefillStates Refills { get; set; }
 }

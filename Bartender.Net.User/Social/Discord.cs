@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.User.Social;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Social;
 
 //TODO can just move this into it's own folder
-public class DiscordRecord : IDiscordRecord {
+public class DiscordRecord {
     [JsonIgnore]
     public int ID { get; set; }
 

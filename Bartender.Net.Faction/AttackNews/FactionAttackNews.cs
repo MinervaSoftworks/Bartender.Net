@@ -3,8 +3,8 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.AttackNews;
 
-public class FactionAttackNews : INewsEntries {
+public class FactionAttackNews {
     [JsonProperty ("attacknews")]
-    public IDictionary<string, INewsEntry> News { get; set; }
+    public Dictionary<string, NewsEntry> News { get; set; }
 }
 

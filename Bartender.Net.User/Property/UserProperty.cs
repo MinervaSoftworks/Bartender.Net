@@ -1,11 +1,8 @@
-﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.Common.Property;
-using Bartender.Net.Framework.User.Property;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Property;
 
-public class UserProperty : IUserProperty {
+public class UserProperty {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -37,14 +34,11 @@ public class UserProperty : IUserProperty {
     public required int MarketPrice { get; set; }
 
     [JsonProperty ("modifications")]
-    [JsonConverter (typeof(ConcreteConverter<PropertyModifications>))]
-    public required IPropertyModifications Modifications { get; set; }
+    public required PropertyModifications Modifications { get; set; }
 
     [JsonProperty ("staff")]
-    [JsonConverter (typeof(ConcreteConverter<PropertyStaff>))]
-    public required IPropertyStaff Staff { get; set; }
+    public required PropertyStaff Staff { get; set; }
 
     [JsonProperty ("rented")]
-    [JsonConverter (typeof(ConcreteConverter<RentEntry>))]
-    public required IRentEntry Rented { get; set; }
+    public required RentEntry Rented { get; set; }
 }

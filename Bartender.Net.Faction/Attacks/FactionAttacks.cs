@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Attacks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.AttackNews;
 
-public class FactionAttacks : IFactionAttacks {
+public class FactionAttacks {
     [JsonProperty ("attacks")]
-    public Dictionary<string, IFactionAttack> Attacks { get; set; }
+    public Dictionary<string, FactionAttack> Attacks { get; set; }
 }

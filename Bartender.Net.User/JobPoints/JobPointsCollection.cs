@@ -1,15 +1,14 @@
-﻿using Bartender.Net.Framework.User.JobPoints;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.JobPoints;
 
-public class JobPointsCollection : IJobPointsCollection {
+public class JobPointsCollection {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("companies")]
-    public IDictionary<string, ICompanyPoints> Companies { get; set; }
+    public Dictionary<string, CompanyPoints> Companies { get; set; }
 
     [JsonProperty ("jobs")]
-    public IUserJobPoints JobPoints { get; set; }
+    public UserJobPoints JobPoints { get; set; }
 }

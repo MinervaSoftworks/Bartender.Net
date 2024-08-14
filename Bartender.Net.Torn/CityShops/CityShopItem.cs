@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Torn.CityShops;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Torn.CityShops;
 
-public class CityShopItem : ICityShopItem {
+public class CityShopItem {
     [JsonIgnore]
     public int ID { get; set; }
 

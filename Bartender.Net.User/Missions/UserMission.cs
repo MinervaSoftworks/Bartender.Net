@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Missions;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Missions;
 
-public class UserMission : IUserMission {
+public class UserMission {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,17 +1,16 @@
-﻿using Bartender.Net.Framework.Common.Reports;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Reports;
 
-public class ReportData : IReportData {
+public class ReportData {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("bounties")]
-    public IEnumerable<string> Bounties { get; set; }
+    public List<string> Bounties { get; set; }
 
     [JsonProperty ("company_history")]
-    public IEnumerable<IReportReference> CompanyHistory { get; set; }
+    public List<ReportReference> CompanyHistory { get; set; }
 
     [JsonProperty ("defense")]
     public int Defense { get; set; }
@@ -20,13 +19,13 @@ public class ReportData : IReportData {
     public int Dexterity { get; set; }
 
     [JsonProperty ("enemylist")]
-    public IEnumerable<IFriendOrFoeUser> EnemyList { get; set; }
+    public List<FriendOrFoeUser> EnemyList { get; set; }
 
     [JsonProperty ("faction_history")]
-    public IEnumerable<IReportReference> FactionHistory { get; set; }
+    public List<ReportReference> FactionHistory { get; set; }
 
     [JsonProperty ("friendlist")]
-    public IEnumerable<IFriendOrFoeUser> FriendList { get; set; }
+    public List<FriendOrFoeUser> FriendList { get; set; }
 
     [JsonProperty ("invested_amount")]
     public int InvestedAmount { get; set; }
@@ -38,7 +37,7 @@ public class ReportData : IReportData {
     public int Money { get; set; }
 
     [JsonProperty ("otherlist")]
-    public IEnumerable<IWarrant> OtherList { get; set; }
+    public List<Warrant> OtherList { get; set; }
 
     [JsonProperty ("speed")]
     public int Speed { get; set; }
@@ -47,7 +46,7 @@ public class ReportData : IReportData {
     public int Strength { get; set; }
 
     [JsonProperty ("toplist")]
-    public IEnumerable<IWarrant> TopList { get; set; }
+    public List<Warrant> TopList { get; set; }
 
     [JsonProperty ("total_battlestats")]
     public int TotalBattleStats { get; set; }

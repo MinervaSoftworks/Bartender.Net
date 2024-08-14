@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Torn.Bank;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Torn.Cards;
 
-public class CardsCollection : ICardsCollection {
+public class CardsCollection {
     [JsonProperty ("cards")]
-    public Dictionary<int, ICard> Cards { get; set; }
+    public Dictionary<int, Card> Cards { get; set; }
 }

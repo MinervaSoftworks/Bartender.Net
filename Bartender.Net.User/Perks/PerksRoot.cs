@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Perks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Perks;
 
-public class PerksRoot : IPerksRoot {
+public class PerksRoot {
     [JsonIgnore]
     public int ID { get; set; }
 

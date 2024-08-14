@@ -1,8 +1,6 @@
-﻿using TornApi.Net.REST;
+﻿namespace Bartender.Net.REST;
 
-namespace Bartender.Net.REST;
-
-public class RequestConfiguration : IRequestConfiguration {
+public class RequestConfiguration {
     public string Key { get; set; }
 
     public int ID { get; set; }
@@ -11,7 +9,7 @@ public class RequestConfiguration : IRequestConfiguration {
 
     public string Section { get; set; }
 
-    public IEnumerable<string> Selections { get; set; }
+    public List<string> Selections { get; set; }
 
     public DateTime? From { get; set; }
 

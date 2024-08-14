@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.PersonalStats;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.PersonalStats;
 
-public class PersonalStats : IPersonalStats {
+public class PersonalStats {
     [JsonIgnore]
     public int ID { get; set; }
 

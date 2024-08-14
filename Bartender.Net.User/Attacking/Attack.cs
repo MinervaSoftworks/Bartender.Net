@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Attacking;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Attacking;
 
-public class Attack : IAttack {
+public class Attack {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -65,5 +64,5 @@ public class Attack : IAttack {
     public double RespectLoss { get; set; }
 
     [JsonProperty ("modifiers")]
-    public IAttackModifiers Modifiers { get; set; }
+    public AttackModifiers Modifiers { get; set; }
 }

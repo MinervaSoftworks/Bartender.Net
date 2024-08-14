@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Chains;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Chains;
 
-public class FactionChainStubs : IFactionChainStubs {
+public class FactionChainStubs {
     [JsonProperty ("chains")]
-    public IDictionary<string, IChainStub> Chains { get; set; }
+    public Dictionary<string, ChainStub> Chains { get; set; }
 }

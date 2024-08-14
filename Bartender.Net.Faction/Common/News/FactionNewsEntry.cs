@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Common.News;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Common.News;
 
-public class FactionNewsEntry : INewsEntry {
+public class FactionNewsEntry {
     [JsonIgnore]
     public int ID { get; set; }
 

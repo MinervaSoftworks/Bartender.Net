@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.ChainReport;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.ChainReport;
 
-public class BonusHit : IBonusHit {
+public class BonusHit {
     [JsonProperty ("userID")]
     public int ID { get; set; }
 

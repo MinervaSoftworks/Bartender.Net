@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Reports;
 
-public class Report : IReport {
+public class Report {
     [JsonProperty ("id")]
     public int ID { get; set; }
 
     [JsonProperty ("report")]
-    public IReportData Data { get; set; }
+    public ReportData Data { get; set; }
 
     [JsonProperty ("target")]
     public int Target { get; set; }

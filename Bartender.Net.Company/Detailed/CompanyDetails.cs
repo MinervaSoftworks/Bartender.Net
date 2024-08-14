@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.Detailed;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Detailed;
 
-public class CompanyDetails : ICompanyDetails {
+public class CompanyDetails {
     [JsonProperty ("advertising_budget")]
     public int AdvertisingBudget { get; set; }
 
@@ -29,7 +28,7 @@ public class CompanyDetails : ICompanyDetails {
     public int TrainsAvailable { get; set; }
 
     [JsonProperty ("upgrades")]
-    public ICompanyUpgrades Upgrades { get; set; }
+    public CompanyUpgrades Upgrades { get; set; }
 
     [JsonProperty ("value")]
     public int Value { get; set; }

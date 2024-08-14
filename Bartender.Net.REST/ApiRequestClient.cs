@@ -1,16 +1,15 @@
 ﻿using Bartender.Net.Framework;
 using Bartender.Net.Framework.Selection;
 using Bartender.Net.Key;
-using Bartender.Net.REST;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace TornApi.Net.REST {
+namespace Bartender.Net.REST {
     /// <summary>
     /// A request client to interact with Torn's REST Api.
     /// </summary>
-    public class ApiRequestClient : IApiRequestClient {
+    public class ApiRequestClient {
         private HttpClient _client;
 
         public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
@@ -59,7 +58,7 @@ namespace TornApi.Net.REST {
             return result;
         }
 
-        public async Task<IKeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
+        public async Task<KeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
             var config = new RequestConfiguration {
                 Key = key,
                 Section = "key",

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class Competition : ICompetition {
+public class Competition {
     [JsonIgnore]
     public int ID { get; set; }
 

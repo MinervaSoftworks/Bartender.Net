@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Attacks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.AttackNews;
 
-public class FactionAttack : IFactionAttack {
+public class FactionAttack {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -65,6 +64,6 @@ public class FactionAttack : IFactionAttack {
     public double RespectLoss { get; set; }
 
     [JsonProperty ("modifiers")]
-    public IFactionAttackModifiers Modifiers { get; set; }
+    public FactionAttackModifiers Modifiers { get; set; }
 }
 

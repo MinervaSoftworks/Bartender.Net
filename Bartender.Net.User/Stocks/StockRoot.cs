@@ -1,12 +1,8 @@
-﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.Selection;
-using Bartender.Net.Framework.User.Stocks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Stocks;
 
-public class StockRoot : IStockRoot {
+public class StockRoot {
     [JsonProperty ("stocks")]
-    [JsonConverter (typeof(ConcreteConverter<Dictionary<string, Stock>>))]
-    public required IDictionary<string, IStock> Stocks { get; set; }
+    public required Dictionary<string, Stock> Stocks { get; set; }
 }

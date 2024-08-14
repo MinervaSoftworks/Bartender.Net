@@ -1,7 +1,5 @@
-﻿using Bartender.Net.Framework.Company.Stock;
+﻿namespace Bartender.Net.Company.Stock;
 
-namespace Bartender.Net.Company.Stock;
-
-public class CompanyStocks : ICompanyStocks {
-    public IDictionary<string, ICompanyStock> Stocks { get; set; }
+public class CompanyStocks {
+    public Dictionary<string, CompanyStock> Stocks { get; set; }
 }

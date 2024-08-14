@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Attacking;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Attacking;
 
-public class AttackCollection : IAttackCollection {
+public class AttackCollection {
     [JsonProperty ("attacks")]
-    public IDictionary<string, IAttack> Attacks { get; set; }
+    public Dictionary<string, Attack> Attacks { get; set; }
 }

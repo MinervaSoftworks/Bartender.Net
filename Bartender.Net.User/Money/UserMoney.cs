@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Money;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Money;
 
-public class UserMoney : IUserMoney {
+public class UserMoney {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -26,5 +25,5 @@ public class UserMoney : IUserMoney {
     public int MoneyOnhand { get; set; }
 
     [JsonProperty ("city_bank")]
-    public ICityBank CityBank { get; set; }
+    public CityBank CityBank { get; set; }
 }

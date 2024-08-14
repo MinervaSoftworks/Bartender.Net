@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Gym;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Gym;
 
-public class UserGym : IUserGym {
+public class UserGym {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.BattleStats;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Battle;
 
-public class UserBattleStats : IUserBattleStats {
+public class UserBattleStats {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -35,14 +34,14 @@ public class UserBattleStats : IUserBattleStats {
     public int DexterityModifier { get; set; }
 
     [JsonProperty ("strength_info")]
-    public IEnumerable<string> StrengthInfo { get; set; }
+    public List<string> StrengthInfo { get; set; }
 
     [JsonProperty ("defense_info")]
-    public IEnumerable<string> DefenseInfo { get; set; }
+    public List<string> DefenseInfo { get; set; }
 
     [JsonProperty ("speed_info")]
-    public IEnumerable<string> SpeedInfo { get; set; }
+    public List<string> SpeedInfo { get; set; }
 
     [JsonProperty ("dexterity_info")]
-    public IEnumerable<string> DexterityInfo { get; set; }
+    public List<string> DexterityInfo { get; set; }
 }

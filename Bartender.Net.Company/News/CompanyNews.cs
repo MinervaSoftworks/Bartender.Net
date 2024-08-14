@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Company.News;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.News;
 
-public class CompanyNews : ICompanyNews {
+public class CompanyNews {
     [JsonProperty ("news")]
-    public IDictionary<string, ICompanyNewsEntry> MyProperty { get; set; }
+    public Dictionary<string, CompanyNewsEntry> MyProperty { get; set; }
 }

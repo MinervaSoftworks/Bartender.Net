@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.WeaponExp;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.WeaponExp;
 
-public class WeaponExpEntry : IWeaponExpEntry {
+public class WeaponExpEntry {
     [JsonIgnore]
     public int ID { get; set; }
 

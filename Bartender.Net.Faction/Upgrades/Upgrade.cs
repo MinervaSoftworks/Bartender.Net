@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Upgrades;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Upgrades;
 
-public class Upgrade : IUpgrade {
+public class Upgrade {
     [JsonIgnore]
     public int ID { get; set; }
 

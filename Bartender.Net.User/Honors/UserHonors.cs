@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Honors;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Honors;
 
-public class UserHonors : IUserHonors {
+public class UserHonors {
     [JsonIgnore]
     public int ID { get; set; }
 

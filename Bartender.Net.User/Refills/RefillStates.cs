@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Refills;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Refills;
 
-public class RefillStates : IRefillStates {
+public class RefillStates {
     [JsonIgnore]
     public int ID { get; set; }
 

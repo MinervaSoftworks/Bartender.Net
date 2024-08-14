@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using TornApi.Net.Models.Torn;
 
 namespace Bartender.Net.Torn.ChainReport;
 
-public class TornChainReport : ITornChainReport {
+public class TornChainReport {
     [JsonProperty ("assists")]
     public int Assists { get; set; }
 
@@ -11,7 +10,7 @@ public class TornChainReport : ITornChainReport {
     public int BestHit { get; set; }
 
     [JsonProperty ("bonuses")]
-    public IList<IChainBonues> Bonuses { get; set; }
+    public List<ChainBonus> Bonuses { get; set; }
 
     [JsonProperty ("draws")]
     public int Draws { get; set; }
@@ -53,5 +52,5 @@ public class TornChainReport : ITornChainReport {
     public int WarHits { get; set; }
 
     [JsonProperty ("members")]
-    public IDictionary<string, IChainMemeber> Members { get; set; }
+    public Dictionary<string, ChainMember> Members { get; set; }
 }

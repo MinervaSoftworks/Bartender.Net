@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Donations;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Donations;
 
-public class FactionDonations : IFactionDonations {
+public class FactionDonations {
     [JsonProperty ("donations")]
-    public IDictionary<string, IDonationEntry> Donations { get; set; }
+    public Dictionary<string, DonationEntry> Donations { get; set; }
 }

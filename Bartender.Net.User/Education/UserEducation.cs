@@ -1,9 +1,8 @@
-using Bartender.Net.Framework.User.Education;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Edu;
 
-public class UserEducation : IUserEducation {
+public class UserEducation {
     [JsonIgnore]
     public int ID { get; set; }
 

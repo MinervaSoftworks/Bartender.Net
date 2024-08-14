@@ -1,4 +1,4 @@
-﻿namespace TornApi.Net.REST {
+﻿namespace Bartender.Net.REST {
     public class ApiResponse<T> : IApiResponse<T> {
         public T? Content { get; set; } = default;
 

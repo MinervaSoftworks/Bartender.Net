@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Common.Revives;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Revives;
 
-public class ReviveCollection : IReviveCollection {
+public class ReviveCollection {
     [JsonProperty ("revives")]
-    public IDictionary<string, IRevive> Revives { get; set; }
+    public Dictionary<string, Revive> Revives { get; set; }
 }

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.User;
 
-public class LastAction : ILastAction {
+public class LastAction {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -20,5 +20,3 @@ public class LastAction : ILastAction {
     [JsonProperty ("timestamp")]
     public long Timestamp { get; set; }
 }
-//[JsonProperty ("relative")]
-//public string Relative { get; set; }

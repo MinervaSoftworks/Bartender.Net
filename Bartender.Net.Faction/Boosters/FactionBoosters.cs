@@ -1,9 +1,9 @@
-﻿using Bartender.Net.Framework.Faction.Common;
+﻿using Bartender.Net.Faction.Armor;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Boosters;
 
-public class FactionBoosters : IFactionArmoryItems {
+public class FactionBoosters {
     [JsonProperty ("boosters")]
-    public IEnumerable<IFactionArmoryItem> Items { get; set; }
+    public List<FactionArmoryItem> Items { get; set; }
 }

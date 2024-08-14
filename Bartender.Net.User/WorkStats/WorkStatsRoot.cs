@@ -1,10 +1,8 @@
-﻿using Bartender.Net.Framework.Selection;
-using Bartender.Net.Framework.User.WorkStats;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.WorkStats;
 
-public class WorkStatsRoot : IWorkStatsRoot{
+public class WorkStatsRoot {
     [JsonIgnore]
     public int ID { get; set; }
 

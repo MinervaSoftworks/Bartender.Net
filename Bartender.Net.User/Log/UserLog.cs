@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Log;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Log;
 
-public class UserLog : IUserLog {
+public class UserLog {
     [JsonProperty ("log")]
-    public IDictionary<int, ILogEntry> Entries { get; set; }
+    public Dictionary<int, LogEntry> Entries { get; set; }
 }

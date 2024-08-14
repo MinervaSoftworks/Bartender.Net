@@ -1,10 +1,9 @@
-﻿using Bartender.Net.Framework.Common.Property;
-using Bartender.Net.Framework.Property;
+﻿using Bartender.Net.User.Property;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Property;
 
-public class PropertyEntry : IPropertyEntry {
+public class PropertyEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -27,7 +26,7 @@ public class PropertyEntry : IPropertyEntry {
     public List<string> Staff { get; set; }
 
     [JsonProperty ("rented")]
-    public IRentEntry Rented { get; set; }
+    public RentEntry Rented { get; set; }
 
     [JsonProperty ("users_living")]
     public string UsersLiving { get; set; }

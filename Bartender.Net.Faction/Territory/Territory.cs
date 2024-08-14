@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Faction.Territory;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Faction.Territory;
 
-public class Territory : ITerritory {
+public class Territory {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -23,7 +22,7 @@ public class Territory : ITerritory {
     public int Faction { get; set; }
 
     [JsonProperty ("racket")]
-    public IRacket Racket { get; set; }
+    public Racket Racket { get; set; }
 
     [JsonProperty ("sector")]
     public int Sector { get; set; }

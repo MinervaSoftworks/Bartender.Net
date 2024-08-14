@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Bars;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bars;
 
-public class Bar : IBar {
+public class Bar {
     [JsonIgnore]
     public int ID { get; set; }
 

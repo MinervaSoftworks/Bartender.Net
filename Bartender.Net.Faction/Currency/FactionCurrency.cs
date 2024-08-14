@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Faction.Currency;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Currency;
 
-public class FactionCurrency : IFactionCurrency {
+public class FactionCurrency {
     [JsonProperty ("faction_id")]
     public int FactionId { get; set; }
 

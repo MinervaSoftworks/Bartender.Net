@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.User.Travel;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Travel;
 
-public class TravelEntry : ITravelEntry {
+public class TravelEntry {
     [JsonIgnore]
     public int ID { get; set; }
 
