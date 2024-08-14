@@ -7,9 +7,9 @@ public class HallOfFameRank {
     public int ID { get; set; }
 
     [JsonProperty ("value")]
-    public int Value { get; set; }
+    public required int Value { get; set; }
 
     [JsonProperty ("rank")]
-    public int Rank { get; set; }
+    public required int Rank { get; set; }
 }
 

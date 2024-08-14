@@ -2,13 +2,13 @@
 
 namespace Bartender.Net.User.Missions;
 
-public class UserMission {
+public class Mission {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("title")]
-    public string Title { get; set; }
+    public required string Title { get; set; }
 
     [JsonProperty ("status")]
-    public string Status { get; set; }
+    public required string Status { get; set; }
 }

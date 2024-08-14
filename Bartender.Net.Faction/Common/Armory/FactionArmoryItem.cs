@@ -4,14 +4,14 @@ namespace Bartender.Net.Faction.Armor;
 
 public class FactionArmoryItem {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("quantity")]
-    public int Quantity { get; set; }
+    public required int Quantity { get; set; }
 
     [JsonProperty ("type")]
-    public int Type { get; set; }
+    public required int Type { get; set; }
 }

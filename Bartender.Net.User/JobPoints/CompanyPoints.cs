@@ -7,8 +7,8 @@ public class CompanyPoints {
     public int ID { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("jobpoints")]
-    public int JobPoints { get; set; }
+    public required int JobPoints { get; set; }
 }

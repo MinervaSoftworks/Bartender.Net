@@ -8,35 +8,35 @@ public class ReviveFull {
     public int ID { get; set; }
 
     [JsonProperty ("timestamp")]
-    public int Timestamp { get; set; }
+    public required int Timestamp { get; set; }
 
     [JsonProperty ("chance")]
-    public double Chance { get; set; }
+    public required double Chance { get; set; }
 
     [JsonProperty ("result")]
-    public string Result { get; set; }
+    public required string Result { get; set; }
 
     [JsonProperty ("reviver_faction")]
-    public int ReviverFaction { get; set; }
+    public required int ReviverFaction { get; set; }
 
     [JsonProperty ("reviver_id")]
-    public int ReviverId { get; set; }
+    public required int ReviverId { get; set; }
 
     [JsonProperty ("target_early_discharge")]
-    public int TargetEarlyDischarge { get; set; }
+    public required int TargetEarlyDischarge { get; set; }
 
     [JsonProperty ("target_faction")]
-    public int TargetFaction { get; set; }
+    public required int TargetFaction { get; set; }
 
     [JsonProperty ("target_hospital_reason")]
-    public string TargetHospitalReason { get; set; }
+    public required string TargetHospitalReason { get; set; }
 
     [JsonProperty ("target_id")]
-    public int TargetId { get; set; }
+    public required int TargetId { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public LastAction TargetLastAction { get; set; }
+    public required LastAction TargetLastAction { get; set; }
 
     [JsonProperty ("timestamp")]
-    public int TimeStamp { get; set; }
+    public required int TimeStamp { get; set; }
 }

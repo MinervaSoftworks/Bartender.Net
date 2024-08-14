@@ -7,11 +7,11 @@ public class ApplicationStats {
     public int ID { get; set; }
 
     [JsonProperty ("endurance")]
-    public float Endurance { get; set; }
+    public required float Endurance { get; set; }
 
     [JsonProperty ("intelligence")]
-    public float Intelligence { get; set; }
+    public required float Intelligence { get; set; }
 
     [JsonProperty ("manual_labor")]
-    public float ManualLabor { get; set; }
+    public required float ManualLabor { get; set; }
 }

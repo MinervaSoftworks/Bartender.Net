@@ -7,9 +7,9 @@ public class FriendOrFoeUser {
     public int ID { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("user_id")]
-    public int UserID { get; set; }
+    public required int UserID { get; set; }
 }
 

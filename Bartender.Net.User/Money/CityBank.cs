@@ -7,8 +7,8 @@ public class CityBank {
     public int ID { get; set; }
 
     [JsonProperty ("amount")]
-    public int Amount { get; set; }
+    public required int Amount { get; set; }
 
     [JsonProperty ("time_left")]
-    public int TimeLeft { get; set; }
+    public required int TimeLeft { get; set; }
 }

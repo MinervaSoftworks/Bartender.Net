@@ -7,23 +7,23 @@ public class Effectiveness {
     public int ID { get; set; }
 
     [JsonProperty ("working_stats")]
-    public int WorkingStats { get; set; }
+    public required int WorkingStats { get; set; }
 
     [JsonProperty ("settled_in")]
-    public int SettledIn { get; set; }
+    public required int SettledIn { get; set; }
 
     [JsonProperty ("merits")]
-    public int Merits { get; set; }
+    public required int Merits { get; set; }
 
     [JsonProperty ("director_education")]
-    public int DirectorEducation { get; set; }
+    public required int DirectorEducation { get; set; }
 
     [JsonProperty ("total")]
-    public int Total { get; set; }
+    public required int Total { get; set; }
 
     [JsonProperty ("addiction")]
-    public int Addiction { get; set; }
+    public required int Addiction { get; set; }
 
     [JsonProperty ("management")]
-    public int Management { get; set; }
+    public required int Management { get; set; }
 }

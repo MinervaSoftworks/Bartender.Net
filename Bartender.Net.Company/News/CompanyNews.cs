@@ -4,5 +4,5 @@ namespace Bartender.Net.Company.News;
 
 public class CompanyNews {
     [JsonProperty ("news")]
-    public Dictionary<string, CompanyNewsEntry> MyProperty { get; set; }
+    public required Dictionary<string, CompanyNewsEntry> MyProperty { get; set; }
 }

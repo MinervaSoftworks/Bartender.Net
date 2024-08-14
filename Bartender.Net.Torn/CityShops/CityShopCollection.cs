@@ -4,5 +4,5 @@ namespace Bartender.Net.Torn.CityShops;
 
 public class CityShopCollection {
     [JsonProperty ("cityshops")]
-    public Dictionary<string, CityShop> CityShops { get; set; }
+    public required Dictionary<string, CityShop> CityShops { get; set; }
 }

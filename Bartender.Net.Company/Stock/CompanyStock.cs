@@ -7,26 +7,26 @@ public class CompanyStock {
     public int ID { get; set; }
 
     [JsonIgnore]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [JsonProperty ("cost")]
-    public int Cost { get; set; }
+    public required int Cost { get; set; }
 
     [JsonProperty ("in_stock")]
-    public int InStock { get; set; }
+    public required int InStock { get; set; }
 
     [JsonProperty ("on_order")]
-    public int OnOrder { get; set; }
+    public required int OnOrder { get; set; }
 
     [JsonProperty ("price")]
-    public int Price { get; set; }
+    public required int Price { get; set; }
 
     [JsonProperty ("rrp")]
-    public int RRP { get; set; }
+    public required int RRP { get; set; }
 
     [JsonProperty ("sold_amount")]
-    public int SoldAmount { get; set; }
+    public required int SoldAmount { get; set; }
 
     [JsonProperty ("sold_worth")]
-    public int SoldWorth { get; set; }
+    public required int SoldWorth { get; set; }
 }

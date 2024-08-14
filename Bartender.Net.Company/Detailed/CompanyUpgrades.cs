@@ -7,14 +7,14 @@ public class CompanyUpgrades {
     public int ID { get; set; }
 
     [JsonProperty ("company_size")]
-    public int CompanySize { get; set; }
+    public required int CompanySize { get; set; }
 
     [JsonProperty ("staffroom_size")]
-    public string StaffroomSize { get; set; }
+    public required string StaffroomSize { get; set; }
 
     [JsonProperty ("storage_room")]
-    public string StorageSize { get; set; }
+    public required string StorageSize { get; set; }
 
     [JsonProperty ("storage_space")]
-    public int StorageSpace { get; set; }
+    public required int StorageSpace { get; set; }
 }

@@ -8,7 +8,7 @@ public class KeyInfo {
     public int ID { get; set; }
 
     [JsonProperty ("access_type")]
-    public string AccessLevelString { get; set; }
+    public required string AccessLevelString { get; set; }
 
     [JsonIgnore]
     public AccessLevel AccessLevel {

@@ -7,55 +7,55 @@ public class Attack {
     public int ID { get; set; }
 
     [JsonProperty ("code")]
-    public string Code { get; set; }
+    public required string Code { get; set; }
 
     [JsonProperty ("timestamp_started")]
-    public int TimestampStarted { get; set; }
+    public required int TimestampStarted { get; set; }
 
     [JsonProperty ("timestamp_ended")]
-    public int TimestampEnded { get; set; }
+    public required int TimestampEnded { get; set; }
 
     [JsonProperty ("attacker_id")]
-    public int AttackerId { get; set; }
+    public required int AttackerId { get; set; }
 
     [JsonProperty ("attacker_name")]
-    public string AttackerName { get; set; }
+    public required string AttackerName { get; set; }
 
     [JsonProperty ("attacker_faction")]
-    public int AttackerFaction { get; set; }
+    public required int AttackerFaction { get; set; }
 
     [JsonProperty ("attacker_factionname")]
-    public string AttackerFactionName { get; set; }
+    public required string AttackerFactionName { get; set; }
 
     [JsonProperty ("defender_id")]
-    public int DefenderId { get; set; }
+    public required int DefenderId { get; set; }
 
     [JsonProperty ("defender_name")]
-    public string DefenderName { get; set; }
+    public required string DefenderName { get; set; }
 
     [JsonProperty ("defender_faction")]
-    public int DefenderFaction { get; set; }
+    public required int DefenderFaction { get; set; }
 
     [JsonProperty ("defender_factionname")]
-    public string DefenderFactionname { get; set; }
+    public required string DefenderFactionname { get; set; }
 
     [JsonProperty ("result")]
-    public string Result { get; set; }
+    public required string Result { get; set; }
 
     [JsonProperty ("stealthed")]
-    public int Stealthed { get; set; }
+    public required int Stealthed { get; set; }
 
     [JsonProperty ("respect")]
     public double Respect { get; set; }
 
     [JsonProperty ("chain")]
-    public int Chain { get; set; }
+    public required int Chain { get; set; }
 
     [JsonProperty ("raid")]
-    public int Raid { get; set; }
+    public required int Raid { get; set; }
 
     [JsonProperty ("ranked_war")]
-    public int RankedWar { get; set; }
+    public required int RankedWar { get; set; }
 
     [JsonProperty ("respect_gain")]
     public double RespectGain { get; set; }

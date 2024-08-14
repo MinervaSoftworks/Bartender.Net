@@ -4,77 +4,77 @@ namespace Bartender.Net.Faction.Positions;
 
 public class FactionPosition {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonIgnore]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("default")]
-    public int Default { get; set; }
+    public required int Default { get; set; }
 
     [JsonProperty ("canUseMedicalItem")]
-    public int CanUseMedicalItem { get; set; }
+    public required int CanUseMedicalItem { get; set; }
 
     [JsonProperty ("canUseBoosterItem")]
-    public int CanUseBoosterItem { get; set; }
+    public required int CanUseBoosterItem { get; set; }
 
     [JsonProperty ("canUseDrugItem")]
-    public int CanUseDrugItem { get; set; }
+    public required int CanUseDrugItem { get; set; }
 
     [JsonProperty ("canUseEnergyRefill")]
-    public int CanUseEnergyRefill { get; set; }
+    public required int CanUseEnergyRefill { get; set; }
 
     [JsonProperty ("canUseNerveRefill")]
-    public int CanUseNerveRefill { get; set; }
+    public required int CanUseNerveRefill { get; set; }
 
     [JsonProperty ("canLoanTemporaryItem")]
-    public int CanLoanTemporaryItem { get; set; }
+    public required int CanLoanTemporaryItem { get; set; }
 
     [JsonProperty ("canLoanWeaponAndArmory")]
-    public int CanLoanWeaponAndArmory { get; set; }
+    public required int CanLoanWeaponAndArmory { get; set; }
 
     [JsonProperty ("canRetrieveLoanedArmory")]
-    public int CanRetrieveLoanedArmory { get; set; }
+    public required int CanRetrieveLoanedArmory { get; set; }
 
     [JsonProperty ("canPlanAndInitiateOrganisedCrime")]
-    public int CanPlanAndInitiateOrganisedCrime { get; set; }
+    public required int CanPlanAndInitiateOrganisedCrime { get; set; }
 
     [JsonProperty ("canAccessFactionApi")]
-    public int CanAccessFactionApi { get; set; }
+    public required int CanAccessFactionApi { get; set; }
 
     [JsonProperty ("canGiveItem")]
-    public int CanGiveItem { get; set; }
+    public required int CanGiveItem { get; set; }
 
     [JsonProperty ("canGiveMoney")]
-    public int CanGiveMoney { get; set; }
+    public required int CanGiveMoney { get; set; }
 
     [JsonProperty ("canGivePoints")]
-    public int CanGivePoints { get; set; }
+    public required int CanGivePoints { get; set; }
 
     [JsonProperty ("canManageForum")]
-    public int CanManageForum { get; set; }
+    public required int CanManageForum { get; set; }
 
     [JsonProperty ("canManageApplications")]
-    public int CanManageApplications { get; set; }
+    public required int CanManageApplications { get; set; }
 
     [JsonProperty ("canKickMembers")]
-    public int CanKickMembers { get; set; }
+    public required int CanKickMembers { get; set; }
 
     [JsonProperty ("canAdjustMemberBalance")]
-    public int CanAdjustMemberBalance { get; set; }
+    public required int CanAdjustMemberBalance { get; set; }
 
     [JsonProperty ("canManageWars")]
-    public int CanManageWars { get; set; }
+    public required int CanManageWars { get; set; }
 
     [JsonProperty ("canManageUpgrades")]
-    public int CanManageUpgrades { get; set; }
+    public required int CanManageUpgrades { get; set; }
 
     [JsonProperty ("canSendNewsletter")]
-    public int CanSendNewsletter { get; set; }
+    public required int CanSendNewsletter { get; set; }
 
     [JsonProperty ("canChangeAnnouncement")]
-    public int CanChangeAnnouncement { get; set; }
+    public required int CanChangeAnnouncement { get; set; }
 
     [JsonProperty ("canChangeDescription")]
-    public int CanChangeDescription { get; set; }
+    public required int CanChangeDescription { get; set; }
 }

@@ -22,26 +22,26 @@ public class UserBattleStats {
     public long Total { get; set; }
 
     [JsonProperty ("strength_modifier")]
-    public int StrengthModifier { get; set; }
+    public required int StrengthModifier { get; set; }
 
     [JsonProperty ("defense_modifier")]
-    public int DefenseModifier { get; set; }
+    public required int DefenseModifier { get; set; }
 
     [JsonProperty ("speed_modifier")]
-    public int SpeedModifier { get; set; }
+    public required int SpeedModifier { get; set; }
 
     [JsonProperty ("dexterity_modifier")]
-    public int DexterityModifier { get; set; }
+    public required int DexterityModifier { get; set; }
 
     [JsonProperty ("strength_info")]
-    public List<string> StrengthInfo { get; set; }
+    public required List<string> StrengthInfo { get; set; }
 
     [JsonProperty ("defense_info")]
-    public List<string> DefenseInfo { get; set; }
+    public required List<string> DefenseInfo { get; set; }
 
     [JsonProperty ("speed_info")]
-    public List<string> SpeedInfo { get; set; }
+    public required List<string> SpeedInfo { get; set; }
 
     [JsonProperty ("dexterity_info")]
-    public List<string> DexterityInfo { get; set; }
+    public required List<string> DexterityInfo { get; set; }
 }

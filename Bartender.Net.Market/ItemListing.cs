@@ -4,11 +4,11 @@ namespace Bartender.Net.Market;
 
 public class ItemListing {
     [JsonProperty ("cost")]
-    public int Cost { get; set; }
+    public required int Cost { get; set; }
 
     [JsonProperty ("ID")]
     public int ID { get; set; }
 
     [JsonProperty ("quantity")]
-    public int Quantity { get; set; }
+    public required int Quantity { get; set; }
 }

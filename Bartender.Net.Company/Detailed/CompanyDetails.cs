@@ -4,32 +4,32 @@ namespace Bartender.Net.Company.Detailed;
 
 public class CompanyDetails {
     [JsonProperty ("advertising_budget")]
-    public int AdvertisingBudget { get; set; }
+    public required int AdvertisingBudget { get; set; }
 
     [JsonProperty ("company_bank")]
-    public int CompanyBank { get; set; }
+    public required int CompanyBank { get; set; }
 
     [JsonProperty ("company_funds")]
-    public int CompanyFunds { get; set; }
+    public required int CompanyFunds { get; set; }
 
     [JsonProperty ("efficiency")]
-    public int Efficiency { get; set; }
+    public required int Efficiency { get; set; }
 
     [JsonProperty ("environment")]
-    public int Environment { get; set; }
+    public required int Environment { get; set; }
 
     [JsonProperty ("ID")]
     public int ID { get; set; }
 
     [JsonProperty ("popularity")]
-    public int Popularity { get; set; }
+    public required int Popularity { get; set; }
 
     [JsonProperty ("trains_available")]
-    public int TrainsAvailable { get; set; }
+    public required int TrainsAvailable { get; set; }
 
     [JsonProperty ("upgrades")]
-    public CompanyUpgrades Upgrades { get; set; }
+    public required CompanyUpgrades Upgrades { get; set; }
 
     [JsonProperty ("value")]
-    public int Value { get; set; }
+    public required int Value { get; set; }
 }

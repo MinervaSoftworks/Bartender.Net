@@ -7,5 +7,5 @@ public class CompanyPointsCollection {
     public int ID { get; set; }
 
     [JsonProperty ("companies")]
-    public Dictionary<string, CompanyPoints> CompanyPoints { get; set; }
+    public required Dictionary<string, CompanyPoints> CompanyPoints { get; set; }
 }

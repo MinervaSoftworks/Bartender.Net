@@ -4,5 +4,5 @@ namespace Bartender.Net.Faction.Armor;
 
 public class FactionArmors {
     [JsonProperty ("armor")]
-    public List<FactionLoanable> Loanables { get; set; }
+    public required List<FactionLoanable> Loanables { get; set; }
 }

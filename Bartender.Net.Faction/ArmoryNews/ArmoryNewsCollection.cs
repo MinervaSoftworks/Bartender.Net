@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.ArmoryNews;
 
-public class ArmoryNewsCollection {
+public class ArmoryNewsRoot {
     [JsonProperty ("armorynews")]
-    public Dictionary<string, NewsEntry> News { get; set; }
+    public required Dictionary<string, NewsEntry> News { get; set; }
 }

@@ -4,32 +4,32 @@ namespace Bartender.Net.Faction.Upgrades;
 
 public class Territory {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("coordinateX")]
-    public string CoordinateX { get; set; }
+    public required string CoordinateX { get; set; }
 
     [JsonProperty ("coordinateY")]
-    public string CoordinateY { get; set; }
+    public required string CoordinateY { get; set; }
 
     [JsonProperty ("dailyRespect")]
-    public int DailyRespect { get; set; }
+    public required int DailyRespect { get; set; }
 
     [JsonProperty ("density")]
-    public int Density { get; set; }
+    public required int Density { get; set; }
 
     [JsonProperty ("faction")]
-    public int Faction { get; set; }
+    public required int Faction { get; set; }
 
     [JsonProperty ("racket")]
     public Racket Racket { get; set; }
 
     [JsonProperty ("sector")]
-    public int Sector { get; set; }
+    public required int Sector { get; set; }
 
     [JsonProperty ("size")]
-    public int Size { get; set; }
+    public required int Size { get; set; }
 
     [JsonProperty ("slots")]
-    public int Slots { get; set; }
+    public required int Slots { get; set; }
 }

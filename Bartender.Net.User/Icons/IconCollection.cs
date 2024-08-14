@@ -7,5 +7,5 @@ public class IconCollection {
     public int ID { get; set; }
 
     [JsonProperty ("icons")]
-    public Dictionary<string, string> Icons { get; set; }
+    public required Dictionary<string, string> Icons { get; set; }
 }

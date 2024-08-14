@@ -10,7 +10,7 @@ public class LastAction {
     public int ID { get; set; }
 
     [JsonProperty ("status")]
-    public string Status { get; set; }
+    public required string Status { get; set; }
 
     public LastActionStatus LastActionStatus {
         get => Status.ToLastActionStatus ();

@@ -13,7 +13,7 @@ public class War {
     public long Start { get; set; }
 
     [JsonProperty ("target")]
-    public int Target { get; set; }
+    public required int Target { get; set; }
 
     [JsonProperty ("winner")]
     public decimal Winner { get; set; }

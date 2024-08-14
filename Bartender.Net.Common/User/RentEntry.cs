@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.User.Property;
+namespace Bartender.Net.Common.User;
 
 public class RentEntry {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("cost_per_day")]
     public required int CostPerDay { get; set; }

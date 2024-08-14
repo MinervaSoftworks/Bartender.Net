@@ -7,11 +7,11 @@ public class RankedWarFaction {
     public int ID { get; set; }
 
     [JsonProperty ("chain")]
-    public int Chain { get; set; }
+    public required int Chain { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("score")]
-    public int Score { get; set; }
+    public required int Score { get; set; }
 }

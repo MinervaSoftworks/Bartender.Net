@@ -1,23 +1,23 @@
 ﻿namespace Bartender.Net.REST;
 
 public class RequestConfiguration {
-    public string Key { get; set; }
+    public required string Key { get; set; }
 
     public int ID { get; set; }
 
-    public string? Comment { get; set; }
+    public required string? Comment { get; set; }
 
-    public string Section { get; set; }
+    public required string Section { get; set; }
 
-    public List<string> Selections { get; set; }
+    public required List<string> Selections { get; set; }
 
     public DateTime? From { get; set; }
 
     public DateTime? To { get; set; }
 
-    public int? Limit { get; set; }
+    public required int? Limit { get; set; }
 
-    public string? Sort { get; set; }
+    public required string? Sort { get; set; }
 
     public override string ToString () {
         var idPart = ID > 0 ? $"{ID}" : "";

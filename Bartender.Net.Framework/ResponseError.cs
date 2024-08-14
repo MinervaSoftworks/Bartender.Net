@@ -4,5 +4,5 @@ namespace Bartender.Net.Framework;
 
 public class ResponseError {
     [JsonProperty ("error")]
-    public Error Error { get; set; }
+    public required Error Error { get; set; }
 }

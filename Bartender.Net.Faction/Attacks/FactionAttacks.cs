@@ -4,5 +4,5 @@ namespace Bartender.Net.Faction.AttackNews;
 
 public class FactionAttacks {
     [JsonProperty ("attacks")]
-    public Dictionary<string, FactionAttack> Attacks { get; set; }
+    public required Dictionary<string, FactionAttack> Attacks { get; set; }
 }

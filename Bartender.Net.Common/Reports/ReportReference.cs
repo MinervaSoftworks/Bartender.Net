@@ -7,11 +7,11 @@ public class ReportReference {
     public int ID { get; set; }
 
     [JsonProperty ("joined")]
-    public string Joined { get; set; }
+    public required string Joined { get; set; }
 
     [JsonProperty ("left")]
-    public string Left { get; set; }
+    public required string Left { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 }

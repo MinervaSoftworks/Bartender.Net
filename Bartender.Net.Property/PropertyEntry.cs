@@ -1,33 +1,33 @@
-﻿using Bartender.Net.User.Property;
+﻿using Bartender.Net.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Property;
 
 public class PropertyEntry {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("owner_id")]
-    public int OwnerId { get; set; }
+    public required int OwnerId { get; set; }
 
     [JsonProperty ("property_type")]
-    public int PropertyType { get; set; }
+    public required int PropertyType { get; set; }
 
     [JsonProperty ("happy")]
-    public int Happy { get; set; }
+    public required int Happy { get; set; }
 
     [JsonProperty ("upkeep")]
-    public int Upkeep { get; set; }
+    public required int Upkeep { get; set; }
 
     [JsonProperty ("upgrades")]
-    public List<string> Upgrades { get; set; }
+    public required List<string> Upgrades { get; set; }
 
     [JsonProperty ("staff")]
-    public List<string> Staff { get; set; }
+    public required List<string> Staff { get; set; }
 
     [JsonProperty ("rented")]
-    public RentEntry Rented { get; set; }
+    public required RentEntry Rented { get; set; }
 
     [JsonProperty ("users_living")]
-    public string UsersLiving { get; set; }
+    public required string UsersLiving { get; set; }
 }

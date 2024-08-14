@@ -7,59 +7,59 @@ public class ChainReport {
     public int ID { get; set; }
 
     [JsonProperty ("factionID")]
-    public int FactionID { get; set; }
+    public required int FactionID { get; set; }
 
     [JsonProperty ("chain")]
-    public int Chain { get; set; }
+    public required int Chain { get; set; }
 
     [JsonProperty ("start")]
-    public int Start { get; set; }
+    public required int Start { get; set; }
 
     [JsonProperty ("end")]
-    public int End { get; set; }
+    public required int End { get; set; }
 
     [JsonProperty ("leave")]
-    public int Leave { get; set; }
+    public required int Leave { get; set; }
 
     [JsonProperty ("mug")]
-    public int Mug { get; set; }
+    public required int Mug { get; set; }
 
     [JsonProperty ("hospitalize")]
-    public int Hospitalize { get; set; }
+    public required int Hospitalize { get; set; }
 
     [JsonProperty ("assists")]
-    public int Assists { get; set; }
+    public required int Assists { get; set; }
 
     [JsonProperty ("overseas")]
-    public int Overseas { get; set; }
+    public required int Overseas { get; set; }
 
     [JsonProperty ("draws")]
-    public int Draws { get; set; }
+    public required int Draws { get; set; }
 
     [JsonProperty ("escapes")]
-    public int Escapes { get; set; }
+    public required int Escapes { get; set; }
 
     [JsonProperty ("losses")]
-    public int Losses { get; set; }
+    public required int Losses { get; set; }
 
     [JsonProperty ("respect")]
     public double Respect { get; set; }
 
     [JsonProperty ("targets")]
-    public int Targets { get; set; }
+    public required int Targets { get; set; }
 
     [JsonProperty ("warhits")]
-    public int Warhits { get; set; }
+    public required int Warhits { get; set; }
 
     [JsonProperty ("besthit")]
-    public int Besthit { get; set; }
+    public required int Besthit { get; set; }
 
     [JsonProperty ("retaliations")]
-    public int Retaliations { get; set; }
+    public required int Retaliations { get; set; }
 
     [JsonProperty ("members")]
-    public Dictionary<string, ChainParticipant> Participants { get; set; }
+    public required Dictionary<string, ChainParticipant> Participants { get; set; }
 
     [JsonProperty ("bonuses")]
-    public List<BonusHit> Bonuses { get; set; }
+    public required List<BonusHit> Bonuses { get; set; }
 }

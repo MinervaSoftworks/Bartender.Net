@@ -5,6 +5,6 @@ namespace Bartender.Net.Faction.AttackNews;
 
 public class FactionMembershipNews {
     [JsonProperty ("membershipnews")]
-    public Dictionary<string, NewsEntry> News { get; set; }
+    public required Dictionary<string, NewsEntry> News { get; set; }
 }
 

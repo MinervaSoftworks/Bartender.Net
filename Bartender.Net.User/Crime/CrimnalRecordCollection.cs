@@ -7,50 +7,50 @@ public class CrimnalRecordCollection {
     public int ID { get; set; }
 
     [JsonProperty ("auto_theft")]
-    public int AutoTheft { get; set; }
+    public required int AutoTheft { get; set; }
 
     [JsonProperty ("computer_crimes")]
-    public int ComputerCrimes { get; set; }
+    public required int ComputerCrimes { get; set; }
 
     [JsonProperty ("counterfeiting")]
-    public int Counterfeiting { get; set; }
+    public required int Counterfeiting { get; set; }
 
     [JsonProperty ("cybercrime")]
-    public int Cybercrime { get; set; }
+    public required int Cybercrime { get; set; }
 
     [JsonProperty ("drug_deals")]
-    public int DrugDeals { get; set; }
+    public required int DrugDeals { get; set; }
 
     [JsonProperty ("extortion")]
-    public int Extortion { get; set; }
+    public required int Extortion { get; set; }
 
     [JsonProperty ("fraud")]
-    public int Fraud { get; set; }
+    public required int Fraud { get; set; }
 
     [JsonProperty ("fraud_crimes")]
-    public int FraudCrimes { get; set; }
+    public required int FraudCrimes { get; set; }
 
     [JsonProperty ("illegalproduction")]
-    public int IllegalProduction { get; set; }
+    public required int IllegalProduction { get; set; }
 
     [JsonProperty ("illicitservices")]
-    public int IllicitServices { get; set; }
+    public required int IllicitServices { get; set; }
 
     [JsonProperty ("murder")]
-    public int Murder { get; set; }
+    public required int Murder { get; set; }
 
     [JsonProperty ("other")]
-    public int Other { get; set; }
+    public required int Other { get; set; }
 
     [JsonProperty ("selling_illegal_products")]
-    public int SellingIllegalProducts { get; set; }
+    public required int SellingIllegalProducts { get; set; }
 
     [JsonProperty ("theft")]
-    public int Theft { get; set; }
+    public required int Theft { get; set; }
 
     [JsonProperty ("total")]
-    public int Total { get; set; }
+    public required int Total { get; set; }
 
     [JsonProperty ("vandalism")]
-    public int Vandalism { get; set; }
+    public required int Vandalism { get; set; }
 }

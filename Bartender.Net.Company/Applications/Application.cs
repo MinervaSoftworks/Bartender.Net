@@ -7,23 +7,23 @@ public class Application {
     public int ID { get; set; }
 
     [JsonProperty ("expires")]
-    public int Expires { get; set; }
+    public required int Expires { get; set; }
 
     [JsonProperty ("level")]
-    public int Level { get; set; }
+    public required int Level { get; set; }
 
     [JsonProperty ("message")]
-    public string Message { get; set; }
+    public required string Message { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public ApplicationStats Stats { get; set; }
+    public required ApplicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
-    public string Status { get; set; }
+    public required string Status { get; set; }
 
     [JsonProperty ("userID")]
-    public int UserID { get; set; }
+    public required int UserID { get; set; }
 }

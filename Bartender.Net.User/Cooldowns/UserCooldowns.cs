@@ -7,11 +7,11 @@ public class UserCooldowns {
     public int ID { get; set; }
 
     [JsonProperty ("drug")]
-    public int Drug { get; set; }
+    public required int Drug { get; set; }
 
     [JsonProperty ("medical")]
-    public int Medical { get; set; }
+    public required int Medical { get; set; }
 
     [JsonProperty ("booster")]
-    public int Booster { get; set; }
+    public required int Booster { get; set; }
 }

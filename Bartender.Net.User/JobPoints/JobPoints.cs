@@ -7,5 +7,5 @@ public class JobPoints {
     public int ID { get; set; }
 
     [JsonProperty ("jobpoints")]
-    public JobPointsCollection Points { get; set; }
+    public required JobPointsCollection Points { get; set; }
 }

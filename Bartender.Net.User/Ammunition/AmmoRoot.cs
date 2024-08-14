@@ -4,5 +4,5 @@ namespace Bartender.Net.User.Ammunition;
 
 public class AmmoRoot {
     [JsonProperty ("ammo")]
-    public List<Ammo> Ammo { get; set; }
+    public required List<Ammo> Ammo { get; set; }
 }

@@ -10,16 +10,16 @@ public class Report {
     public int ID { get; set; }
 
     [JsonProperty ("report")]
-    public ReportData Data { get; set; }
+    public required ReportData Data { get; set; }
 
     [JsonProperty ("target")]
-    public int Target { get; set; }
+    public required int Target { get; set; }
 
     [JsonProperty ("timestamp")]
-    public int Timestamp { get; set; }
+    public required int Timestamp { get; set; }
 
     [JsonProperty ("type")]
-    public string Type { get; set; }
+    public required string Type { get; set; }
 
     [JsonIgnore]
     public ReportType ReportType {
@@ -28,5 +28,5 @@ public class Report {
     }
 
     [JsonProperty ("user_id")]
-    public int UserID { get; set; }
+    public required int UserID { get; set; }
 }

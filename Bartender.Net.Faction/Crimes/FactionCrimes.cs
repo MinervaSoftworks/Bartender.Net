@@ -4,5 +4,5 @@ namespace Bartender.Net.Faction.Crimes;
 
 public class FactionCrimes {
     [JsonProperty ("crimes")]
-    public Dictionary<string, FactionCrime> Crimes { get; set; }
+    public required Dictionary<string, FactionCrime> Crimes { get; set; }
 }

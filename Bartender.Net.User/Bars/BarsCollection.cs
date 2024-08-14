@@ -4,7 +4,7 @@ namespace Bartender.Net.User.Bars;
 
 public class BarsCollection {
     [JsonProperty ("server_time")]
-    public int ServerTime { get; set; }
+    public required int ServerTime { get; set; }
 
     [JsonProperty ("happy")]
     public Bar Happy { get; set; }

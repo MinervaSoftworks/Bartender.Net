@@ -6,16 +6,16 @@ namespace Bartender.Net.Faction.Basic;
 
 public class Ranking {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("division")]
-    public int Division { get; set; }
+    public required int Division { get; set; }
 
     [JsonProperty ("level")]
-    public int Level { get; set; }
+    public required int Level { get; set; }
 
     [JsonProperty ("name")]
-    public string RankString { get; set; }
+    public required string RankString { get; set; }
 
     [JsonIgnore]
     public Rank Rank {
@@ -24,8 +24,8 @@ public class Ranking {
     }
 
     [JsonProperty ("position")]
-    public int Position { get; set; }
+    public required int Position { get; set; }
 
     [JsonProperty ("wins")]
-    public int Wins { get; set; }
+    public required int Wins { get; set; }
 }

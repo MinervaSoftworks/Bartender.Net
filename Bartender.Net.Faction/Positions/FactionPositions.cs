@@ -4,5 +4,5 @@ namespace Bartender.Net.Faction.Positions;
 
 public class FactionPositions {
     [JsonProperty ("positions")]
-    public Dictionary<string, FactionPosition> Positions { get; set; }
+    public required Dictionary<string, FactionPosition> Positions { get; set; }
 }

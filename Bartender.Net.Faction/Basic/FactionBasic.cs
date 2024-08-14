@@ -4,50 +4,50 @@ namespace Bartender.Net.Faction.Basic;
 
 public class FactionBasic {
     [JsonProperty ("age")]
-    public int Age { get; set; }
+    public required int Age { get; set; }
 
     [JsonProperty ("best_chain")]
-    public int BestChain { get; set; }
+    public required int BestChain { get; set; }
 
     [JsonProperty ("capacity")]
-    public int Capacity { get; set; }
+    public required int Capacity { get; set; }
 
     [JsonProperty ("co-leader")]
-    public int ColeaderID { get; set; }
+    public required int ColeaderID { get; set; }
 
     [JsonProperty ("ID")]
     public int ID { get; set; }
 
     [JsonProperty ("leader")]
-    public int Leader { get; set; }
+    public required int Leader { get; set; }
 
     [JsonProperty ("members")]
-    public Dictionary<string, FactionMember> Members { get; set; }
+    public required Dictionary<string, FactionMember> Members { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("peace")]
-    public Dictionary<string, long> PeaceTreaties { get; set; }
+    public required Dictionary<string, long> PeaceTreaties { get; set; }
 
     [JsonProperty ("raid_wars")]
-    public List<Raid> RaidWars { get; set; }
+    public required List<Raid> RaidWars { get; set; }
 
     [JsonProperty ("rank")]
     public Ranking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
-    public Dictionary<string, RankedWar> RankedWars { get; set; }
+    public required Dictionary<string, RankedWar> RankedWars { get; set; }
 
     [JsonProperty ("respect")]
-    public int Respect { get; set; }
+    public required int Respect { get; set; }
 
     [JsonProperty ("tag")]
-    public string Tag { get; set; }
+    public required string Tag { get; set; }
 
     [JsonProperty ("tag_image")]
-    public string TagImage { get; set; }
+    public required string TagImage { get; set; }
 
     [JsonProperty ("territory_wars")]
-    public List<TerritoryWar> TerritoryWars { get; set; }
+    public required List<TerritoryWar> TerritoryWars { get; set; }
 }

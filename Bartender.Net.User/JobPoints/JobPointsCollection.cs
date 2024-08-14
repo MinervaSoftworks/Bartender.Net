@@ -7,8 +7,8 @@ public class JobPointsCollection {
     public int ID { get; set; }
 
     [JsonProperty ("companies")]
-    public Dictionary<string, CompanyPoints> Companies { get; set; }
+    public required Dictionary<string, CompanyPoints> Companies { get; set; }
 
     [JsonProperty ("jobs")]
-    public UserJobPoints JobPoints { get; set; }
+    public required UserJobPoints JobPoints { get; set; }
 }

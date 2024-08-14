@@ -4,17 +4,17 @@ namespace Bartender.Net.Faction.RankedWars;
 
 public class RankedWar {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("end")]
-    public int End { get; set; }
+    public required int End { get; set; }
 
     [JsonProperty ("start")]
-    public int Start { get; set; }
+    public required int Start { get; set; }
 
     [JsonProperty ("target")]
-    public int Target { get; set; }
+    public required int Target { get; set; }
 
     [JsonProperty ("winner")]
-    public int Winner { get; set; }
+    public required int Winner { get; set; }
 }

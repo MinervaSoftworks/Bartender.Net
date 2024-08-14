@@ -7,11 +7,11 @@ public class UserEducation {
     public int ID { get; set; }
 
     [JsonProperty ("education_current")]
-    public int EducationCurrent { get; set; }
+    public required int EducationCurrent { get; set; }
 
     [JsonProperty ("education_timeleft")]
-    public int EducationTimeleft { get; set; }
+    public required int EducationTimeleft { get; set; }
 
     [JsonProperty ("education_completed")]
-    public List<int> EducationCompleted { get; set; }
+    public required List<int> EducationCompleted { get; set; }
 }

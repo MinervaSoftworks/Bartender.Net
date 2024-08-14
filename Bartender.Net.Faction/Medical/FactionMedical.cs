@@ -5,5 +5,5 @@ namespace Bartender.Net.Faction.Boosters;
 
 public class FactionMedical {
     [JsonProperty ("medical")]
-    public List<FactionArmoryItem> Items { get; set; }
+    public required List<FactionArmoryItem> Items { get; set; }
 }

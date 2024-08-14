@@ -2,13 +2,13 @@
 
 namespace Bartender.Net.User.Medals;
 
-public class UserMedals {
+public class MedalsRoot {
     [JsonIgnore]
     public int ID { get; set; }
 
     [JsonProperty ("medals_awarded")]
-    public List<int> MedalsAwarded { get; set; }
+    public required List<int> MedalsAwarded { get; set; }
 
     [JsonProperty ("medals_time")]
-    public List<int> MedalsTime { get; set; }
+    public required List<int> MedalsTime { get; set; }
 }

@@ -4,5 +4,5 @@ namespace Bartender.Net.User.Bazaar;
 
 public class UserBazaar {
     [JsonProperty ("bazaar")]
-    public List<BazaarListing> Listings { get; set; }
+    public required List<BazaarListing> Listings { get; set; }
 }

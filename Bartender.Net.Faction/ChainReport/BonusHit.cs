@@ -7,14 +7,14 @@ public class BonusHit {
     public int ID { get; set; }
 
     [JsonProperty ("chain")]
-    public int Chain { get; set; }
+    public required int Chain { get; set; }
 
     [JsonProperty ("attacker")]
-    public int Attacker { get; set; }
+    public required int Attacker { get; set; }
 
     [JsonProperty ("defender")]
-    public int Defender { get; set; }
+    public required int Defender { get; set; }
 
     [JsonProperty ("respect")]
-    public int Respect { get; set; }
+    public required int Respect { get; set; }
 }

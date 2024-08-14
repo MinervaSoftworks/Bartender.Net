@@ -7,7 +7,7 @@ public class RankedWar {
     public int ID { get; set; }
 
     [JsonProperty ("factions")]
-    public Dictionary<string, RankedWarFaction> Factions { get; set; }
+    public required Dictionary<string, RankedWarFaction> Factions { get; set; }
 
     [JsonProperty ("war")]
     public War War { get; set; }

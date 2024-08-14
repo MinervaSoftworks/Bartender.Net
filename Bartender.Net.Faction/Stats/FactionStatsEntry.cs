@@ -4,128 +4,128 @@ namespace Bartender.Net.Faction.Stats;
 
 public class FactionStatsEntry {
     [JsonProperty ("medicalitemsused")]
-    public int Medicalitemsused { get; set; }
+    public required int Medicalitemsused { get; set; }
 
     [JsonProperty ("criminaloffences")]
-    public int Criminaloffences { get; set; }
+    public required int Criminaloffences { get; set; }
 
     [JsonProperty ("organisedcrimerespect")]
-    public int Organisedcrimerespect { get; set; }
+    public required int Organisedcrimerespect { get; set; }
 
     [JsonProperty ("organisedcrimemoney")]
     public long Organisedcrimemoney { get; set; }
 
     [JsonProperty ("organisedcrimesuccess")]
-    public int Organisedcrimesuccess { get; set; }
+    public required int Organisedcrimesuccess { get; set; }
 
     [JsonProperty ("organisedcrimefail")]
-    public int Organisedcrimefail { get; set; }
+    public required int Organisedcrimefail { get; set; }
 
     [JsonProperty ("attackswon")]
-    public int Attackswon { get; set; }
+    public required int Attackswon { get; set; }
 
     [JsonProperty ("attackslost")]
-    public int Attackslost { get; set; }
+    public required int Attackslost { get; set; }
 
     [JsonProperty ("attackschain")]
-    public int Attackschain { get; set; }
+    public required int Attackschain { get; set; }
 
     [JsonProperty ("attacksleave")]
-    public int Attacksleave { get; set; }
+    public required int Attacksleave { get; set; }
 
     [JsonProperty ("attacksmug")]
-    public int Attacksmug { get; set; }
+    public required int Attacksmug { get; set; }
 
     [JsonProperty ("attackshosp")]
-    public int Attackshosp { get; set; }
+    public required int Attackshosp { get; set; }
 
     [JsonProperty ("bestchain")]
-    public int Bestchain { get; set; }
+    public required int Bestchain { get; set; }
 
     [JsonProperty ("busts")]
-    public int Busts { get; set; }
+    public required int Busts { get; set; }
 
     [JsonProperty ("revives")]
-    public int Revives { get; set; }
+    public required int Revives { get; set; }
 
     [JsonProperty ("jails")]
-    public int Jails { get; set; }
+    public required int Jails { get; set; }
 
     [JsonProperty ("hosps")]
-    public int Hosps { get; set; }
+    public required int Hosps { get; set; }
 
     [JsonProperty ("medicalitemrecovery")]
-    public int Medicalitemrecovery { get; set; }
+    public required int Medicalitemrecovery { get; set; }
 
     [JsonProperty ("medicalcooldownused")]
-    public int Medicalcooldownused { get; set; }
+    public required int Medicalcooldownused { get; set; }
 
     [JsonProperty ("gymtrains")]
-    public int Gymtrains { get; set; }
+    public required int Gymtrains { get; set; }
 
     [JsonProperty ("gymstrength")]
-    public int Gymstrength { get; set; }
+    public required int Gymstrength { get; set; }
 
     [JsonProperty ("gymspeed")]
-    public int Gymspeed { get; set; }
+    public required int Gymspeed { get; set; }
 
     [JsonProperty ("gymdefense")]
-    public int Gymdefense { get; set; }
+    public required int Gymdefense { get; set; }
 
     [JsonProperty ("gymdexterity")]
-    public int Gymdexterity { get; set; }
+    public required int Gymdexterity { get; set; }
 
     [JsonProperty ("candyused")]
-    public int Candyused { get; set; }
+    public required int Candyused { get; set; }
 
     [JsonProperty ("alcoholused")]
-    public int Alcoholused { get; set; }
+    public required int Alcoholused { get; set; }
 
     [JsonProperty ("energydrinkused")]
-    public int Energydrinkused { get; set; }
+    public required int Energydrinkused { get; set; }
 
     [JsonProperty ("drugsused")]
-    public int Drugsused { get; set; }
+    public required int Drugsused { get; set; }
 
     [JsonProperty ("drugoverdoses")]
-    public int Drugoverdoses { get; set; }
+    public required int Drugoverdoses { get; set; }
 
     [JsonProperty ("rehabs")]
-    public int Rehabs { get; set; }
+    public required int Rehabs { get; set; }
 
     [JsonProperty ("caymaninterest")]
-    public int Caymaninterest { get; set; }
+    public required int Caymaninterest { get; set; }
 
     [JsonProperty ("traveltimes")]
-    public int Traveltimes { get; set; }
+    public required int Traveltimes { get; set; }
 
     [JsonProperty ("traveltime")]
-    public int Traveltime { get; set; }
+    public required int Traveltime { get; set; }
 
     [JsonProperty ("hunting")]
-    public int Hunting { get; set; }
+    public required int Hunting { get; set; }
 
     [JsonProperty ("attacksdamagehits")]
-    public int Attacksdamagehits { get; set; }
+    public required int Attacksdamagehits { get; set; }
 
     [JsonProperty ("attacksdamage")]
-    public int Attacksdamage { get; set; }
+    public required int Attacksdamage { get; set; }
 
     [JsonProperty ("hosptimegiven")]
-    public int Hosptimegiven { get; set; }
+    public required int Hosptimegiven { get; set; }
 
     [JsonProperty ("hosptimereceived")]
-    public int Hosptimereceived { get; set; }
+    public required int Hosptimereceived { get; set; }
 
     [JsonProperty ("attacksdamaging")]
-    public int Attacksdamaging { get; set; }
+    public required int Attacksdamaging { get; set; }
 
     [JsonProperty ("attacksrunaway")]
-    public int Attacksrunaway { get; set; }
+    public required int Attacksrunaway { get; set; }
 
     [JsonProperty ("highestterritories")]
-    public int Highestterritories { get; set; }
+    public required int Highestterritories { get; set; }
 
     [JsonProperty ("territoryrespect")]
-    public int Territoryrespect { get; set; }
+    public required int Territoryrespect { get; set; }
 }

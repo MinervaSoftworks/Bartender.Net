@@ -7,10 +7,10 @@ public class NewUserEvent {
     public int ID { get; set; }
 
     [JsonProperty ("timestamp")]
-    public int Timestamp { get; set; }
+    public required int Timestamp { get; set; }
 
     [JsonProperty ("event")]
-    public string Event { get; set; }
+    public required string Event { get; set; }
 
     [JsonProperty ("seen")]
     public bool Seen { get; set; }

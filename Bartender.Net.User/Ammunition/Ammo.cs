@@ -10,16 +10,16 @@ public class Ammo {
     public int ID { get; set; }
 
     [JsonProperty ("ammoID")]
-    public int AmmoID { get => ID; set => ID = value; }
+    public required int AmmoID { get => ID; set => ID = value; }
 
     [JsonProperty ("equipped")]
     public bool Equipped { get; set; }
 
     [JsonProperty ("quantity")]
-    public int Quantity { get; set; }
+    public required int Quantity { get; set; }
 
     [JsonProperty ("size")]
-    public string Size { get; set; }
+    public required string Size { get; set; }
 
     [JsonIgnore]
     public AmmoSize AmmoSize {
@@ -28,7 +28,7 @@ public class Ammo {
     }
 
     [JsonProperty ("type")]
-    public string Type { get; set; }
+    public required string Type { get; set; }
 
     [JsonIgnore]
     public AmmoType AmmoType {
@@ -37,5 +37,5 @@ public class Ammo {
     }
 
     [JsonProperty ("typeID")]
-    public int TypeID { get; set; }
+    public required int TypeID { get; set; }
 }

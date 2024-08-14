@@ -7,38 +7,38 @@ public class CompanyProfile {
     public int ID { get; set; }
 
     [JsonProperty ("company_type")]
-    public int CompanyType { get; set; }
+    public required int CompanyType { get; set; }
 
     [JsonProperty ("rating")]
-    public int Rating { get; set; }
+    public required int Rating { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("director")]
-    public int Director { get; set; }
+    public required int Director { get; set; }
 
     [JsonProperty ("employees_hired")]
-    public int EmployeesHired { get; set; }
+    public required int EmployeesHired { get; set; }
 
     [JsonProperty ("employees_capacity")]
-    public int EmployeesCapacity { get; set; }
+    public required int EmployeesCapacity { get; set; }
 
     [JsonProperty ("daily_income")]
-    public int DailyIncome { get; set; }
+    public required int DailyIncome { get; set; }
 
     [JsonProperty ("daily_customers")]
-    public int DailyCustomers { get; set; }
+    public required int DailyCustomers { get; set; }
 
     [JsonProperty ("weekly_income")]
-    public int WeeklyIncome { get; set; }
+    public required int WeeklyIncome { get; set; }
 
     [JsonProperty ("weekly_customers")]
-    public int WeeklyCustomers { get; set; }
+    public required int WeeklyCustomers { get; set; }
 
     [JsonProperty ("days_old")]
-    public int DaysOld { get; set; }
+    public required int DaysOld { get; set; }
 
     [JsonProperty ("employees")]
-    public Dictionary<string, CompanyEmployee> Employees { get; set; }
+    public required Dictionary<string, CompanyEmployee> Employees { get; set; }
 }

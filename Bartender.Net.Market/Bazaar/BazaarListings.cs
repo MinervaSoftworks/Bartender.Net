@@ -5,5 +5,5 @@ namespace Bartender.Net.Models.Market.Bazaar;
 
 public class BazaarListings {
     [JsonProperty ("bazaar")]
-    public List<ItemListing> Items { get; set; }
+    public required List<ItemListing> Items { get; set; }
 }

@@ -4,26 +4,26 @@ namespace Bartender.Net.Faction.Chain;
 
 public class CurrentChainEntry {
     [JsonIgnore]
-    public int ID { get; set; }
+    public  int ID { get; set; }
 
     [JsonProperty ("current")]
-    public int Current { get; set; }
+    public required int Current { get; set; }
 
     [JsonProperty ("max")]
-    public int Max { get; set; }
+    public required int Max { get; set; }
 
     [JsonProperty ("timeout")]
-    public int Timeout { get; set; }
+    public required int Timeout { get; set; }
 
     [JsonProperty ("modifier")]
-    public int Modifier { get; set; }
+    public required int Modifier { get; set; }
 
     [JsonProperty ("cooldown")]
-    public int Cooldown { get; set; }
+    public required int Cooldown { get; set; }
 
     [JsonProperty ("start")]
-    public int Start { get; set; }
+    public required int Start { get; set; }
 
     [JsonProperty ("end")]
-    public int End { get; set; }
+    public required int End { get; set; }
 }

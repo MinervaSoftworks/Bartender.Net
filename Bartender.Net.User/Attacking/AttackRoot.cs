@@ -4,5 +4,5 @@ namespace Bartender.Net.User.Attacking;
 
 public class AttackRoot {
     [JsonProperty ("attacks")]
-    public Dictionary<string, Attack> Attacks { get; set; }
+    public required Dictionary<string, Attack> Attacks { get; set; }
 }

@@ -7,14 +7,14 @@ public class FactionApplicationStats {
     public int ID { get; set; }
 
     [JsonProperty ("strength")]
-    public int Strength { get; set; }
+    public required int Strength { get; set; }
 
     [JsonProperty ("defense")]
-    public int Defense { get; set; }
+    public required int Defense { get; set; }
 
     [JsonProperty ("speed")]
-    public int Speed { get; set; }
+    public required int Speed { get; set; }
 
     [JsonProperty ("dexterity")]
-    public int Dexterity { get; set; }
+    public required int Dexterity { get; set; }
 }

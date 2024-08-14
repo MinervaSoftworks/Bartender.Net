@@ -4,5 +4,5 @@ namespace Bartender.Net.User.Events;
 
 public class UserEvents {
     [JsonProperty ("events")]
-    public Dictionary<string, UserEvent> Events { get; set; }
+    public required Dictionary<string, UserEvent> Events { get; set; }
 }

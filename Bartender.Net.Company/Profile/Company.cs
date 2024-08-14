@@ -4,5 +4,5 @@ namespace Bartender.Net.Company.Profile;
 
 public class Company {
     [JsonProperty ("company")]
-    public CompanyProfile CompanyProfile { get; set; }
+    public required CompanyProfile CompanyProfile { get; set; }
 }

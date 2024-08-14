@@ -8,29 +8,29 @@ public class Employee {
     public int ID { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("position")]
-    public string Position { get; set; }
+    public required string Position { get; set; }
 
     [JsonProperty ("days_in_company")]
-    public int DaysInCompany { get; set; }
+    public required int DaysInCompany { get; set; }
 
     [JsonProperty ("manual_labor")]
-    public int ManualLabor { get; set; }
+    public required int ManualLabor { get; set; }
 
     [JsonProperty ("intelligence")]
-    public int Intelligence { get; set; }
+    public required int Intelligence { get; set; }
 
     [JsonProperty ("endurance")]
-    public int Endurance { get; set; }
+    public required int Endurance { get; set; }
 
     [JsonProperty ("effectiveness")]
-    public Effectiveness Effectiveness { get; set; }
+    public required Effectiveness Effectiveness { get; set; }
 
     [JsonProperty ("last_action")]
-    public LastAction LastAction { get; set; }
+    public required LastAction LastAction { get; set; }
 
     [JsonProperty ("status")]
-    public Status Status { get; set; }
+    public required Status Status { get; set; }
 }

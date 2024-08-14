@@ -7,11 +7,11 @@ public class Warrant {
     public int ID { get; set; }
 
     [JsonProperty ("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonProperty ("user_id")]
-    public int UserID { get; set; }
+    public required int UserID { get; set; }
 
     [JsonProperty ("warrant")]
-    public int Amount { get; set; }
+    public required int Amount { get; set; }
 }

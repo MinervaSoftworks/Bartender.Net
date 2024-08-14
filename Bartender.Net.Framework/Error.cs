@@ -4,8 +4,8 @@ namespace Bartender.Net.Framework;
 
 public class Error {
     [JsonProperty ("code")]
-    public int Code { get; set; } = -1;
+    public required int Code { get; set; } = -1;
 
     [JsonProperty ("error")]
-    public string ErrorMsg { get; set; }
+    public required string ErrorMsg { get; set; }
 }

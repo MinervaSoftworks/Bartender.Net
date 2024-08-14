@@ -7,14 +7,14 @@ public class ChainStub {
     public int ID { get; set; }
 
     [JsonProperty ("chain")]
-    public int Chain { get; set; }
+    public required int Chain { get; set; }
 
     [JsonProperty ("respect")]
-    public string Respect { get; set; }
+    public required string Respect { get; set; }
 
     [JsonProperty ("start")]
-    public int Start { get; set; }
+    public required int Start { get; set; }
 
     [JsonProperty ("end")]
-    public int End { get; set; }
+    public required int End { get; set; }
 }
