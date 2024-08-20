@@ -4,7 +4,7 @@ namespace Bartender.Net.Faction.Upgrades;
 
 public class Territory {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("coordinateX")]
     public required string CoordinateX { get; set; }

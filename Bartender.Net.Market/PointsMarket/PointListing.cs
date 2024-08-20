@@ -4,7 +4,7 @@ namespace Bartender.Net.Models.Market;
 
 public class PointListing {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("cost")]
     public required int Cost { get; set; }

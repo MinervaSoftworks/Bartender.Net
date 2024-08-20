@@ -1,5 +1,5 @@
-using Bartender.Net.Extensions;
-using Bartender.Net.Extensions.User;
+using Bartender.Net.Framework.Extensions;
+using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Ammunition;
 using Newtonsoft.Json;
 

@@ -4,7 +4,7 @@ namespace Bartender.Net.Key;
 
 public class KeySelections {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("company")]
     public required List<string> Company { get; set; }

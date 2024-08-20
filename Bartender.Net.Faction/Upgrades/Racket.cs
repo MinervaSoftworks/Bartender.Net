@@ -4,7 +4,7 @@ namespace Bartender.Net.Faction.Upgrades;
 
 public class Racket {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("changed")]
     public required int Changed { get; set; }

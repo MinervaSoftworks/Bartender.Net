@@ -4,7 +4,7 @@ namespace Bartender.Net.Torn.ChainReport;
 
 public class ChainBonus {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("chain")]
     public required int Chain { get; set; }

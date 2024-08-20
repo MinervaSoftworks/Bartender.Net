@@ -4,7 +4,7 @@ namespace Bartender.Net.Faction.Upgrades;
 
 public class Upgrade {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("ability")]
     public required string Ability { get; set; }

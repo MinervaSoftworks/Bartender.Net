@@ -1,6 +1,8 @@
 ﻿using Bartender.Net.Extensions;
 using Bartender.Net.Extensions.User;
 using Bartender.Net.Framework.Common.Reports;
+using Bartender.Net.Framework.Extensions;
+using Bartender.Net.Framework.Extensions.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Common.Reports;

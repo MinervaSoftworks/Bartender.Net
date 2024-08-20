@@ -1,7 +1,6 @@
 ﻿using Bartender.Net.Common.User;
-using Bartender.Net.Extensions;
-using Bartender.Net.Extensions.User;
-using Bartender.Net.Framework;
+using Bartender.Net.Framework.Extensions;
+using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
 using Bartender.Net.User.Bars;
 using Newtonsoft.Json;

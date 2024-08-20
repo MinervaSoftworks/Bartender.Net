@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Extensions;
+﻿using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Faction.Basic;
 using Newtonsoft.Json;
 
@@ -6,7 +6,7 @@ namespace Bartender.Net.Faction.Basic;
 
 public class Ranking {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("division")]
     public required int Division { get; set; }

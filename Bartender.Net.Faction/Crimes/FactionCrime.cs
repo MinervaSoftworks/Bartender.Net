@@ -5,7 +5,7 @@ namespace Bartender.Net.Faction.Crimes;
 
 public class FactionCrime {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("crime_id")]
     public required int CrimeType { get; set; }

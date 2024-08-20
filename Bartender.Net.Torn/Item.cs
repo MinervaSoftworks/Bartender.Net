@@ -4,7 +4,7 @@ namespace Bartender.Net.Models.Torn;
 
 public class Item {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

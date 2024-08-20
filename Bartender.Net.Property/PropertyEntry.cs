@@ -5,7 +5,7 @@ namespace Bartender.Net.Property;
 
 public class PropertyEntry {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("owner_id")]
     public required int OwnerId { get; set; }

@@ -4,7 +4,7 @@ namespace Bartender.Net.Faction.RankedWars;
 
 public class RankedWarEntry {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("war")]
     public RankedWar Rankedwar { get; set; }

@@ -4,7 +4,7 @@ namespace Bartender.Net.Torn.Cards;
 
 public class Card {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("class")]
     public required string Class { get; set; }

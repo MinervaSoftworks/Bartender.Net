@@ -4,7 +4,7 @@ namespace Bartender.Net.Torn.CityShops;
 
 public class CityShopItem {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("in_stock")]
     public required int InStock { get; set; }

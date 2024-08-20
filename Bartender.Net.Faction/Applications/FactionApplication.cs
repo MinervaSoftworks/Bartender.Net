@@ -4,7 +4,7 @@ namespace Bartender.Net.Faction.Applications;
 
 public class FactionApplication {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonProperty ("expires")]
     public required int Expires { get; set; }

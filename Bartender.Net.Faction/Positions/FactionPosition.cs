@@ -4,7 +4,7 @@ namespace Bartender.Net.Faction.Positions;
 
 public class FactionPosition {
     [JsonIgnore]
-    public  int ID { get; set; }
+    public int ID { get; set; }
 
     [JsonIgnore]
     public required string Name { get; set; }
