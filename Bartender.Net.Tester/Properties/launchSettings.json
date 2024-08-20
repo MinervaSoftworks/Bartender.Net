@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "TornApi.Net.Tester": {
-      "commandName": "Project",
-      "commandLineArgs": "https://api.torn.com zg2jtavwZxXnWmGA"
-    }
-  }
-}
