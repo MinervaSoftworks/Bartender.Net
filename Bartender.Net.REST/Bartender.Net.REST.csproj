@@ -4,12 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Title>TornApi.Net REST</Title>
+    <Title>Bartender.Net REST</Title>
     <Authors>Raven Crowe</Authors>
     <Copyright>Copyright (c) Raven Crowe 2023</Copyright>
-    <Description>REST request clients for TornApi.Net</Description>
+    <Description>REST request clients for Bartender.</Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.5.8</Version>
+    <Version>2.0-ALPHA</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

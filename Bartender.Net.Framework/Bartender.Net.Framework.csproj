@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<Title>Bartender.Net.Market</Title>
+	<Authors>Raven Crowe</Authors>
+	<Copyright>Copyright (c) Raven Crowe 2024</Copyright>
+	<Description>The Framework for Bartender.Net, containing commonly used items.</Description>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Version>2.0-ALPHA</Version>
   </PropertyGroup>
 
   <ItemGroup>
