@@ -1,4 +1,6 @@
-﻿namespace Bartender.Net.REST {
+﻿using Bartender.Net.Framework.REST;
+
+namespace Bartender.Net.REST {
     public class ApiResponse<T> : IApiResponse<T> {
         public T? Content { get; set; } = default;
 

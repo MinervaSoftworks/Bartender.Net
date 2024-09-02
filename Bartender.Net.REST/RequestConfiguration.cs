@@ -1,6 +1,9 @@
-﻿namespace Bartender.Net.REST;
+﻿using Bartender.Net.Framework.REST;
+using Bartender.Net.Framework.Selection;
 
-public class RequestConfiguration {
+namespace Bartender.Net.REST;
+
+public class RequestConfiguration : IRequestConfiguration {
     public required string Key { get; set; }
 
     public int ID { get; set; }
@@ -18,6 +21,8 @@ public class RequestConfiguration {
     public int? Limit { get; set; }
 
     public string? Sort { get; set; }
+
+    public AccessLevel AccessLevel { get; set; }
 
     public override string ToString () {
         var idPart = ID > 0 ? $"{ID}" : "";

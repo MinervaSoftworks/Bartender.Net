@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Bartender.Net.Framework.REST;
+using System.Net;
 
 namespace Bartender.Net.REST {
     public class KeyValidationStatus : IKeyValidationStatus {

@@ -1,119 +1,120 @@
 ﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.REST;
 using Bartender.Net.Framework.Selection;
 using Bartender.Net.Key;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http.Headers;
 
-namespace Bartender.Net.REST {
-    /// <summary>
-    /// A request client to interact with Torn's REST Api.
-    /// </summary>
-    public class ApiRequestClient {
-        private HttpClient _client;
+namespace Bartender.Net.REST;
 
-        public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
-            _client = clientFactory.CreateClient ();
+/// <summary>
+/// A request client to interact with Torn's REST Api.
+/// </summary>
+public class ApiRequestClient : IApiRequestClient {
+    private HttpClient _client;
 
-            _client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
+    public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
+        _client = clientFactory.CreateClient ();
 
-            _client.BaseAddress = new Uri (apiUrl);
-        }
+        _client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
 
-        public async Task<IApiResponse<T>?> GetAsync<T> (RequestConfiguration config, AccessLevel accessLevel) where T : class {
-            var keyStatus = await ValidateKeyAsync (config.Key, accessLevel);
+        _client.BaseAddress = new Uri (apiUrl);
+    }
 
-            var result = new ApiResponse<T> {
-                KeyStatus = keyStatus
-            };
+    public async Task<IApiResponse<T>?> GetAsync<T> (IRequestConfiguration config) where T : class {
+        var keyStatus = await ValidateKeyAsync (config.Key, config.AccessLevel);
 
-            if (!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
-                return result;
-            }
+        var result = new ApiResponse<T> {
+            KeyStatus = keyStatus
+        };
 
-            var response = await _client.GetAsync (config.ToString ());
-
-            result.HttpResponseMessage = response;
-
-            if (!response.IsSuccessStatusCode) {
-                return result;
-            }
-
-            var json = await response.Content.ReadAsStringAsync ();
-
-            if (json == string.Empty) {
-                return result;
-            }
-
-            try {
-                var parsed = JsonConvert.DeserializeObject<T> (json);
-
-                result.Content = parsed;
-            }
-            catch (JsonException) {
-                result.Content = null;
-                return result;
-            }
-
+        if (!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
             return result;
         }
 
-        public async Task<KeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
-            var config = new RequestConfiguration {
-                Key = key,
-                Section = "key",
-                Selections = ["info"],
-                Comment = "Bartender.Net Key Validation"
+        var response = await _client.GetAsync (config.ToString ());
+
+        result.HttpResponseMessage = response;
+
+        if (!response.IsSuccessStatusCode) {
+            return result;
+        }
+
+        var json = await response.Content.ReadAsStringAsync ();
+
+        if (json == string.Empty) {
+            return result;
+        }
+
+        try {
+            var parsed = JsonConvert.DeserializeObject<T> (json);
+
+            result.Content = parsed;
+        }
+        catch (JsonException) {
+            result.Content = null;
+            return result;
+        }
+
+        return result;
+    }
+
+    public async Task<IKeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
+        var config = new RequestConfiguration {
+            Key = key,
+            Section = "key",
+            Selections = ["info"],
+            Comment = "Bartender.Net Key Validation"
+        };
+
+        var response = await _client.GetAsync (config.ToString ());
+
+        if (!response.IsSuccessStatusCode) {
+            return new KeyValidationStatus {
+                HttpStatusCode = response.StatusCode
             };
+        }
 
-            var response = await _client.GetAsync (config.ToString ());
+        var json = await response.Content.ReadAsStringAsync ();
 
-            if (!response.IsSuccessStatusCode) {
-                return new KeyValidationStatus {
-                    HttpStatusCode = response.StatusCode
-                };
-            }
+        if (json == string.Empty) {
+            return new KeyValidationStatus {
+                HttpStatusCode = HttpStatusCode.NotFound
+            };
+        }
 
-            var json = await response.Content.ReadAsStringAsync ();
+        var error = ParseErrorCode (json);
 
-            if (json == string.Empty) {
-                return new KeyValidationStatus {
-                    HttpStatusCode = HttpStatusCode.NotFound
-                };
-            }
+        if (error >= 0) {
+            return new KeyValidationStatus {
+                ErrorCode = error,
+            };
+        }
 
-            var error = ParseErrorCode (json);
+        var parsed = JsonConvert.DeserializeObject<KeyInfo> (json);
 
-            if (error >= 0) {
-                return new KeyValidationStatus {
-                    ErrorCode = error,
-                };
-            }
+        if (parsed is null) {
+            return new KeyValidationStatus ();
+        }
 
-            var parsed = JsonConvert.DeserializeObject<KeyInfo> (json);
-
-            if (parsed is null) {
-                return new KeyValidationStatus ();
-            }
-
-            if (parsed.AccessLevel < requiredLevel) {
-                return new KeyValidationStatus {
-                    IsValid = true,
-                    ErrorCode = 16,
-                };
-            }
-
+        if (parsed.AccessLevel < requiredLevel) {
             return new KeyValidationStatus {
                 IsValid = true,
-                HasRequiredAccessLevel = true,
-                ErrorCode = -1
+                ErrorCode = 16,
             };
         }
 
-        private static int ParseErrorCode (string json) {
-            var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
+        return new KeyValidationStatus {
+            IsValid = true,
+            HasRequiredAccessLevel = true,
+            ErrorCode = -1
+        };
+    }
 
-            return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
-        }
+    private static int ParseErrorCode (string json) {
+        var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
+
+        return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
     }
 }
