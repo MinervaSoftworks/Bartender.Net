@@ -3,6 +3,6 @@
 namespace Bartender.Net.Framework.REST;
 
 public interface IApiRequestClient {
-    Task<IApiResponse<T>?> GetAsync<T> (IRequestConfiguration config, AccessLevel accessLevel) where T : class;
+    Task<IApiResponse<T>?> GetAsync<T> (IRequestConfiguration config) where T : class;
     Task<IKeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel);
 }
