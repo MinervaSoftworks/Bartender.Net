@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework.Key;
 using Bartender.Net.Framework.REST;
+using Bartender.Net.Framework.Section;
 
 namespace Bartender.Net.REST;
 
@@ -12,7 +13,7 @@ public class RequestConfiguration : IRequestConfiguration {
 
     public required string Section { get; set; }
 
-    public required List<string> Selections { get; set; }
+    public required List<Selection> Selections { get; set; }
 
     public DateTime? From { get; set; }
 
