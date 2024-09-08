@@ -146,9 +146,4 @@ public class ApiRequestClient : IApiRequestClient {
 
         return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
     }
-
-    private class FetchResult<T> {
-        public int ErrorCode { get; set; }
-        public required T Result { get; set; }
-    }
 }
