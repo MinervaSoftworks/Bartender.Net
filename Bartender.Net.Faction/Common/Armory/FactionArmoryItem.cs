@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Faction.Armor;
+namespace Bartender.Net.Faction.Common.Armory;
 
 public class FactionArmoryItem {
     [JsonIgnore]

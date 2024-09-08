@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Models.Market;
+namespace Bartender.Net.Market.PointsMarket;
 
 public class PointListing {
     [JsonIgnore]

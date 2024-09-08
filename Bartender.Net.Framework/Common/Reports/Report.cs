@@ -1,9 +1,8 @@
-﻿using Bartender.Net.Framework.Common.Reports;
-using Bartender.Net.Framework.Extensions;
+﻿using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.Common.Reports;
+namespace Bartender.Net.Framework.Common.Reports;
 
 public class Report {
     [JsonProperty ("id")]

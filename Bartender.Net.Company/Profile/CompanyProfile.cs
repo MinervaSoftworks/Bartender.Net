@@ -40,5 +40,5 @@ public class CompanyProfile {
     public required int DaysOld { get; set; }
 
     [JsonProperty ("employees")]
-    public required Dictionary<string, CompanyEmployee> Employees { get; set; }
+    public required Dictionary<string, CompanyProfileEmployee> Employees { get; set; }
 }

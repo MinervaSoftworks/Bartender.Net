@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Framework.Faction.Territory;
+namespace Bartender.Net.Faction.Territory;
 
 public class Racket {
     [JsonIgnore]

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Faction.AttackNews;
+namespace Bartender.Net.Faction.Attacks;
 
 public class FactionAttack {
     [JsonIgnore]

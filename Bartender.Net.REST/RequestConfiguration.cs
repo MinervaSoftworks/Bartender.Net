@@ -1,5 +1,5 @@
 ﻿using Bartender.Net.Framework.REST;
-using Bartender.Net.Framework.Selection;
+using Bartender.Net.Framework.Section;
 
 namespace Bartender.Net.REST;
 

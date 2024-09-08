@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Torn.CityShops;
+namespace Bartender.Net.Torn.Companies;
 
 public class Position {
     [JsonProperty ("description")]

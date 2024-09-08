@@ -3,7 +3,7 @@ using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.Common.User;
+namespace Bartender.Net.Framework.Common.User;
 
 public class Status {
     [JsonIgnore]

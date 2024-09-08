@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Bartender.Net.User.UserCooldowns;
+namespace Bartender.Net.User.Cooldowns;
 
 public class UserCooldowns {
     [JsonIgnore]

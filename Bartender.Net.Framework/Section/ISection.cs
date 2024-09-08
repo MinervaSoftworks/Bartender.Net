@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.Framework.Selection;
+﻿namespace Bartender.Net.Framework.Section;
 
 public interface ISection {
     string EndpointString { get; }

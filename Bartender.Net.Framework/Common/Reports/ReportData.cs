@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Common.Reports;
+namespace Bartender.Net.Framework.Common.Reports;
 
 public class ReportData {
     [JsonIgnore]

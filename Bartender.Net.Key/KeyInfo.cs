@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Framework.Selection;
+﻿using Bartender.Net.Framework.Section;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Key;

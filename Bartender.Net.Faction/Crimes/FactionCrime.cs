@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Common.User;
+﻿using Bartender.Net.Framework.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Crimes;
@@ -14,7 +14,7 @@ public class FactionCrime {
     public required string Name { get; set; }
 
     [JsonProperty ("initiated")]
-    public bool Initiated { get; set; }
+    public required bool Initiated { get; set; }
 
     [JsonProperty ("initiated_by")]
     public required int InitiatedBy { get; set; }
@@ -35,14 +35,14 @@ public class FactionCrime {
     public bool Success { get; set; }
 
     [JsonProperty ("time_completed")]
-    public long TimeComplete { get; set; }
+    public required long TimeComplete { get; set; }
 
     [JsonProperty ("time_left")]
     public required int TimeLeft { get; set; }
 
     [JsonProperty ("time_ready")]
-    public long TimeReady { get; set; }
+    public required long TimeReady { get; set; }
 
     [JsonProperty ("time_started")]
-    public long TimeStarted { get; set; }
+    public required long TimeStarted { get; set; }
 }

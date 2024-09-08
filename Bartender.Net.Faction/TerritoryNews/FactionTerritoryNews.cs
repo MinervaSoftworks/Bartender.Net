@@ -1,7 +1,7 @@
 ﻿using Bartender.Net.Framework.Common.News;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.Faction.AttackNews;
+namespace Bartender.Net.Faction.TerritoryNews;
 
 public class FactionTerritoryNews {
     [JsonProperty ("territorynews")]

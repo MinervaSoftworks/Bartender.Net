@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Models.Torn;
+namespace Bartender.Net.Torn;
 
 public class Item {
     [JsonIgnore]

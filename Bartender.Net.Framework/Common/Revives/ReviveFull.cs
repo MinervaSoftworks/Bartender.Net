@@ -1,7 +1,7 @@
 ﻿using Bartender.Net.Framework.Common.User;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.Common.Revives;
+namespace Bartender.Net.Framework.Common.Revives;
 
 public class ReviveFull {
     [JsonIgnore]

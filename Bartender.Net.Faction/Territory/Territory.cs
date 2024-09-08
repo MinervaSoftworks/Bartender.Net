@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.Framework.Faction.Territory;
+namespace Bartender.Net.Faction.Territory;
 
 public class Territory {
     [JsonIgnore]
@@ -22,7 +22,7 @@ public class Territory {
     public required int Faction { get; set; }
 
     [JsonProperty ("racket")]
-    public Racket Racket { get; set; }
+    public required Racket Racket { get; set; }
 
     [JsonProperty ("sector")]
     public required int Sector { get; set; }

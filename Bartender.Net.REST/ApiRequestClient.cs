@@ -1,6 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Bartender.Net.Framework.REST;
-using Bartender.Net.Framework.Selection;
+using Bartender.Net.Framework.Section;
 using Bartender.Net.Key;
 using Newtonsoft.Json;
 using System.Net;

@@ -3,7 +3,7 @@ using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.Common.User;
+namespace Bartender.Net.User.Profile;
 
 public class RelativeLastAction {
     [JsonIgnore]
