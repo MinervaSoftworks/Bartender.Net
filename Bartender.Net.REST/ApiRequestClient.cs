@@ -93,7 +93,7 @@ public class ApiRequestClient : IApiRequestClient {
         var config = new RequestConfiguration {
             Key = key,
             Section = "key",
-            Selections = ["info"],
+            Selections = [ KeySection.Info ],
             Comment = "Bartender.Net Key Validation"
         };
 
