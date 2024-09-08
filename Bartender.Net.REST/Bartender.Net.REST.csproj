@@ -41,6 +41,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Bartender.Net.Framework\Bartender.Net.Framework.csproj" />
 	  <ProjectReference Include="..\Bartender.Net.Key\Bartender.Net.Key.csproj" />
 	</ItemGroup>
 </Project>

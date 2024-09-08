@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.User.Attacks;
 
-public class UserAttackRoot {
+public class UserAttacksRoot {
     [JsonProperty ("attacks")]
     public required Dictionary<string, UserAttack> Attacks { get; set; }
 }

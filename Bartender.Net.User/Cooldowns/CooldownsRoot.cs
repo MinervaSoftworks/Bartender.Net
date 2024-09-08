@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.User.Cooldowns;
 
-public class UserCooldownsRoot {
+public class CooldownsRoot {
     [JsonProperty ("cooldowns")]
     public required UserCooldowns Cooldowns { get; set; }
 }

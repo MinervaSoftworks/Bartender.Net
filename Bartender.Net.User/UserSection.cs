@@ -1,0 +1,113 @@
+﻿using Bartender.Net.Framework.Key;
+using Bartender.Net.Framework.Section;
+using Bartender.Net.User.Ammunition;
+using Bartender.Net.User.Attacks;
+using Bartender.Net.User.AttacksFull;
+using Bartender.Net.User.Bars;
+using Bartender.Net.User.Basic;
+using Bartender.Net.User.BattleStats;
+using Bartender.Net.User.Cooldowns;
+
+namespace Bartender.Net.User;
+
+public class UserSection : ISection {
+    public string Name => "user";
+
+    public static readonly Selection Ammo = new ("ammo", AccessLevel.Minimal, typeof (AmmoRoot));
+    public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (UserAttacksRoot));
+    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot));
+    public static readonly Selection Bars = new ("bars", AccessLevel.Minimal, typeof (BarsRoot));
+    public static readonly Selection Basic = new ("basic", AccessLevel.Public, typeof (UserBasic));
+    public static readonly Selection BattleStats = new ("battlestats", AccessLevel.Limited, typeof (BattleStatsRoot));
+    public static readonly Selection Cooldowns = new ("cooldowns", AccessLevel.Minimal, typeof (CooldownsRoot));
+    public static readonly Selection Crimes = new ("crimes", AccessLevel.Minimal, typeof (CooldownsRoot));
+    public static readonly Selection CriminalRecord = new ("criminalrecord", AccessLevel.Public, typeof (object));
+    public static readonly Selection Discord = new ("discord", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Display = new ("display", AccessLevel.Public, typeof (object));
+    public static readonly Selection Education = new ("education", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Equipment = new ("equipment", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Events = new ("events", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Gym = new ("gym", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Hof = new ("hof", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Honors = new ("honors", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Icons = new ("icons", AccessLevel.Public, typeof (object));
+    public static readonly Selection Inventory = new ("inventory", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection JobPoints = new ("jobpoints", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Log = new ("log", AccessLevel.Full, typeof (object));
+    public static readonly Selection Lookup = new ("lookup", AccessLevel.Public, typeof (object));
+    public static readonly Selection Medals = new ("medals", AccessLevel.Public, typeof (object));
+    public static readonly Selection Merits = new ("merits", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Messages = new ("messages", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Missions = new ("missions", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Money = new ("money", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Networth = new ("networth", AccessLevel.Limited, typeof (object));
+    public static readonly Selection NewEvents = new ("newevents", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection NewMessages = new ("newmessages", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Notifications = new ("notifications", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Perks = new ("perks", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection PersonalStats = new ("personalstats", AccessLevel.Public, typeof (object));
+    public static readonly Selection Profile = new ("profile", AccessLevel.Public, typeof (object));
+    public static readonly Selection Properties = new ("properties", AccessLevel.Public, typeof (object));
+    public static readonly Selection PublicStatus = new ("publicstatus", AccessLevel.Public, typeof (object));
+    public static readonly Selection Refills = new ("refills", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Reports = new ("reports", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Revives = new ("revives", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection RevivesFull = new ("revivesfull", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Skills = new ("skills", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection Stocks = new ("stocks", AccessLevel.Limited, typeof (object));
+    public static readonly Selection Timestamp = new ("timestamp", AccessLevel.Public, typeof (object));
+    public static readonly Selection Travel = new ("travel", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection WeaponExp = new ("weaponexp", AccessLevel.Minimal, typeof (object));
+    public static readonly Selection WorkStats = new ("workstats", AccessLevel.Minimal, typeof (object));
+
+    public IEnumerable<Selection> Selections {
+        get {
+            yield return Ammo;
+            yield return Attacks;
+            yield return AttacksFull;
+            yield return Bars;
+            yield return Basic;
+            yield return BattleStats;
+            yield return Cooldowns;
+            yield return Crimes;
+            yield return CriminalRecord;
+            yield return Discord;
+            yield return Display;
+            yield return Education;
+            yield return Equipment;
+            yield return Events;
+            yield return Gym;
+            yield return Hof;
+            yield return Honors;
+            yield return Icons;
+            yield return Inventory;
+            yield return JobPoints;
+            yield return Log;
+            yield return Lookup;
+            yield return Medals;
+            yield return Merits;
+            yield return Messages;
+            yield return Missions;
+            yield return Money;
+            yield return Networth;
+            yield return NewEvents;
+            yield return NewMessages;
+            yield return Notifications;
+            yield return Perks;
+            yield return PersonalStats;
+            yield return Profile;
+            yield return Properties;
+            yield return PublicStatus;
+            yield return Refills;
+            yield return Reports;
+            yield return Revives;
+            yield return RevivesFull;
+            yield return Skills;
+            yield return Stocks;
+            yield return Timestamp;
+            yield return Travel;
+            yield return WeaponExp;
+            yield return WorkStats;
+        }
+    }
+}

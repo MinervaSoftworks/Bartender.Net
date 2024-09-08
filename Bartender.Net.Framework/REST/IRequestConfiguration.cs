@@ -9,10 +9,9 @@ public interface IRequestConfiguration {
     string Key { get; set; }
     int? Limit { get; set; }
     string Section { get; set; }
-    List<string> Selections { get; set; }
+    List<Selection> Selections { get; set; }
     string? Sort { get; set; }
     DateTime? To { get; set; }
-    AccessLevel AccessLevel { get; set; }
 
     string ToString ();
 }

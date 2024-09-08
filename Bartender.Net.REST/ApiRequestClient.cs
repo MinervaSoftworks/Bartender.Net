@@ -12,7 +12,7 @@ namespace Bartender.Net.REST;
 /// A request client to interact with Torn's REST Api.
 /// </summary>
 public class ApiRequestClient : IApiRequestClient {
-    private HttpClient _client;
+    private readonly HttpClient _client;
 
     public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
         _client = clientFactory.CreateClient ();
@@ -22,26 +22,20 @@ public class ApiRequestClient : IApiRequestClient {
         _client.BaseAddress = new Uri (apiUrl);
     }
 
-    public async Task<IApiResponse<T>?> GetAsync<T> (IRequestConfiguration config) where T : class {
-        var keyStatus = await ValidateKeyAsync (config.Key, config.AccessLevel);
+    public async Task<IApiResponse<T>> FetchSelectionAsync<T> (IRequestConfiguration requestConfiguration) {
+        if (requestConfiguration.Selections.Count > 1) {
+            throw new ArgumentException ("Use FetchMultipleSelectionsAsync to fetch more than one selection at a time");
+        }
 
         var result = new ApiResponse<T> {
-            KeyStatus = keyStatus
+            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
         };
 
-        if (!keyStatus.IsValid && !keyStatus.HasRequiredAccessLevel) {
+        if (!result.HttpResponseMessage.IsSuccessStatusCode) {
             return result;
         }
 
-        var response = await _client.GetAsync (config.ToString ());
-
-        result.HttpResponseMessage = response;
-
-        if (!response.IsSuccessStatusCode) {
-            return result;
-        }
-
-        var json = await response.Content.ReadAsStringAsync ();
+        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
 
         if (json == string.Empty) {
             return result;
@@ -53,14 +47,49 @@ public class ApiRequestClient : IApiRequestClient {
             result.Content = parsed;
         }
         catch (JsonException) {
-            result.Content = null;
+            result.Content = default;
             return result;
         }
 
         return result;
     }
 
-    public async Task<IKeyValidationStatus> ValidateKeyAsync (string key, AccessLevel requiredLevel) {
+    public async Task<IApiResponse<IEnumerable<object>>> FetchMultipleSelectionsAsync (IRequestConfiguration requestConfiguration) {
+        var result = new ApiResponse<IEnumerable<object>> {
+            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
+        };
+
+        if (!result.HttpResponseMessage.IsSuccessStatusCode) {
+            return result;
+        }
+
+        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
+
+        if (json == string.Empty) {
+            return result;
+        }
+
+        var fetched = new List<object> ();
+
+        foreach (var selection in requestConfiguration.Selections) {
+            try {
+                var parsed = JsonConvert.DeserializeObject (json, selection.Root);
+
+                if (parsed is not null) {
+                    fetched.Add (parsed);
+                }
+            }
+            catch (JsonException) {
+                continue;
+            }
+        }
+
+        result.Content = fetched;
+
+        return result;
+    }
+
+    public async Task<IKeyValidationStatus> ValidateKeyForSelectionAsync (string key, Selection selection) {
         var config = new RequestConfiguration {
             Key = key,
             Section = "key",
@@ -98,7 +127,7 @@ public class ApiRequestClient : IApiRequestClient {
             return new KeyValidationStatus ();
         }
 
-        if (parsed.AccessLevel < requiredLevel) {
+        if (parsed.AccessLevel < selection.AccessLevelRequired) {
             return new KeyValidationStatus {
                 IsValid = true,
                 ErrorCode = 16,
@@ -116,5 +145,10 @@ public class ApiRequestClient : IApiRequestClient {
         var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
 
         return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
+    }
+
+    private class FetchResult<T> {
+        public int ErrorCode { get; set; }
+        public required T Result { get; set; }
     }
 }

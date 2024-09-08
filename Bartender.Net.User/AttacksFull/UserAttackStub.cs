@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.AttacksFull;
 
-public class AttackStub {
+public class UserAttackStub {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,4 +1,4 @@
-﻿namespace Bartender.Net.Framework.Section;
+﻿namespace Bartender.Net.Framework.Key;
 
 public enum AccessLevel {
     Custom,

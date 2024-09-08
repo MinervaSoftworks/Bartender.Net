@@ -1,5 +1,5 @@
-﻿using Bartender.Net.Framework.REST;
-using Bartender.Net.Framework.Section;
+﻿using Bartender.Net.Framework.Key;
+using Bartender.Net.Framework.REST;
 
 namespace Bartender.Net.REST;
 
@@ -10,9 +10,9 @@ public class RequestConfiguration : IRequestConfiguration {
 
     public string? Comment { get; set; }
 
-    public string Section { get; set; }
+    public required string Section { get; set; }
 
-    public List<string> Selections { get; set; }
+    public required List<string> Selections { get; set; }
 
     public DateTime? From { get; set; }
 
@@ -21,8 +21,6 @@ public class RequestConfiguration : IRequestConfiguration {
     public int? Limit { get; set; }
 
     public string? Sort { get; set; }
-
-    public AccessLevel AccessLevel { get; set; }
 
     public override string ToString () {
         var idPart = ID > 0 ? $"{ID}" : "";
