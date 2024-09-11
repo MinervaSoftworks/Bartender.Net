@@ -1,4 +1,4 @@
-﻿using Bartender.Net.Framework.Section;
+﻿using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Framework.REST;
 

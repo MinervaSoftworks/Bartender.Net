@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace Bartender.Net.Framework.REST;
+﻿namespace Bartender.Net.Framework.REST;
 
 public interface IKeyValidationStatus {
     IApiResponse? Response { get; set; }

@@ -1,6 +1,5 @@
-﻿using Bartender.Net.Framework.Key;
-using Bartender.Net.Framework.REST;
-using Bartender.Net.Framework.Section;
+﻿using Bartender.Net.Framework.REST;
+using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.REST;
 

@@ -1,5 +1,5 @@
 ﻿using Bartender.Net.Framework.Key;
-using Bartender.Net.Framework.Section;
+using Bartender.Net.Framework.Sections;
 using Bartender.Net.User.Ammunition;
 using Bartender.Net.User.Attacks;
 using Bartender.Net.User.AttacksFull;
