@@ -9,7 +9,7 @@
 		<Copyright>Copyright (c) Raven Crowe 2023</Copyright>
 		<Description>REST request clients for Bartender.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>2.0.5-ALPHA</Version>
+		<Version>2.0.6-ALPHA</Version>
 		<Company>Minerva Softworks</Company>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
