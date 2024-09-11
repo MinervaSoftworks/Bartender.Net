@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.User.Refills;
 
-public class RefillRoot {
+public class RefillsRoot {
     [JsonProperty ("refills")]
     public required RefillStates Refills { get; set; }
 }

@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Gym;
 
-public class GyrmRoot {
+public class GymRoot {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Company.Detailed;
 
-public class CompanyUpgrades {
+public class Upgrade {
     [JsonIgnore]
     public int ID { get; set; }
 

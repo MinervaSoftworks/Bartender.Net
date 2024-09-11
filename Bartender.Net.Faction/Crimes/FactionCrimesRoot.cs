@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Faction.Crimes;
 
-public class FactionCrimes {
+public class FactionCrimesRoot {
     [JsonProperty ("crimes")]
     public required Dictionary<string, FactionCrime> Crimes { get; set; }
 }

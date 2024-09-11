@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Property.Property;
 
-public class PropertyEndpoint {
+public class PropertyRoot {
     [JsonProperty ("property")]
     public required PropertyEntry Property { get; set; }
 }

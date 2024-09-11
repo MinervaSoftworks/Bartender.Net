@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.CrimeNews;
 
-public class FactionCrimeNews {
+public class CrimeNewsRoot {
     [JsonProperty ("crimenews")]
     public required Dictionary<string, NewsEntry> News { get; set; }
 }

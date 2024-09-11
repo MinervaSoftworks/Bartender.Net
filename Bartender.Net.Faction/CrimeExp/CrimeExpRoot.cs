@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Faction.CrimeExp;
 
-public class FactionCrimeExperience {
+public class CrimeExpRoot {
     [JsonProperty ("crimeexp")]
     public required List<int> CrimeExp { get; set; }
 }

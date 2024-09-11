@@ -1,5 +1,5 @@
 ﻿namespace Bartender.Net.Market.ItemMarket;
 
-public class ItemMarketRoots {
+public class ItemMarketRoot {
     public required List<ItemListing> Items { get; set; }
 }

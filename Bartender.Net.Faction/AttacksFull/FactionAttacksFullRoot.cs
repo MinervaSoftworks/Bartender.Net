@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Faction.AttacksFull;
 
-public class AttacksFullRoot {
+public class FactionAttacksFullRoot {
     [JsonProperty ("attacks")]
     public required Dictionary<string, AttackStub> Stubs { get; set; }
 }

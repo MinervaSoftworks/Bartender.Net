@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.User.NewEvents;
 
-public class NewUserEventRoot {
+public class NewUserEventsRoot {
     [JsonProperty ("events")]
     public required Dictionary<string, NewUserEvent> Events { get; set; }
 

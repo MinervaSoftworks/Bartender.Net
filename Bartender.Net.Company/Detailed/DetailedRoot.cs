@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Company.Detailed;
 
-public class CompanyDetails {
+public class DetailedRoot {
     [JsonProperty ("advertising_budget")]
     public required int AdvertisingBudget { get; set; }
 
@@ -28,7 +28,7 @@ public class CompanyDetails {
     public required int TrainsAvailable { get; set; }
 
     [JsonProperty ("upgrades")]
-    public required CompanyUpgrades Upgrades { get; set; }
+    public required Upgrade Upgrades { get; set; }
 
     [JsonProperty ("value")]
     public required int Value { get; set; }

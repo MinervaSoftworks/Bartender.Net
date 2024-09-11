@@ -4,5 +4,5 @@ namespace Bartender.Net.Faction.Chain;
 
 public class ChainRoot {
     [JsonProperty ("chain")]
-    public CurrentChainEntry Chain { get; set; }
+    public required CurrentChainEntry Chain { get; set; }
 }
