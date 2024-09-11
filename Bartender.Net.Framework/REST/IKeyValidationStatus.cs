@@ -3,9 +3,8 @@
 namespace Bartender.Net.Framework.REST;
 
 public interface IKeyValidationStatus {
-    int ErrorCode { get; set; }
-    bool HasRequiredAccessLevel { get; set; }
-    HttpStatusCode HttpStatusCode { get; set; }
-    bool IsKeyUsable { get; }
+    IApiResponse? Response { get; set; }
     bool IsValid { get; set; }
+    bool HasRequiredAccessLevel { get; set; }
+    bool IsUsable { get; }
 }

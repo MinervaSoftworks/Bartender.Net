@@ -3,7 +3,6 @@ using Bartender.Net.Framework.REST;
 using Bartender.Net.Framework.Section;
 using Bartender.Net.Key;
 using Newtonsoft.Json;
-using System.Net;
 using System.Net.Http.Headers;
 
 namespace Bartender.Net.REST;
@@ -22,12 +21,8 @@ public class ApiRequestClient : IApiRequestClient {
         _client.BaseAddress = new Uri (apiUrl);
     }
 
-    public async Task<IApiResponse<T>> FetchSelectionAsync<T> (IRequestConfiguration requestConfiguration) {
-        if (requestConfiguration.Selections.Count > 1) {
-            throw new ArgumentException ("Use FetchMultipleSelectionsAsync to fetch more than one selection at a time");
-        }
-
-        var result = new ApiResponse<T> {
+    public async Task<IApiResponse> FetchAsync (IRequestConfiguration requestConfiguration) {
+        var result = new ApiResponse {
             HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
         };
 
@@ -38,45 +33,27 @@ public class ApiRequestClient : IApiRequestClient {
         var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
 
         if (json == string.Empty) {
+            result.Error = 17;
+
             return result;
         }
 
-        try {
-            var parsed = JsonConvert.DeserializeObject<T> (json);
+        var error = ParseErrorCode (json);
 
-            result.Content = parsed;
-        }
-        catch (JsonException) {
-            result.Content = default;
+        if (error >= 0) {
+            result.Error = error;
+
             return result;
         }
 
-        return result;
-    }
-
-    public async Task<IApiResponse<IEnumerable<object>>> FetchMultipleSelectionsAsync (IRequestConfiguration requestConfiguration) {
-        var result = new ApiResponse<IEnumerable<object>> {
-            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
-        };
-
-        if (!result.HttpResponseMessage.IsSuccessStatusCode) {
-            return result;
-        }
-
-        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
-
-        if (json == string.Empty) {
-            return result;
-        }
-
-        var fetched = new List<object> ();
+        var fetched = new Dictionary<Selection, object> ();
 
         foreach (var selection in requestConfiguration.Selections) {
             try {
                 var parsed = JsonConvert.DeserializeObject (json, selection.Root);
 
                 if (parsed is not null) {
-                    fetched.Add (parsed);
+                    fetched.Add (selection, parsed);
                 }
             }
             catch (JsonException) {
@@ -93,52 +70,34 @@ public class ApiRequestClient : IApiRequestClient {
         var config = new RequestConfiguration {
             Key = key,
             Section = "key",
-            Selections = [ KeySection.Info ],
+            Selections = [KeySection.Info],
             Comment = "Bartender.Net Key Validation"
         };
 
-        var response = await _client.GetAsync (config.ToString ());
+        var response = await FetchAsync (config);
 
-        if (!response.IsSuccessStatusCode) {
-            return new KeyValidationStatus {
-                HttpStatusCode = response.StatusCode
-            };
-        }
-
-        var json = await response.Content.ReadAsStringAsync ();
-
-        if (json == string.Empty) {
-            return new KeyValidationStatus {
-                HttpStatusCode = HttpStatusCode.NotFound
-            };
-        }
-
-        var error = ParseErrorCode (json);
-
-        if (error >= 0) {
-            return new KeyValidationStatus {
-                ErrorCode = error,
-            };
-        }
-
-        var parsed = JsonConvert.DeserializeObject<KeyInfo> (json);
-
-        if (parsed is null) {
-            return new KeyValidationStatus ();
-        }
-
-        if (parsed.AccessLevel < selection.AccessLevelRequired) {
-            return new KeyValidationStatus {
-                IsValid = true,
-                ErrorCode = 16,
-            };
-        }
-
-        return new KeyValidationStatus {
-            IsValid = true,
-            HasRequiredAccessLevel = true,
-            ErrorCode = -1
+        var status = new KeyValidationStatus {
+            Response = response
         };
+
+        if (response is null || response.HttpResponseMessage is null) {
+            return status;
+        }
+
+        if (response.Error >= 0) {
+            return status;
+        }
+
+        var keyInfo = response.Content [KeySection.Info] as KeyInfo;
+
+        if (keyInfo is null) {
+            return status;
+        }
+
+        status.IsValid = true;
+        status.HasRequiredAccessLevel = keyInfo.Selections.HasSelectionAccess (selection.Name);
+
+        return status;
     }
 
     private static int ParseErrorCode (string json) {

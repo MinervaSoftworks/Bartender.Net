@@ -1,18 +1,14 @@
 ﻿using Bartender.Net.Framework.REST;
+using Bartender.Net.Framework.Section;
 
 namespace Bartender.Net.REST {
-    public class ApiResponse<T> : IApiResponse<T> {
-        public T? Content { get; set; } = default;
-
+    public class ApiResponse : IApiResponse {
         public HttpResponseMessage? HttpResponseMessage { get; set; }
 
-        public bool IsValid () {
-            if ((HttpResponseMessage is null || !HttpResponseMessage.IsSuccessStatusCode)
-                || Content is null) {
-                return false;
-            }
+        public int Error { get; set; } = -1;
 
-            return true;
-        }
+        public IDictionary<Selection, object> Content { get; set; } = new Dictionary<Selection, object> ();
+
+        public bool IsValid () => !(HttpResponseMessage is null || !HttpResponseMessage.IsSuccessStatusCode) && Content is not null;
     }
 }

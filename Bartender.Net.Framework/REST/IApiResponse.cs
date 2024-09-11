@@ -1,8 +1,12 @@
-﻿namespace Bartender.Net.Framework.REST;
+﻿using Bartender.Net.Framework.Section;
 
-public interface IApiResponse<T> {
-    T? Content { get; set; }
+namespace Bartender.Net.Framework.REST;
+
+public interface IApiResponse {
     HttpResponseMessage? HttpResponseMessage { get; set; }
+
+    IDictionary<Selection, object> Content { get; set; }
+    int Error { get; set; }
 
     bool IsValid ();
 }
