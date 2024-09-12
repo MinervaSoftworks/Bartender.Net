@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Attacks;
 
-public class FactionAttack {
+public class FactionAttack : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

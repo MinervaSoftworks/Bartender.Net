@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.Faction.Currency;
 
-public class CurrencyRoot {
+public class CurrencyRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("faction_id")]
     public required int FactionId { get; set; }
 

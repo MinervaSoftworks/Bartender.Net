@@ -1,6 +1,7 @@
-﻿namespace Bartender.Net.Faction.Cesium;
+﻿//using Bartender.Net.Framework;
 
-public class FactionCesium {
-    public int ID { get; set; }
-    // TODO Meh?
-}
+//namespace Bartender.Net.Faction.Cesium;
+
+//public class FactionCesium : IBartenderEntity {
+//    public int ID { get; set; }
+//}

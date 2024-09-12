@@ -6,7 +6,7 @@ namespace Bartender.Net.Key;
 public class KeySection : ISection {
     public string Name => "key";
 
-    public static readonly Selection Info = new ("info", AccessLevel.Public, typeof(KeyInfo));
+    public static readonly Selection Info = new ("info", AccessLevel.Public, typeof (KeyInfo));
 
     public IEnumerable<Selection> Selections {
         get {

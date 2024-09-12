@@ -2,7 +2,10 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.HoF;
 
-public class HallOfFameRoot {
+public class HallOfFameRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public required int ID { get; set; }
 

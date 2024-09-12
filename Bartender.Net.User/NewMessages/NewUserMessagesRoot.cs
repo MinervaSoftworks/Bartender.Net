@@ -3,7 +3,10 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.NewMessages;
 
-public class NewUserMessagesRoot {
+public class NewUserMessagesRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

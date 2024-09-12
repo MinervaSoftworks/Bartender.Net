@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Market;
 
-public class ItemListing {
+public class ItemListing : IBartenderEntity {
     [JsonProperty ("cost")]
     public required int Cost { get; set; }
 

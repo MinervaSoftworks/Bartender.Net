@@ -1,8 +1,9 @@
+using Bartender.Net.Framework;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.AttacksFull;
 
-public class UserAttackStub {
+public class UserAttackStub : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

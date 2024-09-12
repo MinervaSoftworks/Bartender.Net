@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Property;
 
-public class PropertyStaff {
+public class PropertyStaff : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,3 +1,4 @@
+using Bartender.Net.Framework;
 using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Ammunition;
@@ -5,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Ammunition;
 
-public class Ammo {
+public class Ammo : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

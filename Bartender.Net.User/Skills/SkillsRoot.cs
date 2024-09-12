@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.User.Skills;
 
-public class SkillsRoot {
+public class SkillsRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

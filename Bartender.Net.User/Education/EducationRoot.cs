@@ -2,7 +2,10 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Education;
 
-public class EducationRoot {
+public class EducationRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

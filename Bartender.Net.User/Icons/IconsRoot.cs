@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.User.Icons;
 
-public class IconsRoot {
+public class IconsRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

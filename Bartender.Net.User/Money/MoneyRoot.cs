@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.User.Money;
 
-public class MoneyRoot {
+public class MoneyRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,11 +1,12 @@
-﻿using Bartender.Net.Framework.Extensions;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class Competition {
+public class Competition : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Applications;
 
-public class AppicationStats {
+public class AppicationStats : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

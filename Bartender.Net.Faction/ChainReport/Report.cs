@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.ChainReport;
 
-public class Report {
+public class Report : IBartenderEntity {
     [JsonProperty ("userID")]
     public int ID { get; set; }
 

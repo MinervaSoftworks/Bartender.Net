@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.Faction.Territory;
 
-public class TerritoryRoot {
+public class TerritoryRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("territory")]
     public required Dictionary<string, Territory> Territories { get; set; }
 }

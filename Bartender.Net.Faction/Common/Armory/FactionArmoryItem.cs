@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Common.Armory;
 
-public class FactionArmoryItem {
+public class FactionArmoryItem : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

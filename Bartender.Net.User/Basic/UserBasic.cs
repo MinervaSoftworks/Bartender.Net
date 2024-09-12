@@ -1,10 +1,11 @@
-﻿using Bartender.Net.Framework.Common.User;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Common.User;
 using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Basic;
 
-public class UserBasic {
+public class UserBasic : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

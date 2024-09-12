@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class FactionBasic {
+public class FactionBasic : IBartenderEntity {
     [JsonProperty ("age")]
     public required int Age { get; set; }
 

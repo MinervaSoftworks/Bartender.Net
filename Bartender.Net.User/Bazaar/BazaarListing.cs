@@ -1,9 +1,10 @@
+using Bartender.Net.Framework;
 using Bartender.Net.User.Profile;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bazaar;
 
-public class BazaarListing {
+public class BazaarListing : IBartenderEntity {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 

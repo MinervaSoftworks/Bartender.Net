@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.User.Perks;
 
-public class PerksRoot {
+public class PerksRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

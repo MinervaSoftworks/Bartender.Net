@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Messages;
 
-public class UserMessage {
+public class UserMessage : IBartenderEntity {
     [JsonProperty ("timestamp")]
     public required int Timestamp { get; set; }
 

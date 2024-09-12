@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Donations;
 
-public class DonationEntry {
+public class DonationEntry : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

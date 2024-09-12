@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.Faction.Upgrades;
 
-public class UpgradesRoot {
+public class UpgradesRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("peace")]
     public required Dictionary<string, Upgrade> Peace { get; set; }
 

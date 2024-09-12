@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Common.Armory;
 
-public class FactionLoanable {
+public class FactionLoanable : IBartenderEntity {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 

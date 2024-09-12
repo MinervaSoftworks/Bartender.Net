@@ -1,9 +1,10 @@
-﻿using Bartender.Net.Framework.Key;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Key;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Key;
 
-public class KeyInfo {
+public class KeyInfo : IBartenderEntity {
     [JsonProperty ("access_level")]
     public int ID { get; set; }
 

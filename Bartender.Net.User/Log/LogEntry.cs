@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Log;
 
-public class LogEntry {
+public class LogEntry : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

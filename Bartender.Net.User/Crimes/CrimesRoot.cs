@@ -3,7 +3,10 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Crimes;
 
-public class CrimesRoot {
+public class CrimesRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("criminalrecord")]
     public required CrimnalRecordCollection Crimes { get; set; }
 }

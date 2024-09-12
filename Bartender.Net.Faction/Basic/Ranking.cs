@@ -1,10 +1,11 @@
-﻿using Bartender.Net.Framework.Extensions;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Faction.Basic;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class Ranking {
+public class Ranking : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

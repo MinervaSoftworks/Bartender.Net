@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Stock;
 
-public class CompanyStock {
+public class CompanyStock : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

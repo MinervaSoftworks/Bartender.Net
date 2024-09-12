@@ -1,8 +1,9 @@
+using Bartender.Net.Framework;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bars;
 
-public class ChainBar {
+public class ChainBar : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

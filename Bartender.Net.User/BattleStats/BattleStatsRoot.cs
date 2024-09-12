@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.User.BattleStats;
 
-public class BattleStatsRoot {
+public class BattleStatsRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

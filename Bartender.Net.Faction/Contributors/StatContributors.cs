@@ -1,8 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Contributors;
 
-public class StatContributors {
+public class StatContributors : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("medicalitemsused")]
     public required List<MemberContributor> MedicalItemsUsed { get; set; }
 

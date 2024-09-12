@@ -1,9 +1,10 @@
-﻿using Bartender.Net.Framework.Common.User;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Common.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Crimes;
 
-public class FactionCrime {
+public class FactionCrime : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

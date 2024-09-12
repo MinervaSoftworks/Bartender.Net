@@ -7,7 +7,10 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class UserProfileRoot {
+public class UserProfileRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class TerritoryWar {
+public class TerritoryWar : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

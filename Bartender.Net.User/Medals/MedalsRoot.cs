@@ -2,7 +2,10 @@
 
 namespace Bartender.Net.User.Medals;
 
-public class MedalsRoot {
+public class MedalsRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonIgnore]
     public int ID { get; set; }
 

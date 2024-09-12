@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Territory;
 
-public class Racket {
+public class Racket : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 
