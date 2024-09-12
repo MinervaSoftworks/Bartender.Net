@@ -1,11 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Detailed;
 
 public class DetailedRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
     [JsonProperty ("advertising_budget")]
     public required int AdvertisingBudget { get; set; }
 

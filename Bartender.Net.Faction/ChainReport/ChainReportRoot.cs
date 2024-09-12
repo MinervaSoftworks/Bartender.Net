@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Bartender.Net.Framework;
+using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.ChainReport;
 
@@ -7,5 +8,5 @@ public class ChainReportRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("chainreport")]
-    public Report Chainreport { get; set; }
+    public required Report ChainReport { get; set; }
 }

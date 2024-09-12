@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.Common.News;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Common.News;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.TerritoryNews;

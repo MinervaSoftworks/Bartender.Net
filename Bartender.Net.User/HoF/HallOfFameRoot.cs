@@ -1,3 +1,4 @@
+using Bartender.Net.Framework;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.User.HoF;
@@ -5,9 +6,6 @@ namespace Bartender.Net.User.HoF;
 public class HallOfFameRoot : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
-
-    [JsonIgnore]
-    public required int ID { get; set; }
 
     [JsonProperty ("attacks")]
     public required HallOfFameRank Attacks { get; set; }

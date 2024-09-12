@@ -1,4 +1,5 @@
-﻿using Bartender.Net.Framework.Common.User;
+﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Common.User;
 using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
@@ -8,9 +9,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Profile;
 
 public class UserProfileRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
     [JsonIgnore]
     public int ID { get; set; }
 
