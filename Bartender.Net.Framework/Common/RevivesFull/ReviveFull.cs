@@ -1,6 +1,7 @@
 ﻿using Bartender.Net.Framework.Common.Revives;
 using Bartender.Net.Framework.Common.User;
 using Bartender.Net.Framework.Extensions;
+using Bartender.Net.Framework.Extensions.User;
 using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.RevivesFull;
