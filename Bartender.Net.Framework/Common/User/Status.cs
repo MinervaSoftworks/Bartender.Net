@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.User;
 
-public class Status {
+public class Status : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

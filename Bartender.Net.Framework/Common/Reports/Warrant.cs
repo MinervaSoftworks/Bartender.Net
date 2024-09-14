@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Framework.Common.Reports;
 
-public class Warrant {
+public class Warrant : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

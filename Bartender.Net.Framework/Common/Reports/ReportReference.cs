@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Framework.Common.Reports;
 
-public class ReportReference {
+public class ReportReference : IBartenderEntity {
     [JsonProperty ("ID")]
     public int ID { get; set; }
 

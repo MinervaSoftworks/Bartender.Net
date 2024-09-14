@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.Framework.Common.User;
 
-public class RentEntry {
+public class RentEntry : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

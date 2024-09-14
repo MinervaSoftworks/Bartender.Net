@@ -1,6 +1,6 @@
 ﻿namespace Bartender.Net.Framework.Common.News;
 
-public class NewsEntry {
+public class NewsEntry : IBartenderEntity {
     public required string News { get; set; }
 
     public required long Timestamp { get; set; }

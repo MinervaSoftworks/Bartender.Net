@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.Reports;
 
-public class Report {
+public class Report : IBartenderEntity {
     [JsonProperty ("id")]
     public int ID { get; set; }
 

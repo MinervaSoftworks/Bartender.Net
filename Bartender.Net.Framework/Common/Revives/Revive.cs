@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.Revives;
 
-public class Revive {
+public class Revive : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

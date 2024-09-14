@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.User;
 
-public class LastAction {
+public class LastAction : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 
