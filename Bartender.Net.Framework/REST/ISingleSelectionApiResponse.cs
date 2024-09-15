@@ -1,8 +1,6 @@
-﻿using Bartender.Net.Framework;
-
-namespace Bartender.Net.REST {
+﻿namespace Bartender.Net.Framework.REST {
     public interface ISingleSelectionApiResponse<T> where T : IBartenderEntity {
-        T Content { get; set; }
+        T? Content { get; set; }
         int Error { get; set; }
         HttpResponseMessage? HttpResponseMessage { get; set; }
 

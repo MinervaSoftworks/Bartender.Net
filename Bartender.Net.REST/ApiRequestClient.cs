@@ -66,6 +66,36 @@ public class ApiRequestClient : IApiRequestClient {
         return result;
     }
 
+    public async Task<ISingleSelectionApiResponse<T>> FetchSingleSelectionAsync <T> (IRequestConfiguration requestConfiguration) where T : IBartenderEntity {
+        var result = new SingleSelectionApiResponse<T> {
+            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
+        };
+
+        if (!result.HttpResponseMessage.IsSuccessStatusCode) {
+            return result;
+        }
+
+        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
+
+        if (json == string.Empty) {
+            result.Error = 17;
+
+            return result;
+        }
+
+        var error = ParseErrorCode (json);
+
+        if (error >= 0) {
+            result.Error = error;
+
+            return result;
+        }
+
+        result.Content = JsonConvert.DeserializeObject<T> (json);
+
+        return result;
+    }
+
     public async Task<IKeyValidationStatus> ValidateKeyForSelectionAsync (string key, Selection selection) {
         var config = new RequestConfiguration {
             Key = key,
