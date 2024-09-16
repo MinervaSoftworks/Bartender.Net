@@ -66,7 +66,7 @@ public class ApiRequestClient : IApiRequestClient {
         return result;
     }
 
-    public async Task<ISingleSelectionApiResponse<T>> FetchSingleSelectionAsync <T> (IRequestConfiguration requestConfiguration) where T : IBartenderEntity {
+    public async Task<ISingleSelectionApiResponse<T>> FetchSingleSelectionAsync<T> (IRequestConfiguration requestConfiguration) where T : IBartenderEntity {
         var result = new SingleSelectionApiResponse<T> {
             HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
         };

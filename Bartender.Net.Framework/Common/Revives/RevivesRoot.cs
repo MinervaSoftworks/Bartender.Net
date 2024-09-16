@@ -6,6 +6,6 @@ public class RevivesRoot : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 
-    [JsonProperty("revives")]
+    [JsonProperty ("revives")]
     public required List<Revive> Revives { get; set; }
 }

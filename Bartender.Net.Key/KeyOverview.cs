@@ -1,5 +1,4 @@
 using Bartender.Net.Framework;
-using Bartender.Net.Key.KeyInfo;
 
 namespace Bartender.Net.Key;
 
