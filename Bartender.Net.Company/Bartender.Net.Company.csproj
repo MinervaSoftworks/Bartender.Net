@@ -9,7 +9,7 @@
 		<Copyright>Copyright (c) Raven Crowe 2024</Copyright>
 		<Description>Company models for Bartender.Net.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>2.1-ALPHA</Version>
+		<Version>2.2-ALPHA</Version>
 		<Company>Minerva Softworks</Company>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
