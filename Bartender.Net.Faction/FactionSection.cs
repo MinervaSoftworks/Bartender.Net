@@ -32,7 +32,7 @@ using Bartender.Net.Framework.Key;
 using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Faction;
-public class FactionSection : ISectiony {
+public class FactionSection : ISection {
     public int ID => 3;
 
     public string Name => "faction";
