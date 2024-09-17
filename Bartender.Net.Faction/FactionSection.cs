@@ -32,7 +32,9 @@ using Bartender.Net.Framework.Key;
 using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Faction;
-public class FactionSection : ISection {
+public class FactionSection : ISectiony {
+    public int ID => 3;
+
     public string Name => "faction";
 
     public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (ApplicationsRoot));

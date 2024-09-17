@@ -11,6 +11,8 @@ using Bartender.Net.Framework.Sections;
 namespace Bartender.Net.Company;
 
 public class CompanySection : ISection {
+    public int ID => 4;
+
     public string Name => "company";
 
     public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (CompanyApplicationsRoot));

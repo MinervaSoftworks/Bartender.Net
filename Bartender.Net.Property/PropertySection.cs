@@ -5,6 +5,8 @@ using Bartender.Net.Property.Property;
 namespace Bartender.Net.Property;
 
 public class PropertySection : ISection {
+    public int ID => 2;
+
     public string Name => "Property";
 
     public static readonly Selection Property = new ("property", AccessLevel.Public, typeof (PropertyRoot));

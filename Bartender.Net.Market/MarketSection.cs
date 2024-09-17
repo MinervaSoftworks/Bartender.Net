@@ -6,6 +6,8 @@ using Bartender.Net.Market.PointsMarket;
 
 namespace Bartender.Net.Market;
 public class MarketSection : ISection {
+    public int ID => 5;
+
     public string Name => "market";
 
     public static readonly Selection Bazaar = new ("bazaar", AccessLevel.Public, typeof (BazaarRoot));

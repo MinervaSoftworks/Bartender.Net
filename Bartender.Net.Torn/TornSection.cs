@@ -2,7 +2,9 @@
 //using Bartender.Net.Framework.Sections;
 
 //namespace Bartender.Net.Torn;
-//public class TornSection : ISection {
+//public class TornSection : ISection, IBartenderEntity {
+//    public int ID => 6;
+
 //    public string Name => "torn";
 
 //    public static readonly Selection Bank = new ("bank", AccessLevel.Public, typeof(BankRoot));

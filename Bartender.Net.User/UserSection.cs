@@ -44,6 +44,8 @@ using Bartender.Net.User.WorkStats;
 namespace Bartender.Net.User;
 
 public class UserSection : ISection {
+    public int ID { get; } = 1;
+
     public string Name => "user";
 
     public static readonly Selection Ammo = new ("ammo", AccessLevel.Minimal, typeof (AmmoRoot));
