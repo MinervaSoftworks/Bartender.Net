@@ -1,4 +1,3 @@
-using Bartender.Net.Framework;
 using Bartender.Net.User.Ammunition;
 using Bartender.Net.User.Attacks;
 using Bartender.Net.User.AttacksFull;
@@ -42,86 +41,43 @@ using Bartender.Net.User.WorkStats;
 
 namespace Bartender.Net.User;
 
-public class UserOverview : IBartenderEntity {
-    public required int ID { get; set; }
-
-    public required AmmoRoot Ammo { get; set; }
-
-    public required UserAttacksRoot UserAttacks { get; set; }
-
-    public required UserAttacksFullRoot UserAttacksFull { get; set; }
-
-    public required BarsRoot Bars { get; set; }
-
-    public required UserBasic UserBasic { get; set; }
-
-    public required BattleStatsRoot BattleStats { get; set; }
-
-    public required CooldownsRoot Cooldowns { get; set; }
-
-    public required CrimesRoot Crimes { get; set; }
-
-    public required CriminalRecordRoot CriminalRecord { get; set; }
-
-    public required DiscordRoot Discord { get; set; }
-
-    public required DisplayCaseRoot DisplayCase { get; set; }
-
-    public required EducationRoot Education { get; set; }
-
-    public required EquipmentRoot Equipment { get; set; }
-
-    public required EventsRoot Events { get; set; }
-
-    public required GymRoot Gym { get; set; }
-
-    public required HallOfFameRoot HallOfFame { get; set; }
-
-    public required HonorsRoot Honors { get; set; }
-
-    public required IconsRoot Icons { get; set; }
-
-    public required JobPointsRoot JobPoints { get; set; }
-
-    public required LogRoot Log { get; set; }
-
-    public required MedalsRoot Medals { get; set; }
-
-    public required MeritsRoot Merits { get; set; }
-
-    public required MessagesRoot Messages { get; set; }
-
-    public required MissionsRoot Missions { get; set; }
-
-    public required MoneyRoot Money { get; set; }
-
-    public required NetworthRoot Networth { get; set; }
-
-    public required NewUserEventsRoot NewUserEvents { get; set; }
-
-    public required NewUserMessagesRoot NewUserMessages { get; set; }
-
-    public required UserNotificationsRoot UserNotifications { get; set; }
-
-    public required PerksRoot Perks { get; set; }
-
-    public required PersonalStatsRoot PersonalStats { get; set; }
-
-    public required UserProfileRoot UserProfile { get; set; }
-
-    public required PropertiesRoot Properties { get; set; }
-
-    public required PublicStatusRoot PublicStatus { get; set; }
-
-    public required RefillsRoot Refills { get; set; }
-
-    public required SkillsRoot Skills { get; set; }
-
-    public required UserStocksRoot UserStocks { get; set; }
-
-    public required TravelRoot Travel { get; set; }
-
-    public required WeaponExpRoot WeaponExp { get; set; }
-
-    public required WorkStatsRoot WorkStats { get; set; }
-}
+public record UserOverview (AmmoRoot? Ammo = null,
+                            UserAttacksRoot? UserAttacks = null,
+                            UserAttacksFullRoot? UserAttacksFull = null,
+                            BarsRoot? Bars = null,
+                            UserBasic? UserBasic = null,
+                            BattleStatsRoot? BattleStats = null,
+                            CooldownsRoot? Cooldowns = null,
+                            CrimesRoot? Crimes = null,
+                            CriminalRecordRoot? CriminalRecord = null,
+                            DiscordRoot? Discord = null,
+                            DisplayCaseRoot? DisplayCase = null,
+                            EducationRoot? Education = null,
+                            EquipmentRoot? Equipment = null,
+                            EventsRoot? Events = null,
+                            GymRoot? Gym = null,
+                            HallOfFameRoot? HallOfFame = null,
+                            HonorsRoot? Honors = null,
+                            IconsRoot? Icons = null,
+                            JobPointsRoot? JobPoints = null,
+                            LogRoot? Log = null,
+                            MedalsRoot? Medals = null,
+                            MeritsRoot? Merits = null,
+                            MessagesRoot? Messages = null,
+                            MissionsRoot? Missions = null,
+                            MoneyRoot? Money = null,
+                            NetworthRoot? Networth = null,
+                            NewUserEventsRoot? NewUserEvents = null,
+                            NewUserMessagesRoot? NewUserMessages = null,
+                            UserNotificationsRoot? UserNotifications = null,
+                            PerksRoot? Perks = null,
+                            PersonalStatsRoot? PersonalStats = null,
+                            UserProfileRoot? UserProfile = null,
+                            PropertiesRoot? Properties = null,
+                            PublicStatusRoot? PublicStatus = null,
+                            RefillsRoot? Refills = null,
+                            SkillsRoot? Skills = null,
+                            UserStocksRoot? UserStocks = null,
+                            TravelRoot? Travel = null,
+                            WeaponExpRoot? WeaponExp = null,
+                            WorkStatsRoot? WorkStats = null);
