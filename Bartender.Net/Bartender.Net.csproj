@@ -4,12 +4,12 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Title>Bartender.Net REST</Title>
+		<Title>Bartender.Net</Title>
 		<Authors>Raven Crowe</Authors>
 		<Copyright>Copyright (c) Raven Crowe 2023</Copyright>
-		<Description>REST request clients for Bartender.</Description>
+		<Description>Bartender, a .Net wrapper for Torn's Api.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>2.3-ALPHA</Version>
+		<Version>2.4-ALPHA</Version>
 		<Company>Minerva Softworks</Company>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
