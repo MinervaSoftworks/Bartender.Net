@@ -10,11 +10,7 @@ using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Company;
 
-public class CompanySection : ISection {
-    public int ID => 4;
-
-    public string Name => "company";
-
+public class CompanySelections {
     public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (CompanyApplicationsRoot));
     public static readonly Selection Companies = new ("companies", AccessLevel.Public, typeof (CompaniesRoot));
     public static readonly Selection Detailed = new ("detailed", AccessLevel.Limited, typeof (DetailedRoot));
@@ -23,7 +19,7 @@ public class CompanySection : ISection {
     public static readonly Selection Profile = new ("profile", AccessLevel.Public, typeof (CompanyProfileRoot));
     public static readonly Selection Stock = new ("stock", AccessLevel.Limited, typeof (StockRoot));
 
-    public IEnumerable<Selection> Selections {
+    public static IEnumerable<Selection> Selections {
         get {
             yield return Applications;
             yield return Companies;

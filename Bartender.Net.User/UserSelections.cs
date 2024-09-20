@@ -43,11 +43,7 @@ using Bartender.Net.User.WorkStats;
 
 namespace Bartender.Net.User;
 
-public class UserSection : ISection {
-    public int ID { get; } = 1;
-
-    public string Name => "user";
-
+public class UserSelections {
     public static readonly Selection Ammo = new ("ammo", AccessLevel.Minimal, typeof (AmmoRoot));
     public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (UserAttacksRoot));
     public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot));
@@ -93,7 +89,7 @@ public class UserSection : ISection {
     public static readonly Selection WeaponExp = new ("weaponexp", AccessLevel.Minimal, typeof (WeaponExpRoot));
     public static readonly Selection WorkStats = new ("workstats", AccessLevel.Minimal, typeof (WorkStatsRoot));
 
-    public IEnumerable<Selection> Selections {
+    public static IEnumerable<Selection> Selections {
         get {
             yield return Ammo;
             yield return Attacks;

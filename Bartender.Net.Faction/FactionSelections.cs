@@ -32,11 +32,7 @@ using Bartender.Net.Framework.Key;
 using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Faction;
-public class FactionSection : ISection {
-    public int ID => 3;
-
-    public string Name => "faction";
-
+public class FactionSelections {
     public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (ApplicationsRoot));
     public static readonly Selection Armor = new ("armor", AccessLevel.Minimal, typeof (ArmorRoot));
     public static readonly Selection ArmoryNews = new ("armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot));
@@ -73,7 +69,7 @@ public class FactionSection : ISection {
     public static readonly Selection Upgrades = new ("upgrades", AccessLevel.Minimal, typeof (UpgradesRoot));
     public static readonly Selection Weapons = new ("weapons", AccessLevel.Minimal, typeof (WeaponsRoot));
 
-    public IEnumerable<Selection> Selections {
+    public static IEnumerable<Selection> Selections {
         get {
             yield return Applications;
             yield return Armor;

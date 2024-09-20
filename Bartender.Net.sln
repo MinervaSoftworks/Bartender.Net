@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.REST", "Bartender.Net.REST\Bartender.Net.REST.csproj", "{0298660E-1CAA-499E-A88A-1F56E8DA8008}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net", "Bartender.Net\Bartender.Net.csproj", "{0298660E-1CAA-499E-A88A-1F56E8DA8008}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bartender.Net.User", "Bartender.Net.User\Bartender.Net.User.csproj", "{5D185C7F-BE76-48E6-A175-9A9A2B388B78}"
 EndProject

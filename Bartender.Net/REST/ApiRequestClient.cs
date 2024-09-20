@@ -100,7 +100,7 @@ public class ApiRequestClient : IApiRequestClient {
         var config = new RequestConfiguration {
             Key = key,
             Section = "key",
-            Selections = [KeySection.Info],
+            Selections = [KeySelections.Info],
             Comment = "Bartender.Net Key Validation"
         };
 
@@ -118,7 +118,7 @@ public class ApiRequestClient : IApiRequestClient {
             return status;
         }
 
-        var keyInfo = response.Content [KeySection.Info] as KeyInfo;
+        var keyInfo = response.Content [KeySelections.Info] as KeyInfo;
 
         if (keyInfo is null) {
             return status;

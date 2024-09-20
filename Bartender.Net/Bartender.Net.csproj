@@ -41,7 +41,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Bartender.Net.Company\Bartender.Net.Company.csproj" />
+	  <ProjectReference Include="..\Bartender.Net.Faction\Bartender.Net.Faction.csproj" />
 	  <ProjectReference Include="..\Bartender.Net.Framework\Bartender.Net.Framework.csproj" />
 	  <ProjectReference Include="..\Bartender.Net.Key\Bartender.Net.Key.csproj" />
+	  <ProjectReference Include="..\Bartender.Net.Market\Bartender.Net.Market.csproj" />
+	  <ProjectReference Include="..\Bartender.Net.Property\Bartender.Net.Property.csproj" />
+	  <ProjectReference Include="..\Bartender.Net.Torn\Bartender.Net.Torn.csproj" />
+	  <ProjectReference Include="..\Bartender.Net.User\Bartender.Net.User.csproj" />
 	</ItemGroup>
 </Project>

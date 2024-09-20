@@ -18,5 +18,5 @@ public class KeyInfo : IBartenderEntity {
     }
 
     [JsonProperty ("selections")]
-    public KeySelections Selections { get; set; }
+    public KeyAuths Selections { get; set; }
 }
