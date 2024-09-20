@@ -22,6 +22,9 @@ using Bartender.Net.Faction.Medical;
 using Bartender.Net.Faction.MembershipNews;
 using Bartender.Net.Faction.Positions;
 using Bartender.Net.Faction.RankedWars;
+using Bartender.Net.Faction.Reports;
+using Bartender.Net.Faction.Revives;
+using Bartender.Net.Faction.RevivesFull;
 using Bartender.Net.Faction.Stats;
 using Bartender.Net.Faction.Temporary;
 using Bartender.Net.Faction.Territory;
@@ -32,6 +35,7 @@ using Bartender.Net.Framework.Key;
 using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Faction;
+
 public class FactionSelections {
     public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (ApplicationsRoot));
     public static readonly Selection Armor = new ("armor", AccessLevel.Minimal, typeof (ArmorRoot));
@@ -42,7 +46,6 @@ public class FactionSelections {
     public static readonly Selection Basic = new ("basic", AccessLevel.Public, typeof (FactionBasic));
     public static readonly Selection Boosters = new ("boosters", AccessLevel.Minimal, typeof (BoostersRoot));
     public static readonly Selection Caches = new ("caches", AccessLevel.Limited, typeof (CachesRoot));
-    //public static readonly Selection Cesium = new ("cesium", AccessLevel.Limited, typeof(CesiumRoot));
     public static readonly Selection Chain = new ("chain", AccessLevel.Public, typeof (ChainRoot));
     public static readonly Selection ChainReport = new ("chainreport", AccessLevel.Public, typeof (ChainReportRoot));
     public static readonly Selection Chains = new ("chains", AccessLevel.Minimal, typeof (ChainRoot));
@@ -59,9 +62,9 @@ public class FactionSelections {
     public static readonly Selection MembershipNews = new ("membershipnews", AccessLevel.Minimal, typeof (MembershipNewsRoot));
     public static readonly Selection Positions = new ("positions", AccessLevel.Minimal, typeof (PositionsRoot));
     public static readonly Selection RankedWars = new ("rankedwars", AccessLevel.Public, typeof (RankedWarsRoot));
-    //public static readonly Selection Reports = new ("reports", AccessLevel.Limited, typeof(ReportsRoot));
-    //public static readonly Selection Revives = new ("revives", AccessLevel.Minimal, typeof(RevivesRoot));
-    //public static readonly Selection RevivesFull = new ("revivesfull", AccessLevel.Minimal, typeof(RevivesFullRoot));
+    public static readonly Selection Reports = new ("reports", AccessLevel.Limited, typeof (FactionReportsRoot));
+    public static readonly Selection Revives = new ("revives", AccessLevel.Minimal, typeof (FactionRevivesRoot));
+    public static readonly Selection RevivesFull = new ("revivesfull", AccessLevel.Minimal, typeof (FactionReviveFullRoot));
     public static readonly Selection Stats = new ("stats", AccessLevel.Minimal, typeof (StatsRoot));
     public static readonly Selection Temporary = new ("temporary", AccessLevel.Minimal, typeof (TemporaryRoot));
     public static readonly Selection Territory = new ("territory", AccessLevel.Public, typeof (TerritoryRoot));
@@ -80,7 +83,6 @@ public class FactionSelections {
             yield return Basic;
             yield return Boosters;
             yield return Caches;
-            //yield return Cesium;
             yield return Chain;
             yield return ChainReport;
             yield return Chains;
@@ -97,9 +99,9 @@ public class FactionSelections {
             yield return MembershipNews;
             yield return Positions;
             yield return RankedWars;
-            //yield return Reports;
-            //yield return Revives;
-            //yield return RevivesFull;
+            yield return Reports;
+            yield return Revives;
+            yield return RevivesFull;
             yield return Stats;
             yield return Temporary;
             yield return Territory;

@@ -22,6 +22,9 @@ using Bartender.Net.Faction.Medical;
 using Bartender.Net.Faction.MembershipNews;
 using Bartender.Net.Faction.Positions;
 using Bartender.Net.Faction.RankedWars;
+using Bartender.Net.Faction.Reports;
+using Bartender.Net.Faction.Revives;
+using Bartender.Net.Faction.RevivesFull;
 using Bartender.Net.Faction.Stats;
 using Bartender.Net.Faction.Temporary;
 using Bartender.Net.Faction.Territory;
@@ -58,9 +61,9 @@ public record FactionOverview (ApplicationsRoot? Applications = null,
                                MembershipNewsRoot? MembershipNews = null,
                                PositionsRoot? Positions = null,
                                RankedWarsRoot? RankedWars = null,
-                               ReportsRoot? Reports = null,
-                               RevivesRoot? Revives = null,
-                               ReviveFullRoot? ReviveFull = null,
+                               FactionReportsRoot? Reports = null,
+                               FactionRevivesRoot? Revives = null,
+                               FactionReviveFullRoot? ReviveFull = null,
                                StatsRoot? Stats = null,
                                TemporaryRoot? Temporary = null,
                                TerritoryRoot? Territory = null,

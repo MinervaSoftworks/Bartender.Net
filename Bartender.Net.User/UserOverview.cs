@@ -32,6 +32,9 @@ using Bartender.Net.User.Profile;
 using Bartender.Net.User.Property;
 using Bartender.Net.User.PublicStatus;
 using Bartender.Net.User.Refills;
+using Bartender.Net.User.Reports;
+using Bartender.Net.User.Revives;
+using Bartender.Net.User.RevivesFull;
 using Bartender.Net.User.Skills;
 using Bartender.Net.User.Social;
 using Bartender.Net.User.Stocks;
@@ -76,6 +79,9 @@ public record UserOverview (AmmoRoot? Ammo = null,
                             PropertiesRoot? Properties = null,
                             PublicStatusRoot? PublicStatus = null,
                             RefillsRoot? Refills = null,
+                            UserReportsRoot? Reports = null,
+                            UserRevivesRoot? Revives = null,
+                            UserReviveFullRoot? ReviveFull = null,
                             SkillsRoot? Skills = null,
                             UserStocksRoot? UserStocks = null,
                             TravelRoot? Travel = null,
