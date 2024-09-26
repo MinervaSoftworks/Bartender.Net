@@ -20,7 +20,7 @@ public class Application : IBartenderEntity {
     public required string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public AppicationStats Stats { get; set; }
+    public required AppicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
     public required string Status { get; set; }

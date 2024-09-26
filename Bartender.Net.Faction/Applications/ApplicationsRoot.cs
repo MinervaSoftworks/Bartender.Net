@@ -3,10 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Applications;
 
-public class ApplicationsRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class ApplicationsRoot {
     [JsonProperty ("applications")]
     public required Dictionary<string, Application> Applications { get; set; }
 }

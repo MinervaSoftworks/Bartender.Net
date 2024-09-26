@@ -11,10 +11,10 @@ public class AttackStub : IBartenderEntity {
     public required string Code { get; set; }
 
     [JsonProperty ("timestamp_started")]
-    public long TimestampStarted { get; set; }
+    public required long TimestampStarted { get; set; }
 
     [JsonProperty ("timestamp_ended")]
-    public long TimestampEnded { get; set; }
+    public required long TimestampEnded { get; set; }
 
     [JsonProperty ("attacker_id")]
     public required int AttackerId { get; set; }

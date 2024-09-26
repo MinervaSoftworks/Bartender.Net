@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Caches;
 
-public class CachesRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class CachesRoot {
     [JsonProperty ("caches")]
     public required List<FactionArmoryItem> Items { get; set; }
 }

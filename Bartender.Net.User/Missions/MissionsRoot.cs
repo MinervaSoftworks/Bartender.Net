@@ -3,10 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Missions;
 
-public class MissionsRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class MissionsRoot {
     [JsonProperty ("Duke")]
     public required List<Mission> Duke { get; set; }
 }

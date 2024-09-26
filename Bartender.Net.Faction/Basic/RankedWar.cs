@@ -11,5 +11,5 @@ public class RankedWar : IBartenderEntity {
     public required Dictionary<string, RankedWarFaction> Factions { get; set; }
 
     [JsonProperty ("war")]
-    public War War { get; set; }
+    public required War War { get; set; }
 }

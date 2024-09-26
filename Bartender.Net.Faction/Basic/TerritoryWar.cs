@@ -14,7 +14,7 @@ public class TerritoryWar : IBartenderEntity {
     public required int DefendingFaction { get; set; }
 
     [JsonProperty ("end_time")]
-    public long EndTime { get; set; }
+    public required long EndTime { get; set; }
 
     [JsonProperty ("required_score")]
     public required int RequiredScore { get; set; }
@@ -23,7 +23,7 @@ public class TerritoryWar : IBartenderEntity {
     public required int Score { get; set; }
 
     [JsonProperty ("start_time")]
-    public long StartTime { get; set; }
+    public required long StartTime { get; set; }
 
     [JsonProperty ("territory")]
     public required string Territory { get; set; }

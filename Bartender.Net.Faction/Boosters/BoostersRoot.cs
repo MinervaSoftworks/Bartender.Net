@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Boosters;
 
-public class BoostersRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class BoostersRoot {
     [JsonProperty ("boosters")]
     public required List<FactionArmoryItem> Items { get; set; }
 }

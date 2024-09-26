@@ -20,5 +20,5 @@ public class Raid : IBartenderEntity {
     public required int RaiderFaction { get; set; }
 
     [JsonProperty ("start_time")]
-    public long StartTime { get; set; }
+    public required long StartTime { get; set; }
 }

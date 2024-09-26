@@ -8,5 +8,5 @@ public class StatsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("stats")]
-    public StatsEntry Stats { get; set; }
+    public required StatsEntry Stats { get; set; }
 }

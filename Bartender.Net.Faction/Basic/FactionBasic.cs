@@ -17,7 +17,7 @@ public class FactionBasic : IBartenderEntity {
     public required int ColeaderID { get; set; }
 
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public required int ID { get; set; }
 
     [JsonProperty ("leader")]
     public required int Leader { get; set; }
@@ -35,7 +35,7 @@ public class FactionBasic : IBartenderEntity {
     public required List<Raid> RaidWars { get; set; }
 
     [JsonProperty ("rank")]
-    public Ranking Rank { get; set; }
+    public required Ranking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
     public required Dictionary<string, RankedWar> RankedWars { get; set; }

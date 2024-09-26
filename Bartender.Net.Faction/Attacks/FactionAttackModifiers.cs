@@ -8,20 +8,20 @@ public class FactionAttackModifiers : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("fair_fight")]
-    public double FairFight { get; set; }
+    public required double FairFight { get; set; }
 
     [JsonProperty ("war")]
-    public double War { get; set; }
+    public required double War { get; set; }
 
     [JsonProperty ("retaliation")]
-    public double Retaliation { get; set; }
+    public required double Retaliation { get; set; }
 
     [JsonProperty ("group_attack")]
-    public double GroupAttack { get; set; }
+    public required double GroupAttack { get; set; }
 
     [JsonProperty ("overseas")]
-    public double Overseas { get; set; }
+    public required double Overseas { get; set; }
 
     [JsonProperty ("chain_bonus")]
-    public double ChainBonus { get; set; }
+    public required double ChainBonus { get; set; }
 }

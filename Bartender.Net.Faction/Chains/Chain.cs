@@ -3,12 +3,12 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Chains;
 
-public class ChainStub : IBartenderEntity {
+public class Chain : IBartenderEntity {
     [JsonProperty ("userID")]
     public int ID { get; set; }
 
     [JsonProperty ("chain")]
-    public required int Chain { get; set; }
+    public required int ChainNumber { get; set; }
 
     [JsonProperty ("respect")]
     public required string Respect { get; set; }

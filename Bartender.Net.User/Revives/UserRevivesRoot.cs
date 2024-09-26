@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Revives;
 
-public class UserRevivesRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class UserRevivesRoot {
     [JsonProperty ("revives")]
     public required List<Revive> Revives { get; set; }
 }

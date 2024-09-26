@@ -3,10 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Market.Bazaar;
 
-public class BazaarRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class BazaarRoot {
     [JsonProperty ("bazaar")]
     public required List<ItemListing> Items { get; set; }
 }

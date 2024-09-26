@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Weapons;
 
-public class WeaponsRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class WeaponsRoot {
     [JsonProperty ("weapons")]
     public required List<FactionLoanable> Loanables { get; set; }
 }

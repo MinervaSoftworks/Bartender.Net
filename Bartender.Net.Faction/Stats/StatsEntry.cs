@@ -17,7 +17,7 @@ public class StatsEntry : IBartenderEntity {
     public required int Organisedcrimerespect { get; set; }
 
     [JsonProperty ("organisedcrimemoney")]
-    public long Organisedcrimemoney { get; set; }
+    public required long Organisedcrimemoney { get; set; }
 
     [JsonProperty ("organisedcrimesuccess")]
     public required int Organisedcrimesuccess { get; set; }

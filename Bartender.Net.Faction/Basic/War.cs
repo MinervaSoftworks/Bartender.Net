@@ -8,14 +8,14 @@ public class War : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("end")]
-    public long End { get; set; }
+    public required long End { get; set; }
 
     [JsonProperty ("start")]
-    public long Start { get; set; }
+    public required long Start { get; set; }
 
     [JsonProperty ("target")]
     public required int Target { get; set; }
 
     [JsonProperty ("winner")]
-    public decimal Winner { get; set; }
+    public required int Winner { get; set; }
 }

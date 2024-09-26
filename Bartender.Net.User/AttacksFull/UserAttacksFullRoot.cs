@@ -3,10 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.AttacksFull;
 
-public class UserAttacksFullRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class UserAttacksFullRoot {
     [JsonProperty ("attacks")]
     public required Dictionary<string, UserAttackStub> Attacks { get; set; }
 }

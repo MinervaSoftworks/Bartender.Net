@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Reports;
 
-public class UserReportsRoot : IBartenderEntity {
-    [JsonIgnore]
-    public int ID { get; set; }
-
+public class UserReportsRoot {
     [JsonProperty ("reports")]
     public required List<Report> Reports { get; set; }
 }

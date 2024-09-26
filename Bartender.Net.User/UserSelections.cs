@@ -55,7 +55,7 @@ public class UserSelections {
     public static readonly Selection BattleStats = new ("battlestats", AccessLevel.Limited, typeof (BattleStatsRoot));
     public static readonly Selection Cooldowns = new ("cooldowns", AccessLevel.Minimal, typeof (CooldownsRoot));
     public static readonly Selection Crimes = new ("crimes", AccessLevel.Minimal, typeof (CrimesRoot));
-    public static readonly Selection CriminalRecord = new ("criminalrecord", AccessLevel.Public, typeof (CriminalRecordRoot));
+    public static readonly Selection CriminalRecord = new ("criminalrecord", AccessLevel.Public, typeof (CrimeRecordRoot));
     public static readonly Selection Discord = new ("discord", AccessLevel.Limited, typeof (DiscordRoot));
     public static readonly Selection Display = new ("display", AccessLevel.Public, typeof (DisplayCaseRoot));
     public static readonly Selection Education = new ("education", AccessLevel.Minimal, typeof (EducationRoot));
