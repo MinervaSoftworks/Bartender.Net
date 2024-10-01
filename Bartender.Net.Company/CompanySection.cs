@@ -18,7 +18,7 @@ public class CompanySection {
     public static readonly Selection Employees = new ("employees", AccessLevel.Limited, typeof (EmployeesRoot), typeof (Employee));
     public static readonly Selection News = new ("news", AccessLevel.Limited, typeof (CompanyNewsRoot), typeof (NewsEntry));
     public static readonly Selection Profile = new ("profile", AccessLevel.Public, typeof (CompanyProfileRoot), typeof (CompanyProfile));
-    public static readonly Selection Stock = new ("stock", AccessLevel.Limited, typeof (StockRoot), typeof (CompanyStock));
+    public static readonly Selection Stock = new ("stock", AccessLevel.Limited, typeof (CompanyStocksRoot), typeof (CompanyStock));
 
     public static IEnumerable<Selection> Selections {
         get {

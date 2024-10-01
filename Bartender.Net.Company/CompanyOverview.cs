@@ -14,4 +14,4 @@ public record CompanyOverview (CompanyApplicationsRoot? CompanyApplications = nu
                                EmployeesRoot? Employees = null,
                                CompanyNewsRoot? CompanyNews = null,
                                CompanyProfileRoot? CompanyProfile = null,
-                               StockRoot? Stock = null);
+                               CompanyStocksRoot? Stock = null);

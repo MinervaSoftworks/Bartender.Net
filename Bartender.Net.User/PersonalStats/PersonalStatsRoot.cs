@@ -3,7 +3,10 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.PersonalStats;
 
-public class PersonalStatsRoot {
+public class PersonalStatsRoot : IBartenderEntity {
+    [JsonIgnore]
+    public int ID { get; set; }
+
     [JsonProperty ("personalstats")]
     public required PersonalStatsEntry PersonalStats { get; set; }
 }
