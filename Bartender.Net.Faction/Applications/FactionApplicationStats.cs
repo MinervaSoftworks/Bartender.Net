@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Applications;
 
-public class AppicationStats : IBartenderEntity {
+public class FactionApplicationStats : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

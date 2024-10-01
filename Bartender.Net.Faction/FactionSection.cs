@@ -43,12 +43,12 @@ using Bartender.Net.Framework.Sections;
 namespace Bartender.Net.Faction;
 
 public class FactionSection {
-    public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (ApplicationsRoot), typeof (FactionApplication));
+    public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (FactionApplicationsRoot), typeof (FactionApplication));
     public static readonly Selection Armor = new ("armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionLoanable));
     public static readonly Selection ArmoryNews = new ("armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot), typeof (NewsEntry));
     public static readonly Selection AttackNews = new ("attacknews", AccessLevel.Limited, typeof (AttackNewsRoot), typeof (NewsEntry));
     public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (FactionAttacksRoot), typeof (FactionAttack));
-    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (FactionAttacksFullRoot), typeof (AttackStub));
+    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (FactionAttacksFullRoot), typeof (FactionAttackFull));
     public static readonly Selection Basic = new ("basic", AccessLevel.Public, typeof (FactionBasic), typeof (FactionBasic));
     public static readonly Selection Boosters = new ("boosters", AccessLevel.Minimal, typeof (BoostersRoot), typeof (FactionArmoryItem));
     public static readonly Selection Caches = new ("caches", AccessLevel.Limited, typeof (CachesRoot), typeof (FactionArmoryItem));
@@ -76,7 +76,7 @@ public class FactionSection {
     public static readonly Selection Territory = new ("territory", AccessLevel.Public, typeof (TerritoryRoot), typeof (FactionTerritory));
     public static readonly Selection TerritoryNews = new ("territorynews", AccessLevel.Minimal, typeof (TerritoryNewsRoot), typeof (NewsEntry));
     public static readonly Selection Upgrades = new ("upgrades", AccessLevel.Minimal, typeof (UpgradesRoot), typeof (UpgradesRoot));
-    public static readonly Selection Weapons = new ("weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof(FactionLoanable));
+    public static readonly Selection Weapons = new ("weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof (FactionLoanable));
 
     public static IEnumerable<Selection> Selections {
         get {

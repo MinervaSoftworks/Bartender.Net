@@ -8,5 +8,5 @@ public class UserStocksRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("stocks")]
-    public required Dictionary<string, Stock> Stocks { get; set; }
+    public required Dictionary<string, UserStock> Stocks { get; set; }
 }

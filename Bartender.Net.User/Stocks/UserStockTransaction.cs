@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Stocks;
 
-public class StockTransaction : IBartenderEntity {
+public class UserStockTransaction : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

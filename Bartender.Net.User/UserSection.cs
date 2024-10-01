@@ -52,7 +52,7 @@ namespace Bartender.Net.User;
 public class UserSection {
     public static readonly Selection Ammo = new ("ammo", AccessLevel.Minimal, typeof (AmmoRoot), typeof (Ammo));
     public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (UserAttacksRoot), typeof (UserAttack));
-    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot), typeof (UserAttackStub));
+    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot), typeof (UserAttackFull));
     public static readonly Selection Bars = new ("bars", AccessLevel.Minimal, typeof (BarsRoot), typeof (BarsRoot));
     public static readonly Selection Basic = new ("basic", AccessLevel.Public, typeof (UserBasic), typeof (UserBasic));
     public static readonly Selection BattleStats = new ("battlestats", AccessLevel.Limited, typeof (BattleStatsRoot), typeof (BattleStatsRoot));
@@ -89,7 +89,7 @@ public class UserSection {
     public static readonly Selection Revives = new ("revives", AccessLevel.Minimal, typeof (UserRevivesRoot), typeof (Revive));
     public static readonly Selection RevivesFull = new ("revivesfull", AccessLevel.Minimal, typeof (UserReviveFullRoot), typeof (ReviveFull));
     public static readonly Selection Skills = new ("skills", AccessLevel.Minimal, typeof (SkillsRoot), typeof (SkillsRoot));
-    public static readonly Selection Stocks = new ("stocks", AccessLevel.Limited, typeof (UserStocksRoot), typeof (Stock));
+    public static readonly Selection Stocks = new ("stocks", AccessLevel.Limited, typeof (UserStocksRoot), typeof (UserStock));
     public static readonly Selection Travel = new ("travel", AccessLevel.Minimal, typeof (TravelRoot), typeof (TravelEntry));
     public static readonly Selection WeaponExp = new ("weaponexp", AccessLevel.Minimal, typeof (WeaponExpRoot), typeof (WeaponExpEntry));
     public static readonly Selection WorkStats = new ("workstats", AccessLevel.Minimal, typeof (WorkStatsRoot), typeof (WorkStatsRoot));

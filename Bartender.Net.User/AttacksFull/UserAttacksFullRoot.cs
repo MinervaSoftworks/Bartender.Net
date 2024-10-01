@@ -8,5 +8,5 @@ public class UserAttacksFullRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("attacks")]
-    public required Dictionary<string, UserAttackStub> Attacks { get; set; }
+    public required Dictionary<string, UserAttackFull> Attacks { get; set; }
 }

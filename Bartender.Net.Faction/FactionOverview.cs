@@ -31,13 +31,10 @@ using Bartender.Net.Faction.Territory;
 using Bartender.Net.Faction.TerritoryNews;
 using Bartender.Net.Faction.Upgrades;
 using Bartender.Net.Faction.Weapons;
-using Bartender.Net.Framework.Common.Reports;
-using Bartender.Net.Framework.Common.Revives;
-using Bartender.Net.Framework.Common.RevivesFull;
 
 namespace Bartender.Net.Faction;
 
-public record FactionOverview (ApplicationsRoot? Applications = null,
+public record FactionOverview (FactionApplicationsRoot? Applications = null,
                                ArmorRoot? Armor = null,
                                ArmoryNewsRoot? ArmoryNews = null,
                                AttackNewsRoot? AttackNews = null,

@@ -20,7 +20,7 @@ public class FactionApplication : IBartenderEntity {
     public required string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public required AppicationStats Stats { get; set; }
+    public required FactionApplicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
     public required string Status { get; set; }

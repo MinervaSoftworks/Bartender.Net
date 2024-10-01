@@ -1,9 +1,9 @@
-using Bartender.Net.Framework;
+﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.User.AttacksFull;
+namespace Bartender.Net.Faction.AttacksFull;
 
-public class UserAttackStub : IBartenderEntity {
+public class FactionAttackFull : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 
@@ -11,16 +11,16 @@ public class UserAttackStub : IBartenderEntity {
     public required string Code { get; set; }
 
     [JsonProperty ("timestamp_started")]
-    public required int TimestampStarted { get; set; }
+    public required long TimestampStarted { get; set; }
 
     [JsonProperty ("timestamp_ended")]
-    public required int TimestampEnded { get; set; }
+    public required long TimestampEnded { get; set; }
 
     [JsonProperty ("attacker_id")]
-    public required string AttackerId { get; set; }
+    public required int AttackerId { get; set; }
 
     [JsonProperty ("attacker_faction")]
-    public required string AttackerFaction { get; set; }
+    public required int AttackerFaction { get; set; }
 
     [JsonProperty ("defender_id")]
     public required int DefenderId { get; set; }
@@ -29,7 +29,6 @@ public class UserAttackStub : IBartenderEntity {
     public required int DefenderFaction { get; set; }
 
     [JsonProperty ("result")]
-    // TODO Enum
     public required string Result { get; set; }
 
     [JsonProperty ("stealthed")]

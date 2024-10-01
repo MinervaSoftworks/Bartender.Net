@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Stocks;
 
-public class StockBonus : IBartenderEntity {
+public class UserStockBonus : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 
