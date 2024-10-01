@@ -5,7 +5,7 @@ using Bartender.Net.Property.Property;
 namespace Bartender.Net.Property;
 
 public class PropertySelections {
-    public static readonly Selection Property = new ("property", AccessLevel.Public, typeof (PropertyRoot));
+    public static readonly Selection Property = new ("property", AccessLevel.Public, typeof (PropertyRoot), typeof (PropertyEntry));
 
     public static IEnumerable<Selection> Selections {
         get {

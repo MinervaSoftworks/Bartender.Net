@@ -1,7 +1,6 @@
-﻿using Bartender.Net.Framework;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Bartender.Net.User.Social;
+namespace Bartender.Net.User.Discord;
 
 //TODO can just move this into it's own folder
 public class DiscordRoot {

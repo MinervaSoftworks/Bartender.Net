@@ -6,9 +6,9 @@ using Bartender.Net.Market.PointsMarket;
 
 namespace Bartender.Net.Market;
 public class MarketSelections {
-    public static readonly Selection Bazaar = new ("bazaar", AccessLevel.Public, typeof (BazaarRoot));
-    public static readonly Selection ItemMarket = new ("itemmarket", AccessLevel.Public, typeof (ItemMarketRoot));
-    public static readonly Selection PointsMarket = new ("pointsmarket", AccessLevel.Public, typeof (PointsMarketRoot));
+    public static readonly Selection Bazaar = new ("bazaar", AccessLevel.Public, typeof (BazaarRoot), typeof (ItemListing));
+    public static readonly Selection ItemMarket = new ("itemmarket", AccessLevel.Public, typeof (ItemMarketRoot), typeof (ItemListing));
+    public static readonly Selection PointsMarket = new ("pointsmarket", AccessLevel.Public, typeof (PointsMarketRoot), typeof (PointListing));
 
     public static IEnumerable<Selection> Selections {
         get {

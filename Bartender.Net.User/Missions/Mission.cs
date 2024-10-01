@@ -12,4 +12,7 @@ public class Mission : IBartenderEntity {
 
     [JsonProperty ("status")]
     public required string Status { get; set; }
+
+    [JsonIgnore]
+    public string? Provider { get; set; }
 }
