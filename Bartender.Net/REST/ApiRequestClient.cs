@@ -50,7 +50,7 @@ public class ApiRequestClient : IApiRequestClient {
 
         foreach (var selection in requestConfiguration.Selections) {
             try {
-                var parsed = JsonConvert.DeserializeObject (json, selection.Root);
+                var parsed = JsonConvert.DeserializeObject (json, selection.JsonRootType);
 
                 if (parsed is not null) {
                     fetched.Add (selection, parsed);
@@ -100,7 +100,7 @@ public class ApiRequestClient : IApiRequestClient {
         var config = new RequestConfiguration {
             Key = key,
             Section = "key",
-            Selections = [KeySelections.Info],
+            Selections = [KeySection.Info],
             Comment = "Bartender.Net Key Validation"
         };
 
@@ -118,7 +118,7 @@ public class ApiRequestClient : IApiRequestClient {
             return status;
         }
 
-        var keyInfo = response.Content [KeySelections.Info] as KeyInfo;
+        var keyInfo = response.Content [KeySection.Info] as KeyInfo;
 
         if (keyInfo is null) {
             return status;

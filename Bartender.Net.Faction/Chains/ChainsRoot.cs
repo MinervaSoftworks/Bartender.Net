@@ -5,5 +5,5 @@ namespace Bartender.Net.Faction.Chains;
 
 public class ChainsRoot {
     [JsonProperty ("chains")]
-    public required Dictionary<string, Chain> Chains { get; set; }
+    public required Dictionary<string, FactionChain> Chains { get; set; }
 }

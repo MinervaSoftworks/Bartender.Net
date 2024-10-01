@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Chain;
 
-public class CurrentChainEntry : IBartenderEntity {
+public class CurrentChain : IBartenderEntity {
     [JsonIgnore]
     public int ID { get; set; }
 

@@ -8,5 +8,5 @@ public class ChainReportRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("chainreport")]
-    public required ChainReport ChainReport { get; set; }
+    public required FactionChainReport ChainReport { get; set; }
 }

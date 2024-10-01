@@ -9,12 +9,12 @@ using Bartender.Net.User;
 namespace Bartender.Net;
 
 public static class Sections {
-    public static readonly Section Company = new Section ("company", CompanySelections.Selections);
-    public static readonly Section Faction = new Section ("faction", FactionSelections.Selections);
-    public static readonly Section Key = new Section ("key", KeySelections.Selections);
-    public static readonly Section Market = new Section ("market", MarketSelections.Selections);
-    public static readonly Section Property = new Section ("property", PropertySelections.Selections);
-    public static readonly Section User = new Section ("user", UserSelections.Selections);
+    public static readonly Section Company = new Section ("company", CompanySection.Selections);
+    public static readonly Section Faction = new Section ("faction", FactionSection.Selections);
+    public static readonly Section Key = new Section ("key", KeySection.Selections);
+    public static readonly Section Market = new Section ("market", MarketSection.Selections);
+    public static readonly Section Property = new Section ("property", PropertySection.Selections);
+    public static readonly Section User = new Section ("user", UserSection.Selections);
 
     public static IEnumerable<Section> Values {
         get {

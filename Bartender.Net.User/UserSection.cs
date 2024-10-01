@@ -49,7 +49,7 @@ using Bartender.Net.User.WorkStats;
 
 namespace Bartender.Net.User;
 
-public class UserSelections {
+public class UserSection {
     public static readonly Selection Ammo = new ("ammo", AccessLevel.Minimal, typeof (AmmoRoot), typeof (Ammo));
     public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (UserAttacksRoot), typeof (UserAttack));
     public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot), typeof (UserAttackStub));
