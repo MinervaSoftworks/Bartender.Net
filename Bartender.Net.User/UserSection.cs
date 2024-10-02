@@ -49,52 +49,68 @@ using Bartender.Net.User.WorkStats;
 
 namespace Bartender.Net.User;
 
-public class UserSection {
-    public static readonly Selection Ammo = new ("ammo", AccessLevel.Minimal, typeof (AmmoRoot), typeof (Ammo));
-    public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (UserAttacksRoot), typeof (UserAttack));
-    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot), typeof (UserAttackFull));
-    public static readonly Selection Bars = new ("bars", AccessLevel.Minimal, typeof (BarsRoot), typeof (BarsRoot));
-    public static readonly Selection Basic = new ("basic", AccessLevel.Public, typeof (UserBasic), typeof (UserBasic));
-    public static readonly Selection BattleStats = new ("battlestats", AccessLevel.Limited, typeof (BattleStatsRoot), typeof (BattleStatsRoot));
-    public static readonly Selection Bazaar = new ("bazaar", AccessLevel.Limited, typeof (BazaarRoot), typeof (BazaarListing));
-    public static readonly Selection Cooldowns = new ("cooldowns", AccessLevel.Minimal, typeof (CooldownsRoot), typeof (CooldownsRoot));
-    public static readonly Selection CriminalRecord = new ("criminalrecord", AccessLevel.Public, typeof (CrimeRecordRoot), typeof (CrimeRecordCollection));
-    public static readonly Selection Discord = new ("discord", AccessLevel.Limited, typeof (DiscordRoot), typeof (DiscordRecord));
-    public static readonly Selection Display = new ("display", AccessLevel.Public, typeof (DisplayCaseRoot), typeof (DisplayCaseItem));
-    public static readonly Selection Education = new ("education", AccessLevel.Minimal, typeof (EducationRoot), typeof (EducationRoot));
-    public static readonly Selection Equipment = new ("equipment", AccessLevel.Minimal, typeof (EquipmentRoot), typeof (EquipmentEntry));
-    public static readonly Selection Events = new ("events", AccessLevel.Limited, typeof (EventsRoot), typeof (Event));
-    public static readonly Selection Gym = new ("gym", AccessLevel.Minimal, typeof (GymRoot), typeof (GymRoot));
-    public static readonly Selection Hof = new ("hof", AccessLevel.Limited, typeof (HallOfFameRoot), typeof (HallOfFameRoot));
-    public static readonly Selection Honors = new ("honors", AccessLevel.Minimal, typeof (HonorsRoot), typeof (HonorsRoot));
-    public static readonly Selection Icons = new ("icons", AccessLevel.Public, typeof (IconsRoot), typeof (IconsRoot));
-    public static readonly Selection JobPoints = new ("jobpoints", AccessLevel.Minimal, typeof (JobPointsRoot), typeof (JobPointsCollection));
-    public static readonly Selection Log = new ("log", AccessLevel.Full, typeof (LogRoot), typeof (LogEntry));
-    public static readonly Selection Medals = new ("medals", AccessLevel.Public, typeof (MedalsRoot), typeof (MedalsRoot));
-    public static readonly Selection Merits = new ("merits", AccessLevel.Minimal, typeof (MeritsRoot), typeof (UserMerits));
-    public static readonly Selection Messages = new ("messages", AccessLevel.Limited, typeof (MessagesRoot), typeof (UserMessage));
-    public static readonly Selection Missions = new ("missions", AccessLevel.Minimal, typeof (MissionsRoot), typeof (MissionsRoot));
-    public static readonly Selection Money = new ("money", AccessLevel.Limited, typeof (MoneyRoot), typeof (MoneyRoot));
-    public static readonly Selection Networth = new ("networth", AccessLevel.Limited, typeof (NetworthRoot), typeof (NetworthRecord));
-    public static readonly Selection NewEvents = new ("newevents", AccessLevel.Minimal, typeof (NewUserEventsRoot), typeof (NewUserEvent));
-    public static readonly Selection NewMessages = new ("newmessages", AccessLevel.Minimal, typeof (NewUserMessagesRoot), typeof (UserMessage));
-    public static readonly Selection Notifications = new ("notifications", AccessLevel.Minimal, typeof (UserNotificationsRoot), typeof (UserNotifications));
-    public static readonly Selection Perks = new ("perks", AccessLevel.Minimal, typeof (PerksRoot), typeof (PerksRoot));
-    public static readonly Selection PersonalStats = new ("personalstats", AccessLevel.Public, typeof (PersonalStatsRoot), typeof (PersonalStatsEntry));
-    public static readonly Selection Profile = new ("profile", AccessLevel.Public, typeof (UserProfileRoot), typeof (UserProfileRoot));
-    public static readonly Selection Properties = new ("properties", AccessLevel.Public, typeof (PropertiesRoot), typeof (UserProperty));
-    public static readonly Selection PublicStatus = new ("publicstatus", AccessLevel.Public, typeof (PublicStatusRoot), typeof (PublicStatusRoot));
-    public static readonly Selection Refills = new ("refills", AccessLevel.Minimal, typeof (RefillsRoot), typeof (RefillStates));
-    public static readonly Selection Reports = new ("reports", AccessLevel.Limited, typeof (UserReportsRoot), typeof (Report));
-    public static readonly Selection Revives = new ("revives", AccessLevel.Minimal, typeof (UserRevivesRoot), typeof (Revive));
-    public static readonly Selection RevivesFull = new ("revivesfull", AccessLevel.Minimal, typeof (UserReviveFullRoot), typeof (ReviveFull));
-    public static readonly Selection Skills = new ("skills", AccessLevel.Minimal, typeof (SkillsRoot), typeof (SkillsRoot));
-    public static readonly Selection Stocks = new ("stocks", AccessLevel.Limited, typeof (UserStocksRoot), typeof (UserStock));
-    public static readonly Selection Travel = new ("travel", AccessLevel.Minimal, typeof (TravelRoot), typeof (TravelEntry));
-    public static readonly Selection WeaponExp = new ("weaponexp", AccessLevel.Minimal, typeof (WeaponExpRoot), typeof (WeaponExpEntry));
-    public static readonly Selection WorkStats = new ("workstats", AccessLevel.Minimal, typeof (WorkStatsRoot), typeof (WorkStatsRoot));
+public class UserSection : Section {
+    private static UserSection _instance = default!;
 
-    public static IEnumerable<Selection> Selections {
+    private readonly static object _lock = new ();
+
+    public static UserSection Instance {
+        get {
+            if (_instance == null) {
+                lock (_lock) {
+                    _instance ??= new UserSection ();
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    public readonly Selection Ammo;
+    public readonly Selection Attacks;
+    public readonly Selection AttacksFull;
+    public readonly Selection Bars;
+    public readonly Selection Basic;
+    public readonly Selection BattleStats;
+    public readonly Selection Bazaar;
+    public readonly Selection Cooldowns;
+    public readonly Selection CriminalRecord;
+    public readonly Selection Discord;
+    public readonly Selection Display;
+    public readonly Selection Education;
+    public readonly Selection Equipment;
+    public readonly Selection Events;
+    public readonly Selection Gym;
+    public readonly Selection Hof;
+    public readonly Selection Honors;
+    public readonly Selection Icons;
+    public readonly Selection JobPoints;
+    public readonly Selection Log;
+    public readonly Selection Medals;
+    public readonly Selection Merits;
+    public readonly Selection Messages;
+    public readonly Selection Missions;
+    public readonly Selection Money;
+    public readonly Selection Networth;
+    public readonly Selection NewEvents;
+    public readonly Selection NewMessages;
+    public readonly Selection Notifications;
+    public readonly Selection Perks;
+    public readonly Selection PersonalStats;
+    public readonly Selection Profile;
+    public readonly Selection Properties;
+    public readonly Selection PublicStatus;
+    public readonly Selection Refills;
+    public readonly Selection Reports;
+    public readonly Selection Revives;
+    public readonly Selection RevivesFull;
+    public readonly Selection Skills;
+    public readonly Selection Stocks;
+    public readonly Selection Travel;
+    public readonly Selection WeaponExp;
+    public readonly Selection WorkStats;
+
+    public override IEnumerable<Selection> Selections {
         get {
             yield return Ammo;
             yield return Attacks;
@@ -139,5 +155,51 @@ public class UserSection {
             yield return WeaponExp;
             yield return WorkStats;
         }
+    }
+
+    public UserSection () : base ("user") {
+        Ammo = new (this, "ammo", AccessLevel.Minimal, typeof (AmmoRoot), typeof (Ammo));
+        Attacks = new (this, "attacks", AccessLevel.Limited, typeof (UserAttacksRoot), typeof (UserAttack));
+        AttacksFull = new (this, "attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot), typeof (UserAttackFull));
+        Bars = new (this, "bars", AccessLevel.Minimal, typeof (BarsRoot), typeof (BarsRoot));
+        Basic = new (this, "basic", AccessLevel.Public, typeof (UserBasic), typeof (UserBasic));
+        BattleStats = new (this, "battlestats", AccessLevel.Limited, typeof (BattleStatsRoot), typeof (BattleStatsRoot));
+        Bazaar = new (this, "bazaar", AccessLevel.Limited, typeof (BazaarRoot), typeof (BazaarListing));
+        Cooldowns = new (this, "cooldowns", AccessLevel.Minimal, typeof (CooldownsRoot), typeof (CooldownsRoot));
+        CriminalRecord = new (this, "criminalrecord", AccessLevel.Public, typeof (CrimeRecordRoot), typeof (CrimeRecordCollection));
+        Discord = new (this, "discord", AccessLevel.Limited, typeof (DiscordRoot), typeof (DiscordRecord));
+        Display = new (this, "display", AccessLevel.Public, typeof (DisplayCaseRoot), typeof (DisplayCaseItem));
+        Education = new (this, "education", AccessLevel.Minimal, typeof (EducationRoot), typeof (EducationRoot));
+        Equipment = new (this, "equipment", AccessLevel.Minimal, typeof (EquipmentRoot), typeof (EquipmentEntry));
+        Events = new (this, "events", AccessLevel.Limited, typeof (EventsRoot), typeof (Event));
+        Gym = new (this, "gym", AccessLevel.Minimal, typeof (GymRoot), typeof (GymRoot));
+        Hof = new (this, "hof", AccessLevel.Limited, typeof (HallOfFameRoot), typeof (HallOfFameRoot));
+        Honors = new (this, "honors", AccessLevel.Minimal, typeof (HonorsRoot), typeof (HonorsRoot));
+        Icons = new (this, "icons", AccessLevel.Public, typeof (IconsRoot), typeof (IconsRoot));
+        JobPoints = new (this, "jobpoints", AccessLevel.Minimal, typeof (JobPointsRoot), typeof (JobPointsCollection));
+        Log = new (this, "log", AccessLevel.Full, typeof (LogRoot), typeof (LogEntry));
+        Medals = new (this, "medals", AccessLevel.Public, typeof (MedalsRoot), typeof (MedalsRoot));
+        Merits = new (this, "merits", AccessLevel.Minimal, typeof (MeritsRoot), typeof (UserMerits));
+        Messages = new (this, "messages", AccessLevel.Limited, typeof (MessagesRoot), typeof (UserMessage));
+        Missions = new (this, "missions", AccessLevel.Minimal, typeof (MissionsRoot), typeof (MissionsRoot));
+        Money = new (this, "money", AccessLevel.Limited, typeof (MoneyRoot), typeof (MoneyRoot));
+        Networth = new (this, "networth", AccessLevel.Limited, typeof (NetworthRoot), typeof (NetworthRecord));
+        NewEvents = new (this, "newevents", AccessLevel.Minimal, typeof (NewUserEventsRoot), typeof (NewUserEvent));
+        NewMessages = new (this, "newmessages", AccessLevel.Minimal, typeof (NewUserMessagesRoot), typeof (UserMessage));
+        Notifications = new (this, "notifications", AccessLevel.Minimal, typeof (UserNotificationsRoot), typeof (UserNotifications));
+        Perks = new (this, "perks", AccessLevel.Minimal, typeof (PerksRoot), typeof (PerksRoot));
+        PersonalStats = new (this, "personalstats", AccessLevel.Public, typeof (PersonalStatsRoot), typeof (PersonalStatsEntry));
+        Profile = new (this, "profile", AccessLevel.Public, typeof (UserProfileRoot), typeof (UserProfileRoot));
+        Properties = new (this, "properties", AccessLevel.Public, typeof (PropertiesRoot), typeof (UserProperty));
+        PublicStatus = new (this, "publicstatus", AccessLevel.Public, typeof (PublicStatusRoot), typeof (PublicStatusRoot));
+        Refills = new (this, "refills", AccessLevel.Minimal, typeof (RefillsRoot), typeof (RefillStates));
+        Reports = new (this, "reports", AccessLevel.Limited, typeof (UserReportsRoot), typeof (Report));
+        Revives = new (this, "revives", AccessLevel.Minimal, typeof (UserRevivesRoot), typeof (Revive));
+        RevivesFull = new (this, "revivesfull", AccessLevel.Minimal, typeof (UserReviveFullRoot), typeof (ReviveFull));
+        Skills = new (this, "skills", AccessLevel.Minimal, typeof (SkillsRoot), typeof (SkillsRoot));
+        Stocks = new (this, "stocks", AccessLevel.Limited, typeof (UserStocksRoot), typeof (UserStock));
+        Travel = new (this, "travel", AccessLevel.Minimal, typeof (TravelRoot), typeof (TravelEntry));
+        WeaponExp = new (this, "weaponexp", AccessLevel.Minimal, typeof (WeaponExpRoot), typeof (WeaponExpEntry));
+        WorkStats = new (this, "workstats", AccessLevel.Minimal, typeof (WorkStatsRoot), typeof (WorkStatsRoot));
     }
 }

@@ -4,12 +4,32 @@ using Bartender.Net.Property.Property;
 
 namespace Bartender.Net.Property;
 
-public class PropertySection {
-    public static readonly Selection Property = new ("property", AccessLevel.Public, typeof (PropertyRoot), typeof (PropertyEntry));
+public class PropertySection : Section {
+    private static PropertySection _instance = default!;
 
-    public static IEnumerable<Selection> Selections {
+    private readonly static object _lock = new ();
+
+    public static PropertySection Instance {
+        get {
+            if (_instance == null) {
+                lock (_lock) {
+                    _instance ??= new PropertySection ();
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    public readonly Selection Property;
+
+    public override IEnumerable<Selection> Selections {
         get {
             yield return Property;
         }
+    }
+
+    public PropertySection() : base ("property") {
+        Property = new (this, "property", AccessLevel.Public, typeof (PropertyRoot), typeof (PropertyEntry));
     }
 }

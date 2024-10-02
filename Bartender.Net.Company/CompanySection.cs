@@ -11,16 +11,32 @@ using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Company;
 
-public class CompanySection {
-    public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (CompanyApplicationsRoot), typeof (CompanyApplication));
-    public static readonly Selection Companies = new ("companies", AccessLevel.Public, typeof (CompaniesRoot), typeof (CompanyEntry));
-    public static readonly Selection Detailed = new ("detailed", AccessLevel.Limited, typeof (DetailedRoot), typeof (DetailedRoot));
-    public static readonly Selection Employees = new ("employees", AccessLevel.Limited, typeof (EmployeesRoot), typeof (Employee));
-    public static readonly Selection News = new ("news", AccessLevel.Limited, typeof (CompanyNewsRoot), typeof (NewsEntry));
-    public static readonly Selection Profile = new ("profile", AccessLevel.Public, typeof (CompanyProfileRoot), typeof (CompanyProfile));
-    public static readonly Selection Stock = new ("stock", AccessLevel.Limited, typeof (CompanyStocksRoot), typeof (CompanyStock));
+public class CompanySection : Section {
+    private static CompanySection _instance = default!;
 
-    public static IEnumerable<Selection> Selections {
+    private readonly static object _lock = new ();
+
+    public static CompanySection Instance {
+        get {
+            if (_instance == null) {
+                lock (_lock) { 
+                    _instance ??= new CompanySection ();
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    public readonly Selection Applications;
+    public readonly Selection Companies;
+    public readonly Selection Detailed;
+    public readonly Selection Employees;
+    public readonly Selection News;
+    public readonly Selection Profile;
+    public readonly Selection Stock;
+
+    public override IEnumerable<Selection> Selections {
         get {
             yield return Applications;
             yield return Companies;
@@ -30,5 +46,15 @@ public class CompanySection {
             yield return Profile;
             yield return Stock;
         }
+    }
+
+    public CompanySection () : base ("company") {
+        Applications = new (this, "applications", AccessLevel.Limited, typeof (CompanyApplicationsRoot), typeof (CompanyApplication));
+        Companies = new (this, "companies", AccessLevel.Public, typeof (CompaniesRoot), typeof (CompanyEntry));
+        Detailed = new (this, "detailed", AccessLevel.Limited, typeof (DetailedRoot), typeof (DetailedRoot));
+        Employees = new (this, "employees", AccessLevel.Limited, typeof (EmployeesRoot), typeof (Employee));
+        News = new (this, "news", AccessLevel.Limited, typeof (CompanyNewsRoot), typeof (NewsEntry));
+        Profile = new (this, "profile", AccessLevel.Public, typeof (CompanyProfileRoot), typeof (CompanyProfile));
+        Stock = new (this, "stock", AccessLevel.Limited, typeof (CompanyStocksRoot), typeof (CompanyStock));
     }
 }

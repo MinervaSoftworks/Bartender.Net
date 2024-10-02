@@ -42,43 +42,59 @@ using Bartender.Net.Framework.Sections;
 
 namespace Bartender.Net.Faction;
 
-public class FactionSection {
-    public static readonly Selection Applications = new ("applications", AccessLevel.Limited, typeof (FactionApplicationsRoot), typeof (FactionApplication));
-    public static readonly Selection Armor = new ("armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionLoanable));
-    public static readonly Selection ArmoryNews = new ("armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot), typeof (NewsEntry));
-    public static readonly Selection AttackNews = new ("attacknews", AccessLevel.Limited, typeof (AttackNewsRoot), typeof (NewsEntry));
-    public static readonly Selection Attacks = new ("attacks", AccessLevel.Limited, typeof (FactionAttacksRoot), typeof (FactionAttack));
-    public static readonly Selection AttacksFull = new ("attacksfull", AccessLevel.Limited, typeof (FactionAttacksFullRoot), typeof (FactionAttackFull));
-    public static readonly Selection Basic = new ("basic", AccessLevel.Public, typeof (FactionBasic), typeof (FactionBasic));
-    public static readonly Selection Boosters = new ("boosters", AccessLevel.Minimal, typeof (BoostersRoot), typeof (FactionArmoryItem));
-    public static readonly Selection Caches = new ("caches", AccessLevel.Limited, typeof (CachesRoot), typeof (FactionArmoryItem));
-    public static readonly Selection Chain = new ("chain", AccessLevel.Public, typeof (ChainRoot), typeof (CurrentChain));
-    public static readonly Selection ChainReport = new ("chainreport", AccessLevel.Public, typeof (ChainReportRoot), typeof (FactionChainReport));
-    public static readonly Selection Chains = new ("chains", AccessLevel.Minimal, typeof (ChainsRoot), typeof (FactionChain));
-    public static readonly Selection Contributors = new ("contributors", AccessLevel.Limited, typeof (ContributorsRoot), typeof (StatContributors));
-    public static readonly Selection CrimeExp = new ("crimeexp", AccessLevel.Minimal, typeof (CrimeExpRoot), typeof (CrimeExpRoot));
-    public static readonly Selection CrimeNews = new ("crimenews", AccessLevel.Minimal, typeof (CrimeNewsRoot), typeof (NewsEntry));
-    public static readonly Selection Crimes = new ("crimes", AccessLevel.Minimal, typeof (FactionCrimesRoot), typeof (FactionCrime));
-    public static readonly Selection Currency = new ("currency", AccessLevel.Limited, typeof (CurrencyRoot), typeof (CurrencyRoot));
-    public static readonly Selection Donations = new ("donations", AccessLevel.Limited, typeof (DonationsRoot), typeof (DonationEntry));
-    public static readonly Selection Drugs = new ("drugs", AccessLevel.Minimal, typeof (DrugsRoot), typeof (FactionArmoryItem));
-    public static readonly Selection FundsNews = new ("fundsnews", AccessLevel.Limited, typeof (FundsNewsRoot), typeof (NewsEntry));
-    public static readonly Selection MainNews = new ("mainnews", AccessLevel.Minimal, typeof (MainNewsRoot), typeof (NewsEntry));
-    public static readonly Selection Medical = new ("medical", AccessLevel.Minimal, typeof (MedicalRoot), typeof (FactionArmoryItem));
-    public static readonly Selection MembershipNews = new ("membershipnews", AccessLevel.Minimal, typeof (MembershipNewsRoot), typeof (NewsEntry));
-    public static readonly Selection Positions = new ("positions", AccessLevel.Minimal, typeof (PositionsRoot), typeof (Position));
-    public static readonly Selection RankedWars = new ("rankedwars", AccessLevel.Public, typeof (RankedWarsRoot), typeof (RankedWarEntry));
-    public static readonly Selection Reports = new ("reports", AccessLevel.Limited, typeof (FactionReportsRoot), typeof (Report));
-    public static readonly Selection Revives = new ("revives", AccessLevel.Minimal, typeof (FactionRevivesRoot), typeof (Revive));
-    public static readonly Selection RevivesFull = new ("revivesfull", AccessLevel.Minimal, typeof (FactionReviveFullRoot), typeof (ReviveFull));
-    public static readonly Selection Stats = new ("stats", AccessLevel.Minimal, typeof (StatsRoot), typeof (StatsEntry));
-    public static readonly Selection Temporary = new ("temporary", AccessLevel.Minimal, typeof (TemporaryRoot), typeof (FactionLoanable));
-    public static readonly Selection Territory = new ("territory", AccessLevel.Public, typeof (TerritoryRoot), typeof (FactionTerritory));
-    public static readonly Selection TerritoryNews = new ("territorynews", AccessLevel.Minimal, typeof (TerritoryNewsRoot), typeof (NewsEntry));
-    public static readonly Selection Upgrades = new ("upgrades", AccessLevel.Minimal, typeof (UpgradesRoot), typeof (UpgradesRoot));
-    public static readonly Selection Weapons = new ("weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof (FactionLoanable));
+public class FactionSection : Section {
+    private static FactionSection _instance = default!;
 
-    public static IEnumerable<Selection> Selections {
+    private readonly static object _lock = new ();
+
+    public static FactionSection Instance {
+        get {
+            if (_instance == null) {
+                lock (_lock) {
+                    _instance ??= new FactionSection ();
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    public readonly Selection Applications;
+    public readonly Selection Armor;
+    public readonly Selection ArmoryNews;
+    public readonly Selection AttackNews;
+    public readonly Selection Attacks;
+    public readonly Selection AttacksFull;
+    public readonly Selection Basic;
+    public readonly Selection Boosters;
+    public readonly Selection Caches;
+    public readonly Selection Chain;
+    public readonly Selection ChainReport;
+    public readonly Selection Chains;
+    public readonly Selection Contributors;
+    public readonly Selection CrimeExp;
+    public readonly Selection CrimeNews;
+    public readonly Selection Crimes;
+    public readonly Selection Currency;
+    public readonly Selection Donations;
+    public readonly Selection Drugs;
+    public readonly Selection FundsNews;
+    public readonly Selection MainNews;
+    public readonly Selection Medical;
+    public readonly Selection MembershipNews;
+    public readonly Selection Positions;
+    public readonly Selection RankedWars;
+    public readonly Selection Reports;
+    public readonly Selection Revives;
+    public readonly Selection RevivesFull;
+    public readonly Selection Stats;
+    public readonly Selection Temporary;
+    public readonly Selection Territory;
+    public readonly Selection TerritoryNews;
+    public readonly Selection Upgrades;
+    public readonly Selection Weapons;
+
+    public override IEnumerable<Selection> Selections {
         get {
             yield return Applications;
             yield return Armor;
@@ -115,5 +131,42 @@ public class FactionSection {
             yield return Upgrades;
             yield return Weapons;
         }
+    }
+
+    public FactionSection () : base ("faction") {
+        Applications = new (this, "applications", AccessLevel.Limited, typeof (FactionApplicationsRoot), typeof (FactionApplication));
+        Armor = new (this, "armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionLoanable));
+        ArmoryNews = new (this, "armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot), typeof (NewsEntry));
+        AttackNews = new (this, "attacknews", AccessLevel.Limited, typeof (AttackNewsRoot), typeof (NewsEntry));
+        Attacks = new (this, "attacks", AccessLevel.Limited, typeof (FactionAttacksRoot), typeof (FactionAttack));
+        AttacksFull = new (this, "attacksfull", AccessLevel.Limited, typeof (FactionAttacksFullRoot), typeof (FactionAttackFull));
+        Basic = new (this, "basic", AccessLevel.Public, typeof (FactionBasic), typeof (FactionBasic));
+        Boosters = new (this, "boosters", AccessLevel.Minimal, typeof (BoostersRoot), typeof (FactionArmoryItem));
+        Caches = new (this, "caches", AccessLevel.Limited, typeof (CachesRoot), typeof (FactionArmoryItem));
+        Chain = new (this, "chain", AccessLevel.Public, typeof (ChainRoot), typeof (CurrentChain));
+        ChainReport = new (this, "chainreport", AccessLevel.Public, typeof (ChainReportRoot), typeof (FactionChainReport));
+        Chains = new (this, "chains", AccessLevel.Minimal, typeof (ChainsRoot), typeof (FactionChain));
+        Contributors = new (this, "contributors", AccessLevel.Limited, typeof (ContributorsRoot), typeof (StatContributors));
+        CrimeExp = new (this, "crimeexp", AccessLevel.Minimal, typeof (CrimeExpRoot), typeof (CrimeExpRoot));
+        CrimeNews = new (this, "crimenews", AccessLevel.Minimal, typeof (CrimeNewsRoot), typeof (NewsEntry));
+        Crimes = new (this, "crimes", AccessLevel.Minimal, typeof (FactionCrimesRoot), typeof (FactionCrime));
+        Currency = new (this, "currency", AccessLevel.Limited, typeof (CurrencyRoot), typeof (CurrencyRoot));
+        Donations = new (this, "donations", AccessLevel.Limited, typeof (DonationsRoot), typeof (DonationEntry));
+        Drugs = new (this, "drugs", AccessLevel.Minimal, typeof (DrugsRoot), typeof (FactionArmoryItem));
+        FundsNews = new (this, "fundsnews", AccessLevel.Limited, typeof (FundsNewsRoot), typeof (NewsEntry));
+        MainNews = new (this, "mainnews", AccessLevel.Minimal, typeof (MainNewsRoot), typeof (NewsEntry));
+        Medical = new (this, "medical", AccessLevel.Minimal, typeof (MedicalRoot), typeof (FactionArmoryItem));
+        MembershipNews = new (this, "membershipnews", AccessLevel.Minimal, typeof (MembershipNewsRoot), typeof (NewsEntry));
+        Positions = new (this, "positions", AccessLevel.Minimal, typeof (PositionsRoot), typeof (Position));
+        RankedWars = new (this, "rankedwars", AccessLevel.Public, typeof (RankedWarsRoot), typeof (RankedWarEntry));
+        Reports = new (this, "reports", AccessLevel.Limited, typeof (FactionReportsRoot), typeof (Report));
+        Revives = new (this, "revives", AccessLevel.Minimal, typeof (FactionRevivesRoot), typeof (Revive));
+        RevivesFull = new (this, "revivesfull", AccessLevel.Minimal, typeof (FactionReviveFullRoot), typeof (ReviveFull));
+        Stats = new (this, "stats", AccessLevel.Minimal, typeof (StatsRoot), typeof (StatsEntry));
+        Temporary = new (this, "temporary", AccessLevel.Minimal, typeof (TemporaryRoot), typeof (FactionLoanable));
+        Territory = new (this, "territory", AccessLevel.Public, typeof (TerritoryRoot), typeof (FactionTerritory));
+        TerritoryNews = new (this, "territorynews", AccessLevel.Minimal, typeof (TerritoryNewsRoot), typeof (NewsEntry));
+        Upgrades = new (this, "upgrades", AccessLevel.Minimal, typeof (UpgradesRoot), typeof (UpgradesRoot));
+        Weapons = new (this, "weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof (FactionLoanable));
     }
 }

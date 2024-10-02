@@ -1,3 +1,7 @@
 ﻿namespace Bartender.Net.Framework.Sections;
 
-public record Section (string Name, IEnumerable<Selection> Selections);
+public abstract class Section (string name) {
+    public string Name { get; init; } = name;
+
+    public abstract IEnumerable<Selection> Selections { get; }
+}
