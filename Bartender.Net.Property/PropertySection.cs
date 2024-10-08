@@ -29,7 +29,7 @@ public class PropertySection : Section {
         }
     }
 
-    public PropertySection() : base ("property") {
+    private PropertySection() : base ("property") {
         Property = new (this, "property", AccessLevel.Public, typeof (PropertyRoot), typeof (PropertyEntry));
     }
 }

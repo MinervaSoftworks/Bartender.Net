@@ -133,7 +133,7 @@ public class FactionSection : Section {
         }
     }
 
-    public FactionSection () : base ("faction") {
+    private FactionSection () : base ("faction") {
         Applications = new (this, "applications", AccessLevel.Limited, typeof (FactionApplicationsRoot), typeof (FactionApplication));
         Armor = new (this, "armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionLoanable));
         ArmoryNews = new (this, "armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot), typeof (NewsEntry));

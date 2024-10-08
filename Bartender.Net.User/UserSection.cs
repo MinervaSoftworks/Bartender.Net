@@ -157,7 +157,7 @@ public class UserSection : Section {
         }
     }
 
-    public UserSection () : base ("user") {
+    private UserSection () : base ("user") {
         Ammo = new (this, "ammo", AccessLevel.Minimal, typeof (AmmoRoot), typeof (Ammo));
         Attacks = new (this, "attacks", AccessLevel.Limited, typeof (UserAttacksRoot), typeof (UserAttack));
         AttacksFull = new (this, "attacksfull", AccessLevel.Limited, typeof (UserAttacksFullRoot), typeof (UserAttackFull));

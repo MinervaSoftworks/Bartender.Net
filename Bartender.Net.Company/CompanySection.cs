@@ -48,7 +48,7 @@ public class CompanySection : Section {
         }
     }
 
-    public CompanySection () : base ("company") {
+    private CompanySection () : base ("company") {
         Applications = new (this, "applications", AccessLevel.Limited, typeof (CompanyApplicationsRoot), typeof (CompanyApplication));
         Companies = new (this, "companies", AccessLevel.Public, typeof (CompaniesRoot), typeof (CompanyEntry));
         Detailed = new (this, "detailed", AccessLevel.Limited, typeof (DetailedRoot), typeof (DetailedRoot));

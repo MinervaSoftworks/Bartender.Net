@@ -28,7 +28,7 @@ public class KeySection : Section {
         }
     }
 
-    public KeySection () : base ("key") {
+    private KeySection () : base ("key") {
         Info = new (this, "info", AccessLevel.Public, typeof (KeyInfo), typeof (KeyInfo));
     }
 }

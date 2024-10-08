@@ -35,7 +35,7 @@ public class MarketSection : Section {
         }
     }
 
-    public MarketSection () : base ("market") {
+    private MarketSection () : base ("market") {
         Bazaar = new (this, "bazaar", AccessLevel.Public, typeof (BazaarRoot), typeof (ItemListing));
         ItemMarket = new (this, "itemmarket", AccessLevel.Public, typeof (ItemMarketRoot), typeof (ItemListing));
         PointsMarket = new (this, "pointsmarket", AccessLevel.Public, typeof (PointsMarketRoot), typeof (PointListing));
