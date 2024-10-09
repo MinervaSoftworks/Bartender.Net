@@ -9,5 +9,5 @@ public class ArmorRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("armor")]
-    public required List<FactionLoanable> Loanables { get; set; }
+    public virtual required List<FactionLoanable> Loanables { get; set; }
 }

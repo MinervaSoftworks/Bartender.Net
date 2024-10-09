@@ -8,5 +8,5 @@ public class MissionsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("Duke")]
-    public required List<Mission> Duke { get; set; }
+    public virtual required List<Mission> Duke { get; set; }
 }

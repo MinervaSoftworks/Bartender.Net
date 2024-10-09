@@ -8,7 +8,7 @@ public class UserAttackModifiers : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("fair_fight")]
-    public double FairFight { get; set; }
+    public required double FairFight { get; set; }
 
     [JsonProperty ("war")]
     public required int War { get; set; }
@@ -23,5 +23,5 @@ public class UserAttackModifiers : IBartenderEntity {
     public required int Overseas { get; set; }
 
     [JsonProperty ("chain_bonus")]
-    public double ChainBonus { get; set; }
+    public required double ChainBonus { get; set; }
 }

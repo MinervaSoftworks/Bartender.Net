@@ -8,5 +8,5 @@ public class DiscordRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("discord")]
-    public required DiscordRecord Discord { get; set; }
+    public virtual required DiscordRecord Discord { get; set; }
 }

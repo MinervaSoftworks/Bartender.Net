@@ -8,19 +8,19 @@ public class BattleStatsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("strength")]
-    public long Strength { get; set; }
+    public required long Strength { get; set; }
 
     [JsonProperty ("speed")]
-    public long Speed { get; set; }
+    public required long Speed { get; set; }
 
     [JsonProperty ("dexterity")]
-    public long Dexterity { get; set; }
+    public required long Dexterity { get; set; }
 
     [JsonProperty ("defense")]
-    public long Defense { get; set; }
+    public required long Defense { get; set; }
 
     [JsonProperty ("total")]
-    public long Total { get; set; }
+    public required long Total { get; set; }
 
     [JsonProperty ("strength_modifier")]
     public required int StrengthModifier { get; set; }

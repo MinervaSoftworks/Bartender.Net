@@ -8,5 +8,5 @@ public class UserNotificationsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("notifications")]
-    public required UserNotifications Notifications { get; set; }
+    public virtual required UserNotifications Notifications { get; set; }
 }

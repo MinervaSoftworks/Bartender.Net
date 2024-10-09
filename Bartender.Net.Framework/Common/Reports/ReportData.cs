@@ -7,10 +7,10 @@ public class ReportData : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("bounties")]
-    public required List<string> Bounties { get; set; }
+    public virtual required List<string> Bounties { get; set; }
 
     [JsonProperty ("company_history")]
-    public required List<ReportReference> CompanyHistory { get; set; }
+    public virtual required List<ReportReference> CompanyHistory { get; set; }
 
     [JsonProperty ("defense")]
     public required int Defense { get; set; }
@@ -19,13 +19,13 @@ public class ReportData : IBartenderEntity {
     public required int Dexterity { get; set; }
 
     [JsonProperty ("enemylist")]
-    public required List<FriendOrFoeUser> EnemyList { get; set; }
+    public virtual required List<FriendOrFoeUser> EnemyList { get; set; }
 
     [JsonProperty ("faction_history")]
-    public required List<ReportReference> FactionHistory { get; set; }
+    public virtual required List<ReportReference> FactionHistory { get; set; }
 
     [JsonProperty ("friendlist")]
-    public required List<FriendOrFoeUser> FriendList { get; set; }
+    public virtual required List<FriendOrFoeUser> FriendList { get; set; }
 
     [JsonProperty ("invested_amount")]
     public required int InvestedAmount { get; set; }
@@ -37,7 +37,7 @@ public class ReportData : IBartenderEntity {
     public required int Money { get; set; }
 
     [JsonProperty ("otherlist")]
-    public required List<Warrant> OtherList { get; set; }
+    public virtual required List<Warrant> OtherList { get; set; }
 
     [JsonProperty ("speed")]
     public required int Speed { get; set; }
@@ -46,7 +46,7 @@ public class ReportData : IBartenderEntity {
     public required int Strength { get; set; }
 
     [JsonProperty ("toplist")]
-    public required List<Warrant> TopList { get; set; }
+    public virtual required List<Warrant> TopList { get; set; }
 
     [JsonProperty ("total_battlestats")]
     public required int TotalBattleStats { get; set; }

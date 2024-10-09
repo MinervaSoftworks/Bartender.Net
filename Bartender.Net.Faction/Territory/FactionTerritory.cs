@@ -23,7 +23,7 @@ public class FactionTerritory : IBartenderEntity {
     public required int Faction { get; set; }
 
     [JsonProperty ("racket")]
-    public required Racket Racket { get; set; }
+    public virtual required Racket Racket { get; set; }
 
     [JsonProperty ("sector")]
     public required int Sector { get; set; }

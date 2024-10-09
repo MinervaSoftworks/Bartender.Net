@@ -14,7 +14,7 @@ public class Ammo : IBartenderEntity {
     public required int AmmoID { get; set; }
 
     [JsonProperty ("equipped")]
-    public bool Equipped { get; set; }
+    public required bool Equipped { get; set; }
 
     [JsonProperty ("quantity")]
     public required int Quantity { get; set; }

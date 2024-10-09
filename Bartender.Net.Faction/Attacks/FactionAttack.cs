@@ -65,6 +65,6 @@ public class FactionAttack : IBartenderEntity {
     public required double RespectLoss { get; set; }
 
     [JsonProperty ("modifiers")]
-    public required FactionAttackModifiers Modifiers { get; set; }
+    public virtual required FactionAttackModifiers Modifiers { get; set; }
 }
 

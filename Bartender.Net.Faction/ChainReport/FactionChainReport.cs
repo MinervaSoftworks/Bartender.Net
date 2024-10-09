@@ -62,5 +62,5 @@ public class FactionChainReport : IBartenderEntity {
     public required Dictionary<string, ChainParticipant> Participants { get; set; }
 
     [JsonProperty ("bonuses")]
-    public required List<BonusHit> Bonuses { get; set; }
+    public virtual required List<BonusHit> Bonuses { get; set; }
 }

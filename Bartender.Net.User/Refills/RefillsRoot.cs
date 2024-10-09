@@ -8,5 +8,5 @@ public class RefillsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("refills")]
-    public required RefillStates Refills { get; set; }
+    public virtual required RefillStates Refills { get; set; }
 }

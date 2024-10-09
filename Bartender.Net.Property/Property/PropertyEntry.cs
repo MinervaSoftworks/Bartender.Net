@@ -21,13 +21,13 @@ public class PropertyEntry : IBartenderEntity {
     public required int Upkeep { get; set; }
 
     [JsonProperty ("upgrades")]
-    public required List<string> Upgrades { get; set; }
+    public virtual required List<string> Upgrades { get; set; }
 
     [JsonProperty ("staff")]
-    public required List<string> Staff { get; set; }
+    public virtual required List<string> Staff { get; set; }
 
     [JsonProperty ("rented")]
-    public required RentEntry Rented { get; set; }
+    public virtual required RentEntry Rented { get; set; }
 
     [JsonProperty ("users_living")]
     public required string UsersLiving { get; set; }

@@ -8,8 +8,8 @@ public class MedalsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("medals_awarded")]
-    public required List<int> MedalsAwarded { get; set; }
+    public virtual required List<int> MedalsAwarded { get; set; }
 
     [JsonProperty ("medals_time")]
-    public required List<int> MedalsTime { get; set; }
+    public virtual required List<int> MedalsTime { get; set; }
 }

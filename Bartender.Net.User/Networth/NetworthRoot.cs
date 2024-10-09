@@ -8,5 +8,5 @@ public class NetworthRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("Networth")]
-    public required NetworthRecord NetworthRecord { get; set; }
+    public virtual required NetworthRecord NetworthRecord { get; set; }
 }

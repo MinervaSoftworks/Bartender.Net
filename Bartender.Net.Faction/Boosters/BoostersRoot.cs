@@ -9,5 +9,5 @@ public class BoostersRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("boosters")]
-    public required List<FactionArmoryItem> Items { get; set; }
+    public virtual required List<FactionArmoryItem> Items { get; set; }
 }

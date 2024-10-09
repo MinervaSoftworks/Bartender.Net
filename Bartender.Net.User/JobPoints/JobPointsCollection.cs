@@ -11,5 +11,5 @@ public class JobPointsCollection : IBartenderEntity {
     public required Dictionary<string, CompanyPoints> Companies { get; set; }
 
     [JsonProperty ("jobs")]
-    public required UserJobPoints JobPoints { get; set; }
+    public virtual required UserJobPoints JobPoints { get; set; }
 }

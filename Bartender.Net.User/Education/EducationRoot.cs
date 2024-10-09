@@ -14,5 +14,5 @@ public class EducationRoot : IBartenderEntity {
     public required int EducationTimeleft { get; set; }
 
     [JsonProperty ("education_completed")]
-    public required List<int> EducationCompleted { get; set; }
+    public virtual required List<int> EducationCompleted { get; set; }
 }

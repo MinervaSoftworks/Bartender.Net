@@ -18,5 +18,5 @@ public class CompanyProfileEmployee : IBartenderEntity {
     public required int DaysInCompany { get; set; }
 
     [JsonProperty ("last_action")]
-    public required LastAction LastAction { get; set; }
+    public virtual required LastAction LastAction { get; set; }
 }

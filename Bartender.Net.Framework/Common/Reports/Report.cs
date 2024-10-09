@@ -9,7 +9,7 @@ public class Report : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("report")]
-    public required ReportData Data { get; set; }
+    public virtual required ReportData Data { get; set; }
 
     [JsonProperty ("target")]
     public required int Target { get; set; }

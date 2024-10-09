@@ -22,5 +22,5 @@ public class UserBasic : IBartenderEntity {
     public required string Name { get; set; }
 
     [JsonProperty ("status")]
-    public required Status Status { get; set; }
+    public virtual required Status Status { get; set; }
 }

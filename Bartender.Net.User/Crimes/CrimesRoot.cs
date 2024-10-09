@@ -9,5 +9,5 @@ public class CrimesRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("criminalrecord")]
-    public required CrimeRecordCollection Crimes { get; set; }
+    public virtual required CrimeRecordCollection Crimes { get; set; }
 }

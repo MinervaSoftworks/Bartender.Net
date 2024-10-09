@@ -9,5 +9,5 @@ public class CachesRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("caches")]
-    public required List<FactionArmoryItem> Items { get; set; }
+    public virtual required List<FactionArmoryItem> Items { get; set; }
 }

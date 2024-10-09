@@ -9,5 +9,5 @@ public class UserRevivesRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("revives")]
-    public required List<Revive> Revives { get; set; }
+    public virtual required List<Revive> Revives { get; set; }
 }

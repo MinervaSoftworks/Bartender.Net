@@ -8,5 +8,5 @@ public class MeritsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("merits")]
-    public required UserMerits Merits { get; set; }
+    public virtual required UserMerits Merits { get; set; }
 }

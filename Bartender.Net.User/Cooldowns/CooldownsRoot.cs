@@ -8,5 +8,5 @@ public class CooldownsRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("cooldowns")]
-    public required UserCooldowns Cooldowns { get; set; }
+    public virtual required UserCooldowns Cooldowns { get; set; }
 }

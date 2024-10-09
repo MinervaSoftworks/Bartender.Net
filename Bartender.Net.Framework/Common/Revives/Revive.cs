@@ -55,5 +55,5 @@ public class Revive : IBartenderEntity {
     public required int TargetEarlyDischarge { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public required LastAction TargetLastAction { get; set; }
+    public virtual required LastAction TargetLastAction { get; set; }
 }

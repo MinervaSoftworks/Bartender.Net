@@ -32,10 +32,10 @@ public class FactionBasic : IBartenderEntity {
     public required Dictionary<string, long> PeaceTreaties { get; set; }
 
     [JsonProperty ("raid_wars")]
-    public required List<Raid> RaidWars { get; set; }
+    public virtual required List<Raid> RaidWars { get; set; }
 
     [JsonProperty ("rank")]
-    public required Ranking Rank { get; set; }
+    public virtual required Ranking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
     public required Dictionary<string, RankedWar> RankedWars { get; set; }
@@ -50,5 +50,5 @@ public class FactionBasic : IBartenderEntity {
     public required string TagImage { get; set; }
 
     [JsonProperty ("territory_wars")]
-    public required List<TerritoryWar> TerritoryWars { get; set; }
+    public virtual required List<TerritoryWar> TerritoryWars { get; set; }
 }

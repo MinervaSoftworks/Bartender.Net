@@ -20,7 +20,7 @@ public class CompanyApplication : IBartenderEntity {
     public required string Name { get; set; }
 
     [JsonProperty ("stats")]
-    public required CompanyApplicationStats Stats { get; set; }
+    public virtual required CompanyApplicationStats Stats { get; set; }
 
     [JsonProperty ("status")]
     public required string Status { get; set; }

@@ -11,17 +11,17 @@ public class BarsRoot : IBartenderEntity {
     public required int ServerTime { get; set; }
 
     [JsonProperty ("happy")]
-    public required Bar Happy { get; set; }
+    public virtual required Bar Happy { get; set; }
 
     [JsonProperty ("life")]
-    public required Bar Life { get; set; }
+    public virtual required Bar Life { get; set; }
 
     [JsonProperty ("energy")]
-    public required Bar Energy { get; set; }
+    public virtual required Bar Energy { get; set; }
 
     [JsonProperty ("nerve")]
-    public required Bar Nerve { get; set; }
+    public virtual required Bar Nerve { get; set; }
 
     [JsonProperty ("chain")]
-    public required ChainBar Chain { get; set; }
+    public virtual required ChainBar Chain { get; set; }
 }

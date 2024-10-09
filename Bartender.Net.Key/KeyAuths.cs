@@ -8,25 +8,25 @@ public class KeyAuths : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("company")]
-    public required List<string> Company { get; set; }
+    public virtual required List<string> Company { get; set; }
 
     [JsonProperty ("faction")]
-    public required List<string> Faction { get; set; }
+    public virtual required List<string> Faction { get; set; }
 
-    [JsonProperty ("Key")]
-    public required List<string> Key { get; set; }
+    [JsonProperty ("key")]
+    public virtual required List<string> Key { get; set; }
 
-    [JsonProperty ("Market")]
-    public required List<string> Market { get; set; }
+    [JsonProperty ("market")]
+    public virtual required List<string> Market { get; set; }
 
-    [JsonProperty ("Property")]
-    public required List<string> Property { get; set; }
+    [JsonProperty ("property")]
+    public virtual required List<string> Property { get; set; }
 
-    [JsonProperty ("Torn")]
-    public required List<string> Torn { get; set; }
+    [JsonProperty ("torn")]
+    public virtual required List<string> Torn { get; set; }
 
-    [JsonProperty ("User")]
-    public required List<string> User { get; set; }
+    [JsonProperty ("user")]
+    public virtual required List<string> User { get; set; }
 
     public bool HasSelectionAccess (string selection) => Company.Contains (selection)
                                                          || Faction.Contains (selection)

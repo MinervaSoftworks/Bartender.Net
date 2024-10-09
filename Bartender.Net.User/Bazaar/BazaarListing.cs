@@ -9,7 +9,7 @@ public class BazaarListing : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonIgnore]
-    public UserProfileRoot? Owner { get; set; }
+    public virtual UserProfileRoot? Owner { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

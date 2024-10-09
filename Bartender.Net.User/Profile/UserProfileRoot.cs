@@ -25,7 +25,7 @@ public class UserProfileRoot : IBartenderEntity {
     public required Dictionary<string, string> BasicIcons { get; set; }
 
     [JsonProperty ("competition")]
-    public required Competition Competition { get; set; }
+    public virtual required Competition Competition { get; set; }
 
     [JsonProperty ("donator")]
     public required bool Donator { get; set; }
@@ -34,7 +34,7 @@ public class UserProfileRoot : IBartenderEntity {
     public required int Enemies { get; set; }
 
     [JsonProperty ("faction")]
-    public required FactionStub Faction { get; set; }
+    public virtual required FactionStub Faction { get; set; }
 
     [JsonProperty ("forum_posts")]
     public required int ForumPosts { get; set; }
@@ -61,16 +61,16 @@ public class UserProfileRoot : IBartenderEntity {
     public required int Karma { get; set; }
 
     [JsonProperty ("last_action")]
-    public required RelativeLastAction LastAction { get; set; }
+    public virtual required RelativeLastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
     public required int Level { get; set; }
 
     [JsonProperty ("life")]
-    public required Bar Life { get; set; }
+    public virtual required Bar Life { get; set; }
 
     [JsonProperty ("marrige")]
-    public required Marriage Marriage { get; set; }
+    public virtual required Marriage Marriage { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
@@ -88,8 +88,8 @@ public class UserProfileRoot : IBartenderEntity {
     public required string Signup { get; set; }
 
     [JsonProperty ("states")]
-    public required PlayerStates States { get; set; }
+    public virtual required PlayerStates States { get; set; }
 
     [JsonProperty ("status")]
-    public required Status Status { get; set; }
+    public virtual required Status Status { get; set; }
 }

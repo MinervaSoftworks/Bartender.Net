@@ -8,26 +8,26 @@ public class PerksRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("faction_perks")]
-    public required List<string> FactionPerks { get; set; }
+    public virtual required List<string> FactionPerks { get; set; }
 
     [JsonProperty ("job_perks")]
-    public required List<string> JobPerks { get; set; }
+    public virtual required List<string> JobPerks { get; set; }
 
     [JsonProperty ("property_perks")]
-    public required List<string> PropertyPerks { get; set; }
+    public virtual required List<string> PropertyPerks { get; set; }
 
     [JsonProperty ("education_perks")]
-    public required List<string> EducationPerks { get; set; }
+    public virtual required List<string> EducationPerks { get; set; }
 
     [JsonProperty ("enhancer_perks")]
-    public required List<string> EnhancerPerks { get; set; }
+    public virtual required List<string> EnhancerPerks { get; set; }
 
     [JsonProperty ("book_perks")]
-    public required List<object> BookPerks { get; set; }
+    public virtual required List<object> BookPerks { get; set; }
 
     [JsonProperty ("stock_perks")]
-    public required List<string> StockPerks { get; set; }
+    public virtual required List<string> StockPerks { get; set; }
 
     [JsonProperty ("merit_perks")]
-    public required List<string> MeritPerks { get; set; }
+    public virtual required List<string> MeritPerks { get; set; }
 }

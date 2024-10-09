@@ -26,5 +26,5 @@ public class MoneyRoot : IBartenderEntity {
     public required int MoneyOnhand { get; set; }
 
     [JsonProperty ("city_bank")]
-    public required CityBank CityBank { get; set; }
+    public virtual required CityBank CityBank { get; set; }
 }

@@ -8,5 +8,5 @@ public class TravelRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("travel")]
-    public required TravelEntry Travel { get; set; }
+    public virtual required TravelEntry Travel { get; set; }
 }

@@ -8,5 +8,5 @@ public class WeaponExpRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("weaponexp")]
-    public required WeaponExpEntry WeaponExp { get; set; }
+    public virtual required WeaponExpEntry WeaponExp { get; set; }
 }

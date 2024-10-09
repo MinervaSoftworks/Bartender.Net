@@ -27,11 +27,11 @@ public class Employee : IBartenderEntity {
     public required int Endurance { get; set; }
 
     [JsonProperty ("effectiveness")]
-    public required Effectiveness Effectiveness { get; set; }
+    public virtual required Effectiveness Effectiveness { get; set; }
 
     [JsonProperty ("last_action")]
-    public required LastAction LastAction { get; set; }
+    public virtual required LastAction LastAction { get; set; }
 
     [JsonProperty ("status")]
-    public required Status Status { get; set; }
+    public virtual required Status Status { get; set; }
 }

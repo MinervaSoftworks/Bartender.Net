@@ -8,10 +8,10 @@ public class UserStock : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("benefit")]
-    public required UserStockBonus Benefit { get; set; }
+    public virtual required UserStockBonus Benefit { get; set; }
 
     [JsonProperty ("benefit")]
-    public required UserStockBonus Dividend { get; set; }
+    public virtual required UserStockBonus Dividend { get; set; }
 
     [JsonProperty ("stock_id")]
     public required int StockId { get; set; }

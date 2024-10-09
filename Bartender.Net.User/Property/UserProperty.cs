@@ -36,11 +36,11 @@ public class UserProperty : IBartenderEntity {
     public required int MarketPrice { get; set; }
 
     [JsonProperty ("modifications")]
-    public required PropertyModifications Modifications { get; set; }
+    public virtual required PropertyModifications Modifications { get; set; }
 
     [JsonProperty ("staff")]
-    public required PropertyStaff Staff { get; set; }
+    public virtual required PropertyStaff Staff { get; set; }
 
     [JsonProperty ("rented")]
-    public required RentEntry Rented { get; set; }
+    public virtual required RentEntry Rented { get; set; }
 }

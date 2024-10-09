@@ -9,5 +9,5 @@ public class TemporaryRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("temporary")]
-    public required List<FactionLoanable> Loanables { get; set; }
+    public virtual required List<FactionLoanable> Loanables { get; set; }
 }

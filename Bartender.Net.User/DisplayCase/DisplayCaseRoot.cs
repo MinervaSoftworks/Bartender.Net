@@ -8,5 +8,5 @@ public class DisplayCaseRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("display")]
-    public required List<DisplayCaseItem> Items { get; set; }
+    public virtual required List<DisplayCaseItem> Items { get; set; }
 }

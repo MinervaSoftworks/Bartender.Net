@@ -8,5 +8,5 @@ public class ItemMarketRoot : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("itemmarket")]
-    public required List<ItemListing> Items { get; set; }
+    public virtual required List<ItemListing> Items { get; set; }
 }

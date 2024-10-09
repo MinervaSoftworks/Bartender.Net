@@ -12,7 +12,7 @@ public class FactionMember : IBartenderEntity {
     public required int DaysInFaction { get; set; }
 
     [JsonProperty ("last_action")]
-    public required LastAction LastAction { get; set; }
+    public virtual required LastAction LastAction { get; set; }
 
     [JsonProperty ("level")]
     public required int Level { get; set; }
@@ -24,5 +24,5 @@ public class FactionMember : IBartenderEntity {
     public required string Position { get; set; }
 
     [JsonProperty ("status")]
-    public required Status Status { get; set; }
+    public virtual required Status Status { get; set; }
 }

@@ -8,7 +8,7 @@ public class RankedWarEntry : IBartenderEntity {
     public int ID { get; set; }
 
     [JsonProperty ("war")]
-    public required RankedWar Rankedwar { get; set; }
+    public virtual required RankedWar Rankedwar { get; set; }
 
     [JsonProperty ("factions")]
     public required Dictionary<string, RankedWarFaction> Factions { get; set; }
