@@ -2,9 +2,9 @@
 
 namespace Bartender.Net.Framework.Common.User;
 
-public class RentEntry : IBartenderEntity {
+public class RentEntry : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("cost_per_day")]
     public required int CostPerDay { get; set; }

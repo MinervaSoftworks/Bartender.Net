@@ -3,12 +3,12 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Messages;
 
-public class UserMessage : IBartenderEntity {
+public class UserMessage : BartenderEntity {
     [JsonProperty ("timestamp")]
     public required int Timestamp { get; set; }
 
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

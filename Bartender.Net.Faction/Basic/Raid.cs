@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class Raid : IBartenderEntity {
+public class Raid : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("defender_score")]
     public required int DefenderScore { get; set; }

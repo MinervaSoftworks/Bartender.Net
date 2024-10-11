@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Attacks;
 
-public class FactionAttackModifiers : IBartenderEntity {
+public class FactionAttackModifiers : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("fair_fight")]
     public required double FairFight { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Cooldowns;
 
-public class CooldownsRoot : IBartenderEntity {
+public class CooldownsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("cooldowns")]
     public virtual required UserCooldowns Cooldowns { get; set; }

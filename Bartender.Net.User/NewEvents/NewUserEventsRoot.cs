@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.NewEvents;
 
-public class NewUserEventsRoot : IBartenderEntity {
+public class NewUserEventsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("events")]
     public required Dictionary<string, NewUserEvent> Events { get; set; }

@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bazaar;
 
-public class BazaarListing : IBartenderEntity {
+public class BazaarListing : BartenderEntity {
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonIgnore]
     public virtual UserProfileRoot? Owner { get; set; }

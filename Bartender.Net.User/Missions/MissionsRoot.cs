@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Missions;
 
-public class MissionsRoot : IBartenderEntity {
+public class MissionsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("Duke")]
     public virtual required List<Mission> Duke { get; set; }

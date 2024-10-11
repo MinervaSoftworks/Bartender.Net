@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Territory;
 
-public class TerritoryRoot : IBartenderEntity {
+public class TerritoryRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("territory")]
     public required Dictionary<string, FactionTerritory> Territories { get; set; }

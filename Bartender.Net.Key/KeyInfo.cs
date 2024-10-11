@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Key;
 
-public class KeyInfo : IBartenderEntity {
+public class KeyInfo : BartenderEntity {
     [JsonProperty ("access_level")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("access_type")]
     public required string AccessLevelString { get; set; }

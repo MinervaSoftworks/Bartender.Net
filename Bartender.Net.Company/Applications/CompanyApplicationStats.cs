@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Applications;
 
-public class CompanyApplicationStats : IBartenderEntity {
+public class CompanyApplicationStats : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("endurance")]
     public required float Endurance { get; set; }

@@ -5,9 +5,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class Ranking : IBartenderEntity {
+public class Ranking : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("division")]
     public required int Division { get; set; }

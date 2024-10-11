@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.NewEvents;
 
-public class NewUserEvent : IBartenderEntity {
+public class NewUserEvent : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("timestamp")]
     public required int Timestamp { get; set; }

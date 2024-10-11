@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Networth;
 
-public class NetworthRecord : IBartenderEntity {
+public class NetworthRecord : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("pending")]
     public required int Pending { get; set; }

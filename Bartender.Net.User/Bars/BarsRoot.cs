@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Bars;
 
-public class BarsRoot : IBartenderEntity {
+public class BarsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("server_time")]
     public required int ServerTime { get; set; }

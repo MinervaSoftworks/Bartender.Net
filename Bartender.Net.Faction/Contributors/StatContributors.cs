@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Contributors;
 
-public class StatContributors : IBartenderEntity {
+public class StatContributors : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("medicalitemsused")]
     public virtual required List<MemberContributor> MedicalItemsUsed { get; set; }

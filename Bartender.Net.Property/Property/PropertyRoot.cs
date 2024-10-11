@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Property.Property;
 
-public class PropertyRoot : IBartenderEntity {
+public class PropertyRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("property")]
     public required PropertyEntry Property { get; set; }

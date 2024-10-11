@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Positions;
 
-public class Position : IBartenderEntity {
+public class Position : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonIgnore]
     public required string Name { get; set; }

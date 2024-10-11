@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Ammunition;
 
-public class AmmoRoot : IBartenderEntity {
+public class AmmoRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("ammo")]
     public virtual required List<Ammo> Ammo { get; set; }

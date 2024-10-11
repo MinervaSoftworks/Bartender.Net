@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class FactionMember : IBartenderEntity {
+public class FactionMember : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("days_in_faction")]
     public required int DaysInFaction { get; set; }

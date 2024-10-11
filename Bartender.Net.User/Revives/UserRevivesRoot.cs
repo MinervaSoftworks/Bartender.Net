@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Revives;
 
-public class UserRevivesRoot : IBartenderEntity {
+public class UserRevivesRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("revives")]
     public virtual required List<Revive> Revives { get; set; }

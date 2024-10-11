@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Armor;
 
-public class ArmorRoot : IBartenderEntity {
+public class ArmorRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("armor")]
     public virtual required List<FactionLoanable> Loanables { get; set; }

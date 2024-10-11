@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.CrimeRecord;
 
-public class CrimeRecordRoot : IBartenderEntity {
+public class CrimeRecordRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("criminalrecord")]
     public virtual required CrimeRecordCollection Crimes { get; set; }

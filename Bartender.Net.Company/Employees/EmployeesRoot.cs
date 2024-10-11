@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Employees;
 
-public class EmployeesRoot : IBartenderEntity {
+public class EmployeesRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("company_employees")]
     public required Dictionary<string, Employee> Employees { get; set; }

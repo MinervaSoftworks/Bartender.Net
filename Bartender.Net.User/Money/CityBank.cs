@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Money;
 
-public class CityBank : IBartenderEntity {
+public class CityBank : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("amount")]
     public required int Amount { get; set; }

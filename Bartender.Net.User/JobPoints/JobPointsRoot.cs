@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.JobPoints;
 
-public class JobPointsRoot : IBartenderEntity {
+public class JobPointsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("jobpoints")]
     public virtual required JobPointsCollection Points { get; set; }

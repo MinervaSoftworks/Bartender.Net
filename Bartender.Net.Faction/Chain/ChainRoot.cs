@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Chain;
 
-public class ChainRoot : IBartenderEntity {
+public class ChainRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("chain")]
     public required CurrentChain Chain { get; set; }

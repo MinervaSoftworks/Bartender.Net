@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Detailed;
 
-public class DetailedRoot : IBartenderEntity {
+public class DetailedRoot : BartenderEntity {
     [JsonProperty ("advertising_budget")]
     public required int AdvertisingBudget { get; set; }
 
@@ -20,7 +20,7 @@ public class DetailedRoot : IBartenderEntity {
     public required int Environment { get; set; }
 
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("popularity")]
     public required int Popularity { get; set; }

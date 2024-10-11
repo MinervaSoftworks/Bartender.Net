@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Notifications;
 
-public class UserNotificationsRoot : IBartenderEntity {
+public class UserNotificationsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("notifications")]
     public virtual required UserNotifications Notifications { get; set; }

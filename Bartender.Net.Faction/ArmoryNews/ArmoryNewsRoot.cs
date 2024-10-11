@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.ArmoryNews;
 
-public class ArmoryNewsRoot : IBartenderEntity {
+public class ArmoryNewsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("armorynews")]
     public required Dictionary<string, NewsEntry> News { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Profile;
 
-public class CompanyProfile : IBartenderEntity {
+public class CompanyProfile : BartenderEntity {
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("company_type")]
     public required int CompanyType { get; set; }

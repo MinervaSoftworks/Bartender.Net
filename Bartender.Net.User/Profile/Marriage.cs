@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class Marriage : IBartenderEntity {
+public class Marriage : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("duration")]
     public required int Duration { get; set; }

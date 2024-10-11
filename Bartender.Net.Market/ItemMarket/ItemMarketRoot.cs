@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Market.ItemMarket;
 
-public class ItemMarketRoot : IBartenderEntity {
+public class ItemMarketRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("itemmarket")]
     public virtual required List<ItemListing> Items { get; set; }

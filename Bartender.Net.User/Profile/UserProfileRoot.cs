@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class UserProfileRoot : IBartenderEntity {
+public class UserProfileRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("player_id")]
     public required int ProfileID { get; set; }

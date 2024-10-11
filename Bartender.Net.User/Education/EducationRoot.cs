@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Education;
 
-public class EducationRoot : IBartenderEntity {
+public class EducationRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("education_current")]
     public required int EducationCurrent { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Upgrades;
 
-public class UpgradesRoot : IBartenderEntity {
+public class UpgradesRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("peace")]
     public required Dictionary<string, Upgrade> Peace { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Merits;
 
-public class MeritsRoot : IBartenderEntity {
+public class MeritsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("merits")]
     public virtual required UserMerits Merits { get; set; }

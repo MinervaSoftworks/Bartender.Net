@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.User;
 
-public class LastAction : IBartenderEntity {
+public class LastAction : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("status")]
     public required string Status { get; set; }

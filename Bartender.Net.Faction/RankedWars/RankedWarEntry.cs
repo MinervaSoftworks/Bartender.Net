@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.RankedWars;
 
-public class RankedWarEntry : IBartenderEntity {
+public class RankedWarEntry : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("war")]
     public virtual required RankedWar Rankedwar { get; set; }

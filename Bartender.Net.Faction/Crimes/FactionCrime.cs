@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Crimes;
 
-public class FactionCrime : IBartenderEntity {
+public class FactionCrime : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("crime_id")]
     public required int CrimeType { get; set; }

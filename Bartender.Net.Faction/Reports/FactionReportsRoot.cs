@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Reports;
 
-public class FactionReportsRoot : IBartenderEntity {
+public class FactionReportsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("reports")]
     public virtual required List<Report> Reports { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Travel;
 
-public class TravelEntry : IBartenderEntity {
+public class TravelEntry : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("destination")]
     public required string Destination { get; set; }

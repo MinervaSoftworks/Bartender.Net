@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Currency;
 
-public class CurrencyRoot : IBartenderEntity {
+public class CurrencyRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("faction_id")]
     public required int FactionId { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Common.Armory;
 
-public class FactionLoanable : IBartenderEntity {
+public class FactionLoanable : BartenderEntity {
     [JsonProperty ("ID")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

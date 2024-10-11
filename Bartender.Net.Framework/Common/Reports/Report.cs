@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Framework.Common.Reports;
 
-public class Report : IBartenderEntity {
+public class Report : BartenderEntity {
     [JsonProperty ("id")]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("report")]
     public virtual required ReportData Data { get; set; }

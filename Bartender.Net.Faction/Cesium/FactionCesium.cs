@@ -3,5 +3,5 @@
 //namespace Bartender.Net.Faction.Cesium;
 
 //public class FactionCesium : IBartenderEntity {
-//    public int ID { get; set; }
+//    public override int ID { get; set; }
 //}

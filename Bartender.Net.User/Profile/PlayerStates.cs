@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class PlayerStates : IBartenderEntity {
+public class PlayerStates : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("hospital_timestamp")]
     public required long HospitalTimestamp { get; set; }

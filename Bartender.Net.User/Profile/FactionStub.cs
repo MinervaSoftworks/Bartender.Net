@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Profile;
 
-public class FactionStub : IBartenderEntity {
+public class FactionStub : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("days_in_faction")]
     public required int DaysInFaction { get; set; }

@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Medical;
 
-public class MedicalRoot : IBartenderEntity {
+public class MedicalRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("medical")]
     public virtual required List<FactionArmoryItem> Items { get; set; }

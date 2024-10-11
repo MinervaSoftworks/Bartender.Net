@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Refills;
 
-public class RefillStates : IBartenderEntity {
+public class RefillStates : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("energy_refill_used")]
     public required bool EnergyRefillUsed { get; set; }

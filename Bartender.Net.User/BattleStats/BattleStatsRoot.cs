@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.BattleStats;
 
-public class BattleStatsRoot : IBartenderEntity {
+public class BattleStatsRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("strength")]
     public required long Strength { get; set; }

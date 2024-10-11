@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Temporary;
 
-public class TemporaryRoot : IBartenderEntity {
+public class TemporaryRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("temporary")]
     public virtual required List<FactionLoanable> Loanables { get; set; }

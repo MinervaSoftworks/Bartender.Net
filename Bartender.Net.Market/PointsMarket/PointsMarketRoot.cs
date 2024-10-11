@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Market.PointsMarket;
 
-public class PointsMarketRoot : IBartenderEntity {
+public class PointsMarketRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("pointsmarket")]
     public required Dictionary<string, PointListing> Points { get; set; }

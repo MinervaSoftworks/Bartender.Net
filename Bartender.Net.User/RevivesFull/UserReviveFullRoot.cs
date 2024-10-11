@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.RevivesFull;
 
-public class UserReviveFullRoot : IBartenderEntity {
+public class UserReviveFullRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("revives")]
     public required Dictionary<string, ReviveFull> Revives { get; set; }

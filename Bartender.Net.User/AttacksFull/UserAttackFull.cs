@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.AttacksFull;
 
-public class UserAttackFull : IBartenderEntity {
+public class UserAttackFull : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("code")]
     public required string Code { get; set; }

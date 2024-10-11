@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.User.Messages;
 
-public class MessagesRoot : IBartenderEntity {
+public class MessagesRoot : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("messages")]
     public required Dictionary<string, UserMessage> Messages { get; set; }

@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Territory;
 
-public class Racket : IBartenderEntity {
+public class Racket : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("changed")]
     public required int Changed { get; set; }

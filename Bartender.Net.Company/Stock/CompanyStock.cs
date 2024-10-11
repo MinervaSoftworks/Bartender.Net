@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Stock;
 
-public class CompanyStock : IBartenderEntity {
+public class CompanyStock : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonIgnore]
     public string? Name { get; set; }

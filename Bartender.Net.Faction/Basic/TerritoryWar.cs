@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class TerritoryWar : IBartenderEntity {
+public class TerritoryWar : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("assaulting_faction")]
     public required int AssaultingFaction { get; set; }

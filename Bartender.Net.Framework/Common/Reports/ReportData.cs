@@ -2,9 +2,9 @@
 
 namespace Bartender.Net.Framework.Common.Reports;
 
-public class ReportData : IBartenderEntity {
+public class ReportData : BartenderEntity {
     [JsonIgnore]
-    public int ID { get; set; }
+    public override int ID { get; set; }
 
     [JsonProperty ("bounties")]
     public virtual required List<string> Bounties { get; set; }

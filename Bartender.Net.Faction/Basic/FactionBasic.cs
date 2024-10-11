@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class FactionBasic : IBartenderEntity {
+public class FactionBasic : BartenderEntity {
     [JsonProperty ("age")]
     public required int Age { get; set; }
 
@@ -17,7 +17,7 @@ public class FactionBasic : IBartenderEntity {
     public required int ColeaderID { get; set; }
 
     [JsonProperty ("ID")]
-    public required int ID { get; set; }
+    public required override int ID { get; set; }
 
     [JsonProperty ("leader")]
     public required int Leader { get; set; }
