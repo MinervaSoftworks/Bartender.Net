@@ -19,7 +19,7 @@ public class CompanySection : Section {
     public static CompanySection Instance {
         get {
             if (_instance == null) {
-                lock (_lock) { 
+                lock (_lock) {
                     _instance ??= new CompanySection ();
                 }
             }
