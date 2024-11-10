@@ -11,19 +11,57 @@ namespace Bartender.Net.REST;
 /// A request client to interact with Torn's REST Api.
 /// </summary>
 public class ApiRequestClient : IApiRequestClient {
+    private readonly int _fetchTimeLimit = 500;
+    private readonly int _retries = 5;
+    private readonly int _retryTimeout = 2500;
+
+    private DateTime _lastFetch = DateTime.UtcNow;
+
+    private TimeSpan _timeSinceLastFetch = new TimeSpan ();
+
+    private static object _lock = new object ();
+
     private readonly HttpClient _client;
 
-    public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl) {
+    public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl, int fetchTimeLimit = 500, int retries = 5, int retryTimeout = 5000) {
         _client = clientFactory.CreateClient ();
 
         _client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
 
         _client.BaseAddress = new Uri (apiUrl);
+
+        _fetchTimeLimit = fetchTimeLimit;
+        _retries = retries;
+        _retryTimeout = retryTimeout;
+    }
+
+    private static int ParseErrorCode (string json) {
+        var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
+
+        return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
+    }
+
+    private bool CanFetch () {
+        lock (_lock) {
+            _timeSinceLastFetch = DateTime.UtcNow - _lastFetch;
+
+            return _timeSinceLastFetch.Milliseconds > _fetchTimeLimit;
+        }
+    }
+
+    private async Task<HttpResponseMessage> PerformFetchAsync (IRequestConfiguration requestConfiguration) {
+        if (!CanFetch ()) {
+            await Task.Delay (400 - _timeSinceLastFetch.Milliseconds);
+        }
+
+        _lastFetch = DateTime.UtcNow;
+
+        return await _client.GetAsync (requestConfiguration.ToString ());
     }
 
     public async Task<IApiResponse> FetchAsync (IRequestConfiguration requestConfiguration) {
         var result = new ApiResponse {
-            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
+            HttpResponseMessage = await PerformFetchAsync (requestConfiguration)
         };
 
         if (!result.HttpResponseMessage.IsSuccessStatusCode) {
@@ -128,11 +166,5 @@ public class ApiRequestClient : IApiRequestClient {
         status.HasRequiredAccessLevel = keyInfo.Selections.HasSelectionAccess (selection.Name);
 
         return status;
-    }
-
-    private static int ParseErrorCode (string json) {
-        var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
-
-        return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
     }
 }
