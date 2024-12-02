@@ -12,8 +12,5 @@ public class IconsRoot : BartenderEntity {
     [NotMapped]
     public Dictionary<string, string> Icons { get; set; } = default!;
 
-    public virtual List<string> IconsList {
-        get => Icons.TornDictionaryToList ();
-        set => Icons = value.ToTornDictionary ();
-    }
+
 }

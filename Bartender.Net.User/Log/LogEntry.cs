@@ -15,22 +15,12 @@ public class LogEntry : BartenderEntity {
     [NotMapped]
     public Dictionary<string, int> Data { get; set; } = default!;
 
-    public virtual List<int> DataList {
-        get => Data.TornDictionaryToList ();
-        set => Data = value.ToTornDictionary ();
-    }
-
     [JsonProperty ("log")]
     public required string LogType { get; set; }
 
     [JsonProperty ("params")]
     [NotMapped]
     public Dictionary<string, string> Params { get; set; } = default!;
-
-    public virtual List<string> ParamsList {
-        get => Params.TornDictionaryToList ();
-        set => Params = value.ToTornDictionary ();
-    }
 
     [JsonProperty ("timestamp")]
     public long Timestamp { get; set; }

@@ -26,9 +26,11 @@ public class UserProfileRoot : BartenderEntity {
     [NotMapped]
     public Dictionary<string, string> BasicIcons { get; set; } = default!;
 
+    private List<string> _icons = new List<string> ();
+
     public virtual List<string> BasicIconsList {
-        get => BasicIcons.TornDictionaryToList ();
-        set => BasicIcons = value.ToTornDictionary ();
+        get => _icons.Count == 0 ? BasicIcons.Values.ToList () : _icons;
+        set => _icons = value;
     }
 
     [JsonProperty ("competition")]
