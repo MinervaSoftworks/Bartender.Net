@@ -1,4 +1,5 @@
 ﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Extensions;
 using Bartender.Net.User.Messages;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;

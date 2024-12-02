@@ -3,6 +3,7 @@ using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.Profile;
 
@@ -25,6 +26,9 @@ public class Competition : BartenderEntity {
     }
 
     [JsonProperty ("position")]
+    [NotMapped]
+    // TODO This needs to be figured out and turned into it's own class
+    // Hesitant to do so b/c idk if it's going to change or not
     public required object Position { get; set; }
 
     [JsonProperty ("score")]
