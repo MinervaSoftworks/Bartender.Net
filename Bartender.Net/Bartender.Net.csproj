@@ -9,7 +9,7 @@
 		<Copyright>Copyright (c) Raven Crowe 2023</Copyright>
 		<Description>Bartender, a .Net wrapper for Torn's Api.</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>2.9-ALPHA</Version>
+		<Version>2.15-ALPHA</Version>
 		<Company>Minerva Softworks</Company>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
