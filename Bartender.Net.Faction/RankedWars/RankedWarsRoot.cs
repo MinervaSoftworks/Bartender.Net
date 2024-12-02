@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.RankedWars;
 
@@ -8,5 +9,11 @@ public class RankedWarsRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("rankedwars")]
-    public required Dictionary<string, RankedWarEntry> Wars { get; set; }
+    [NotMapped]
+    public Dictionary<string, RankedWarEntry> Wars { get; set; } = default!;
+
+    public virtual List<RankedWarEntry> WarsList {
+        get => Wars.TornDictionaryToList ();
+        set => Wars = value.ToTornDictionary ();
+    }
 }

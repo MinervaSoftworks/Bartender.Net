@@ -5,6 +5,7 @@ using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
 using Bartender.Net.User.Bars;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.Profile;
 
@@ -22,7 +23,13 @@ public class UserProfileRoot : BartenderEntity {
     public required int Awards { get; set; }
 
     [JsonProperty ("icons")]
-    public required Dictionary<string, string> BasicIcons { get; set; }
+    [NotMapped]
+    public Dictionary<string, string> BasicIcons { get; set; } = default!;
+
+    public virtual List<string> BasicIconsList {
+        get => BasicIcons.TornDictionaryToList ();
+        set => BasicIcons = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("competition")]
     public virtual required Competition Competition { get; set; }

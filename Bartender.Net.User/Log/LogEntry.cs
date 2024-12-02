@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.Log;
 
@@ -11,13 +12,25 @@ public class LogEntry : BartenderEntity {
     public required string Category { get; set; }
 
     [JsonProperty ("data")]
-    public required Dictionary<string, int> Data { get; set; }
+    [NotMapped]
+    public Dictionary<string, int> Data { get; set; } = default!;
+
+    public virtual List<int> DataList {
+        get => Data.TornDictionaryToList ();
+        set => Data = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("log")]
     public required string LogType { get; set; }
 
     [JsonProperty ("params")]
-    public required Dictionary<string, string> Params { get; set; }
+    [NotMapped]
+    public Dictionary<string, string> Params { get; set; } = default!;
+
+    public virtual List<string> ParamsList {
+        get => Params.TornDictionaryToList ();
+        set => Params = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("timestamp")]
     public long Timestamp { get; set; }

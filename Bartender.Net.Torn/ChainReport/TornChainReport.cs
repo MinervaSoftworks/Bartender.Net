@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Torn.ChainReport;
 
@@ -52,5 +53,11 @@ public class TornChainReport {
     public required int WarHits { get; set; }
 
     [JsonProperty ("members")]
-    public required Dictionary<string, ChainMember> Members { get; set; }
+    [NotMapped]
+    public Dictionary<string, ChainMember> Members { get; set; } = default!;
+
+    public virtual List<ChainMember> MembersList {
+        get => Members.TornDictionaryToList ();
+        set => Members = value.ToTornDictionary ();
+    }
 }

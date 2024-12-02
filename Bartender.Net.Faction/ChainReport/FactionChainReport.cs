@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.ChainReport;
 
@@ -59,7 +60,13 @@ public class FactionChainReport : BartenderEntity {
     public required int Retaliations { get; set; }
 
     [JsonProperty ("members")]
-    public required Dictionary<string, ChainParticipant> Participants { get; set; }
+    [NotMapped]
+    public Dictionary<string, ChainParticipant> Participants { get; set; } = default!;
+
+    public virtual List<ChainParticipant> ParticipantsList {
+        get => Participants.TornDictionaryToList ();
+        set => Participants = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("bonuses")]
     public virtual required List<BonusHit> Bonuses { get; set; }

@@ -1,8 +1,15 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Torn.CityShops;
 
 public class CityShopCollection {
     [JsonProperty ("cityshops")]
-    public required Dictionary<string, CityShop> CityShops { get; set; }
+    [NotMapped]
+    public Dictionary<string, CityShop> CityShops { get; set; } = default!;
+
+    public virtual List<CityShop> CityShopsList {
+        get => CityShops.TornDictionaryToList ();
+        set => CityShops = value.ToTornDictionary ();
+    }
 }

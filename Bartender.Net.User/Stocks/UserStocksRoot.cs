@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.Stocks;
 
@@ -8,5 +9,11 @@ public class UserStocksRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("stocks")]
-    public required Dictionary<string, UserStock> Stocks { get; set; }
+    [NotMapped]
+    public Dictionary<string, UserStock> Stocks { get; set; } = default!;
+
+    public virtual List<UserStock> StocksList {
+        get => Stocks.TornDictionaryToList ();
+        set => Stocks = value.ToTornDictionary ();
+    }
 }

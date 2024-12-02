@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.NewEvents;
 
@@ -8,7 +9,13 @@ public class NewUserEventsRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("events")]
-    public required Dictionary<string, NewUserEvent> Events { get; set; }
+    [NotMapped]
+    public Dictionary<string, NewUserEvent> Events { get; set; } = default!;
+
+    public virtual List<NewUserEvent> EventsList {
+        get => Events.TornDictionaryToList ();
+        set => Events = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("player_id")]
     public required int PlayerID { get; set; }

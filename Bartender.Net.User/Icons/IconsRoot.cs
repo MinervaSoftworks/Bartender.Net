@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.Icons;
 
@@ -8,5 +9,11 @@ public class IconsRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("icons")]
-    public required Dictionary<string, string> Icons { get; set; }
+    [NotMapped]
+    public Dictionary<string, string> Icons { get; set; } = default!;
+
+    public virtual List<string> IconsList {
+        get => Icons.TornDictionaryToList ();
+        set => Icons = value.ToTornDictionary ();
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Torn.Companies;
 
@@ -16,13 +17,31 @@ public class Company {
     public required string Name { get; set; }
 
     [JsonProperty ("position")]
-    public required Dictionary<string, Position> Positions { get; set; }
+    [NotMapped]
+    public Dictionary<string, Position> Positions { get; set; } = default!;
+
+    public virtual List<Position> PositionsList {
+        get => Positions.TornDictionaryToList ();
+        set => Positions = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("specials")]
-    public required Dictionary<string, CompanySpecial> Specials { get; set; }
+    [NotMapped]
+    public Dictionary<string, CompanySpecial> Specials { get; set; } = default!;
+
+    public virtual List<CompanySpecial> SpecialsList {
+        get => Specials.TornDictionaryToList ();
+        set => Specials = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("stocks")]
-    public required Dictionary<string, CompanyStock> Stocks { get; set; }
+    [NotMapped]
+    public Dictionary<string, CompanyStock> Stocks { get; set; } = default!;
+
+    public virtual List<CompanyStock> StocksList {
+        get => Stocks.TornDictionaryToList ();
+        set => Stocks = value.ToTornDictionary ();
+    }
 }
 
 public class CompanyStock {

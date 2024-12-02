@@ -1,6 +1,7 @@
 ﻿using Bartender.Net.Framework;
 using Bartender.Net.Framework.Common.RevivesFull;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.RevivesFull;
 
@@ -9,5 +10,11 @@ public class FactionReviveFullRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("revives")]
-    public required Dictionary<string, ReviveFull> Revives { get; set; }
+    [NotMapped]
+    public Dictionary<string, ReviveFull> Revives { get; set; } = default!;
+
+    public virtual List<ReviveFull> RevivesList {
+        get => Revives.TornDictionaryToList ();
+        set => Revives = value.ToTornDictionary ();
+    }
 }

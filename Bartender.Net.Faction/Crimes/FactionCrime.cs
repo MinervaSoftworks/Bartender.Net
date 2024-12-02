@@ -1,6 +1,7 @@
 ﻿using Bartender.Net.Framework;
 using Bartender.Net.Framework.Common.User;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Crimes;
 
@@ -24,7 +25,13 @@ public class FactionCrime : BartenderEntity {
     public required int MoneyGain { get; set; }
 
     [JsonProperty ("participants")]
-    public required Dictionary<string, Status> Participants { get; set; }
+    [NotMapped]
+    public Dictionary<string, Status> Participants { get; set; } = default!;
+
+    public virtual List<Status> ParticipantsList {
+        get => Participants.TornDictionaryToList ();
+        set => Participants = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("planned_by")]
     public required int PlannedBy { get; set; }

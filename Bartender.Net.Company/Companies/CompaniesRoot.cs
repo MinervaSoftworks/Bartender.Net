@@ -8,5 +8,10 @@ public class CompaniesRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("cards")]
-    public required Dictionary<string, CompanyEntry> Companies { get; set; }
+    public Dictionary<string, CompanyEntry> Companies { get; set; } = default!;
+
+    public virtual List<CompanyEntry> CompaniesList {
+        get => Companies.TornDictionaryToList ();
+        set => Companies = value.ToTornDictionary ();
+    }
 }

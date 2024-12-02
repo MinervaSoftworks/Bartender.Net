@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Donations;
 
@@ -8,5 +9,11 @@ public class DonationsRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("donations")]
-    public required Dictionary<string, DonationEntry> Donations { get; set; }
+    [NotMapped]
+    public Dictionary<string, DonationEntry> Donations { get; set; } = default!;
+
+    public virtual List<DonationEntry> DonationsList {
+        get => Donations.TornDictionaryToList ();
+        set => Donations = value.ToTornDictionary ();
+    }
 }

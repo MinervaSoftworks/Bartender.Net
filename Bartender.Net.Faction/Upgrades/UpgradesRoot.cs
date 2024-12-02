@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Upgrades;
 
@@ -8,14 +9,32 @@ public class UpgradesRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("peace")]
-    public required Dictionary<string, Upgrade> Peace { get; set; }
+    [NotMapped]
+    public Dictionary<string, Upgrade> Peace { get; set; } = default!;
+
+    public virtual List<Upgrade> PeaceList {
+        get => Peace.TornDictionaryToList ();
+        set => Peace = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("state")]
     public required string StateName { get; set; }
 
     [JsonProperty ("upgrades")]
-    public required Dictionary<string, Upgrade> Upgrades { get; set; }
+    [NotMapped]
+    public Dictionary<string, Upgrade> Upgrades { get; set; } = default!;
+
+    public virtual List<Upgrade> UpgradesList {
+        get => Upgrades.TornDictionaryToList ();
+        set => Upgrades = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("war")]
-    public required Dictionary<string, Upgrade> War { get; set; }
+    [NotMapped]
+    public Dictionary<string, Upgrade> War { get; set; } = default!;
+
+    public virtual List<Upgrade> WarList {
+        get => War.TornDictionaryToList ();
+        set => War = value.ToTornDictionary ();
+    }
 }

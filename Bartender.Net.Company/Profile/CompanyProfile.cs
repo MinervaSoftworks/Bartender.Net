@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Company.Profile;
 
@@ -41,5 +42,11 @@ public class CompanyProfile : BartenderEntity {
     public required int DaysOld { get; set; }
 
     [JsonProperty ("employees")]
-    public required Dictionary<string, CompanyProfileEmployee> Employees { get; set; }
+    [NotMapped]
+    public Dictionary<string, CompanyProfileEmployee> Employees { get; set; } = default!;
+
+    public virtual List<CompanyProfileEmployee> EmployeesList {
+        get => Employees.TornDictionaryToList ();
+        set => Employees = value.ToTornDictionary ();
+    }
 }

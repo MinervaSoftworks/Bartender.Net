@@ -8,5 +8,10 @@ public class FactionAttacksFullRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("attacks")]
-    public required Dictionary<string, FactionAttackFull> Stubs { get; set; }
+    public Dictionary<string, FactionAttackFull> Stubs { get; set; } = default!;
+
+    public virtual List<FactionAttackFull> StubsList {
+        get => Stubs.TornDictionaryToList ();
+        set => Stubs = value.ToTornDictionary ();
+    }
 }

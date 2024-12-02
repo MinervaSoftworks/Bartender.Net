@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.User.JobPoints;
 
@@ -8,7 +9,13 @@ public class JobPointsCollection : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("companies")]
-    public required Dictionary<string, CompanyPoints> Companies { get; set; }
+    [NotMapped]
+    public Dictionary<string, CompanyPoints> Companies { get; set; } = default!;
+
+    public virtual List<CompanyPoints> CompaniesList {
+        get => Companies.TornDictionaryToList ();
+        set => Companies = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("jobs")]
     public virtual required UserJobPoints JobPoints { get; set; }

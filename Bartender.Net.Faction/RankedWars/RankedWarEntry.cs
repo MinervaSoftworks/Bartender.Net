@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.RankedWars;
 
@@ -11,5 +12,11 @@ public class RankedWarEntry : BartenderEntity {
     public virtual required RankedWar Rankedwar { get; set; }
 
     [JsonProperty ("factions")]
-    public required Dictionary<string, RankedWarFaction> Factions { get; set; }
+    [NotMapped]
+    public Dictionary<string, RankedWarFaction> Factions { get; set; } = default!;
+
+    public virtual List<RankedWarFaction> FactionsList {
+        get => Factions.TornDictionaryToList ();
+        set => Factions = value.ToTornDictionary ();
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Basic;
 
@@ -23,13 +24,20 @@ public class FactionBasic : BartenderEntity {
     public required int Leader { get; set; }
 
     [JsonProperty ("members")]
-    public required Dictionary<string, FactionMember> Members { get; set; }
+    [NotMapped]
+    public Dictionary<string, FactionMember> Members { get; set; } = default!;
+
+    public virtual List<FactionMember> MembersList {
+        get => Members.TornDictionaryToList ();
+        set => Members = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
 
     [JsonProperty ("peace")]
-    public required Dictionary<string, long> PeaceTreaties { get; set; }
+    [NotMapped]
+    public Dictionary<string, long> PeaceTreaties { get; set; } = default!;
 
     [JsonProperty ("raid_wars")]
     public virtual required List<Raid> RaidWars { get; set; }
@@ -38,7 +46,13 @@ public class FactionBasic : BartenderEntity {
     public virtual required Ranking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
-    public required Dictionary<string, RankedWar> RankedWars { get; set; }
+    [NotMapped]
+    public Dictionary<string, RankedWar> RankedWars { get; set; } = default!;
+
+    public virtual List<RankedWar> RankedWarsList {
+        get => RankedWars.TornDictionaryToList ();
+        set => RankedWars = value.ToTornDictionary ();
+    }
 
     [JsonProperty ("respect")]
     public required int Respect { get; set; }
