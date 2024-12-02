@@ -24,4 +24,16 @@ public class Bar : BartenderEntity {
 
     [JsonProperty ("ticktime")]
     public required int Ticktime { get; set; }
+
+    public virtual BarsRoot HappyBar { get; set; } = default!;
+    public int HappyBarID { get; set; }
+
+    public virtual BarsRoot LifeBar { get; set; } = default!;
+    public int LifeBarID { get; set; }
+
+    public virtual BarsRoot EnergyBar { get; set; } = default!;
+    public int EnergyBarID { get; set; }
+
+    public virtual BarsRoot NerveBar { get; set; } = default!;
+    public int NerveBarID { get; set; }
 }
