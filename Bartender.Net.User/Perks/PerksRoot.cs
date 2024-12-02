@@ -23,7 +23,7 @@ public class PerksRoot : BartenderEntity {
     public virtual required List<string> EnhancerPerks { get; set; }
 
     [JsonProperty ("book_perks")]
-    public virtual required List<object> BookPerks { get; set; }
+    public virtual required List<string> BookPerks { get; set; }
 
     [JsonProperty ("stock_perks")]
     public virtual required List<string> StockPerks { get; set; }
