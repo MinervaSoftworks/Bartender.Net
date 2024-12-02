@@ -29,7 +29,7 @@ public class DetailedRoot : BartenderEntity {
     public required int TrainsAvailable { get; set; }
 
     [JsonProperty ("upgrades")]
-    public required Upgrade Upgrades { get; set; }
+    public required DetailedUpgrade Upgrades { get; set; }
 
     [JsonProperty ("value")]
     public required int Value { get; set; }

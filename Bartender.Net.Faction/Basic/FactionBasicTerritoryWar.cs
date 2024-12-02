@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class TerritoryWar : BartenderEntity {
+public class FactionBasicTerritoryWar : BartenderEntity {
     [JsonIgnore]
     public override int ID { get; set; }
 

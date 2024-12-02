@@ -5,15 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Upgrades;
 
-public class UpgradesRoot : BartenderEntity {
+public class FactionUpgradesRoot : BartenderEntity {
     [JsonIgnore]
     public override int ID { get; set; }
 
     [JsonProperty ("peace")]
     [NotMapped]
-    public Dictionary<string, Upgrade> Peace { get; set; } = default!;
+    public Dictionary<string, FactionUpgrade> Peace { get; set; } = default!;
 
-    public virtual List<Upgrade> PeaceList {
+    public virtual List<FactionUpgrade> PeaceList {
         get => Peace.TornDictionaryToList ();
         set => Peace = value.ToTornDictionary ();
     }
@@ -23,18 +23,18 @@ public class UpgradesRoot : BartenderEntity {
 
     [JsonProperty ("upgrades")]
     [NotMapped]
-    public Dictionary<string, Upgrade> Upgrades { get; set; } = default!;
+    public Dictionary<string, FactionUpgrade> Upgrades { get; set; } = default!;
 
-    public virtual List<Upgrade> UpgradesList {
+    public virtual List<FactionUpgrade> UpgradesList {
         get => Upgrades.TornDictionaryToList ();
         set => Upgrades = value.ToTornDictionary ();
     }
 
     [JsonProperty ("war")]
     [NotMapped]
-    public Dictionary<string, Upgrade> War { get; set; } = default!;
+    public Dictionary<string, FactionUpgrade> War { get; set; } = default!;
 
-    public virtual List<Upgrade> WarList {
+    public virtual List<FactionUpgrade> WarList {
         get => War.TornDictionaryToList ();
         set => War = value.ToTornDictionary ();
     }

@@ -10,7 +10,7 @@ public class ArmoryNewsRoot : BartenderEntity {
     public override int ID { get; set; }
 
     [JsonProperty ("armorynews")]
-    public Dictionary<string, NewsEntry> News { get; set; }
+    public Dictionary<string, NewsEntry> News { get; set; } = default!;
 
     public virtual List<NewsEntry> NewsList {
         get => News.TornDictionaryToList ();

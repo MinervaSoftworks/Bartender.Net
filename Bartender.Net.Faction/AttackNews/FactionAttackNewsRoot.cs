@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.AttackNews;
 
-public class AttackNewsRoot : BartenderEntity {
+public class FactionAttackNewsRoot : BartenderEntity {
     [JsonIgnore]
     public override int ID { get; set; }
 

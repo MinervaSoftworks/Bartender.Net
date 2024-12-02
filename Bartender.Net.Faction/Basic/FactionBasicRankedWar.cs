@@ -5,19 +5,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Basic;
 
-public class RankedWar : BartenderEntity {
+public class FactionBasicRankedWar : BartenderEntity {
     [JsonIgnore]
     public override int ID { get; set; }
 
     [JsonProperty ("factions")]
     [NotMapped]
-    public Dictionary<string, RankedWarFaction> Factions { get; set; } = default!;
+    public Dictionary<string, FactionBasicRankedWarFaction> Factions { get; set; } = default!;
 
-    public virtual List<RankedWarFaction> FactionsList {
+    public virtual List<FactionBasicRankedWarFaction> FactionsList {
         get => Factions.TornDictionaryToList ();
         set => Factions = value.ToTornDictionary ();
     }
 
     [JsonProperty ("war")]
-    public virtual required War War { get; set; }
+    public virtual required FactionBasicWar War { get; set; }
 }

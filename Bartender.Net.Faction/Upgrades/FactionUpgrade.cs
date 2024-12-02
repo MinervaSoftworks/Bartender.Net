@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Faction.Upgrades;
 
-public class Upgrade : BartenderEntity {
+public class FactionUpgrade : BartenderEntity {
     [JsonIgnore]
     public override int ID { get; set; }
 

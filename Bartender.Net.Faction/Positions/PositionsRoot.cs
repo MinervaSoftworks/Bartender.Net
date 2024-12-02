@@ -11,9 +11,9 @@ public class PositionsRoot : BartenderEntity {
 
     [JsonProperty ("positions")]
     [NotMapped]
-    public Dictionary<string, Position> Positions { get; set; } = default!;
+    public Dictionary<string, FactionPosition> Positions { get; set; } = default!;
 
-    public virtual List<Position> PositionsList {
+    public virtual List<FactionPosition> PositionsList {
         get => Positions.TornDictionaryToList ();
         set => Positions = value.ToTornDictionary ();
     }

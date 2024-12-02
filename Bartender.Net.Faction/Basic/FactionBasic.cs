@@ -26,9 +26,9 @@ public class FactionBasic : BartenderEntity {
 
     [JsonProperty ("members")]
     [NotMapped]
-    public Dictionary<string, FactionMember> Members { get; set; } = default!;
+    public Dictionary<string, FactionBasicMember> Members { get; set; } = default!;
 
-    public virtual List<FactionMember> MembersList {
+    public virtual List<FactionBasicMember> MembersList {
         get => Members.TornDictionaryToList ();
         set => Members = value.ToTornDictionary ();
     }
@@ -41,16 +41,16 @@ public class FactionBasic : BartenderEntity {
     public Dictionary<string, long> PeaceTreaties { get; set; } = default!;
 
     [JsonProperty ("raid_wars")]
-    public virtual required List<Raid> RaidWars { get; set; }
+    public virtual required List<FactionBasicRaid> RaidWars { get; set; }
 
     [JsonProperty ("rank")]
-    public virtual required Ranking Rank { get; set; }
+    public virtual required FactionBasicRanking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
     [NotMapped]
-    public Dictionary<string, RankedWar> RankedWars { get; set; } = default!;
+    public Dictionary<string, FactionBasicRankedWar> RankedWars { get; set; } = default!;
 
-    public virtual List<RankedWar> RankedWarsList {
+    public virtual List<FactionBasicRankedWar> RankedWarsList {
         get => RankedWars.TornDictionaryToList ();
         set => RankedWars = value.ToTornDictionary ();
     }
@@ -65,5 +65,5 @@ public class FactionBasic : BartenderEntity {
     public required string TagImage { get; set; }
 
     [JsonProperty ("territory_wars")]
-    public virtual required List<TerritoryWar> TerritoryWars { get; set; }
+    public virtual required List<FactionBasicTerritoryWar> TerritoryWars { get; set; }
 }

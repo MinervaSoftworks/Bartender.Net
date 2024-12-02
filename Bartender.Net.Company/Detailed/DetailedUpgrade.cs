@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Bartender.Net.Company.Detailed;
 
-public class Upgrade : BartenderEntity {
+public class DetailedUpgrade : BartenderEntity {
     [JsonIgnore]
     public override int ID { get; set; }
 

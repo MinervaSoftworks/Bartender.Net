@@ -19,7 +19,7 @@ public class ReportData : BartenderEntity {
     public required int Dexterity { get; set; }
 
     [JsonProperty ("enemylist")]
-    public virtual required List<FriendOrFoeUser> EnemyList { get; set; }
+    public virtual List<FriendOrFoeUser> EnemyList { get; set; } = new List<FriendOrFoeUser> ();
 
     [JsonProperty ("faction_history")]
     public virtual required List<ReportReference> FactionHistory { get; set; }

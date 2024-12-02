@@ -137,7 +137,7 @@ public class FactionSection : Section {
         Applications = new (this, "applications", AccessLevel.Limited, typeof (FactionApplicationsRoot), typeof (FactionApplication));
         Armor = new (this, "armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionLoanable));
         ArmoryNews = new (this, "armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot), typeof (NewsEntry));
-        AttackNews = new (this, "attacknews", AccessLevel.Limited, typeof (AttackNewsRoot), typeof (NewsEntry));
+        AttackNews = new (this, "attacknews", AccessLevel.Limited, typeof (FactionAttackNewsRoot), typeof (NewsEntry));
         Attacks = new (this, "attacks", AccessLevel.Limited, typeof (FactionAttacksRoot), typeof (FactionAttack));
         AttacksFull = new (this, "attacksfull", AccessLevel.Limited, typeof (FactionAttacksFullRoot), typeof (FactionAttackFull));
         Basic = new (this, "basic", AccessLevel.Public, typeof (FactionBasic), typeof (FactionBasic));
@@ -157,7 +157,7 @@ public class FactionSection : Section {
         MainNews = new (this, "mainnews", AccessLevel.Minimal, typeof (MainNewsRoot), typeof (NewsEntry));
         Medical = new (this, "medical", AccessLevel.Minimal, typeof (MedicalRoot), typeof (FactionArmoryItem));
         MembershipNews = new (this, "membershipnews", AccessLevel.Minimal, typeof (MembershipNewsRoot), typeof (NewsEntry));
-        Positions = new (this, "positions", AccessLevel.Minimal, typeof (PositionsRoot), typeof (Position));
+        Positions = new (this, "positions", AccessLevel.Minimal, typeof (PositionsRoot), typeof (FactionPosition));
         RankedWars = new (this, "rankedwars", AccessLevel.Public, typeof (RankedWarsRoot), typeof (RankedWarEntry));
         Reports = new (this, "reports", AccessLevel.Limited, typeof (FactionReportsRoot), typeof (Report));
         Revives = new (this, "revives", AccessLevel.Minimal, typeof (FactionRevivesRoot), typeof (Revive));
@@ -166,7 +166,7 @@ public class FactionSection : Section {
         Temporary = new (this, "temporary", AccessLevel.Minimal, typeof (TemporaryRoot), typeof (FactionLoanable));
         Territory = new (this, "territory", AccessLevel.Public, typeof (TerritoryRoot), typeof (FactionTerritory));
         TerritoryNews = new (this, "territorynews", AccessLevel.Minimal, typeof (TerritoryNewsRoot), typeof (NewsEntry));
-        Upgrades = new (this, "upgrades", AccessLevel.Minimal, typeof (UpgradesRoot), typeof (UpgradesRoot));
+        Upgrades = new (this, "upgrades", AccessLevel.Minimal, typeof (FactionUpgradesRoot), typeof (FactionUpgradesRoot));
         Weapons = new (this, "weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof (FactionLoanable));
     }
 }
