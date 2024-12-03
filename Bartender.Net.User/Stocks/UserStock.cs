@@ -12,8 +12,12 @@ public class UserStock : BartenderEntity {
     [JsonProperty ("benefit")]
     public virtual required UserStockBonus Benefit { get; set; }
 
+    public int BenefitID { get; set; }
+
     [JsonProperty ("benefit")]
     public virtual required UserStockBonus Dividend { get; set; }
+
+    public int DividendID { get; set; }
 
     [JsonProperty ("stock_id")]
     public required int StockId { get; set; }

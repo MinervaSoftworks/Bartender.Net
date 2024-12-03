@@ -45,7 +45,4 @@ public class ReviveFull : BartenderEntity {
 
     [JsonProperty ("target_last_action")]
     public required LastAction TargetLastAction { get; set; }
-
-    [JsonProperty ("timestamp")]
-    public required int TimeStamp { get; set; }
 }

@@ -42,5 +42,29 @@ public class HallOfFameRoot : BartenderEntity {
 
     [JsonProperty ("awards")]
     public virtual required HallOfFameRank Awards { get; set; }
+
+    public int AttacksID { get; set; }
+
+    public int BattlestatsID { get; set; }
+
+    public int BustsID { get; set; }
+
+    public int DefendsID { get; set; }
+
+    public int NetworthID { get; set; }
+
+    public int OffencesID { get; set; }
+
+    public int RevivesID { get; set; }
+
+    public int TraveltimeID { get; set; }
+
+    public int WorkstatsID { get; set; }
+
+    public int LevelID { get; set; }
+
+    public int RankID { get; set; }
+
+    public int AwardsID { get; set; }
 }
 

@@ -18,4 +18,8 @@ public class UserStockBonus : BartenderEntity {
 
     [JsonProperty ("frequency")]
     public required int Frequency { get; set; }
+
+    public virtual UserStock BenefitStock { get; set; } = default!;
+
+    public virtual UserStock DividendStock { get; set; } = default!;
 }

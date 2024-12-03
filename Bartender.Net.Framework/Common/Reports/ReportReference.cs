@@ -14,4 +14,10 @@ public class ReportReference : BartenderEntity {
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
+
+    public ReportData CompanyReport { get; set; } = default!;
+    public int CompanyReportID { get; set; } = default!;
+
+    public ReportData FactionReport { get; set; } = default!;
+    public int FactionReportID { get; set; } = default!;
 }

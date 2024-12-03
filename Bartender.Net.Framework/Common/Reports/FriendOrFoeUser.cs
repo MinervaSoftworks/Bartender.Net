@@ -7,10 +7,12 @@ public class FriendOrFoeUser : BartenderEntity {
     public override int ID { get; set; }
 
     public virtual ReportData FriendReportData { get; set; } = default!;
-    public int FriendReportDataID { get; set; } = default!;
+
+    public int FriendReportDataID { get; set; }
 
     public virtual ReportData FoeReportData { get; set; } = default!;
-    public int FoeReportDataID { get; set; } = default!;
+
+    public int FoeReportDataID { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
