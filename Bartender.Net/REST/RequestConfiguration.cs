@@ -27,7 +27,7 @@ public class RequestConfiguration : IRequestConfiguration {
 
         var keyPart = $"&key={Key}";
 
-        var selectionPart = $"?selections={string.Join (',', Selections)}";
+        var selectionPart = $"?selections={string.Join (',', Selections.Select(s => s.Name))}";
 
         var commentPart = Comment is not null && Comment.Length > 0 ? $"&comment={Comment}" : "";
 

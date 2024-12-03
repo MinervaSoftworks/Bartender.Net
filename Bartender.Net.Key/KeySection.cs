@@ -20,15 +20,15 @@ public class KeySection : Section {
         }
     }
 
-    public readonly Selection Info;
+    public readonly Selection KeyInfo;
 
     public override IEnumerable<Selection> Selections {
         get {
-            yield return Info;
+            yield return KeyInfo;
         }
     }
 
     private KeySection () : base ("key") {
-        Info = new (this, "info", AccessLevel.Public, typeof (KeyInfo), typeof (KeyInfo));
+        KeyInfo = new (this, "info", AccessLevel.Public, typeof (KeyInfo), typeof (KeyInfo));
     }
 }

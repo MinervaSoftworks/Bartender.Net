@@ -23,21 +23,21 @@ public class MarketSection : Section {
         }
     }
 
-    public readonly Selection Bazaar;
-    public readonly Selection ItemMarket;
-    public readonly Selection PointsMarket;
+    public readonly Selection MarketBazaar;
+    public readonly Selection MarketItemMarket;
+    public readonly Selection MarketPointsMarket;
 
     public override IEnumerable<Selection> Selections {
         get {
-            yield return Bazaar;
-            yield return ItemMarket;
-            yield return PointsMarket;
+            yield return MarketBazaar;
+            yield return MarketItemMarket;
+            yield return MarketPointsMarket;
         }
     }
 
     private MarketSection () : base ("market") {
-        Bazaar = new (this, "bazaar", AccessLevel.Public, typeof (BazaarRoot), typeof (ItemListing));
-        ItemMarket = new (this, "itemmarket", AccessLevel.Public, typeof (ItemMarketRoot), typeof (ItemListing));
-        PointsMarket = new (this, "pointsmarket", AccessLevel.Public, typeof (PointsMarketRoot), typeof (PointListing));
+        MarketBazaar = new (this, "bazaar", AccessLevel.Public, typeof (BazaarRoot), typeof (ItemListing));
+        MarketItemMarket = new (this, "itemmarket", AccessLevel.Public, typeof (ItemMarketRoot), typeof (ItemListing));
+        MarketPointsMarket = new (this, "pointsmarket", AccessLevel.Public, typeof (PointsMarketRoot), typeof (PointListing));
     }
 }
