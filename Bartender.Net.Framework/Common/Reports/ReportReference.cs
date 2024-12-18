@@ -3,8 +3,7 @@
 namespace Bartender.Net.Framework.Common.Reports;
 
 public class ReportReference : BartenderEntity {
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    [JsonProperty ("ID")]    public required int ReportReferenceId { get; set; }
 
     [JsonProperty ("joined")]
     public required string Joined { get; set; }

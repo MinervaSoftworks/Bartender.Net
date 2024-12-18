@@ -7,11 +7,11 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Ammunition;
 
 public class Ammo : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("ammoID")]
-    public required int AmmoID { get; set; }
+    public required int AmmoID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("equipped")]
     public required bool Equipped { get; set; }

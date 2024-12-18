@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Merits;
 
 public class UserMerits : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("Nerve Bar")]
     public required int NerveBar { get; set; }
 

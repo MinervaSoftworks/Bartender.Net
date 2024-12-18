@@ -4,8 +4,10 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.DisplayCase;
 
 public class DisplayCaseItem : BartenderEntity {
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    [JsonProperty ("ID")]    public required int DisplayCaseItemID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

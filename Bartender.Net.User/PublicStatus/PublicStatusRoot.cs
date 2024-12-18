@@ -7,9 +7,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.PublicStatus;
 
 public class PublicStatusRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("baned")]
     public required bool Banned { get; set; }
 

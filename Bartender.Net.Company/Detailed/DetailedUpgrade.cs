@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Company.Detailed;
 
 public class DetailedUpgrade : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("company_size")]
     public required int CompanySize { get; set; }
 

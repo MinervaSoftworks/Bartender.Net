@@ -5,9 +5,6 @@ namespace Bartender.Net.Company.Stock;
 
 public class CompanyStock : BartenderEntity {
     [JsonIgnore]
-    public override int ID { get; set; }
-
-    [JsonIgnore]
     public string? Name { get; set; }
 
     [JsonProperty ("cost")]

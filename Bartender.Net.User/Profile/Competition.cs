@@ -8,9 +8,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.Profile;
 
 public class Competition : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("attacks")]
     public required int Attacks { get; set; }
 

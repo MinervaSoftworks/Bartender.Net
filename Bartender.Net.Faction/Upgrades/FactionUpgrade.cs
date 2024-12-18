@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Faction.Upgrades;
 
 public class FactionUpgrade : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("ability")]
     public required string Ability { get; set; }
 

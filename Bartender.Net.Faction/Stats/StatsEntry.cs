@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Faction.Stats;
 
 public class StatsEntry : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("medicalitemsused")]
     public required int Medicalitemsused { get; set; }
 

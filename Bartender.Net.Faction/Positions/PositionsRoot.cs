@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.Positions;
 
 public class PositionsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("positions")]
     [NotMapped]
     public Dictionary<string, FactionPosition> Positions { get; set; } = default!;

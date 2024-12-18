@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Bars;
 
 public class ChainBar : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("cooldown")]
     public required int Cooldown { get; set; }
 

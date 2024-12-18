@@ -8,7 +8,10 @@ public class ItemListing : BartenderEntity {
     public required int Cost { get; set; }
 
     [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    public required int ItemListingID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("quantity")]
     public required int Quantity { get; set; }

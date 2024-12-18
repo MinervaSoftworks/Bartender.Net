@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Key;
 
 public class KeyAuths : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("company")]
     public virtual required List<string> Company { get; set; }
 

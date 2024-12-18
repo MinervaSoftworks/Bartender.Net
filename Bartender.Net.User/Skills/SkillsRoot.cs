@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Skills;
 
 public class SkillsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("bootlegging")]
     public required string Bootlegging { get; set; }
 

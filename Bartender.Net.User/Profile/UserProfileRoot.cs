@@ -10,9 +10,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.Profile;
 
 public class UserProfileRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("player_id")]
     public required int ProfileID { get; set; }
 

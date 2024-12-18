@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Faction.Attacks;
 
 public class FactionAttack : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("code")]
     public required string Code { get; set; }
 
@@ -17,7 +14,7 @@ public class FactionAttack : BartenderEntity {
     public required long TimestampEnded { get; set; }
 
     [JsonProperty ("attacker_id")]
-    public required int AttackerId { get; set; }
+    public required int AttackerID { get; set; }
 
     [JsonProperty ("attacker_name")]
     public required string AttackerName { get; set; }
@@ -29,7 +26,7 @@ public class FactionAttack : BartenderEntity {
     public required string AttackerFactionName { get; set; }
 
     [JsonProperty ("defender_id")]
-    public required int DefenderId { get; set; }
+    public required int DefenderID { get; set; }
 
     [JsonProperty ("defender_name")]
     public required string DefenderName { get; set; }

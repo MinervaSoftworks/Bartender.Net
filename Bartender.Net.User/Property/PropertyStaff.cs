@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Property;
 
 public class PropertyStaff : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("maid")]
     public required int Maid { get; set; }
 

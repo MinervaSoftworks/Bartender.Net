@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.Upgrades;
 
 public class FactionUpgradesRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("peace")]
     [NotMapped]
     public Dictionary<string, FactionUpgrade> Peace { get; set; } = default!;

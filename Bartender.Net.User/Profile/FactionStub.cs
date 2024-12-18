@@ -4,14 +4,14 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Profile;
 
 public class FactionStub : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("days_in_faction")]
     public required int DaysInFaction { get; set; }
 
     [JsonProperty ("faction_id")]
-    public required int FactionID { get => ID; set => ID = value; }
+    public required int FactionID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("faction_name")]
     public required string FactionName { get; set; }

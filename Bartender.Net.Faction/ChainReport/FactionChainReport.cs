@@ -6,8 +6,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.ChainReport;
 
 public class FactionChainReport : BartenderEntity {
-    [JsonProperty ("userID")]
-    public override int ID { get; set; }
+    [JsonProperty ("userID")]    public required int FactionChainReportID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("factionID")]
     public required int FactionID { get; set; }

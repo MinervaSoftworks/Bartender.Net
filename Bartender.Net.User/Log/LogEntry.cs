@@ -5,9 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.Log;
 
 public class LogEntry : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("category")]
     public required string Category { get; set; }
 

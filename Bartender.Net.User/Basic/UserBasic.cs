@@ -6,11 +6,11 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Basic;
 
 public class UserBasic : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("player_id")]
-    public required int PlayerID { get => ID; set => ID = value; }
+    public required int PlayerID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("gender")]
     public Gender Gender { get; set; }

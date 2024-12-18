@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.Stocks;
 
 public class UserStock : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("benefit")]
     public virtual required UserStockBonus Benefit { get; set; }
 

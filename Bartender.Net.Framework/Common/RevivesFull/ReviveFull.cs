@@ -7,9 +7,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Framework.Common.RevivesFull;
 
 public class ReviveFull : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("timestamp")]
     public required int Timestamp { get; set; }
 

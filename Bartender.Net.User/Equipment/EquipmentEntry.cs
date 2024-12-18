@@ -4,8 +4,10 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Equipment;
 
 public class EquipmentEntry : BartenderEntity {
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    [JsonProperty ("ID")]    public required int EquipmentEntryID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("equipped")]
     public required int Equiped { get; set; }

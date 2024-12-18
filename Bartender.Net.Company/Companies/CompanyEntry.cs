@@ -4,9 +4,10 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Company.Companies;
 
 public class CompanyEntry : BartenderEntity {
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
-
+    [JsonProperty ("ID")]    public required int ComnpanyID {
+        get => TornID;
+        set => TornID = value;
+    }
     [JsonProperty ("company_type")]
     public required int CompanyType { get; set; }
 

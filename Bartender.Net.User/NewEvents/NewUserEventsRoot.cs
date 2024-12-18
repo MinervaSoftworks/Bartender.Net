@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.NewEvents;
 
 public class NewUserEventsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("events")]
     [NotMapped]
     public Dictionary<string, NewUserEvent> Events { get; set; } = default!;

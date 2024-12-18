@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.RankedWars;
 
 public class RankedWarsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("rankedwars")]
     [NotMapped]
     public Dictionary<string, RankedWarEntry> Wars { get; set; } = default!;

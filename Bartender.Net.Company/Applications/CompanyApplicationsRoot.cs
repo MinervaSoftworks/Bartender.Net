@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Company.Applications;
 
 public class CompanyApplicationsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("applications")]
     [NotMapped]
     public Dictionary<string, CompanyApplication> Applications { get; set; } = default!;

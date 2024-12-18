@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Perks;
 
 public class PerksRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("faction_perks")]
     public virtual required List<string> FactionPerks { get; set; }
 

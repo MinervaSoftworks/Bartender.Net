@@ -6,8 +6,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Company.Profile;
 
 public class CompanyProfile : BartenderEntity {
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    [JsonProperty ("ID")]    public required int CompanyID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("company_type")]
     public required int CompanyType { get; set; }

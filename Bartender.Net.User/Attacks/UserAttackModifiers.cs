@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.Attacks;
 
 public class UserAttackModifiers : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("fair_fight")]
     public required double FairFight { get; set; }
 

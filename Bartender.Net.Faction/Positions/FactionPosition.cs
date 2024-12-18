@@ -5,10 +5,7 @@ namespace Bartender.Net.Faction.Positions;
 
 public class FactionPosition : BartenderEntity {
     [JsonIgnore]
-    public override int ID { get; set; }
-
-    [JsonIgnore]
-    public required string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
     [JsonProperty ("default")]
     public required int Default { get; set; }

@@ -19,8 +19,10 @@ public class DetailedRoot : BartenderEntity {
     [JsonProperty ("environment")]
     public required int Environment { get; set; }
 
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    [JsonProperty ("ID")]    public required int DetailedID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("popularity")]
     public required int Popularity { get; set; }

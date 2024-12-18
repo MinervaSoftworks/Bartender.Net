@@ -7,9 +7,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.Crimes;
 
 public class FactionCrime : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("crime_id")]
     public required int CrimeType { get; set; }
 

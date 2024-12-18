@@ -8,7 +8,7 @@ public interface IRequestConfiguration {
     int ID { get; set; }
     string Key { get; set; }
     int? Limit { get; set; }
-    string Section { get; set; }
+    Section Section { get; set; }
     List<Selection> Selections { get; set; }
     string? Sort { get; set; }
     DateTime? To { get; set; }

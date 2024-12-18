@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Company.Applications;
 
 public class CompanyApplication : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("expires")]
     public required int Expires { get; set; }
 

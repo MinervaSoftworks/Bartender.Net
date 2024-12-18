@@ -7,9 +7,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.RevivesFull;
 
 public class FactionReviveFullRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("revives")]
     [NotMapped]
     public Dictionary<string, ReviveFull> Revives { get; set; } = default!;

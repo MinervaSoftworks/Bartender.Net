@@ -7,9 +7,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.Faction.FundsNews;
 
 public class FundsNewsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("fundsnews")]
     [NotMapped]
     public Dictionary<string, NewsEntry> News { get; set; } = default!;

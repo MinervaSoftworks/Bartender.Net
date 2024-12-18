@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.WorkStats;
 
 public class WorkStatsRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("manual_labor")]
     public required int ManualLabor { get; set; }
 

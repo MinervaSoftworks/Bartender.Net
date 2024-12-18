@@ -10,7 +10,7 @@ public class RequestConfiguration : IRequestConfiguration {
 
     public string? Comment { get; set; }
 
-    public required string Section { get; set; }
+    public required Section Section { get; set; }
 
     public required List<Selection> Selections { get; set; }
 
@@ -27,7 +27,7 @@ public class RequestConfiguration : IRequestConfiguration {
 
         var keyPart = $"&key={Key}";
 
-        var selectionPart = $"?selections={string.Join (',', Selections.Select(s => s.Name))}";
+        var selectionPart = $"?selections={string.Join (',', Selections.Select (s => s.Name))}";
 
         var commentPart = Comment is not null && Comment.Length > 0 ? $"&comment={Comment}" : "";
 
@@ -39,7 +39,7 @@ public class RequestConfiguration : IRequestConfiguration {
 
         var sortPart = Sort is not null && Sort.Length > 0 ? $"&sort={Sort}" : "";
 
-        return $"/{Section}/{idPart}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
+        return $"/{Section.Name}/{idPart}{selectionPart}{commentPart}{fromPart}{toPart}{limitPart}{sortPart}{keyPart}";
     }
 
     private static long GetUnixTimestamp (DateTime dateTime) {

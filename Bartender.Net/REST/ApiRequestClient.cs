@@ -51,7 +51,7 @@ public class ApiRequestClient : IApiRequestClient {
 
     private async Task<HttpResponseMessage> PerformFetchAsync (IRequestConfiguration requestConfiguration) {
         if (!CanFetch ()) {
-            await Task.Delay (400 - _timeSinceLastFetch.Milliseconds);
+            await Task.Delay (500 - _timeSinceLastFetch.Milliseconds);
         }
 
         _lastFetch = DateTime.UtcNow;
@@ -104,9 +104,8 @@ public class ApiRequestClient : IApiRequestClient {
         return result;
     }
 
-    public async Task<ISingleSelectionApiResponse<T>> FetchSingleSelectionAsync<T> (IRequestConfiguration requestConfiguration) where T : BartenderEntity {
-        var str = requestConfiguration.ToString ();
-        var result = new SingleSelectionApiResponse<T> {
+    public async Task<ISingleSelectionApiResponse> FetchSingleSelectionAsync (IRequestConfiguration requestConfiguration) {
+        var result = new SingleSelectionApiResponse {
             HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
         };
 
@@ -130,7 +129,7 @@ public class ApiRequestClient : IApiRequestClient {
             return result;
         }
 
-        result.Content = JsonConvert.DeserializeObject<T> (json);
+        result.Content = JsonConvert.DeserializeObject (json, requestConfiguration.Selections [0].JsonRootType);
 
         return result;
     }
@@ -138,8 +137,8 @@ public class ApiRequestClient : IApiRequestClient {
     public async Task<IKeyValidationStatus> ValidateKeyForSelectionAsync (string key, Selection selection) {
         var config = new RequestConfiguration {
             Key = key,
-            Section = "key",
-            Selections = [KeySection.Instance.Info],
+            Section = KeySection.Instance,
+            Selections = [KeySection.Instance.KeyInfo],
             Comment = "Bartender.Net Key Validation"
         };
 
@@ -157,7 +156,7 @@ public class ApiRequestClient : IApiRequestClient {
             return status;
         }
 
-        var keyInfo = response.Content [KeySection.Instance.Info] as KeyInfo;
+        var keyInfo = response.Content [KeySection.Instance.KeyInfo] as KeyInfo;
 
         if (keyInfo is null) {
             return status;

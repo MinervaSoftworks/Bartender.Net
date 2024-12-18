@@ -3,9 +3,6 @@
 namespace Bartender.Net.Framework.Common.Reports;
 
 public class FriendOrFoeUser : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     public virtual ReportData FriendReportData { get; set; } = default!;
 
     public int FriendReportDataID { get; set; }

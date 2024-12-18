@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.User.JobPoints;
 
 public class UserJobPoints : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("army")]
     public required int? Army { get; set; }
 

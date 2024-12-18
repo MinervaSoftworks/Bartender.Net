@@ -4,9 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Faction.Territory;
 
 public class FactionTerritory : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("coordinateX")]
     public required string CoordinateX { get; set; }
 

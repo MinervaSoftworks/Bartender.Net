@@ -13,7 +13,7 @@ public static class BartenderExtensions {
         var entities = new List<T> ();
 
         foreach (var entity in dict) {
-            entity.Value.ID = int.Parse (entity.Key);
+            entity.Value.TornID = int.Parse (entity.Key);
 
             entities.Add (entity.Value);
         }
@@ -24,8 +24,8 @@ public static class BartenderExtensions {
     public static Dictionary<string, T> ToTornDictionary<T> (this List<T> list) where T : BartenderEntity {
         var dict = new Dictionary<string, T> ();
 
-        foreach (var application in list) {
-            dict.Add (application.ID.ToString (), application);
+        foreach (var entity in list) {
+            dict.Add (entity.TornID.ToString (), entity);
         }
 
         return dict;

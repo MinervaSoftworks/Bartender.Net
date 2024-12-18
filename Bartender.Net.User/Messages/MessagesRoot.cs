@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.Messages;
 
 public class MessagesRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("messages")]
     [NotMapped]
     public Dictionary<string, UserMessage> Messages { get; set; } = default!;

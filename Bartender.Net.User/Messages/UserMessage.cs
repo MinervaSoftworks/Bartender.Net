@@ -7,8 +7,7 @@ public class UserMessage : BartenderEntity {
     [JsonProperty ("timestamp")]
     public required int Timestamp { get; set; }
 
-    [JsonProperty ("ID")]
-    public override int ID { get; set; }
+    [JsonProperty ("ID")]    public required int UserMessageId { get; set; }
 
     [JsonProperty ("name")]
     public required string Name { get; set; }

@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Bartender.Net.User.Attacks;
 
 public class UserAttacksRoot : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("attacks")]
     [NotMapped]
     public Dictionary<string, UserAttack> Attacks { get; set; } = default!;

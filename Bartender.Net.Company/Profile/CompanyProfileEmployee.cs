@@ -5,9 +5,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Company.Profile;
 
 public class CompanyProfileEmployee : BartenderEntity {
-    [JsonIgnore]
-    public override int ID { get; set; }
-
     [JsonProperty ("name")]
     public required string Name { get; set; }
 
