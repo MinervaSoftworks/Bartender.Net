@@ -1,9 +1,9 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.User.Bars;
+namespace Bartender.Net.User.Profile;
 
-public class Bar : BartenderEntity {
+public class LifeBar : BartenderEntity {
     [JsonProperty ("current")]
     public required int Current { get; set; }
 
@@ -22,6 +22,6 @@ public class Bar : BartenderEntity {
     [JsonProperty ("ticktime")]
     public required int Ticktime { get; set; }
 
-    public virtual BarsRoot Owner { get; set; } = default!;
+    public virtual UserProfileRoot Owner { get; set; } = default!;
     public int OwnerID { get; set; }
 }

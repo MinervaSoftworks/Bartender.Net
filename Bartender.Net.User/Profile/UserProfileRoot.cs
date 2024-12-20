@@ -3,7 +3,6 @@ using Bartender.Net.Framework.Common.User;
 using Bartender.Net.Framework.Extensions;
 using Bartender.Net.Framework.Extensions.User;
 using Bartender.Net.Framework.User.Profile;
-using Bartender.Net.User.Bars;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,7 +10,11 @@ namespace Bartender.Net.User.Profile;
 
 public class UserProfileRoot : BartenderEntity {
     [JsonProperty ("player_id")]
-    public required int ProfileID { get; set; }
+    [NotMapped]
+    public required int ProfileID {
+        get => TornID;
+        set => TornID = value;
+    }
 
     [JsonProperty ("age")]
     public required int Age { get; set; }
@@ -21,16 +24,10 @@ public class UserProfileRoot : BartenderEntity {
 
     [JsonProperty ("icons")]
     [NotMapped]
-    public Dictionary<string, string> BasicIcons { get; set; } = default!;
-
-    private List<string> _icons = new List<string> ();
-
-    public virtual List<string> BasicIconsList {
-        get => _icons.Count == 0 ? BasicIcons.Values.ToList () : _icons;
-        set => _icons = value;
-    }
+    public Dictionary<string, string> BasicIcons { get; set; } = new Dictionary<string, string> ();
 
     [JsonProperty ("competition")]
+    [NotMapped]
     public virtual required Competition Competition { get; set; }
 
     [JsonProperty ("donator")]
@@ -73,9 +70,9 @@ public class UserProfileRoot : BartenderEntity {
     public required int Level { get; set; }
 
     [JsonProperty ("life")]
-    public virtual required Bar Life { get; set; }
+    public virtual required LifeBar Life { get; set; }
 
-    [JsonProperty ("marrige")]
+    [JsonProperty ("married")]
     public virtual required Marriage Marriage { get; set; }
 
     [JsonProperty ("name")]
