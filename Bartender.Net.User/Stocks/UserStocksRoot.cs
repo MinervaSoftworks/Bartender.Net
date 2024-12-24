@@ -8,10 +8,10 @@ namespace Bartender.Net.User.Stocks;
 public class UserStocksRoot : BartenderEntity {
     [JsonProperty ("stocks")]
     [NotMapped]
-    public Dictionary<string, UserStock> Stocks { get; set; } = default!;
-
-    public virtual List<UserStock> StocksList {
-        get => Stocks.TornDictionaryToList ();
-        set => Stocks = value.ToTornDictionary ();
+    public Dictionary<string, UserStock> Stocks {
+        get => StocksList.ToTornDictionary ();
+        set => StocksList = value.TornDictionaryToList ();
     }
+
+    public virtual List<UserStock> StocksList { get; set; } = [];
 }

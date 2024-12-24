@@ -12,9 +12,9 @@ public class Warrant : BartenderEntity {
     [JsonProperty ("warrant")]
     public required int Amount { get; set; }
 
-    public ReportData OtherReport { get; set; } = default!;
+    public virtual ReportData OtherReport { get; set; } = default!;
     public int OtherReportID { get; set; } = default!;
 
-    public ReportData TopReport { get; set; } = default!;
+    public virtual ReportData TopReport { get; set; } = default!;
     public int TopReportID { get; set; } = default!;
 }

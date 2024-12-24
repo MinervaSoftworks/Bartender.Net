@@ -8,10 +8,10 @@ namespace Bartender.Net.Faction.Territory;
 public class TerritoryRoot : BartenderEntity {
     [JsonProperty ("territory")]
     [NotMapped]
-    public Dictionary<string, FactionTerritory> Territories { get; set; } = default!;
-
-    public virtual List<FactionTerritory> TerritoriesList {
-        get => Territories.TornDictionaryToList ();
-        set => Territories = value.ToTornDictionary ();
+    public Dictionary<string, FactionTerritory> Territories {
+        get => TerritoriesList.ToTornDictionary ();
+        set => TerritoriesList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionTerritory> TerritoriesList { get; set; } = [];
 }

@@ -8,10 +8,10 @@ namespace Bartender.Net.User.Property;
 public class PropertiesRoot : BartenderEntity {
     [JsonProperty ("properties")]
     [NotMapped]
-    public Dictionary<string, UserProperty> Properties { get; set; } = default!;
-
-    public virtual List<UserProperty> PropertiesList {
-        get => Properties.TornDictionaryToList ();
-        set => Properties = value.ToTornDictionary ();
+    public Dictionary<string, UserProperty> Properties {
+        get => PropertiesList.ToTornDictionary ();
+        set => PropertiesList = value.TornDictionaryToList ();
     }
+
+    public virtual List<UserProperty> PropertiesList { get; set; } = [];
 }

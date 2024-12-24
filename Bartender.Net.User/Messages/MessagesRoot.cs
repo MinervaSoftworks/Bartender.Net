@@ -8,10 +8,10 @@ namespace Bartender.Net.User.Messages;
 public class MessagesRoot : BartenderEntity {
     [JsonProperty ("messages")]
     [NotMapped]
-    public Dictionary<string, UserMessage> Messages { get; set; } = default!;
-
-    public virtual List<UserMessage> MessagesList {
-        get => Messages.TornDictionaryToList ();
-        set => Messages = value.ToTornDictionary ();
+    public Dictionary<string, UserMessage> Messages {
+        get => MessagesList.ToTornDictionary ();
+        set => MessagesList = value.TornDictionaryToList ();
     }
+
+    public virtual List<UserMessage> MessagesList { get; set; } = [];
 }

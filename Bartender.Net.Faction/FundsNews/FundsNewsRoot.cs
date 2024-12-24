@@ -9,11 +9,11 @@ namespace Bartender.Net.Faction.FundsNews;
 public class FundsNewsRoot : BartenderEntity {
     [JsonProperty ("fundsnews")]
     [NotMapped]
-    public Dictionary<string, NewsEntry> News { get; set; } = default!;
-
-    public virtual List<NewsEntry> NewsList {
-        get => News.TornDictionaryToList ();
-        set => News = value.ToTornDictionary ();
+    public Dictionary<string, NewsEntry> News {
+        get => NewsList.ToTornDictionary ();
+        set => NewsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<NewsEntry> NewsList { get; set; } = default!;
 }
 

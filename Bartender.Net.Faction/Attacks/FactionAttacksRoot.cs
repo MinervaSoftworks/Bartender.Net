@@ -6,10 +6,10 @@ namespace Bartender.Net.Faction.Attacks;
 
 public class FactionAttacksRoot : BartenderEntity {
     [JsonProperty ("attacks")]
-    public Dictionary<string, FactionAttack> Attacks { get; set; } = default!;
-
-    public virtual List<FactionAttack> AttacksList {
-        get => Attacks.TornDictionaryToList ();
-        set => Attacks = value.ToTornDictionary ();
+    public Dictionary<string, FactionAttack> Attacks {
+        get => AttacksList.ToTornDictionary ();
+        set => AttacksList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionAttack> AttacksList { get; set; } = [];
 }

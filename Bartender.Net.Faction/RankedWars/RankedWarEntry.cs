@@ -11,10 +11,10 @@ public class RankedWarEntry : BartenderEntity {
 
     [JsonProperty ("factions")]
     [NotMapped]
-    public Dictionary<string, RankedWarFaction> Factions { get; set; } = default!;
-
-    public virtual List<RankedWarFaction> FactionsList {
-        get => Factions.TornDictionaryToList ();
-        set => Factions = value.ToTornDictionary ();
+    public Dictionary<string, RankedWarFaction> Factions {
+        get => FactionsList.ToTornDictionary ();
+        set => FactionsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<RankedWarFaction> FactionsList { get; set; } = [];
 }

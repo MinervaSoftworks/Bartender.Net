@@ -8,10 +8,10 @@ namespace Bartender.Net.Faction.Positions;
 public class PositionsRoot : BartenderEntity {
     [JsonProperty ("positions")]
     [NotMapped]
-    public Dictionary<string, FactionPosition> Positions { get; set; } = default!;
-
-    public virtual List<FactionPosition> PositionsList {
-        get => Positions.TornDictionaryToList ();
-        set => Positions = value.ToTornDictionary ();
+    public Dictionary<string, FactionPosition> Positions {
+        get => PositionsList.ToTornDictionary ();
+        set => PositionsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionPosition> PositionsList { get; set; } = [];
 }

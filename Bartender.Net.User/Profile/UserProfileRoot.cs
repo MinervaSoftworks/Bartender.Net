@@ -58,7 +58,7 @@ public class UserProfileRoot : BartenderEntity {
     public required int Honor { get; set; }
 
     [JsonProperty ("job")]
-    public required Job Job { get; set; }
+    public virtual required Job Job { get; set; }
 
     [JsonProperty ("karma")]
     public required int Karma { get; set; }

@@ -24,10 +24,10 @@ public class UserStock : BartenderEntity {
 
     [JsonProperty ("transactions")]
     [NotMapped]
-    public Dictionary<string, UserStockTransaction> Transactions { get; set; } = default!;
-
-    public virtual List<UserStockTransaction> TransactionsList {
-        get => Transactions.TornDictionaryToList ();
-        set => Transactions = value.ToTornDictionary ();
+    public Dictionary<string, UserStockTransaction> Transactions {
+        get => TransactionsList.ToTornDictionary ();
+        set => TransactionsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<UserStockTransaction> TransactionsList { get; set; } = [];
 }

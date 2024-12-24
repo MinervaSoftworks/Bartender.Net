@@ -41,5 +41,5 @@ public class ReviveFull : BartenderEntity {
     public required int TargetId { get; set; }
 
     [JsonProperty ("target_last_action")]
-    public required LastAction TargetLastAction { get; set; }
+    public virtual required LastAction TargetLastAction { get; set; }
 }

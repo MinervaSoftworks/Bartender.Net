@@ -26,12 +26,12 @@ public class FactionBasic : BartenderEntity {
 
     [JsonProperty ("members")]
     [NotMapped]
-    public Dictionary<string, FactionBasicMember> Members { get; set; } = default!;
-
-    public virtual List<FactionBasicMember> MembersList {
-        get => Members.TornDictionaryToList ();
-        set => Members = value.ToTornDictionary ();
+    public Dictionary<string, FactionBasicMember> Members {
+        get => MembersList.ToTornDictionary ();
+        set => MembersList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionBasicMember> MembersList { get; set; } = default!;
 
     [JsonProperty ("name")]
     public required string Name { get; set; }
@@ -42,24 +42,24 @@ public class FactionBasic : BartenderEntity {
 
     [JsonProperty ("raid_wars")]
     [NotMapped]
-    public virtual required Dictionary<string, FactionBasicRaid> RaidWars { get; set; }
-
-    public virtual List<FactionBasicRaid> RaidWarsList {
-        get => RaidWars.TornDictionaryToList ();
-        set => RaidWars = value.ToTornDictionary ();
+    public virtual required Dictionary<string, FactionBasicRaid> RaidWars {
+        get => RaidWarsList.ToTornDictionary ();
+        set => RaidWarsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionBasicRaid> RaidWarsList { get; set; } = [];
 
     [JsonProperty ("rank")]
     public virtual required FactionBasicRanking Rank { get; set; }
 
     [JsonProperty ("ranked_wars")]
     [NotMapped]
-    public Dictionary<string, FactionBasicRankedWar> RankedWars { get; set; } = default!;
-
-    public virtual List<FactionBasicRankedWar> RankedWarsList {
-        get => RankedWars.TornDictionaryToList ();
-        set => RankedWars = value.ToTornDictionary ();
+    public Dictionary<string, FactionBasicRankedWar> RankedWars {
+        get => RankedWarsList.ToTornDictionary ();
+        set => RankedWarsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionBasicRankedWar> RankedWarsList { get; set; } = [];
 
     [JsonProperty ("respect")]
     public required int Respect { get; set; }
@@ -72,10 +72,10 @@ public class FactionBasic : BartenderEntity {
 
     [JsonProperty ("territory_wars")]
     [NotMapped]
-    public virtual required Dictionary<string, FactionBasicTerritoryWar> TerritoryWars { get; set; }
-
-    public virtual required List<FactionBasicTerritoryWar> TerritoryWarsList {
-        get => TerritoryWars.TornDictionaryToList ();
-        set => TerritoryWars = value.ToTornDictionary ();
+    public virtual required Dictionary<string, FactionBasicTerritoryWar> TerritoryWars {
+        get => TerritoryWarsList.ToTornDictionary ();
+        set => TerritoryWarsList = value.TornDictionaryToList ();
     }
+
+    public virtual required List<FactionBasicTerritoryWar> TerritoryWarsList { get; set; } = [];
 }

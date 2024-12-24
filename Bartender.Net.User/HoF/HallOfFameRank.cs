@@ -10,28 +10,28 @@ public class HallOfFameRank : BartenderEntity {
     [JsonProperty ("rank")]
     public required int Rank { get; set; }
 
-    public HallOfFameRoot HOFAttacks { get; set; } = default!;
+    public virtual HallOfFameRoot HOFAttacks { get; set; } = default!;
 
-    public HallOfFameRoot HOFBattlestats { get; set; } = default!;
+    public virtual HallOfFameRoot HOFBattlestats { get; set; } = default!;
 
-    public HallOfFameRoot HOFBusts { get; set; } = default!;
+    public virtual HallOfFameRoot HOFBusts { get; set; } = default!;
 
-    public HallOfFameRoot HOFDefends { get; set; } = default!;
+    public virtual HallOfFameRoot HOFDefends { get; set; } = default!;
 
-    public HallOfFameRoot HOFNetworth { get; set; } = default!;
+    public virtual HallOfFameRoot HOFNetworth { get; set; } = default!;
 
-    public HallOfFameRoot HOFOffences { get; set; } = default!;
+    public virtual HallOfFameRoot HOFOffences { get; set; } = default!;
 
-    public HallOfFameRoot HOFRevives { get; set; } = default!;
+    public virtual HallOfFameRoot HOFRevives { get; set; } = default!;
 
-    public HallOfFameRoot HOFTraveltime { get; set; } = default!;
+    public virtual HallOfFameRoot HOFTraveltime { get; set; } = default!;
 
-    public HallOfFameRoot HOFWorkstats { get; set; } = default!;
+    public virtual HallOfFameRoot HOFWorkstats { get; set; } = default!;
 
-    public HallOfFameRoot HOFLevel { get; set; } = default!;
+    public virtual HallOfFameRoot HOFLevel { get; set; } = default!;
 
-    public HallOfFameRoot HOFRank { get; set; } = default!;
+    public virtual HallOfFameRoot HOFRank { get; set; } = default!;
 
-    public HallOfFameRoot HOFAwards { get; set; } = default!;
+    public virtual HallOfFameRoot HOFAwards { get; set; } = default!;
 }
 

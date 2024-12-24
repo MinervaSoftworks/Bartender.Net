@@ -8,6 +8,4 @@ public class IconsRoot : BartenderEntity {
     [JsonProperty ("icons")]
     [NotMapped]
     public Dictionary<string, string> Icons { get; set; } = default!;
-
-
 }

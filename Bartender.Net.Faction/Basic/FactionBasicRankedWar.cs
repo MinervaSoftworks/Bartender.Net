@@ -8,12 +8,12 @@ namespace Bartender.Net.Faction.Basic;
 public class FactionBasicRankedWar : BartenderEntity {
     [JsonProperty ("factions")]
     [NotMapped]
-    public Dictionary<string, FactionBasicRankedWarFaction> Factions { get; set; } = default!;
-
-    public virtual List<FactionBasicRankedWarFaction> FactionsList {
-        get => Factions.TornDictionaryToList ();
-        set => Factions = value.ToTornDictionary ();
+    public Dictionary<string, FactionBasicRankedWarFaction> Factions {
+        get => FactionsList.ToTornDictionary ();
+        set => FactionsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionBasicRankedWarFaction> FactionsList { get; set; } = [];
 
     [JsonProperty ("war")]
     public virtual required FactionBasicWar War { get; set; }

@@ -8,10 +8,10 @@ namespace Bartender.Net.Faction.Donations;
 public class DonationsRoot : BartenderEntity {
     [JsonProperty ("donations")]
     [NotMapped]
-    public Dictionary<string, DonationEntry> Donations { get; set; } = default!;
-
-    public virtual List<DonationEntry> DonationsList {
-        get => Donations.TornDictionaryToList ();
-        set => Donations = value.ToTornDictionary ();
+    public Dictionary<string, DonationEntry> Donations {
+        get => DonationsList.ToTornDictionary ();
+        set => DonationsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<DonationEntry> DonationsList { get; set; } = [];
 }

@@ -63,5 +63,5 @@ public class UserAttack : BartenderEntity {
     public required double RespectLoss { get; set; }
 
     [JsonProperty ("modifiers")]
-    public required UserAttackModifiers Modifiers { get; set; }
+    public virtual required UserAttackModifiers Modifiers { get; set; }
 }

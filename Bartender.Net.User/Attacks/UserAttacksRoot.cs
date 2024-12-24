@@ -8,10 +8,10 @@ namespace Bartender.Net.User.Attacks;
 public class UserAttacksRoot : BartenderEntity {
     [JsonProperty ("attacks")]
     [NotMapped]
-    public Dictionary<string, UserAttack> Attacks { get; set; } = default!;
-
-    public virtual List<UserAttack> AttacksList {
-        get => Attacks.TornDictionaryToList ();
-        set => Attacks = value.ToTornDictionary ();
+    public Dictionary<string, UserAttack> Attacks {
+        get => AttacksList.ToTornDictionary ();
+        set => AttacksList = value.TornDictionaryToList ();
     }
+
+    public virtual List<UserAttack> AttacksList { get; set; } = [];
 }

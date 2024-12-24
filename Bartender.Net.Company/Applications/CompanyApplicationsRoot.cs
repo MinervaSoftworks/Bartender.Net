@@ -8,10 +8,10 @@ namespace Bartender.Net.Company.Applications;
 public class CompanyApplicationsRoot : BartenderEntity {
     [JsonProperty ("applications")]
     [NotMapped]
-    public Dictionary<string, CompanyApplication> Applications { get; set; } = default!;
-
-    public virtual List<CompanyApplication> ApplicationsList {
-        get => Applications.TornDictionaryToList ();
-        set => Applications = value.ToTornDictionary ();
+    public Dictionary<string, CompanyApplication> Applications {
+        get => ApplicationsList.ToTornDictionary ();
+        set => ApplicationsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<CompanyApplication> ApplicationsList { get; set; } = default!;
 }

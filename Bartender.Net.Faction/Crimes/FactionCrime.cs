@@ -24,12 +24,12 @@ public class FactionCrime : BartenderEntity {
 
     [JsonProperty ("participants")]
     [NotMapped]
-    public Dictionary<string, Status> Participants { get; set; } = default!;
-
-    public virtual List<Status> ParticipantsList {
-        get => Participants.TornDictionaryToList ();
-        set => Participants = value.ToTornDictionary ();
+    public Dictionary<string, Status> Participants {
+        get => ParticipantsList.ToTornDictionary ();
+        set => ParticipantsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<Status> ParticipantsList { get; set; } = [];
 
     [JsonProperty ("planned_by")]
     public required int PlannedBy { get; set; }

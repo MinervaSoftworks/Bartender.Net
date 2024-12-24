@@ -6,10 +6,10 @@ namespace Bartender.Net.Company.Stock;
 
 public class CompanyStocksRoot : BartenderEntity {
     [JsonProperty ("company_stock")]
-    public Dictionary<string, CompanyStock> Stocks { get; set; } = default!;
-
-    public virtual List<CompanyStock> StocksList {
-        get => Stocks.TornDictionaryToList ();
-        set => Stocks = value.ToTornDictionary ();
+    public Dictionary<string, CompanyStock> Stocks {
+        get => StocksList.ToTornDictionary ();
+        set => StocksList = value.TornDictionaryToList ();
     }
+
+    public virtual List<CompanyStock> StocksList { get; set; } = [];
 }

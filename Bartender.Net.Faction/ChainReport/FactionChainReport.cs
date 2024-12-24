@@ -64,12 +64,12 @@ public class FactionChainReport : BartenderEntity {
 
     [JsonProperty ("members")]
     [NotMapped]
-    public Dictionary<string, ChainParticipant> Participants { get; set; } = default!;
-
-    public virtual List<ChainParticipant> ParticipantsList {
-        get => Participants.TornDictionaryToList ();
-        set => Participants = value.ToTornDictionary ();
+    public Dictionary<string, ChainParticipant> Participants {
+        get => ParticipantsList.ToTornDictionary ();
+        set => ParticipantsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<ChainParticipant> ParticipantsList { get; set; } = [];
 
     [JsonProperty ("bonuses")]
     public virtual required List<BonusHit> Bonuses { get; set; }

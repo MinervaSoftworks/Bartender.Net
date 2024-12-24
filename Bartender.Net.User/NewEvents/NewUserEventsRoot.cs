@@ -8,12 +8,12 @@ namespace Bartender.Net.User.NewEvents;
 public class NewUserEventsRoot : BartenderEntity {
     [JsonProperty ("events")]
     [NotMapped]
-    public Dictionary<string, NewUserEvent> Events { get; set; } = default!;
-
-    public virtual List<NewUserEvent> EventsList {
-        get => Events.TornDictionaryToList ();
-        set => Events = value.ToTornDictionary ();
+    public Dictionary<string, NewUserEvent> Events {
+        get => EventsList.ToTornDictionary ();
+        set => EventsList = value.TornDictionaryToList ();
     }
+
+    public virtual List<NewUserEvent> EventsList { get; set; } = [];
 
     [JsonProperty ("player_id")]
     public required int PlayerID { get; set; }

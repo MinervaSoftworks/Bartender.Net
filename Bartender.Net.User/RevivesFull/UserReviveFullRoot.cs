@@ -9,10 +9,10 @@ namespace Bartender.Net.User.RevivesFull;
 public class UserReviveFullRoot : BartenderEntity {
     [JsonProperty ("revives")]
     [NotMapped]
-    public Dictionary<string, ReviveFull> Revives { get; set; } = default!;
-
-    public virtual List<ReviveFull> RevivesList {
-        get => Revives.TornDictionaryToList ();
-        set => Revives = value.ToTornDictionary ();
+    public Dictionary<string, ReviveFull> Revives {
+        get => RevivesList.ToTornDictionary ();
+        set => RevivesList = value.TornDictionaryToList ();
     }
+
+    public virtual List<ReviveFull> RevivesList { get; set; } = [];
 }
