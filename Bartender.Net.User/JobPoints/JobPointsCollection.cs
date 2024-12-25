@@ -9,8 +9,8 @@ public class JobPointsCollection : BartenderEntity {
     [JsonProperty ("companies")]
     [NotMapped]
     public Dictionary<string, CompanyPoints> Companies {
-        get => CompaniesList. ToTornDictionary();
-        set => CompaniesList = value. TornDictionaryToList();
+        get => CompaniesList.ToTornDictionary ();
+        set => CompaniesList = value.TornDictionaryToList ();
     }
 
     public virtual List<CompanyPoints> CompaniesList { get; set; } = [];

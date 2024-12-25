@@ -9,8 +9,8 @@ public class UserAttacksFullRoot : BartenderEntity {
     [JsonProperty ("attacks")]
     [NotMapped]
     public Dictionary<string, UserAttackFull> Attacks {
-        get => AttacksList. ToTornDictionary();
-        set => AttacksList = value. TornDictionaryToList();
+        get => AttacksList.ToTornDictionary ();
+        set => AttacksList = value.TornDictionaryToList ();
     }
 
     public virtual List<UserAttackFull> AttacksList { get; set; } = [];

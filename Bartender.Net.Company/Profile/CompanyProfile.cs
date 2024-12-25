@@ -2,7 +2,6 @@
 using Bartender.Net.Framework.Extensions;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.CompilerServices;
 
 namespace Bartender.Net.Company.Profile;
 
