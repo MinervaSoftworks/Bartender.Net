@@ -14,5 +14,5 @@ public class CurrencyRoot : BartenderEntity {
     public required int Points { get; set; }
 
     [JsonProperty ("money")]
-    public required int Money { get; set; }
+    public required long Money { get; set; }
 }

@@ -51,7 +51,7 @@ public class ApiRequestClient : IApiRequestClient {
 
     private async Task<HttpResponseMessage> PerformFetchAsync (IRequestConfiguration requestConfiguration) {
         if (!CanFetch ()) {
-            await Task.Delay (500 - _timeSinceLastFetch.Milliseconds);
+            await Task.Delay (_fetchTimeLimit - _timeSinceLastFetch.Milliseconds);
         }
 
         _lastFetch = DateTime.UtcNow;

@@ -1,9 +1,12 @@
 ﻿using Bartender.Net.Framework;
 using Newtonsoft.Json;
 
-namespace Bartender.Net.Faction.Common.Armory;
+namespace Bartender.Net.Faction.Boosters;
 
-public class FactionArmoryItem : BartenderEntity {
+public class FactionBooster : BartenderEntity {
+    [JsonProperty ("ID")]
+    public int ItemID { get => TornID; set => TornID = value; }
+
     [JsonProperty ("name")]
     public required string Name { get; set; }
 
@@ -11,5 +14,5 @@ public class FactionArmoryItem : BartenderEntity {
     public required int Quantity { get; set; }
 
     [JsonProperty ("type")]
-    public required int Type { get; set; }
+    public required string Type { get; set; }
 }

@@ -8,10 +8,10 @@ namespace Bartender.Net.Faction.Crimes;
 public class FactionCrimesRoot : BartenderEntity {
     [JsonProperty ("crimes")]
     [NotMapped]
-    public Dictionary<string, FactionCrime> Crimes { get; set; } = default!;
-
-    public virtual List<FactionCrime> CrimesList {
-        get => Crimes.TornDictionaryToList ();
-        set => Crimes = value.ToTornDictionary ();
+    public Dictionary<string, FactionCrime> Crimes {
+        get => CrimesList.ToTornDictionary ();
+        set => CrimesList = value.TornDictionaryToList ();
     }
+
+    public virtual List<FactionCrime> CrimesList { get; set; } = [];
 }

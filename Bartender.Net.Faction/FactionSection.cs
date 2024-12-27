@@ -10,7 +10,6 @@ using Bartender.Net.Faction.Caches;
 using Bartender.Net.Faction.Chain;
 using Bartender.Net.Faction.ChainReport;
 using Bartender.Net.Faction.Chains;
-using Bartender.Net.Faction.Common.Armory;
 using Bartender.Net.Faction.Contributors;
 using Bartender.Net.Faction.CrimeExp;
 using Bartender.Net.Faction.CrimeNews;
@@ -135,14 +134,14 @@ public class FactionSection : Section {
 
     private FactionSection () : base ("faction") {
         Applications = new (this, "applications", AccessLevel.Limited, typeof (FactionApplicationsRoot), typeof (FactionApplication));
-        Armor = new (this, "armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionLoanable));
+        Armor = new (this, "armor", AccessLevel.Minimal, typeof (ArmorRoot), typeof (FactionArmor));
         ArmoryNews = new (this, "armorynews", AccessLevel.Minimal, typeof (ArmoryNewsRoot), typeof (NewsEntry));
         AttackNews = new (this, "attacknews", AccessLevel.Limited, typeof (FactionAttackNewsRoot), typeof (NewsEntry));
         Attacks = new (this, "attacks", AccessLevel.Limited, typeof (FactionAttacksRoot), typeof (FactionAttack));
         AttacksFull = new (this, "attacksfull", AccessLevel.Limited, typeof (FactionAttacksFullRoot), typeof (FactionAttackFull));
         Basic = new (this, "basic", AccessLevel.Public, typeof (FactionBasic), typeof (FactionBasic));
-        Boosters = new (this, "boosters", AccessLevel.Minimal, typeof (BoostersRoot), typeof (FactionArmoryItem));
-        Caches = new (this, "caches", AccessLevel.Limited, typeof (CachesRoot), typeof (FactionArmoryItem));
+        Boosters = new (this, "boosters", AccessLevel.Minimal, typeof (BoostersRoot), typeof (FactionBooster));
+        Caches = new (this, "caches", AccessLevel.Limited, typeof (CachesRoot), typeof (FactionCache));
         Chain = new (this, "chain", AccessLevel.Public, typeof (ChainRoot), typeof (CurrentChain));
         ChainReport = new (this, "chainreport", AccessLevel.Public, typeof (ChainReportRoot), typeof (FactionChainReport));
         Chains = new (this, "chains", AccessLevel.Minimal, typeof (ChainsRoot), typeof (FactionChain));
@@ -152,10 +151,10 @@ public class FactionSection : Section {
         Crimes = new (this, "crimes", AccessLevel.Minimal, typeof (FactionCrimesRoot), typeof (FactionCrime));
         Currency = new (this, "currency", AccessLevel.Limited, typeof (CurrencyRoot), typeof (CurrencyRoot));
         Donations = new (this, "donations", AccessLevel.Limited, typeof (DonationsRoot), typeof (DonationEntry));
-        Drugs = new (this, "drugs", AccessLevel.Minimal, typeof (DrugsRoot), typeof (FactionArmoryItem));
+        Drugs = new (this, "drugs", AccessLevel.Minimal, typeof (DrugsRoot), typeof (FactionDrug));
         FundsNews = new (this, "fundsnews", AccessLevel.Limited, typeof (FundsNewsRoot), typeof (NewsEntry));
         MainNews = new (this, "mainnews", AccessLevel.Minimal, typeof (MainNewsRoot), typeof (NewsEntry));
-        Medical = new (this, "medical", AccessLevel.Minimal, typeof (MedicalRoot), typeof (FactionArmoryItem));
+        Medical = new (this, "medical", AccessLevel.Minimal, typeof (MedicalRoot), typeof (FactionMedical));
         MembershipNews = new (this, "membershipnews", AccessLevel.Minimal, typeof (MembershipNewsRoot), typeof (NewsEntry));
         Positions = new (this, "positions", AccessLevel.Minimal, typeof (PositionsRoot), typeof (FactionPosition));
         RankedWars = new (this, "rankedwars", AccessLevel.Public, typeof (RankedWarsRoot), typeof (RankedWarEntry));
@@ -163,10 +162,10 @@ public class FactionSection : Section {
         Revives = new (this, "revives", AccessLevel.Minimal, typeof (FactionRevivesRoot), typeof (Revive));
         RevivesFull = new (this, "revivesfull", AccessLevel.Minimal, typeof (FactionReviveFullRoot), typeof (ReviveFull));
         Stats = new (this, "stats", AccessLevel.Minimal, typeof (StatsRoot), typeof (StatsEntry));
-        Temporary = new (this, "temporary", AccessLevel.Minimal, typeof (TemporaryRoot), typeof (FactionLoanable));
+        Temporary = new (this, "temporary", AccessLevel.Minimal, typeof (TemporaryRoot), typeof (FactionTemporary));
         Territory = new (this, "territory", AccessLevel.Public, typeof (TerritoryRoot), typeof (FactionTerritory));
         TerritoryNews = new (this, "territorynews", AccessLevel.Minimal, typeof (TerritoryNewsRoot), typeof (NewsEntry));
         Upgrades = new (this, "upgrades", AccessLevel.Minimal, typeof (FactionUpgradesRoot), typeof (FactionUpgradesRoot));
-        Weapons = new (this, "weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof (FactionLoanable));
+        Weapons = new (this, "weapons", AccessLevel.Minimal, typeof (WeaponsRoot), typeof (FactionWeapon));
     }
 }
