@@ -26,10 +26,7 @@ public class FactionBasic : BartenderEntity {
 
     [JsonProperty ("members")]
     [NotMapped]
-    public Dictionary<string, FactionBasicMember> Members {
-        get;
-        set;
-    }
+    public Dictionary<string, FactionBasicMember> Members { get; set; }
 
     public virtual List<FactionBasicMember> MembersList { get; set; } = [];
 

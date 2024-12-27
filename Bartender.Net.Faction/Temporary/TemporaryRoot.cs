@@ -5,6 +5,6 @@ namespace Bartender.Net.Faction.Temporary;
 
 public class TemporaryRoot : BartenderEntity {
     [JsonProperty ("temporary")]
-    public virtual required List<FactionTemporary> Loanables { get; set; }
+    public virtual required List<FactionTemporary> Items { get; set; }
 }
 
