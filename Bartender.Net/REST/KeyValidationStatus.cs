@@ -2,7 +2,7 @@
 
 namespace Bartender.Net.REST {
     public class KeyValidationStatus : IKeyValidationStatus {
-        public IApiResponse? Response { get; set; }
+        public IApiResponse? Result { get; set; }
 
         public bool IsValid { get; set; } = false;
 

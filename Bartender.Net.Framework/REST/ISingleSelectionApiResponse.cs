@@ -5,6 +5,7 @@
         HttpResponseMessage? HttpResponseMessage { get; set; }
 
         bool IsValid ();
-        T? TryGetContent<T> (out bool valid) where T : class;
+
+        T? TryGetContent<T> () where T : class;
     }
 }

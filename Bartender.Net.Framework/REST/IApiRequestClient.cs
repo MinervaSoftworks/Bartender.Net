@@ -4,6 +4,6 @@ namespace Bartender.Net.Framework.REST;
 
 public interface IApiRequestClient {
     Task<IApiResponse> FetchAsync (IRequestConfiguration requestConfiguration);
-    Task<ISingleSelectionApiResponse> FetchSingleSelectionAsync (IRequestConfiguration requestConfiguration);
+    Task<IApiResponse> FetchSingleSelectionAsync (IRequestConfiguration requestConfiguration);
     Task<IKeyValidationStatus> ValidateKeyForSelectionAsync (string key, Selection selection);
 }

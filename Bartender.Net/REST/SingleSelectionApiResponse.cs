@@ -11,13 +11,12 @@ public class SingleSelectionApiResponse : ISingleSelectionApiResponse {
 
     public bool IsValid () => !(HttpResponseMessage is null || !HttpResponseMessage.IsSuccessStatusCode) && Content is not null;
 
-    public T? TryGetContent<T> (out bool valid) where T : class {
+
+    public T? TryGetContent<T> () where T : class {
         if (IsValid () && Content is T content) {
-            valid = true;
             return content;
         }
 
-        valid = false;
         return null;
     }
 }

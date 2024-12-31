@@ -11,84 +11,24 @@ namespace Bartender.Net.REST;
 /// A request client to interact with Torn's REST Api.
 /// </summary>
 public class ApiRequestClient : IApiRequestClient {
-    private readonly int _fetchTimeLimit = 500;
-    private readonly int _retries = 5;
-    private readonly int _retryTimeout = 2500;
-
-    private DateTime _lastFetch = DateTime.UtcNow;
-
-    private TimeSpan _timeSinceLastFetch = new TimeSpan ();
-
-    private static object _lock = new object ();
-
     private readonly HttpClient _client;
 
-    public ApiRequestClient (IHttpClientFactory clientFactory, string apiUrl, int fetchTimeLimit = 500, int retries = 5, int retryTimeout = 5000) {
-        _client = clientFactory.CreateClient ();
+    public ApiRequestClient (HttpClient client, IApiUrl apiUrl) {
+        _client = client;
 
         _client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
 
-        _client.BaseAddress = new Uri (apiUrl);
-
-        _fetchTimeLimit = fetchTimeLimit;
-        _retries = retries;
-        _retryTimeout = retryTimeout;
-    }
-
-    private static int ParseErrorCode (string json) {
-        var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
-
-        return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
-    }
-
-    private bool CanFetch () {
-        lock (_lock) {
-            _timeSinceLastFetch = DateTime.UtcNow - _lastFetch;
-
-            return _timeSinceLastFetch.Milliseconds > _fetchTimeLimit;
-        }
-    }
-
-    private async Task<HttpResponseMessage> PerformFetchAsync (IRequestConfiguration requestConfiguration) {
-        if (!CanFetch ()) {
-            await Task.Delay (_fetchTimeLimit - _timeSinceLastFetch.Milliseconds);
-        }
-
-        _lastFetch = DateTime.UtcNow;
-
-        return await _client.GetAsync (requestConfiguration.ToString ());
+        _client.BaseAddress = new Uri (apiUrl.BaseUrl);
     }
 
     public async Task<IApiResponse> FetchAsync (IRequestConfiguration requestConfiguration) {
-        var result = new ApiResponse {
-            HttpResponseMessage = await PerformFetchAsync (requestConfiguration)
-        };
-
-        if (!result.HttpResponseMessage.IsSuccessStatusCode) {
-            return result;
-        }
-
-        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
-
-        if (json == string.Empty) {
-            result.Error = 17;
-
-            return result;
-        }
-
-        var error = ParseErrorCode (json);
-
-        if (error >= 0) {
-            result.Error = error;
-
-            return result;
-        }
+        var result = await ExecuteFetchAsync (requestConfiguration);
 
         var fetched = new Dictionary<Selection, object> ();
 
         foreach (var selection in requestConfiguration.Selections) {
             try {
-                var parsed = JsonConvert.DeserializeObject (json, selection.JsonRootType);
+                var parsed = JsonConvert.DeserializeObject (result.Json, selection.JsonRootType);
 
                 if (parsed is not null) {
                     fetched.Add (selection, parsed);
@@ -104,32 +44,10 @@ public class ApiRequestClient : IApiRequestClient {
         return result;
     }
 
-    public async Task<ISingleSelectionApiResponse> FetchSingleSelectionAsync (IRequestConfiguration requestConfiguration) {
-        var result = new SingleSelectionApiResponse {
-            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
-        };
+    public async Task<IApiResponse> FetchSingleSelectionAsync (IRequestConfiguration requestConfiguration) {
+        var result = await ExecuteFetchAsync (requestConfiguration);
 
-        if (!result.HttpResponseMessage.IsSuccessStatusCode) {
-            return result;
-        }
-
-        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
-
-        if (json == string.Empty) {
-            result.Error = 17;
-
-            return result;
-        }
-
-        var error = ParseErrorCode (json);
-
-        if (error >= 0) {
-            result.Error = error;
-
-            return result;
-        }
-
-        result.Content = JsonConvert.DeserializeObject (json, requestConfiguration.Selections [0].JsonRootType);
+        result.Content = JsonConvert.DeserializeObject (result.Json, requestConfiguration.Selections [0].JsonRootType);
 
         return result;
     }
@@ -142,23 +60,21 @@ public class ApiRequestClient : IApiRequestClient {
             Comment = "Bartender.Net Key Validation"
         };
 
-        var response = await FetchAsync (config);
+        var result = await FetchAsync (config);
 
         var status = new KeyValidationStatus {
-            Response = response
+            Result = result
         };
 
-        if (response is null || response.HttpResponseMessage is null) {
+        if (result is null || result.HttpResponseMessage is null) {
             return status;
         }
 
-        if (response.Error >= 0) {
+        if (result.Error >= 0) {
             return status;
         }
 
-        var keyInfo = response.Content [KeySection.Instance.KeyInfo] as KeyInfo;
-
-        if (keyInfo is null) {
+        if (result.Content is not KeyInfo keyInfo) {
             return status;
         }
 
@@ -166,5 +82,33 @@ public class ApiRequestClient : IApiRequestClient {
         status.HasRequiredAccessLevel = keyInfo.Selections.HasSelectionAccess (selection.Name);
 
         return status;
+    }
+
+    private async Task<IApiResponse> ExecuteFetchAsync (IRequestConfiguration requestConfiguration) {
+        var result = new ApiResponse {
+            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
+        };
+
+        if (result.HttpResponseMessage is null || !result.HttpResponseMessage.IsSuccessStatusCode) {
+            result.Error = 17;
+            return result;
+        }
+
+        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
+
+        if (json == string.Empty) {
+            result.Error = 17;
+        }
+
+        result.Json = json;
+        result.Error = ParseErrorCode (json);
+
+        return result;
+    }
+
+    private static int ParseErrorCode (string json) {
+        var parsed = JsonConvert.DeserializeObject<ResponseError> (json);
+
+        return parsed is null || parsed.Error is null ? -1 : parsed.Error.Code;
     }
 }
