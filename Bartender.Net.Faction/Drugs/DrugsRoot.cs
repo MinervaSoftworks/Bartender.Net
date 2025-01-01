@@ -4,6 +4,6 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Faction.Drugs;
 
 public class DrugsRoot : BartenderEntity {
-    [JsonProperty ("caches")]
+    [JsonProperty ("drugs")]
     public virtual required List<FactionDrug> Items { get; set; }
 }
