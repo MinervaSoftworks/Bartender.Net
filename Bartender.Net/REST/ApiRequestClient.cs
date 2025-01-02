@@ -1,4 +1,5 @@
 ﻿using Bartender.Net.Framework;
+using Bartender.Net.Framework.Exceptions;
 using Bartender.Net.Framework.REST;
 using Bartender.Net.Framework.Sections;
 using Bartender.Net.Key;
@@ -53,6 +54,10 @@ public class ApiRequestClient : IApiRequestClient {
     }
 
     public async Task<IKeyValidationStatus> ValidateKeyForSelectionAsync (string key, Selection selection) {
+        if (string.IsNullOrWhiteSpace (key)) {
+            throw new BartenderNullOrWhiteSpaceKeyException ($"Recieved a null or white space key when attempting to validate said key.");
+        }
+
         var config = new RequestConfiguration {
             Key = key,
             Section = KeySection.Instance,
@@ -85,25 +90,35 @@ public class ApiRequestClient : IApiRequestClient {
     }
 
     private async Task<IApiResponse> ExecuteFetchAsync (IRequestConfiguration requestConfiguration) {
-        var result = new ApiResponse {
-            HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
-        };
+        if(string.IsNullOrWhiteSpace (requestConfiguration.Key)) {
+            throw new BartenderNullOrWhiteSpaceKeyException ($"Recieved a null or white space key when attempting to fetch Section {requestConfiguration.Section.Name}, Selection(s)  {string.Join (", ", requestConfiguration.Selections.Select (s => s.Name))}");
+        }
 
-        if (result.HttpResponseMessage is null || !result.HttpResponseMessage.IsSuccessStatusCode) {
-            result.Error = 17;
+        try {
+            var result = new ApiResponse {
+                HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
+            };
+
+            if (result.HttpResponseMessage is null || !result.HttpResponseMessage.IsSuccessStatusCode) {
+                result.Error = 17;
+                return result;
+            }
+
+            var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
+
+            if (json == string.Empty) {
+                result.Error = 17;
+                return result;
+            }
+
+            result.Json = json;
+            result.Error = ParseErrorCode (json);
+
             return result;
         }
-
-        var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
-
-        if (json == string.Empty) {
-            result.Error = 17;
+        catch (HttpRequestException e) {
+            throw new BartenderHttpRequestException ($"Network error occured while attempting to fetch data from url {requestConfiguration}", e);
         }
-
-        result.Json = json;
-        result.Error = ParseErrorCode (json);
-
-        return result;
     }
 
     private static int ParseErrorCode (string json) {
