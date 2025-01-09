@@ -21,7 +21,4 @@ public class LifeBar : BartenderEntity {
 
     [JsonProperty ("ticktime")]
     public required int Ticktime { get; set; }
-
-    public virtual UserProfileRoot Owner { get; set; } = default!;
-    public int OwnerID { get; set; }
 }

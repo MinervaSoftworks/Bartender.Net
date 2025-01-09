@@ -50,6 +50,10 @@ public class ApiRequestClient : IApiRequestClient {
 
         result.Content = JsonConvert.DeserializeObject (result.Json, requestConfiguration.Selections [0].JsonRootType);
 
+        if(result.Content is BartenderEntity entity) {
+            entity.FetchUTCTimeStamp = ((DateTimeOffset) DateTime.UtcNow).ToUnixTimeSeconds ();
+        } 
+
         return result;
     }
 

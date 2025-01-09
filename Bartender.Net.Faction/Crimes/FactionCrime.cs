@@ -23,13 +23,8 @@ public class FactionCrime : BartenderEntity {
     public required int MoneyGain { get; set; }
 
     [JsonProperty ("participants")]
-    [NotMapped]
-    public Dictionary<string, Status> Participants {
-        get => ParticipantsList.ToTornDictionary ();
-        set => ParticipantsList = value.TornDictionaryToList ();
-    }
-
-    public virtual List<Status> ParticipantsList { get; set; } = [];
+    [JsonConverter (typeof(ParticipantConverter))]
+    public List<int> Participants { get; set; } = [];
 
     [JsonProperty ("planned_by")]
     public required int PlannedBy { get; set; }
@@ -51,4 +46,48 @@ public class FactionCrime : BartenderEntity {
 
     [JsonProperty ("time_started")]
     public required long TimeStarted { get; set; }
+
+    private class ParticipantConverter : JsonConverter {
+        public override bool CanConvert (Type objectType) {
+            return true;
+        }
+
+        public override object? ReadJson (JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer) {
+            if (reader.TokenType != JsonToken.StartArray) {
+                return null;
+            }
+
+            var participants = new List<int> ();
+
+            while (reader.TokenType != JsonToken.EndArray) {
+                reader.Read ();
+
+                if (reader.TokenType == JsonToken.PropertyName && reader.Value is string id) {
+                    participants.Add (int.Parse (id));
+
+                    reader.Skip ();
+                }
+            }
+
+            return participants;
+        }
+
+        public override void WriteJson (JsonWriter writer, object? value, JsonSerializer serializer) {
+            if (value == null) {
+                writer.WriteStartArray ();
+                writer.WriteEndArray ();
+                return;
+            }
+
+            var participants = (IEnumerable<int>) value;
+
+            writer.WriteStartArray ();
+
+            foreach (var participant in participants) {
+                writer.WriteValue (participant);
+            }
+
+            writer.WriteEndArray ();
+        }
+    }
 }
