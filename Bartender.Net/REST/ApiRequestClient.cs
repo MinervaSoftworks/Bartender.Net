@@ -99,26 +99,28 @@ public class ApiRequestClient : IApiRequestClient {
         }
 
         try {
-            var result = new ApiResponse {
-                HttpResponseMessage = await _client.GetAsync (requestConfiguration.ToString ())
-            };
+            using (var resonse = await _client.GetAsync (requestConfiguration.ToString ())) {
+                var result = new ApiResponse {
+                    HttpResponseMessage = resonse
+                };
 
-            if (result.HttpResponseMessage is null || !result.HttpResponseMessage.IsSuccessStatusCode) {
-                result.Error = 17;
+                if (result.HttpResponseMessage is null || !result.HttpResponseMessage.IsSuccessStatusCode) {
+                    result.Error = 17;
+                    return result;
+                }
+
+                var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
+
+                if (json == string.Empty) {
+                    result.Error = 17;
+                    return result;
+                }
+
+                result.Json = json;
+                result.Error = ParseErrorCode (json);
+
                 return result;
             }
-
-            var json = await result.HttpResponseMessage.Content.ReadAsStringAsync ();
-
-            if (json == string.Empty) {
-                result.Error = 17;
-                return result;
-            }
-
-            result.Json = json;
-            result.Error = ParseErrorCode (json);
-
-            return result;
         }
         catch (HttpRequestException e) {
             throw new BartenderHttpRequestException ($"Network error occured while attempting to fetch data from url {requestConfiguration}", e);
