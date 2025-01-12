@@ -50,9 +50,9 @@ public class ApiRequestClient : IApiRequestClient {
 
         result.Content = JsonConvert.DeserializeObject (result.Json, requestConfiguration.Selections [0].JsonRootType);
 
-        if(result.Content is BartenderEntity entity) {
+        if (result.Content is BartenderEntity entity) {
             entity.FetchUTCTimeStamp = ((DateTimeOffset) DateTime.UtcNow).ToUnixTimeSeconds ();
-        } 
+        }
 
         return result;
     }
@@ -94,7 +94,7 @@ public class ApiRequestClient : IApiRequestClient {
     }
 
     private async Task<IApiResponse> ExecuteFetchAsync (IRequestConfiguration requestConfiguration) {
-        if(string.IsNullOrWhiteSpace (requestConfiguration.Key)) {
+        if (string.IsNullOrWhiteSpace (requestConfiguration.Key)) {
             throw new BartenderNullOrWhiteSpaceKeyException ($"Recieved a null or white space key when attempting to fetch Section {requestConfiguration.Section.Name}, Selection(s)  {string.Join (", ", requestConfiguration.Selections.Select (s => s.Name))}");
         }
 

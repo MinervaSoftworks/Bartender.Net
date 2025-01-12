@@ -1,8 +1,5 @@
 ﻿using Bartender.Net.Framework;
-using Bartender.Net.Framework.Common.User;
-using Bartender.Net.Framework.Extensions;
 using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bartender.Net.Faction.Crimes;
 
@@ -23,7 +20,7 @@ public class FactionCrime : BartenderEntity {
     public required int MoneyGain { get; set; }
 
     [JsonProperty ("participants")]
-    [JsonConverter (typeof(ParticipantConverter))]
+    [JsonConverter (typeof (ParticipantConverter))]
     public List<int> Participants { get; set; } = [];
 
     [JsonProperty ("planned_by")]
