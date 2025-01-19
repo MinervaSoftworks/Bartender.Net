@@ -37,6 +37,9 @@ public class SkillsRoot : BartenderEntity {
     [JsonProperty ("pickpocketing")]
     public required string? Pickpocketing { get; set; }
 
+    [JsonProperty ("scamming")]
+    public required string? Scamming { get; set; }
+
     [JsonProperty ("racing")]
     public required string? Racing { get; set; }
 
