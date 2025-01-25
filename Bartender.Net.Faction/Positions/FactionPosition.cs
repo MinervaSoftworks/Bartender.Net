@@ -4,6 +4,62 @@ using Newtonsoft.Json;
 namespace Bartender.Net.Faction.Positions;
 
 public class FactionPosition : BartenderEntity {
+    public static readonly FactionPosition Leader = new () {
+        ID = 0,
+        Name = "Leader",
+        Default = 1,
+        CanUseMedicalItem = 1,
+        CanUseBoosterItem = 1,
+        CanUseDrugItem = 1,
+        CanUseEnergyRefill = 1,
+        CanUseNerveRefill = 1,
+        CanLoanTemporaryItem = 1,
+        CanLoanWeaponAndArmory = 1,
+        CanRetrieveLoanedArmory = 1,
+        CanPlanAndInitiateOrganisedCrime = 1,
+        CanAccessFactionApi = 1,
+        CanGiveItem = 1,
+        CanGiveMoney = 1,
+        CanGivePoints = 1,
+        CanManageForum = 1,
+        CanManageApplications = 1,
+        CanKickMembers = 1,
+        CanAdjustMemberBalance = 1,
+        CanManageWars = 1,
+        CanManageUpgrades = 1,
+        CanSendNewsletter = 1,
+        CanChangeAnnouncement = 1,
+        CanChangeDescription = 1
+    };
+
+    public static readonly FactionPosition CoLeader = new () {
+        ID = 1,
+        Name = "Co-Leader",
+        Default = 1,
+        CanUseMedicalItem = 1,
+        CanUseBoosterItem = 1,
+        CanUseDrugItem = 1,
+        CanUseEnergyRefill = 1,
+        CanUseNerveRefill = 1,
+        CanLoanTemporaryItem = 1,
+        CanLoanWeaponAndArmory = 1,
+        CanRetrieveLoanedArmory = 1,
+        CanPlanAndInitiateOrganisedCrime = 1,
+        CanAccessFactionApi = 1,
+        CanGiveItem = 1,
+        CanGiveMoney = 1,
+        CanGivePoints = 1,
+        CanManageForum = 1,
+        CanManageApplications = 1,
+        CanKickMembers = 1,
+        CanAdjustMemberBalance = 1,
+        CanManageWars = 1,
+        CanManageUpgrades = 1,
+        CanSendNewsletter = 1,
+        CanChangeAnnouncement = 1,
+        CanChangeDescription = 1
+    };
+
     [JsonIgnore]
     public string Name { get; set; } = string.Empty;
 
